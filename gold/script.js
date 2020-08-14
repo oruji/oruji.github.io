@@ -8,7 +8,6 @@ $('input[type=radio][name=myradio]').change(function() {
     }
 });
 
-
 $("input[type=radio][name=myradio]").change(function() {
     if (this.value == "0") {
         $("#divtala").show();
@@ -29,22 +28,60 @@ $("input[type=radio][name=myradio]").change(function() {
 });
 
 $(document).on("click", "#convertDollar", function() {
-	$.ajax({
-	    type: "POST",
-	    url: "/gold/dollar.php", 
-	    data: { 
-	        "mydollar": $("#dollar").val(),
-	        "myounce": $("#ounce").val(),
-	        "mytala": $("#tala").val(),
-	        "mysekke": $("#sekke").val(),
-	        "mydarsad": $("#darsad").val(),
-	        "isdollar": $('input[name="myradio"]:checked').val()
-	    },
-	    scriptCharset: "utf-8" ,
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-	    success: function(msg) {
-	        $("#javab").html(msg);
-	    }
-	});
+  var myinput = $("#dollar").val();
+	var myounce = $("#ounce").val();
+	var mytype = $('input[name="myradio"]:checked').val();
+
+  var myinput = convert2english(myinput);
+  var myounce = convert2english(myounce);
+  var drate = 3.674;
+
+  var finalString = '';
+
+  var abshode;
+
+  if(mytype == 1) {
+      abshode = myinput * myounce / 9.5742;
+
+  } else if(mytype == 0) {
+      abshode = myinput * drate * myounce / 9.5742;
+  }
+
+  var sekke = abshode / 4.6083 / 705 * 900 * 8.133;
+  
+  var finalString = '';
+  
+  finalString = finalString . '<div>';
+  finalString = finalString . '<span class="rightTD">';
+  finalString = finalString . 'طلای جهانی ';
+  finalString = finalString . '</span>';
+  finalString = finalString . '<span class="leftTD">';
+  finalString = finalString . abshode;
+  finalString = finalString . '</span>';
+  finalString = finalString . '</div>';
+
+  finalString = finalString . '<div>';
+  finalString = finalString . '<span class="rightTD">';
+  finalString = finalString . 'سکه&nbsp; جهانی ';
+  finalString = finalString . '</span>';
+  finalString = finalString . '<span class="leftTD">';
+  finalString = finalString . sekke;
+  finalString = finalString . '</span>';
+  finalString = finalString . '</div>';
+  
+  $("#javab").html(finalString);
 });
 });
+
+function convert2english(str) {
+  var persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g];
+  var arabicNumbers  = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+
+  if(typeof str === 'string') {
+    for(var i = 0; i < 10; i++) {
+      str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
+    }
+  }
+  
+  return str;
+}
