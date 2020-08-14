@@ -56,7 +56,7 @@ $(document).on("click", "#convertDollar", function() {
   finalString = finalString + 'طلای جهانی ';
   finalString = finalString + '</span>';
   finalString = finalString + '<span class="leftTD">';
-  finalString = finalString + abshode;
+  finalString = finalString + number_format(abshode);
   finalString = finalString + '</span>';
   finalString = finalString + '</div>';
 
@@ -65,7 +65,7 @@ $(document).on("click", "#convertDollar", function() {
   finalString = finalString + 'سکه&nbsp; جهانی ';
   finalString = finalString + '</span>';
   finalString = finalString + '<span class="leftTD">';
-  finalString = finalString + sekke;
+  finalString = finalString + number_format(sekke);
   finalString = finalString + '</span>';
   finalString = finalString + '</div>';
   
@@ -82,6 +82,13 @@ function convert2english(str) {
       str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
     }
   }
+  
+  return str;
+}
+
+function number_format(str) {
+  str = Math.trunc(str);
+  str = str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");  
   
   return str;
 }
