@@ -51,23 +51,23 @@ $(document).on("click", "#convertDollar", function() {
   
   var finalString = '';
   
-  finalString = finalString . '<div>';
-  finalString = finalString . '<span class="rightTD">';
-  finalString = finalString . 'طلای جهانی ';
-  finalString = finalString . '</span>';
-  finalString = finalString . '<span class="leftTD">';
-  finalString = finalString . abshode;
-  finalString = finalString . '</span>';
-  finalString = finalString . '</div>';
+  finalString = finalString + '<div>';
+  finalString = finalString + '<span class="rightTD">';
+  finalString = finalString + 'طلای جهانی ';
+  finalString = finalString + '</span>';
+  finalString = finalString + '<span class="leftTD">';
+  finalString = finalString + abshode;
+  finalString = finalString + '</span>';
+  finalString = finalString + '</div>';
 
-  finalString = finalString . '<div>';
-  finalString = finalString . '<span class="rightTD">';
-  finalString = finalString . 'سکه&nbsp; جهانی ';
-  finalString = finalString . '</span>';
-  finalString = finalString . '<span class="leftTD">';
-  finalString = finalString . sekke;
-  finalString = finalString . '</span>';
-  finalString = finalString . '</div>';
+  finalString = finalString + '<div>';
+  finalString = finalString + '<span class="rightTD">';
+  finalString = finalString + 'سکه&nbsp; جهانی ';
+  finalString = finalString + '</span>';
+  finalString = finalString + '<span class="leftTD">';
+  finalString = finalString + sekke;
+  finalString = finalString + '</span>';
+  finalString = finalString + '</div>';
   
   $("#javab").html(finalString);
 });
