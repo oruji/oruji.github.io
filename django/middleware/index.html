@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/middleware/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/django/middleware/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>آموزش Middleware جنگو Django کتاب آموزش چارچوب فریم ورک برخط</title>
+<meta name="description" content="آموزش کتاب چارچوب فریم ورک برخط آنلاین جنگو (Django) گاهی نیاز به اجرای یک قطعه کد در هر درخواستی که جنگو کنترل می کند هست. این را middleware انجام می دهد" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="آموزش Middleware جنگو Django کتاب آموزش چارچوب فریم ورک برخط" />
+<meta property="og:description" content="آموزش کتاب چارچوب فریم ورک برخط آنلاین جنگو (Django) گاهی نیاز به اجرای یک قطعه کد در هر درخواستی که جنگو کنترل می کند هست. این را middleware انجام می دهد" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/django/middleware/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/13 19:21</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>آموزش Middleware در جنگو (Django)</h1>
+<p>در مواردی، نیاز به اجرای یک قطعه کد در هر درخواستی که جنگو کنترل می کند خواهید داشت. این کد ممکن است نیاز باشد درخواست را قبل از آن که view آن را کنترل کند، ویرایش کند. این کد ممکن است نیاز باشد اطلاعات درباره ی درخواست برای اهداف debug و غیره ثبت کند.</p>
+<p>می توان این کار را با فریم ورک یا چارچوب middleware انجام داد، که مجموعه ای از hook ها درون پردازش request/response می باشند. این چارچوب یک سیستم "plug-in" سطح پایین و light قادر به تغییر سراسری ورودی و خروجی جنگو (Django) می باشد.</p>
+<p>هر جزء middleware مسئول انجام برخی کارهای خاص می باشد. در صورتی که این کتاب را کامل خوانده باشید، middleware را بارها و بارها دیده اید:</p>
+<ul>
+<li>تمام ابزار session و کاربر که در <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a> مشاهده شد توسط چند تکه ی کوچک از middleware ممکن می شود (بیشتر به خصوص، middleware، request.session و request.user را برای شما در view ها قابل دسترس می کند).</li>
+<li>sitewide cache بحث شده در <a href="http://oruji.github.io/amoozesh.org/django/caching/" class="content" title="مبحث caching">مبحث caching</a> در واقع تنها یک قطعه از middleware می باشد که در صورتی که پاسخ برای view مورد نظر cache شده باشد، فراخوانی آن تابع view را دور می زند.</li>
+<li>برنامه های flatpages، redirects و csrf در <a href="http://oruji.github.io/amoozesh.org/django/package/contrib/" class="content" title="پکیج django.contrib">پکیج django.contrib</a> تمام کارهای خارق العاده خود را از طریق اجزای middleware انجام می دهند.</li>
+</ul>
+<p>این آموزش از کتاب، ماهیت middleware و نحوه ی کارکرد آن را به طور عمیق تر بحث کرده و نحوه ی نوشتن middleware خودتان را توضیح می دهد.</p>
+<h2>Middleware چیست؟</h2>
+<p>اجازه دهید یا یک مثال خیلی ساده شروع کنیم. </p>
+<p>سایت های پر ترافیک اغلب نیاز به قرار دادن جنگو در پشت یک پروکسی load-balancing دارند. این می تواند موجب پیچیدگی های کوچکی شود و یکی از این پیچیدگی ها این است که IP از راه دور هر درخواست (<bdo class="leftInline">request.META["REMOTE_IP"]</bdo>) متعادل کننده ی بار آن خواهد بود، نه در واقع IP ای که request ایجاد می کند. متعادل کننده های بار (load balancers) توسط یک header ویژه به نام X-Forwarded-For جهت درخواست آدرس IP واقعی با این موضوع سر و کار دارند.</p>
+<p>(در دست ترجمه ...):</p>
+<code class="language-python">class SetRemoteAddrFromForwardedFor(object):
+    def process_request(self, request):
+        try:
+            real_ip = request.META['HTTP_X_FORWARDED_FOR']
+        except KeyError:
+            pass
+        else:
+            # HTTP_X_FORWARDED_FOR can be a comma-separated list of IPs.
+            # Take just the first one.
+            real_ip = real_ip.split(",")[0]
+            request.META['REMOTE_ADDR'] = real_ip</code><p>(توجه: اگر چه HTTP header با نام X-Forwarded-For وجود دارد، جنگو آن را به صورت <bdo class="leftInline">request.META['HTTP_X_FORWARDED_FOR']</bdo> قابل دسترس می کند. به استثنای content-length و content-type، هر HTTP header ای درون درخواست با تبدیل تمام کاراکتر به حروف بزرگ، به کلید های request.META تبدیل می شود، به جای هر hyphen با خط تیره و یک پیشوند HTTP_ به نام آن.)</p>
+<p>در صورتی که این middleware نصب شده باشد، مقدار هر X‑Forwarded‑For به طور خودکار درون <bdo class="leftInline">request.META['REMOTE_ADDR']</bdo> درج می شود. این بدین معنی است که برنامه ی جنگوی شما نسبت به این موضوع که آیا آن ها پشت یک پروکسی load-blancing هستند یا خیر نگرانی نخواهد داشت، آن ها می توانند به سادگی به <bdo class="leftInline">request.META['REMOT_ADDR']</bdo> دسترسی پیدا کنند و آن در صورتی که یک پروکسی استفاده شده باشد یا خیر کار خواهد کرد.</p>
+<p>در واقع، این یک نیاز به اندازه ی کافی رایج می باشد که این قسمت از middleware در یک بخش داخلی جنگو (Django) باشد. آن در django.middleware.http قرار دارد.</p>
+<h3>نصب Middleware</h3>
+<p>در صورتی که این کتاب را به صورت کامل خوانده باشید، مثال هایی از نصب middleware را تاکنون مشاهده کرده اید؛ بسیاری از مثال ها در آموزش های قبلی کتاب،  دارای بعضی middleware های ضروری می باشد. برای کامل کردن، در زیر نحوه ی نصب middleware وجود دارد.</p>
+<p>جهت فعال کردن یک جزء middleware، آیتم یا جزء مورد نظر را به تاپی MIDDLEWARE_CLASSES موجود در ماژول تنظیمات (settings.py) اضافه کنید. درون MIDDLEWARE_CLASSES، هر جزء middleware توسط یک رشته نشان داده شده است: مسیر کامل نام کلاس middleware. برای مثال، در زیر MIDDLEWARE_CLASSES پیشفرض ساخته شده توسط django‑admin startproject وجود دارد:</p>
+<code class="language-python">MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+)</code><p>نصب جنگو نیاز به هیچ middleware ای ندارد – در  صورت تمایل، MIDDLEWARE_CLASSES می تواند خالی باشد – ولی توصیه می شود که CommonMiddleware را که به طور مختصر توضیح می دهیم فعال کنید.</p>
+<p>ترتیب قرار گیری مهم می باشد. درون درخواست و فازهای view، جنگو middlewre را با توجه به ترتیب داده شده ی آن ها در MIDDLEWARE_CLASSES بکار می برد، و در پاسخ و فازهای exception، جنگو middleware را با طور برعکس ترتیب بکار می برد. بدین معنی که، جنگو با MIDDLEWARE_CLASSES به صورت یک نوعی از "wrapper" در اطراف تابع view رفتار می کند: در درخواست به سمت پایین لیست به view حرکت کرده، و در پاسخ بر می گردد.</p>
+<h3>متدهای Middleware</h3>
+<p>اکنون که ماهیت middleware و نحوه عمکرد آن را می دانید، اجازه دهید به تمام متدهایی که کلاس های middleware می توانند تعریف کنند نگاهی بیاندازیم.</p>
+<h4>مقدار ده اولیه: <bdo class="leftInline">__init__(self)</bdo>
+</h4>
+<p>از <bdo class="leftInline">__init__()</bdo> جهت راه اندازی systemwide برای یک کلاس middleware داده شده استفاده کنید.</p>
+<p>(در دست ترجمه ...)، هر کلاس middleware فعال شده ای تنها یک بار در هر پردازش سرور instantiated شده است. این بدین معنی است که <bdo class="leftInline">__init__()</bdo> تنها یک بار فراخونی می شود – در زمان راه اندازی سرور – نه برای درخواست های فردی.</p>
+<p>دلیل رایج برای اجرای یک متد <bdo class="leftInline">__init__()</bdo> بررسی این موضوع می باشد که middleware واقعا ضروری می باشد یا خیر. در صورتی که <bdo class="leftInline">__init__()</bdo>، django.core.exceptions.MiddlewareNotUsed را بوجود آورد، در آن هنگام جنگو middleware را از توده ی middleware حذف خواهد کرد. ممکن است از خصوصیت برای بررسی برخی قسمت های نرم افزار که کلاس middleware ضروری می باشد استفاده کنید، یا بررسی این که آیا سرور در حالت debug اجرا می شود یا خیر، (در دست ترجمه ...).</p>
+<p>در صورتی که یک کلاس middleware یک متد <bdo class="leftInline">__init__()</bdo> تعریف کند، متد نباید هیچ آرگومانی بیشتر از self دریافت کند.</p>
+<h4>پردازشگر درخواست: <bdo class="leftInline">process_request(self, request)</bdo>
+</h4>
+<p>این متد به محض این که درخواست دریافت شود فراخوانی می شود – قبل از آن که جنگو URL را برای تعیین view ای که باید اجرا شود تجزیه کند. این متد شیء HttpRequest را ارسال می کند، که شما ممکن است در صورت تمایل آن را اصلاح کنید.</p>
+<p><bdo class="leftInline">process_request()</bdo> باید یا یک شیء HttpResponse و یا None بر گرداند.</p>
+<ul>
+<li>در صورتی که None بر گرداند، جنگو پردازش این request را ادامه خواهد داد، اجرای هر middleware دیگر و سپس view متناظر.</li>
+<li>در صورتی که یک شیء HttpResponse بر گرداند، جنگو هر دوی هر middleware دیگر (از هر نوع) یا view متناظر را فراخوانی نخواهد کرد. جنگو بلافاصله آن HttpResponse را بر خواهد گرداند.</li>
+</ul>
+<h4>پردازشگر <bdo class="leftInline">View: process_view(self, request, view, args, kwargs)</bdo>
+</h4>
+<p>این متد بعد از آن که پردازشگر درخواست فراخوانی شده و تعیین view جهت اجرا توسط جنگو صورت گرفت فراخوانی می شود، ولی قبل آن view واقعا اجرا می شود.</p>
+<p>آرگومان های ارسال شده به این view در جدول شماره ی 1-17 نشان داده شده اند.</p>
+<img src="http://oruji.github.io/amoozesh.org/static/img/table.svg" alt="جدول" class="yaddasht"><h4>جدول شماره 1-2</h4>
+<div class="myscroll"><table class="note"><tbody>
+<tr>
+<th style="
+    width: 80px;
+    min-width: 60px;
+">آرگومان</th>
+<th style="
+    min-width: 300px;
+">توضیح</th>
+</tr>
+<tr>
+<td>request</td>
+<td>شیء HttpRequest.</td>
+</tr>
+<tr>
+<td>view</td>
+<td>تابع پایتون که جنگو برای کنترل این request فراخوانی خواهد کرد. این آرگومان واقعا خود شیء تابع می باشد، نه نام تابع به صورت یک رشته.</td>
+</tr>
+<tr>
+<td>args</td>
+<td>لیست آرگومان های موضعی ه به view ارسال خواهد شد، شامل آرگومان request نمی شود (که همواره اولین آرگومان view می باشد).</td>
+</tr>
+<tr>
+<td>kwargs</td>
+<td>دیکشنری آرگومان های کیورد که به view ارسال خواهند شد</td>
+</tr>
+</tbody></table></div>
+<p>درست مثل <bdo class="leftInline">process_request()</bdo>، <bdo class="leftInline">process_view()</bdo> باید یک شیء HttpResponse یا None بر گرداند.</p>
+<ul>
+<li>در صورتی که None بر گرداند، جنگو پردازش این درخواست اجرای هر middleware دیگر و سپس view متناظر را ادامه خواهد داد.</li>
+<li>در صورتی که یک شیء HttpResponse بر گرداند، جنگو هر دوی هر middleware دیگر (از هر نوع) یا view متناظر را فراخوانی نخواهد کرد. جنگو بلافاصله آن HttpResponse را بر خواهد گرداند.</li>
+</ul>
+<h4>پردازشگر پاسخ: <bdo class="leftInline">process_response(self, request,response)</bdo>
+</h4>
+<p>این متد بعد از فراخوانی شدن تابع view و تولید شدن response فراخوانی می شود. در اینجا، پردازشگر محتوای یک پاسخ را تغییر داده یا اصلاح می کند. یک مورد استفاده ی آشکار، فشرده سازی محتوا می باشد، از قبیل gzip کردن HTML درخواست.</p>
+<p>پارامترها باید کاملا واضح و آشکار باشند: request شیء درخواست می باشد، و response شیء پاسخ برگردانده شده از view است.</p>
+<p>بر خلاف درخواست و پردازشگرهای view که ممکن است None برگردانند، <bdo class="leftInline">process_response()</bdo> باید یک شیء HttpResponse برگرداند. آن reponse می تواند همان اصل ارسال شده به تابع (احتمالا اصلاح شده) باشد یا یک نمونه ی جدید باشد.</p>
+<h4>پردازشگر خطا: <bdo class="leftInline">process_exception(self, request,exception)</bdo>
+</h4>
+<p>این متد تنها در صورتی که چیزی اشتباه شود و view یک خطای cache نشده ایجاد کند فراخوانی می شود. می توان از این hook برای ارسال تذکرهای خطا استفاده کرد،</p>
+<p>پارامترهای این تابع همسان با شیء های request ای می باشد که تا کنون با آن سر و کار داشته ایم، و exception شیء واقعی Exception ایجاد توسط تابع view می باشد.</p>
+<p><bdo class="leftInline">process_exception()</bdo> باید یا یک None و یا یک شیء HttpResponse برگرداند.</p>
+<ul>
+<li>در صورتی که None برگرداند، جنگو پردازش این درخواست را با کنترل خطای داخلی فریم ورک ادامه خواهد داد.</li>
+<li>در صورتی که یک شیء HttpResponse برگرداند، جنگو از آن پاسخ به جای کنترل خطای داخلی چارچوب استفاده می کند.</li>
+</ul>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="نکته" class="yaddasht"><h4>نکته</h4>
+<p>جنگو تعداد کلاس های middleware (توضیح داده شده در بخش بعدی) ارائه می کند که مثال های خوبی را ایجاد می کند. خواندن کد آن ها احساس خوبی نسبت به قدرت middleware به شما می دهد.</p>
+<p>همچنین می توانید تعدادی مثال های ایجاد شده توسط جامعه ی جنگو توزیع شده است را در wiki جنگو بیابید:</p>
+</ul>
+<code class="language-">http://code.djangoproject.com/wiki/ContributeMiddleware</code><h3>Middleware داخلی</h3>
+<p>فریم ورک یا چارچوب جنگو (Django) برخی middleware های داخلی را که با مشکلات رایج سر و کار دارند را ارائه میکند، که در بخش های زیر بحث می کنیم.</p>
+<h4>Middleware پشتیبانی Authentication</h4>
+<p>کلاس Middleware: django.contrib.ath.middleware.AuthenticationMiddleware.</p>
+<p>این middleware پشتیبانی authentication را فعال می کند. این middleware اتریبیوت request.user نشان داده شده در کاربر وارد شده ی فعلی به هر شیء HttpRequest ورودی اضافه می کند.</p>
+<p>برای اطلاعات بیشتر به <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a> مراجعه کنید.</p>
+<h4>"Common" Middleware</h4>
+<p>کلاس middleware: django.middleware.common.CommonMiddleware.</p>
+<p>این middleware، تهسیلاتی برای افراد کمال گرا اضافه کرده است:</p>
+<ul>
+<li>(در دست ترجمه ...):<code class="language-python">import re
+
+DISALLOWED_USER_AGENTS = (
+    re.compile(r'^OmniExplorer_Bot'),
+    re.compile(r'^Googlebot')
+)</code><p>به import re توجه داشته باشید، چرا که DISALLOWED_USER_AGENT نیازمند مقادیر آن جهت کامپایل regex ها می باشد (مثلا، خروجی <bdo class="leftInline">re.compile()</bdo>). فایل تنظیمات پایتونی می باشد، بنابراین برای بکار بردن عبارات import درون آن کاملا مناسب می باشد.</p>
+</li>
+<li>باز نویسی بر اساس تنظیمات APPEND_SLASH و PREPEND_WWW انجام می دهد: در صورتی که APPEND_SLASH دارای مقدار True باشد، URL هایی که علامت "/" جلو را نداشته باشند به URL همسان دارای علامت "/" جلو تغییر مسیر داده خواهند شد، مگر آن که قسمت آخر مسیر حاوی یک پایان باشد. بنابراین foo.com/bar به <bdo class="leftInline">foo.com/bar/</bdo> تغییر مسیر داده می شود، ولی foo.com/bar/file.txt بدون تغییر ارسال می شود.<p>در صورتی که PREPEND_WWW مقدار True داشته باشد، URL هایی که "www." ابتدایی را نداشته باشند، به URL همسان با "www." در ابتدای آن تغییر مسیر داده می شوند.</p>
+<p>هر دوی این option ها به معنای عادی سازی URL ها می باشند. فلسفه این است که هر URL باید در یک – و تنها یک – مکان وجود دارشته باشد. از نظر فنی آدرس example.com/bar متفاوت از <bdo class="leftInline">example.com/bar/</bdo> می باشد، که به نوبه ی خود متفاوت از <bdo class="leftInline">www.example.com/bar/</bdo> می باشد. یک indexer موتور جستجو با این ها به صورت آدرس های جدا رفتار می کند، که برای رتبه ی موتور جستجوی سایت مضر می باشد، بنابراین عادی سازی URL ها بهترین عمل می باشد.</p>
+</li>
+<li>ETag ها را بر اساس تنظیم USE_ETAGS کنترل می کند: ETag ها یک سطح بهینه سازی HTTP برای cache صفحات به طور مشروط می باشد. در صورتی که USE_ETAGS مقدار True باشد، جنگو توسط محتوای صفحه ی <bdo class="leftInline">MD5-hashing</bdo> یک Etag برای هر درخواست محاسبه می کند، و در صورت لزوم مواظب ارسال پاسخ های Not Modified خواهد بود.<p>همچنین توجه داشته باشید که یک GET middleware شرطی، که به طور اختصار توضیح داده شده، ETag ها و یک مقدار بیشتر را کنترل می کند.</p>
+</li>
+</ul>
+<h4>فشرده سازی Middleware</h4>
+<p>کلاس middleware: django.middleware.gzip.GZipMiddleware.</p>
+<p>این middleware به طور خودکار محتوا را برای مرورگرهایی که فشرده سازی gzip را می فهمند (تمام مرورگرهای مدرن) فشرده می سازد. این middleware می تواند تا حد زیادی مقدار bandwidth ای که یک وب سرور مصرف می کند را کاهش دهد. در عوض مقداری زمان جهت فشرده سازی صفحات خواهد برد.</p>
+<p>ما معمولا سرعت را bandwith ترجیح می دهیم، ولی در صورتی که شما بر عکس این را ترجیح می دهید، تنها کافیست این middleware را فعال کنید.</p>
+<h4>GET Middleware شرطی</h4>
+<p>کلاس middleware: django.middleware.http.ConditionalGetMiddleware.</p>
+<p>این middleware اعمال شرطی GET را پشتیبانی می کند. در صورتی که پاسخ دارای یک Last-Modified یا Etag یا header باشد، و درخواست دارای If-None-Match یا If-Modified-Since باشد، پاسخ توسط یک پاسخ 304 ("Not modified") جایگزین می شود. پشتیبانی ETag وابسته به تنظیم USE_ETAGS می باشد و انتظار دارد که header پاسخ Etag قبلا قرار گرفته باشد. همانطور که در بالا بحث شد، هدر ETag توسط common middleware قرار گرفته است.</p>
+<p>همچنین محتوای هر پاسخ به یک درخواست HEAD را نیز حذف می کند و هدرهای پاسخ DATE و Content-Length را برای هر درخواستی قرار می دهد.</p>
+<h4>پشتیبانی پروکسی معکوس (X-Forwarded-For Middleware)</h4>
+<p>کلاس middleware: django.middleware.http.SetRemoteAddrFromForwardedFor.</p>
+<p>این مثالی است که در بخش "Middleware چیست؟" بررسی شد. این middleware، <bdo class="leftInline">request.META['REMOTE_ADDR']</bdo> بر اساس <bdo class="leftInline">request.META['HTTP_X_FORWARDED_FOR']</bdo> قرار می دهد، در صورتی که دومی قرار بگیرد. این در صورتی که در پشت یک پروکسی معکوس نشسته باشین که موجب شود هر REMOTE_ADDR درخواست به <bdo class="leftInline">127.0.0.1</bdo> قرار گرفته باشد مفید است.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="نکته" class="yaddasht"><h4>خطر!</h4>
+<p>این middleware، HTTP_X_FORWARDED_FOR را معتبر نمی سازد.</p>
+<p>در صورتی که در پشت یک پروکسی معکوس نمی باشید که به طور خودکار HTTP_X_FORWARDED_FOR قرار گرفته باشد، از این middleware استفاده نکنید. هر کسی می تواند مقدار HTTP_X_FORWARDED_FOR فریب دهد، و به دلیل آنکه این REMOTE_ADDR بر اساس HTTP_X_FORWARDED_FOR قرار داده شده است، بدین معنی است که هر کسی می تواند آدرس IP خود را جا بزند.</p>
+<p>تنها زمانی که کاملا به مقدار HTTP_X_FORWARDED_FOR اعتماد دارید از این middleware استفاده کنید.</p>
+</ul>
+<h4>Middleware پشتیبانی Session</h4>
+<p>کلاس middleware: django.contrib.sessions.middleware.SessionMiddleware.</p>
+<p>این middleware پشتیبانی session را فعال می کند. برای جزئیات بیشتر به <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a> مراجعه کنید.</p>
+<h4>Sitewide Cache Middleware</h4>
+<p>کلاس middleware: django.middleware.cache.UpdateCacheMiddleware و django.middleware.cache.FetchFromCacheMiddleware.</p>
+<p>این middleware ها با یکدیگر برای cache هر صفحه ی تولید شده توسط جنگو کار می کنند. این موضوع به تفصیل در <a href="http://oruji.github.io/amoozesh.org/django/caching/" class="content" title="مبحث caching">مبحث caching</a> بحث شده است.</p>
+<h4>Transaction Middleware</h4>
+<p>کلاس middleware: django.middleware.transaction.TransactionMiddleware.</p>
+<p>این middleware، COMMIT یا ROLLBACK پایگاه داده را به فاز request/response پیوند می دهد. در صورتی که یک تابع view با موفقیت اجرا شود، یک COMMIT صادر می شود. در صورتی که view یک خطا ایجاد کند، یک ROLLBACK صادر می شود.</p>
+<p>ترتیب این middleware درون لیست اهمیت دارد. ماژول های middleware خارج از اجرای آن با commit‑on‑save اجرا می شوند – رفتار پیشفرض جنگو. ماژول های middleware داخل آن (دیرتر درون لیست می آیند) که در زیر کنترل transaction همسان به صورت توابع view خواهد بود اجرا می شوند.</p>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش جنگو</div>
+<a href="http://oruji.github.io/amoozesh.org/django/introduction/" class="anav" title="مقدمه">مقدمه</a><a href="http://oruji.github.io/amoozesh.org/django/start/" class="anav" title="شروع کار">شروع کار</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/" class="anav" title="view ها و URLconf ها">view ها و URLconf ها</a><a href="http://oruji.github.io/amoozesh.org/django/template/" class="anav" title="Template ها">Template ها</a><a href="http://oruji.github.io/amoozesh.org/django/model/" class="anav" title="مدل ها">مدل ها</a><a href="http://oruji.github.io/amoozesh.org/django/admin-site/" class="anav" title="سایت مدیر">سایت مدیر</a><a href="http://oruji.github.io/amoozesh.org/django/form/" class="anav" title="فرم ها">فرم ها</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/advance/" class="anav" title="View ها و URLconf های پیشرفته">View ها و URLconf های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/template/advance/" class="anav" title="Template های پیشرفته">Template های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/model/advance/" class="anav" title="مدل های پیشرفته">مدل های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/view/generic/" class="anav" title="View های Generic">View های Generic</a><a href="http://oruji.github.io/amoozesh.org/django/non-html/" class="anav" title="تولید محتوای غیر html ای">تولید محتوای غیر html ای</a><a href="http://oruji.github.io/amoozesh.org/django/session/" class="anav" title="Session ها، کاربران، و عضویت">Session ها، کاربران، و عضویت</a><a href="http://oruji.github.io/amoozesh.org/django/caching/" class="anav" title="مبحث Caching">مبحث Caching</a><a href="http://oruji.github.io/amoozesh.org/django/package/contrib/" class="anav" title="پکیج django.contrib">پکیج django.contrib</a><div  class="divnav" title="مبحث Middleware">مبحث Middleware</div><a href="http://oruji.github.io/amoozesh.org/django/database/integrate/legacy/" class="anav" title="یکپارچه سازی برنامه ها و دیتابیس های Legacy">یکپارچه سازی برنامه ها و دیتابیس های Legacy</a><a href="http://oruji.github.io/amoozesh.org/django/internationalize/" class="anav" title="بین المللی سازی">بین المللی سازی</a><a href="http://oruji.github.io/amoozesh.org/django/security/" class="anav" title="امنیت">امنیت</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/middleware/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+</html>

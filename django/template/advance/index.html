@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/template/advance/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/django/template/advance/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>آموزش Template پیشرفته جنگو Django کتاب چارچوب برخط</title>
+<meta name="description" content="آموزش کتاب برخط آنلاین چارچوب فریم ورک Django اگرچه بیشتر تعامل های template در نقش نویسنده می باشد، ولی شاید بخواهید موتور آن را به طور پیشرفته گسترش دهید" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="آموزش Template پیشرفته جنگو Django کتاب چارچوب برخط" />
+<meta property="og:description" content="آموزش کتاب برخط آنلاین چارچوب فریم ورک Django اگرچه بیشتر تعامل های template در نقش نویسنده می باشد، ولی شاید بخواهید موتور آن را به طور پیشرفته گسترش دهید" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/django/template/advance/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1398/11/2 17:47</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>آموزش Template های پیشرفته در جنگو (Django)</h1>
+<p>اگرچه بیشتر تعامل های شما با زبان template جنگو (Django) در نقش نویسنده ی template می باشد، ولی ممکن است بخواهید موتور template را به طور پیشرفته تری گسترش داده و آن را سفارشی کنید – یا آن را طوری ایجاد کنید که کارهایی را الان نمی تواند انجام دهد را انجام دهد، یا یا به روش دیگری کار شما را آسان تر کند.</p>
+<p><a title="template پیشرفته جنگو" class="content" href="http://oruji.github.io/amoozesh.org/django/template/advance/">این آموزش</a> از کتاب، به عمق وجودی سیستم قالب جنگو خواهد پرداخت. این آموزش آنچه را که نیاز می باشد برای گسترش سیستم لازم می باشد را پوشش می دهد، همچنین در صورتیکه تنها درباره ی نحوه ی کارکرد سیستم template جنگو کنجکاو می باشید می توانید در این فصل جواب سوالات خود را دریافت کنید. همچنین خصوصیت auto-escaping نیز توضیح داده خواهد شد، یک اندازه گیری امنیتی که با استفاده از آن شما دیگر تردیدی در ادامه ی استفاده از جنگو نخواهید داشت.</p>
+<p>در صورتیکه به دنبال استفاده از سیستم template جنگو به عنوان بخشی از برنامه ی دیگر (بدون باقی فریم ورک یا چارچوب) هستید، بخش "پیکربندی سیستم template در حالت مستقل" کمی بعد در همین فصل را مطالعه کنید.</p>
+<h2>مرور زبان Template</h2>
+<p>در ابتدا، اجازه دهید مروری اجمالی به تعدادی از مفاهیم معرفی شده در <a href="http://oruji.github.io/amoozesh.org/django/template/" class="content" title="template">آموزش template جنگو</a> بپردازیم:</p>
+<ul>
+<li>template متن سند، یا یک رشته ی عادی پایتون می باشد، که با استفاده از زبان template جنگو ارتقاء پیدا کرده است.  یک template می تواند حاوی تگ و متغیر باشد.</li>
+<li>تگ template یک علامت داخل template می باشد که کاری را انجام می دهد.  این تعریف به طور عمدی مبهم می باشد. به عنوان مثال، تگ template می تواند یک محتوی را تولید کند، به صورت یک ساختار کنترلی (مانند عبارت if یا حلقه ی for) عمل کند، مقدار بازیابی شده از یک پایگاه داده و یا حتی قادر به دسترسی به دیگر تگ های template باشد.<p>تگ های template با <bdo class="leftInline">{%</bdo> و <bdo class="leftInline">%}</bdo> پوشیده شده اند:</p>
+<code class="language-django">{% if is_logged_in %}
+    Thanks for logging in!
+{% else %}
+    Please log in.
+{% endif %}</code>
+</li>
+<li>متغیر یک علامت داخل یک template می باشد که یک مقدار را به عنوان خروجی بر می گرداند.<p>تگ های متغیر با <bdo class="leftInline">{{</bdo> و <bdo class="leftInline">}}</bdo> پوشیده شده اند.</p>
+<code class="language-python">My first name is {{ first_name }}. My last name is {{ last_name }}.</code>
+</li>
+<li>context یک نام -&gt; مقدار مرتبط شده (همانند دیکشنری پایتون) است که به یک template ارسال می شود.</li>
+<li>template یک context را با جابه جا کردن متغیر با مقادیر context و اجرای تمام تگ ها render می کند.</li>
+</ul>
+<p>برای جزئیات بیشتر درباره ی اصول اولیه template ها به <a href="http://oruji.github.io/amoozesh.org/django/template/" class="content" title="template">آموزش template جنگو</a> مراجعه کنید.</p>
+<p>باقی فصل روش های گسترش دادن موتور template را بحث خواهد کرد. ابتدا، اجازه دهید برای سادگی کار نگاهی کوتاه به مسائلی که از <a href="http://oruji.github.io/amoozesh.org/django/template/" class="content" title="template">آموزش template جنگو</a> گفته نشده است بیاندازیم.</p>
+<h3>RequestContext و پردازشگرهای Context</h3>
+<p>هنگام ارائه ی یک template، شما به یک context نیاز دارید. معمولا این یک نمونه از django.template.Context می باشد، ولی جنگو همچنین دارای یک کلاس فرزند django.template.RequestContext می باشد، که با کمی تفاوت عمل می کند. RequestContext گروهی از متغیرها را برای template context به طور پیشفرض اضافه می کند – چیزی شبیه به شیء HttpRequest یا اطلاعات درباره ی کاربر فعلی وارد شده به سایت.</p>
+<p>هنگامی که نمی خواهید مجموعه ای مشابه از متغیرها را در یک سری از template ها تعیین کنید از RequestContext استفاده می شود. برای مثال، دو view زیر را ملاحظه کنید:</p>
+<code class="language-python">from django.template import loader, Context
+
+def view_1(request):
+    # ...
+    t = loader.get_template('template1.html')
+    c = Context({
+        'app': 'My app',
+        'user': request.user,
+        'ip_address': request.META['REMOTE_ADDR'],
+        'message': 'I am view 1.'
+    })
+    return t.render(c)
+
+def view_2(request):
+    # ...
+    t = loader.get_template('template2.html')
+    c = Context({
+        'app': 'My app',
+        'user': request.user,
+        'ip_address': request.META['REMOTE_ADDR'],
+        'message': 'I am the second view.'
+    })
+    return t.render(c)</code><p>(توجه داشته باشید که به عمد از میانبر <bdo class="leftInline">render_to_response()</bdo> در مثال های فوق استفاده نشده است – template ها به صورت دستی بارگذاری شده اند، شیء ها context ساخته شده و template ها ارائه ی شده اند. تمام گام ها برای هدف به وضوح و دقت توضیح داده می شوند.)</p>
+<p>هر view سه متغیر یکسان – app، user و ip_address – به template خود ارسال می کند. بهتر به نظر نمی رسید اگر کدهای زائد و اضافی حذف می شدند؟</p>
+<p>RequestContext و پردازشگرهای context برای حل این مشکل ساخته شده اند. پردازشگرهای context، به شما اجازه می دهند، یک تعداد از متغیرها که در هر context مجموعه ای دریافت می کنند را به طور خودکار تعیین کنید – بدون اینکه مجبور باشید متغیرها را در هر فراخوانی render_to_response تعیین کنید. مشکل این است که هنگام ارائه ی یک template باید بجای Context از RequestContext استفاده کنید.</p>
+<p>سطح پایین ترین روش برای استفاده از پردازشگرهای context ساختن چند پردازشگر و ارسال آنها به RequestContext می باشد. در زیر نحوه ی نوشتن مثال فوق با پردازشگرهای context وجود دارد:</p>
+<code class="language-python">from django.template import loader, RequestContext
+
+def custom_proc(request):
+    "A context processor that provides 'app', 'user' and 'ip_address'."
+    return {
+        'app': 'My app',
+        'user': request.user,
+        'ip_address': request.META['REMOTE_ADDR']
+    }
+
+def view_1(request):
+    # ...
+    t = loader.get_template('template1.html')
+    c = RequestContext(request, {'message': 'I am view 1.'},
+            processors=[custom_proc])
+    return t.render(c)
+
+def view_2(request):
+    # ...
+    t = loader.get_template('template2.html')
+    c = RequestContext(request, {'message': 'I am the second view.'},
+            processors=[custom_proc])
+    return t.render(c)</code><p>اجازه دهید کد فوق را مورد بررسی قرار دهیم:</p>
+<ul>
+<li>ابتدا، یک تابع به نام custom_proc تعریف شده است. این تابع یک پردازشگر context می باشد که یک شیء HttpRequest دریافت کرده و یک دیکشنری از متغیرها برای استفاده در template context بر می گرداند. این تمام کاری است که این تابع انجام می دهد.</li>
+<li>دو تابع view دیگر برای استفاده از RequestContext به جای Context تغییر کرده اند. دو تفاوت در نحوه ی ساخته شدن context وجود دارد. اول، RequestContext نیاز به یک آرگومان اول برای شیء HttpRequest بودن می باشد که به داخل تابع view در اولین مکان ارسال شده است (request). دوم، RequestContext یک آرگومان اختیاری به نام processors دریافت می کند، که یک لیست یا تاپل از توابع پردازشگر context مورد استفاده می باشد که در کد فوق پردازشگری که در بالا تعریف کردیم را به آن ارسال کرده ایم.</li>
+<li>هر view دیگر لازم نیست شامل app، user یا ip_addressدر ساخت context باشد، زیرا زیرا آن ها با تابع custom_proc تهیه شده اند.</li>
+<li>هر view هنوز دارای انعطاف پذیری برای معرفی هر متغیر template در صورت نیاز می باشد. در این مثال، متغیر template مورد نظر یعنی message به صورت متفاوت در هر view در نظر گرفته شده است.</li>
+</ul>
+<p>در <a href="http://oruji.github.io/amoozesh.org/django/template/" class="content" title="template">آموزش template جنگو</a>، میانبر <bdo class="leftInline">render_to_response()</bdo> معرفی شد که با استفاده از آن دیگر نیازی به فراخوانی <bdo class="leftInline">loader.get_template()</bdo>، سپس ساختن یک Context و فراخوانی متد <bdo class="leftInline">render()</bdo> در template نخواهد بود. به منظور نشان دادن کار به صورت سطح پایین با پردازشگرهای context، در مثال های بالا از <bdo class="leftInline">render_to_response()</bdo> استفاده نشده است، ولی امکان آن وجود دارد که از پردازشگرهای context با <bdo class="leftInline">render_to_response()</bdo> استفاده شود. برای انجام این کار از آرگومان context_instance به صورت زیر استفاده می شود:</p>
+<code class="language-python">from django.shortcuts import render_to_response
+from django.template import RequestContext
+
+def custom_proc(request):
+    "A context processor that provides 'app', 'user' and 'ip_address'."
+    return {
+        'app': 'My app',
+        'user': request.user,
+        'ip_address': request.META['REMOTE_ADDR']
+    }
+
+def view_1(request):
+    # ...
+    return render_to_response('template1.html',
+        {'message': 'I am view 1.'},
+        context_instance=RequestContext(request, processors=[custom_proc]))
+
+def view_2(request):
+    # ...
+    return render_to_response('template2.html',
+        {'message': 'I am the second view.'},
+        context_instance=RequestContext(request, processors=[custom_proc]))</code><p>در مثال فوق کد ارائه ی هر template مربوط به view درون یک خط (شکسته شده) خلاصه شده است.</p>
+<p>این یک پیشرفت می باشد، ولی ارزیابی اختصار کد فوق، باید اعتراف کرد در این روش نیز تقریبا زیاده روی شده است. کدهای اضافه و زائد (متغیرهای template) به قیمت اضافه کردن کدی دیگر (فراخونی processor ها) حذف شده اند. استفاده کردن پردازشگرهای context در صورتیکه مجبور باشید هر بار processor ها را تایپ کنید شما را از تایپ کردن زیاد از حد نجات نمی دهد.</p>
+<p>به این دلیل، جنگو از پردازشگرهای سراسری پشتیبانی می کند. تنظیم TTEMPLATE_CONTEXT_PROCESSORS (در فایل settings.py) پردازشگرهای context ای که باید همواره برای RequestContext بکار برده شوند را طراحی می کند. این نیاز برای تعیین پردازشگرها را در هر بار که از RequestContext استفاده می کنید را حذف می کند.</p>
+<p>به طور پیشفرض، TEMPLATE_CONTEXT_PROCESSORS به شکل زیر خواهد بود:</p>
+<code class="language-python">TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+)</code><p>این تنظیم یک تاپل از آیتم های قابل فراخوانی می باشد که از یک رابط یکسان مانند تابع custom_proc که در مثال قبلی مشاهده شد استفاده می کنند – توابعی که یک شیء request به صورت آرگومان آن دریافت کرده و یک دیکشنری از آیتم های ادغام شده درون context بر می گرداند. توجه داشته باشید که متغیرها در TEMPLATE_CONTEXT_PROCESORS به صورت رشته مشخص شده اند، که بدین معنی می باشد که پردازشگرها لازم است جایی در مسیر پایتون باشند (بنابراین می توانید از تنظیم به آن ها مراجعه کنید).</p>
+<p>هر پردازشگر بدین صورت کار می کند که در صورتیکه یک پردازشگر یک متغیر به context اضافه کند و پردازشگر دوم یک متغیر با همان نام اضافه کند، دومی بر روی اولی بازنویسی می شود.</p>
+<p>جنگو تعدادی از پردازشگرهای ساده ی context را ارائه می دهد، از جمله آنهایی که به طور پیشفرض فعال می باشند:</p>
+<h4>django.core.context_processors.auth</h4>
+<p>در صورتیکه TEMPLATE_CONTEXT_PROCESSORS حاوی این پردازشگر باشد، هر RequestContext حاوی این متغیرها خواهد بود:</p>
+<ul>
+<li>user: یک نمونه ی django.auth.models.User می باشد که کاربر فعلی وارد شده (یا در صورتی کاربری وارد نشده باشد یک کاربر بی نام) را نمایش می دهد.</li>
+<li>messages: یک لیست از پیام ها (به صورت رشته) برای کاربر فعلی وارد شده، در پشت صحنه، این متغیر برای هر درخواست <bdo class="leftInline">request.user.get_and_delete_messages()</bdo> را فراخوانی می کند. این متد پیام های کاربر را جمع کرده و آن ها را از پایگاه داده حذف می کند.</li>
+<li>perms: یک نمونه از django.core.context_processors.PermWrapper که حق دسترسی هایی که کاربر فعلی وارد شده دارا می باشد را نشان می دهد.</li>
+</ul>
+<p>برای اطلاعات بیشتر در مورد کاربران، حق دسترسی ها و پیام ها به <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a> مراجعه کنید.</p>
+<h4>django.core.context_processors.debug</h4>
+<p>این پردازشگر اطلاعات اشکال زدایی (debugging) به سمت لایه ی template هدایت می کند. در صورتیکه TEMPLATE_CONTEXT_PROCESSORS حاوی این پردازشگر باشد، هر RequestContext حاوی این متغیرها خواهد بود:</p>
+<ul>
+<li>debug: مقدار تنظیم <bdo class="leftInline">DEBUG (True or False)</bdo>. شما می توانید از این متغیر برای تست اینکه آیا در حالت debug می باشید یا خیر استفاده کنید.</li>
+<li>sql_queries: لیست (<bdo class="leftInline">'sql': ..., 'time': ...</bdo>) دیکشنری هایی که هر کوئری SQL نشان می دهد که دارای اتفاقاتی که تاکنون در طول درخواست رخ داده اند و چه مدت طول کشیده اند می باشد. لیست به ترتیب کوتئری هایی که صادر شده اند می باشد.</li>
+</ul>
+<p>بدلیل آنکه اطلاعات اشکال زدایی حساس می باشند، این پردازشگر context تنها در صورتیکه دو وضعیت زیر درست باشند متغیرها را به context اضافه می کند:</p>
+<ul>
+<li>تنظیم DEBUG، True باشد.</li>
+<li>درخواست از یک آدرس IP در تنظیم INTERNAL_IPS آمده باشد.</li>
+</ul>
+<p>خوانندگان زیرک توجه خواهند داشته که متغیر template، debug هرگز مقدار False نخواهد داشت، زیرا در صورتیکه DEBUG مقدارش False باشد، متغیر debug در اولین مکان ساکن نخواهد بود.</p>
+<h4><bdo class="leftInline">django.core.context_processors.i18n</bdo></h4>
+<p>در صورتیکه این پردازشگر فعال باشد، هر RequestContext  حاوی این متغیرها خواهد بود:</p>
+<ul>
+<li>LANGUAGE: مقدار تنظیم LANGUAGE.</li>
+<li>LANUAGE_CODE: در صورت وجود request.LANGUAGE_CODE؛ در غیر اینصورت، مقدار تنظیم LANGUAGE_CODE.</li>
+</ul>
+<h4>django.core.context_processors.request</h4>
+<p>در صورتیکه این پردازشگر فعال باشد، هر RequestContext حاوی یک متغیر request خواهد بود که شیء HttpRequest فعلی می باشد، توجه داشته باشید که این پردازشگر به صورت پیشفرض غیر فعال است؛ شما باید آن را فعال کنید.</p>
+<p>در صورتیکه template های شما نیاز به دسترسی به attribute های HttpRequest فعلی باشند مانند آدرس Ip، ممکن است از این پردازشگر استفاده کنید:</p>
+<code class="language-django">{{ request.REMOTE_ADDR }}</code><h4>راهنمایی هایی برای نوشتن پردازشگرهای context خودتان</h4>
+<p>در زیر راهنمایی هایی برای ایجاد پردازشگر خودتان وجود دارد:</p>
+<ul>
+<li>هر پردازشگر context را مسئول کوچکترین زیر مجموعه ی قابلیت های ممکن کنید. استفاده از پردازشگرهای چندگانه ساده می باشد، بنابراین ممکن است عمکرد را به قسمت های منطقی برای استفاده ی دوباره در آینده تقسیم کنید.</li>
+<li>به خاطر داشته باشید که هر پردازشگر context در TEMPLATE_CONTEXT_PROCESSORS در هر template ساخته شده با فایل تنظیمات قابل دسترس خواهد بود، بنابراین سعی کنید نام های متغیری انتخاب کنید که با نام متغیرهایی که به طور مستقل ممکن است استفاده کنید تداخل نداشته باشد. از آنجایی که نام های متغیر به حروف کوچک و بزرگ حساس می باشند، ایده ی بدی نیست که تمام متغیرهایی که یک پردازشگر تولید می کند با تماما با حروف بزرگ باشند.</li>
+<li>تا زمانیکه آن ها در مسیر پایتون می باشند مشکلی نیست که filesystem باشند، بنابراین می توان به آن ها از تنظیم TEMPLATE_CONTEXT_PROCESSORS اشاره کرد. با در نظر گرفتن این، مناسب آن است که آن ها را در یک فایل با نام context_processors.py داخل app یا پروژه ذخیره کرد.</li>
+</ul>
+<h3>HTML Escaping خودکار</h3>
+<p>هنگام تولید HTML از template ها، همواره یک مخاطره وجود دارد که یک متغیر شامل کاراکترهایی باشد که بر روی نتیجه ی HTML تاثیر بگذارد. برای مثال، کد زیر را ملاحظه کنید:</p>
+<code class="language-django">Hello, {{ name }}.</code><p>در ابتدا، به نظر می رسد کد فوق روش بی ضرری برای نمایش نام کاربر می باشد، اما در نظر داشته باشید چه اتفاقی می افتد اگر ورودی کاربر به شکل زیر باشد:</p>
+<code class="language-html">&lt;script&gt;alert('hello')&lt;/script&gt;</code><p>با مقدار فوق، template به صورت زیر ارائه خواهد شد:</p>
+<code class="language-html">Hello, &lt;script&gt;alert('hello')&lt;/script&gt;</code><p>... این بدین معنی است که مرورگر یک جعبه ی خطر جاوا اسکریپت ظاهر خواهد کرد!</p>
+<p>به طور مشابه، چه می شود اگر name حاوی یک علامت '&lt;' مانند زیر باشد؟</p>
+<code class="language-html">&lt;b&gt;username</code><p>مقدار فوق نتیجه ای به شکل زیر خواهد داشت:</p>
+<code class="language-html">Hello, &lt;b&gt;username</code><p>مقدار فوق باعث می شود، باقی کد صفحه ی وب به صورت bold نمایش داده خواهند شد!</p>
+<p>واضح است که، داده ی ارسال شده توسط کاربر به طور کورکورانه قابل اعتماد نمی باشد، زیرا کاربران مخرب از این حفره برای انجام مقاصد پلید استفاده کنند. این قبیل رفتار امنیتی حمله ی <bdo class="leftInline">Cross Site Scripting (XSS)</bdo> نامیده می شوند. (برای اطلاعات بیشتر در مورد امنیت، به <a href="http://oruji.github.io/amoozesh.org/django/security/" class="content" title="امنیت">آموزش امنیت</a> مراجعه کنید.)</p>
+<p>جهت اجتناب از این مشکل، دو امکان وجود دارد:</p>
+<ul>
+<li>ابتدا، می توان از طریق فیلتر escape برای اجرای هر متغیر مشکوک اطمینان حاصل کرد، به طوری که این فیلتر حروف مضر HTML را به نوع غیر مضر آن تبدیل می کند. این راهکار پیشفرض در جنگو برای سال های اول بوده است، ولی مشکل این است که این حالت توسعه دهندگان و نویسندگان template را مقید به استفاده از escape می کند. در استفاده کردن از فیلتر escape، فراموش کردن استفاده از آن بسیار اتفاق می افتد.</li>
+<li>دوم اینکه، می توان از HTML escaping خودکار جنگو استفاده کرد. باقی این بخش نحوه ی کار auto‑escaping را توضیح خواهد داد.</li>
+</ul>
+<p>به طور پیشفرض، هر template ای به صورت خودکار حروف گفته شده در خروجی هر تگ متغیر را به حروف غیر مضر تبدیل می کند. به ویژه، این پنج حروف تبدیل می شوند.</p>
+<ul>
+<li>&lt; به <bdo class="leftInline">&lt;</bdo> تبدیل می شود</li>
+<li>&gt; به <bdo class="leftInline">&gt;</bdo> تبدیل می شود</li>
+<li>' (تک کتیشن) به <bdo class="leftInline">'</bdo> تبدیل می شود</li>
+<li>" (دابل کتیشن) به <bdo class="leftInline">"</bdo> تبدیل می شود</li>
+<li>&amp; به <bdo class="leftInline">&amp;</bdo> تبدیل می شود</li>
+</ul>
+<p>دوباره تاکید می کنیم که، این رفتار به صورت پیشفرض می باشد. در صورتیکه از سیستم template جنگو استفاده می کنید، شما از این مشکلات محفوظ می باشید.</p>
+<h4>نحوه ی از کار انداختن auto-escaping</h4>
+<p>در صورتیکه بخواهید حالت پیشفرض یعنی auto-escaping را برای هر وب سایت، هر سطح template و یا هر سطح متغیر، تغییر دهید، می توان به چندین روش عمل کرد.</p>
+<p>چرا می خواهید این حالت را تغییر دهید؟ زیرا، گاهی اوقات متغیرهای template حاوی داده ای می باشند که می خواهید به صورت HTML ارائه شوند، که در این صورت می خواهید محتویات این متغیرها escape نشوند. برای مثال، ممکن است قسمت هایی از کد HTML مورد اعتمادی را در پایگاه داده ذخیره کنید و بخواهید آن را به طور مستقیم درون template استفاده کنید. یا، ممکن است از template جنگو جهت تولید متنی به غیر از HTML استفاده کنید – مانند یک پیام پست الکترونیک برای نمونه.</p>
+<h3>برای متغیرها</h3>
+<p>جهت غیر فعال کردن auto‑scaping برای یک متغیر، از فیلتر safe می توان استفاده کرد:</p>
+<code class="language-django">This will be escaped: {{ data }}
+This will not be escaped: {{ data|safe }}</code><p>در مثال فوق در صورتیکه data حاوی مقدار '&lt;b&gt;' باشد، خروجی آن به صورت زیر خواهد بود:</p>
+<code class="language-django">This will be escaped: &lt;b&gt;
+This will not be escaped: &lt;b&gt;</code><h3>برای بلاک های template</h3>
+<p>جهت کنترل auto‑escaping برای یک template، template (یا تنها قسمتی از template) را درون تگ autoescape مانند زیر قرار دهید:</p>
+<code class="language-django">{% autoescape off %}
+    Hello {{ name }}
+{% endautoescape %}</code><p>تگ autoescape یک مقدار on یا off به صورت آرگومان دریافت می کند. گاهی اوقات می خواهید زمانی که auto‑escape در قسمتی از کد غیر فعال شده است آن را مجبور کنید که فعال شود مانند مثال زیر:</p>
+<code class="language-django">Auto-escaping is on by default. Hello {{ name }}
+
+{% autoescape off %}
+    This will not be auto-escaped: {{ data }}.
+
+    Nor this: {{ other_data }}
+    {% autoescape on %}
+        Auto-escaping applies again: {{ name }}
+    {% endautoescape %}
+{% endautoescape %}</code><p>تگ auto‑escape درون template هایی که از template پدر ارث بری کرده اند نیز تاثیر می گذارد. به عنوان مثال:</p>
+<code class="language-django"># base.html
+
+{% autoescape off %}
+&lt;h1&gt;{% block title %}{% endblock %}&lt;/h1&gt;
+{% block content %}
+{% endblock %}
+{% endautoescape %}
+
+# child.html
+
+{% extends "base.html" %}
+{% block title %}This &amp; that{% endblock %}
+{% block content %}{{ greeting }}{% endblock %}</code><p>به این دلیل که auto‑escaping درون template پدر غیر فعال شده است، درون template فرزند نیز غیر فعال خواهد بود، بنابراین در صورتیکه متغیر greeting حاوی رشته ی &lt;b&gt;Hello!&lt;/b&gt; باشد، خروجی آن به صورت زیر خواهد بود:</p>
+<code class="language-html">&lt;h1&gt;This &amp; that&lt;/h1&gt;
+&lt;b&gt;Hello!&lt;/b&gt;</code><h4>نکته ها</h4>
+<p>عموما، نویسندگان template نیازی نیست در مورد auto‑escaping خیلی زیاد نگرانی داشته باشند. توسعه دهندگان سمت پایتون (افرادی که view ها و فیلترهای سفارشی را می نویسند)، نیاز دارند، درباره ی مواردی که در داده نباید escape شوند فکر کنند، و داده را به طور مناسب علامت گذاری کنند. بنابراین کارها در template انجام خواهند شد.</p>
+<p>در صورتیکه یک template می سازید که ممکن است در وضعیت هایی که مطمئن نیستید آیا auto‑escaping فعال است یا خیر استفاده شده باشد، آنگاه یک فیلتر escape برای هر متغیر که نیاز به escape دارد قرار دهید. هنگامی که auto‑escaping فعال باشد، هیچ مشکلی پیش نخواهد آمد – فیلتر escape تاثیری بر روی متغیرهای auto‑escape شده نخواهد داشت.</p>
+<h4>Escape کردن خودکار رشته ی خام در آرگومان های فیلتر</h4>
+<p>همانطور که پیش تر ذکر شد، آرگومان های فیلتر می توانند رشته باشند:</p>
+<code class="language-django">{{ data|default:"This is a string literal." }}</code><p>تمام رشته های خام بدون هیچ escape خودکاری درون template مندرج شده می باشند – آن ها مثل اینکه از میان فیلتر safe عبور کرده باشند عمل می کنند. دلیل این موضوع این است که نویسنده ی template آنچه را که به صورت رشته ی خام می آید را تحت کنترل دارد، بنابراین آن ها اطمینان حاصل می کنند که متن هنگامی template نوشته می شود به صورت صحیح escape شده باشد.</p>
+<p>این بدان معناست که خواهید نوشت:</p>
+<code class="language-django">{{ data|default:"3 &lt; 2" }}</code><p>... به جای</p>
+<code class="language-django">{{ data|default:"3 &lt; 2" }}  &lt;-- Bad! Don't do this.</code><p>حالت فوق تاثیری بر روی مقداری که درون خود متغیر می باشد نخواهد داشت. در صورت لزوم محتویات متغیرها همچنان به طور خودکار escpae شده می باشند،  زیرا این دیگر خارج از کنترل نویسنده ی template می باشد.</p>
+<h3>بارگذاری داخل Template </h3>
+<p>عموما، شما template ها را در فایل هایی درون filesystem خود ذخیره خواهید کرد، اما می توان از template loader های سفارشی برای بارگذاری template ها از منابع دیگر استفاده کرد.</p>
+<p>جنگو دارای دو روش برای بارگذاری template می باشد:</p>
+<ul>
+<li>django.template.loader.get_template (template_name): get_template، template کامپایل شده (یک شیء Template) برای template با نام داده شده را بر می گرداند. در صورتیکه template مورد نظر وجود نداشته باشد، خطای TemplateDoesNotExist رخ خواهد داد.</li>
+<li>django.template.loader.select_template (template_name_list): select_template درست مثل get_template می باشد، با این تفاوت که select_template لیستی از نام template ها را دریافت می کند. از لیست موجود، اولین template موجود را بر می گرداند. در صورتیکه هیچکدام از template ها وجود نداشته باشند، یک خطای TemplateDoesNotexist رخ خواهد داد.</li>
+</ul>
+<p>همانطور که در <a href="http://oruji.github.io/amoozesh.org/django/template/" class="content" title="template">آموزش template جنگو</a> بحث شد، هر کدام از این توابع به صورت پیشفرض برای بارگذاری template ها از تنظیم TEMPLATE_DIRS استفاده می کنند. </p>
+<p>بعضی از loader ها به طور پیشفرض غیر فعال می باشند، ولی می توان با ویرایش تنظیم TEMPLATE_LOADER آن ها را فعال کرد. TEMPLATE_LOADERS باید یک تاپل از رشته ها باشد، به طوری که هر رشته یک template loader را نمایش می دهد. این template loader ها به همراه جنگو ارائه شده اند:</p>
+<ul>
+<li>django.template.loaders.filesystem.load_template_source: این loader، template ها را از filesystem به همراه TEMPLATE_DIRS بارگذاری می کند.</li>
+<li>django.template.loaders.app_directories.load_template_source: این loader، template ها را از برنامه های جنگو روی filesystem بارگذاری می کند. برای هر برنامه در INSTALLED_APPS، loader یک دایرکتوری زیرمجموعه ی templates را جستجو می کند. در صورتیکه دایرکتوری وجود داشته باشد، جنگو در آن جا به دنبال template ها می گردد.<p>این بدین معناست که می توان template ها را با برنامه های فردی خودتان ذخیره کنید، برای مثال، اگر INSTALLED_APPS حاوی ('myproject.polls'، 'myproject.music') باشد، در اینصورت <bdo class="leftInline">get_template('foo.html')</bdo> به شکل زیر template ها را بدین ترتیب جستجو می کند:</p>
+</li>
+<li><bdo class="leftInline">/path/to/myproject/polls/templates/foo.html</bdo></li>
+<li>
+<bdo class="leftInline">/path/to/myproject/music/templates/foo.html</bdo><p>توجه داشته باشید که loader یک بهینه سازی را اجرا می کند: loader یک لیست از پکیج های INSTALLED_APPS را که دارای دایرکتوری زیرمجموعه ی templates می باشد را cache می کند.</p>
+<p>این loader به صورت پیشفرض فعال می باشد.</p>
+</li>
+<li>django.template.loaders.eggs.load_template_source: این loader درست مثل app_directories می باشد، با این تفاوت که template ها را به جای filesystem از egg های پایتون بارگذاری می کند. این loader به طور پیشفرض غیر فعال می باشد؛ در صورتیکه از egg ها برای توزیع برنامه ی خود استفاده می کنید نیاز خواهید داشت که آن را فعال کنید. (egg های پایتون روشی برای فشرده سازی کد پایتون داخل یک فایل تنها می باشد.)</li>
+</ul>
+<p>جنگو به منظور توجه به تنظیم TEMPLATE_LOADERS از template loader ها استفاده می کند. جنگو از هر loader تا پیدا کردن مطابق آن استفاده می کند.</p>
+<h3>گسترش Template System</h3>
+<p>اکنون که کمی بیشتر درباره ی مسائل داخلی template system فهمیده اید، اجازه دهید نحوه ی گسترش سیستم با کد سفارشی را مورد بررسی قرار دهیم.</p>
+<p>بیشترین نقش سفارشی سازی template فرمی از تگ های سفارشی و فیلترها می باشد. اگر چه زبان template جنگو دارای بسیاری از تگ ها و فیلترهای داخلی می باشد، شما احتمالا کتابخانه هایی از تگ ها و فیلترهای خودتان را جمع آوری خواهید کرد تا احتیاجات خودتان را رفع کنید. خوشبختانه، تعریف عملکرد برنامه برای خودتان بسیار آسان می باشد.</p>
+<h4>ساختن یک کتابخانه ی Template</h4>
+<p>برای نوشتن تگ ها یا فیلترهای سفارشی، اولین کار ساختن یک کتابخانه ی template است – قسمت کوچکی از زیر ساخت جنگو که می تواند دوباره استفاده شود.</p>
+<p>ساختن یک کتابخانه ی template دارای یک روند دو مرحله ای می باشد:</p>
+<ul>
+<li>مرحله ی اول، تصمیم گرفتن اینکه کدام برنامه ی جنگو باید به کتابخانه ی template جا دهد. در صورتیکه از طریق دستور manage.py startapp، یک app ساخته اید، می توانید کتابخانه ی خود را در آنجا قرار دهید، یا می توانید منحصرا یک app دیگر برای کتابخانه ی template بسازید. ما ساختن یک app جدا برای کتابخانه ی template را پیشنهاد می کنیم، زیرا فیلترهای شما می توانند در پروژه های آینده نیز برای شما مفید واقع شوند.<p>هر روشی را که انتخاب می کنید، اطمینان حاصل کنید که app مورد نظر را به تنظیم INSTALLED_APPS اضافه کرده اید. به طور کوتاه این موضوع را توضیح خواهیم داد.</p>
+</li>
+<li>مرحله ی دوم، ساختن یک دایرکتوری به نام templatetags در پکیج مناسب برنامه ی جنگو می باشد. این دایرکتوری باید از نظر مسیر هم سطح با models.py، views.py و غیره باشد. برای مثال:<code class="language-">books/
+    __init__.py
+    models.py
+    templatetags/
+    views.py</code><p>دو فایل خالی در دایرکتوری templatetags بسازید: یک فایل <bdo class="leftInline">__init__.py</bdo> (برای اینکه به پایتون نشان داده شود که این یک پکیج حاوی کد پایتون می باشد) و یک فایل که حاوی تعریف تگ ها/فیلترهای سفارشی شما خواهد بود. نام فایل دوم آن چیزی خواهد بود که شما برای بارگذاری تگ ها از آن استفاده خواهید کرد. برای مثال، در صورتیکه تگ ها یا فیلترهای سفارشی شما درون فایلی به نام poll_extras.py خواهد بود، شما کدی نظیر کد زیر را درون template خواهید داشت:</p>
+<code class="language-python">{% load poll_extras %}</code><p>تگ <bdo class="leftInline">{% load %}</bdo> تنظیم INSTALLED_APPS را مورد بررسی قرار داده و تنها اجازه به بارگذاری کردن کتابخانه های template داخل برنامه های نصب شده جنگو می دهد. این یک ویژگی امنیتی می باشد؛ این ویژگی اجازه می دهد تا مکانی برای بسیاری از کتابخانه های template در یک رایانه ی تنها را بدون فعال کردن دسترسی به تمام آنها برای هر نصب جنگو ایجاد کنید.</p>
+</li>
+</ul>
+<p>در صورتیکه یک کتابخانه ی template نوشته اید که به هیچ models/views ای مرتبط نیست، این حالت برای داشتن پکیج برنامه ی جنگو که حاوی تنها یک پکیج templatetags می باشد معتبر و کاملا عادی است. هیچ محدودیتی نسبت به تعداد ماژول هایی که شما در پکیج templatetags قرار می دهید وجود ندارد. تنها به خاطر داشته باشید که یک عبارت <bdo class="leftInline">{% load %}</bdo> تگ ها یا فیلترهایی برای نام ماژول پایتون داده شده بارگذاری خواهد کرد، نه نام برنامه.</p>
+<p>هنگامی که آن ماژول پایتون را ساخته باشید، تنها ملزم به نوشتن مقدار کمی از کد پایتون بسته به اینکه آیا چه فیلتر یا تگی می نویسید خواهید بود.</p>
+<p>برای معتبر بودن کتابخانه ی تگ، ماژول باید حاوی یک متغیر در سطح ماژول به نام register باشد که یک نمونه از template.Library می باشد. این یک ساختار داده می باشد که تمام تگ ها و فیلترها درون آن عضو شده اند. بنابراین، در بالا ماژول، کد زیر را اضافه کنید:</p>
+<code class="language-python">from django import template
+
+register = template.Library()</code><ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="جدول" class="yaddasht"><h4>نکته</h4>
+<p>برای یک انتخاب خوب از مثال ها، کد منبع فیلترها و تگ های پیشفرض جنگو را بخوانید. آن ها به ترتیب در django/template/defaultfilters.py و django/template/defaulttags.py می باشند. همچنین برخی برنامه های موجود در django.contrib حاوی کتابخانه های template می باشد.</p>
+</ul>
+<p>هنگامی که متغیر register را ساختید، شما برای ساختن فیلترها و تگ ها template از آن استفاده خواهید کرد.</p>
+<h4>نوشتن فیلترهای سفارشی Template</h4>
+<p>فیلترهای سفارشی تنها توابع پایتون می باشند که یک یا دو آرگومان دریافت می کنند:</p>
+<ul>
+<li>مقدار متغیر (ورودی)</li>
+<li>مقدار آرگومان، که می تواند یک مقدار پیشفرض یا داشته و یا رو هم رفته ترک شده باشد</li>
+</ul>
+<p>برای مثال، در فیلتر <bdo class="leftInline">{{ var|foo:"bar" }}</bdo>، فیلتر foo محتویات متغیر var و آرگومان "bar" را ارسال خواهد کرد.</p>
+<p>توابع فیلتر باید همواره چیزی را بر گردانند. آن نباید خطایی ایجاد کنند، و باید به آرامی خطاها را رد کنند. در صورتیکه یک خطا وجود داشته باشد، یا باید ورودی اصلی را برگردانند یا یک رشته ی خالی را، هر کدام که حساسیت بیشتری خواهد داشت.</p>
+<p>در اینجا یک مثال از تعریف فیلتر را ملاحظه می کنید:</p>
+<code class="language-python">def cut(value, arg):
+    "Removes all values of arg from the given string"
+    return value.replace(arg, '')</code><p>در زیر نحوه ی استفاده حذف کردن فاصله های مقدار یک متغیر توسط فیلتر بالا نشان داده شده است:</p>
+<code class="language-django">{{ somevariable|cut:" " }}</code><p>اغلب فیلترها آرگومانی دریافت نمی کنند. در این مورد، تنها آرگومان تابع را حذف کنید:</p>
+<code class="language-python">def lower(value): # Only one argument.
+    "Converts a string into all lowercase"
+    return value.lower()</code><p>هنگامی که تعریف فیلتر خود را نوشتید، برای اینکه آن را برای زبان template جنگو در دسترس قرار دهید لازم است که آن رابه نمونه ی Library خود معرفی کنید: </p>
+<code class="language-python">register.filter('cut', cut)
+register.filter('lower', lower)</code><p>متد <bdo class="leftInline">Library.filter()</bdo> دو آرگومان دریافت می کند:</p>
+<ul>
+<li>نام فیلتر (یک رشته)</li>
+<li>خود تابع فیلتر</li>
+</ul>
+<p>در صورتیکه از پایتون <bdo class="leftInline">2.4</bdo> یا بالاتر استفاده می کنید، می توانید بجای روش فوق از <bdo class="leftInline">regiser.filter()</bdo> به صورت یک decorator استفاده کنید:</p>
+<code class="language-python">@register.filter(name='cut')
+def cut(value, arg):
+    return value.replace(arg, '')
+
+@register.filter
+def lower(value):
+    return value.lower()</code><p>در صورتیکه آرگومان name را قرار ندهید، همانطور که در مثال دوم مشاهده کردید، جنگو از نام تابع به صورت نام فیلتر استفاده خواهد کرد.</p>
+<p>مثال فوق نیز مثال کامل کتابخانه ی template یعنی تهیه ی فیلتر cut می باشد:</p>
+<code class="language-python">from django import template
+
+register = template.Library()
+
+@register.filter(name='cut')
+def cut(value, arg):
+    return value.replace(arg, '')</code><h4>توشتن تگ های template سفارشی</h4>
+<p>تگ ها پیچیده تر از فیلترهای می باشند، زیرا تقریبا هرکاری را می توانند انجام دهند.</p>
+<p><a href="http://oruji.github.io/amoozesh.org/django/template/" class="content" title="template">آموزش template جنگو</a> نحوه ی کار سیستم template جنگو را در یک روند دو مرحله ای توضیح می دهد: کامپایل و ارائه (compling and rendering). برای تعریفی یک تگ template سفارشی، لازم است نحوه ی مدیریت هر دو مرحله ی فوق در زمانی که جنگو تگ شما را به دست می آورد به آن گفته شود.</p>
+<p>هنگامی که جنگو یک template را کامپایل می کند، متن خام template را به note هایی تقسیم می کند. هر node یک نمونه از django.template.Node بوده و دارای یک متد <bdo class="leftInline">render()</bdo> می باشد. در نتیجه، یک template کامپایل شده یک لیست از شیء های Node می باشد. برای مثال، template زیر را ملاحظه کنید:</p>
+<code class="language-django">Hello, {{ person.name }}.
+
+{% ifequal name.birthday today %}
+    Happy birthday!
+{% else %}
+    Be sure to come back on your birthday
+    for a splendid surprise message.
+{% endifequal %}</code><p>در حالت کامپایل شدهه ی template، template فوق به صورت لیستی از node های زیر نشان داده شده است:</p>
+<ul>
+<li>node متن: <bdo class="leftInline">"Hello, "</bdo>
+</li>
+<li>node متغیر: person.name</li>
+<li>node متن: <bdo class="leftInline">".\n\n"</bdo>
+</li>
+<li><bdo class="leftInline">ifEqual node: name.birthday and today</bdo></li>
+</ul>
+<p>هنگامی که در یک template کامپایل شده <bdo class="leftInline">render()</bdo> فراخوانی می شود، template متد <bdo class="leftInline">render()</bdo> در هر Node موجود در لیست node را با context داده شده فراخوانی می کند. نتیجه ی کار برای شکل دادن به خروجی template همه ی node های وصل شده به یکدیگر است. در نتیجه، برای تعریف یک تگ template سفارشی، شما نحوه ی تبدیل شدن تگ خام template به یک Node (کامپایل تابع) و آنچه را که متد <bdo class="leftInline">render()</bdo> ند انجام می دهد را تعیین می کنید.</p>
+<p>بخش های بعدی، تمامی مراحل نوشتن تگ سفارشی پوشش داده خواهد شد.</p>
+<h4>نوشتن کامپایل تابع</h4>
+<p>برای هر تگ template ای که parser با آن مواجه است، یک تابع پایتون با محتویات تگ و خود شیء parser فراخوانی می شود. این تابع موظف است یک نمونه Node بر اساس محتویات تگ بر گرداند.</p>
+<p>برای مثال، اجازه دهید یک تگ template بنویسیم، <bdo class="leftInline">{% current_time %}</bdo>، که زمان/تاریخ فعلی را نمایش دهد، که قالب بندی آن نیز بر حسب پارامتر داده شده در تگ در strftime (<bdo class="leftInline">http://www.djangoproject.com/r/python/strftime/</bdo> را مشاهده کنید) باشد. در این مورد تصور می کنیم تگ باید به شکل زیر استفاده شود: </p>
+<ul>
+<h4>نکته</h4>
+<p>بله، این تگ template یک تگ اضافه و زائد می باشد – تگ پیشفرض <bdo class="leftInline">{% now %}</bdo> با روشی ساده تر همین کار را انجام می دهد. تگ template فوق تنها با هدف آشنایی با ساختن تگ های سفارشی  ارائه شده است.</p>
+</ul>
+<p>parser برای این تابع پارامتر را دریافت کرده و یک شیء Node بسازد:</p>
+<code class="language-python">from django import template
+
+register = template.Library()
+
+def do_current_time(parser, token):
+    try:
+        # split_contents() knows not to split quoted strings.
+        tag_name, format_string = token.split_contents()
+    except ValueError:
+        msg = '%r tag requires a single argument' % token.split_contents()[0]
+        raise template.TemplateSyntaxError(msg)
+    return CurrentTimeNode(format_string[1:-1])</code><p>اجازه دهید کد فوق را مورد بررسی قرار دهیم:</p>
+<ul>
+<li>هر کامپایل تابع تگ template دو آرگومان دریافت می کند، parser و token. parser شیء template parser می باشد که در این مثال از آن استفاده نشده است. token علامتی است که در حال حاضر توسط parser تجزیه شده است.</li>
+<li>token.contents یک رشته از محتویات خام تگ می باشد. در مثال فوق <bdo class="leftInline">'current_time "%Y‑%m‑%d %I:%M %p"'</bdo> می باشد.</li>
+<li>متد <bdo class="leftInline">token.split_contents()</bdo> بر حسب فاصله، تا زمانی که متن توسط کتیشن پوشیده شده است آن را جدا می کند. از <bdo class="leftInline">token.contents.split()</bdo> استفاده نکنید () در دست ترجمه ...</li>
+<li>تابع فوق موظف است خطای django.template.TemplateSyntaxError با یک پیام مفید برای هر خطا ایجاد کند.</li>
+<li>نام تگ را به طور مستقیم در پیام های خطا استفاده نکنید، زیرا این کار باعث می شود نام تگ به تابع شما وصل شود. <bdo class="leftInline">token.split_contents()[0]</bdo> همواره نام تگ شما خواهد بود – حتی هنگامی که تگ دارای هیچ آرگومانی نیست.</li>
+<li>تابع فوق یک CurrentTimeNode (که کمی بعد آن را ایجاد خواهیم کرد) حاوی هرچیزی که node برای شناختن این تگ نیاز دارد بر می گرداند. در این مورد، تنها آرگومان <bdo class="leftInline">"%Y‑%m‑%d %I:%M %p"</bdo> ارسال می شود. کتیشن عقبی و جلویی تگ template توسط <bdo class="leftInline">format_string[1:-1]</bdo> حذف می شود.</li>
+<li>توابع کامپایل تگ template باید یک کلاس فرزند Node بر گردانند؛ در غیر اینصورت مقدار برگشتی یک خطا است.</li>
+</ul>
+<h4>نوشتن Template Node</h4>
+<p>گام بعدی در نوشتن تگ های سفارشی، تعریف یک کلاس فرزند Node که حاوی یک متد <bdo class="leftInline">render()</bdo> است می باشد. در ادامه ی مثال قبلی، نیاز به تعریف CurrentTimeNode می باشد:</p>
+<code class="language-python">import datetime
+
+class CurrentTimeNode(template.Node):
+    def __init__(self, format_string):
+        self.format_string = str(format_string)
+
+    def render(self, context):
+        now = datetime.datetime.now()
+        return now.strftime(self.format_string)</code><p>این دو تابع (<bdo class="leftInline">__init__()</bdo> و <bdo class="leftInline">render()</bdo>) به طور مستقیم به دو مرحله ی در روند <bdo class="leftInline">template (compilation and rendering)</bdo> مرتبط هستند. در نتیجه، تابع <bdo class="leftInline">__init__()</bdo> تنها ملزم به ذخیره ی قالب رشته ی برای استفاده ی بعدی می باشد، و تابع <bdo class="leftInline">render()</bdo> کار واقعی را انجام می دهد.</p>
+<p>مانند فیلترهای template، این توابع باید به جای ایجاد خطا به طور بی صدا خطاهای ایجاد شده را رد کنند. تنها زمانی که تگ های template اجازه دارند خطاها را ایجاد کنند زمان کامپایل می باشد.</p>
+<h4>معرفی تگ</h4>
+<p>در پایان، نیاز به معرفی تگ با نمونه ی ماژول Library می باشد. معرفی تگ های سفارشی بسیار شبیه به معرفی فیلترهای سفارشی (همانطور که توضیح داده شد) می باشد. تنها یک نمونه template.Library را معرفی کرده و متد <bdo class="leftInline">tag()</bdo> آن را فراخوانی کنید. برای مثال:</p>
+<code class="language-python">register.tag('current_time', do_current_time)</code><p>متد <bdo class="leftInline">tag()</bdo> دو آرگومان دریافت می کند:</p>
+<ul>
+<li>نام تگ template (رشته).</li>
+<li>تابع کامپایل.</li>
+</ul>
+<p>همانند معرفی فیلتر، امکان این وجود دارد که از register.tag به صورت یک decorator در پایتون <bdo class="leftInline">2.4</bdo> و بالاتر استفاده کرد:</p>
+<code class="language-python">@register.tag(name="current_time")
+def do_current_time(parser, token):
+    # ...
+
+@register.tag
+def shout(parser, token):
+    # ...</code><p>در صورت حذف آرگومان name، همانند مثال دوم، جنگو از نام تابع برای نام تگ استفاده خواهد کرد.</p>
+<h4>تنظیم یک متغیر در Context</h4>
+<p>مثال بخش قبلی به سادگی یک مقدار را بر می گرداند. خیلی اوقات قرار دادن متغیرها به جای برگشت دادن مقادیر  مفید خواهد بود. در این روش، نویسندگان template می توانند تنها متغیرهایی که تگ های template شما قرار داده اند را استفاده کنند.</p>
+<p>برای قرار دادن یک متغیر در context، از اختصاص دادن دیکشنری برای شیء context در متد <bdo class="leftInline">render()</bdo> استفاده می شود. در زیر نسخه ی تغییر کرده ی CurrentTimeNode مشاهده می کنید:</p>
+<code class="language-python">class CurrentTimeNode2(template.Node):
+    def __init__(self, format_string):
+        self.format_string = str(format_string)
+
+    def render(self, context):
+        now = datetime.datetime.now()
+        context['current_time'] = now.strftime(self.format_string)
+        return ''</code><p>(ساختن یک تابع <bdo class="leftInline">do_current_time2</bdo>، به اضافه ی معرفی آن تابع به تگ template، <bdo class="leftInline">current_time2</bdo> انجام نشده است، تا خواننده آن ها را به عنوان تمرین انجام داد.)</p>
+<p>توجه داشته باشید که <bdo class="leftInline">render()</bdo> یک رشته ی خالی را بر می گرداند. <bdo class="leftInline">render()</bdo> همواره باید یک رشته بر گرداند، بنابراین در صورتیکه تمام تگ های template یک متغیر را قرار دهند، <bdo class="leftInline">render()</bdo> باید یک رشته ی خالی بر گرداند.</p>
+<p>در اینجا نحوه ی استفاده ی نسخه ی جدید از تگ نشان داده شده است:</p>
+<code class="language-django">{% current_time2 "%Y-%M-%d %I:%M %p" %}</code><p>ولی یک مشکل با <bdo class="leftInline">CurrentTimeNode2</bdo> وجود دارد: نام متغیر current_time به صورت مستقیم استفاده شده است. این بدان معناست که شما نیاز است اطمینان حاصل کنید که template شما از <bdo class="leftInline">{{ current_time }}</bdo> هیچ جای دیگری استفاده نکرده است، زیرا <bdo class="leftInline">{% current_time2 %}</bdo> مقدار آن متغیر را باز نویسی خواهد کرد.</p>
+<p>راهکار درست این است که تگ template نامی برای متغیر قرار داده شده تعیین نماید:</p>
+<code class="language-django">{% get_current_time "%Y-%M-%d %I:%M %p" as my_current_time %}</code><p>برای انجام چنین کاری، نیاز به تغییر هر دو تابع کامپایل و کلاس Node به صورت زیر می باشد:</p>
+<code class="language-python">import re
+
+class CurrentTimeNode3(template.Node):
+    def __init__(self, format_string, var_name):
+        self.format_string = str(format_string)
+        self.var_name = var_name
+
+    def render(self, context):
+        now = datetime.datetime.now()
+        context[self.var_name] = now.strftime(self.format_string)
+        return ''
+
+def do_current_time(parser, token):
+    # This version uses a regular expression to parse tag contents.
+    try:
+        # Splitting by None == splitting by spaces.
+        tag_name, arg = token.contents.split(None, 1)
+    except ValueError:
+        msg = '%r tag requires arguments' % token.contents[0]
+        raise template.TemplateSyntaxError(msg)
+
+    m = re.search(r'(.*?) as (\w )', arg)
+    if m:
+        fmt, var_name = m.groups()
+    else:
+        msg = '%r tag had invalid arguments' % tag_name
+        raise template.TemplateSyntaxError(msg)
+
+    if not (fmt[0] == fmt[-1] and fmt[0] in ('"', "'")):
+        msg = "%r tag's argument should be in quotes" % tag_name
+        raise template.TemplateSyntaxError(msg)
+
+    return CurrentTimeNode3(fmt[1:-1], var_name)</code><p>حالا <bdo class="leftInline">do_current_time()</bdo> قالب رشته و نام متغیر را به <bdo class="leftInline">CurrentTimeNode3</bdo> ارسال می کند.</p>
+<h4>Parse کردن تا تگ Template دیگر</h4>
+<p>تگ های template می توانند به صورت بلاک های حاوی تگ های دیگر (مانند <bdo class="leftInline">{% if %}</bdo> و <bdo class="leftInline">{% for %}</bdo>) کار کنند. برای ساختن یک تگ template مانند این، در تابع کامپایل خود از <bdo class="leftInline">parser.parse()</bdo> استفاده کنید.</p>
+<p>در زیر نحوه ی کار تگ <bdo class="leftInline">{% comment %}</bdo> انجام شده است:</p>
+<code class="language-python">def do_comment(parser, token):
+    nodelist = parser.parse(('endcomment',))
+    parser.delete_first_token()
+    return CommentNode()
+
+class CommentNode(template.Node):
+    def render(self, context):
+        return ''</code><p><bdo class="leftInline">parser.parse()</bdo> یک تاپل از نام تگ های template برای استفاده داخل تگ دریافت می کند و یک نمونه از django.template.NodeList بر می گرداند، که لیست تمام شیء های Node ای می باشد که parser با آن ها قبل از برخورد با نام تگ موجود در تاپل برخورد کرده است.</p>
+<p>بنابراین در مثال قبلی، nodelist یک لیست از تمام node های بین <bdo class="leftInline">{% comment %}</bdo> و <bdo class="leftInline">{% endcomment %}</bdo> بدون در نظر گرفتن خود آن ها می باشد.</p>
+<p>بعد از آن که <bdo class="leftInline">parser.parse()</bdo> فراخوانی شده است، parser در دست ترجمه ...</p>
+<p>سپس <bdo class="leftInline">CommentNode.render()</bdo> به سادگی یک رشته ی خالی را بر می گرداند. هر چیزی بین <bdo class="leftInline">{% comment %}</bdo> و <bdo class="leftInline">{% endcomment %}</bdo> رد شده است.</p>
+<h4>Parse کردن تا تگ Template دیگر و ذخیره ی محتویات</h4>
+<p>در مثال قبلی، do_comment هر چیزی را بین <bdo class="leftInline">{% comment %}</bdo> و <bdo class="leftInline">{% endcomment %}</bdo> رد کرد. همچنین این امکان وجود دارد که با کد بین تگ های template کاری انجام داد.</p>
+<p>برای مثال، در اینجا یک تگ template سفارشی، <bdo class="leftInline">{% upper %}</bdo>، که هر چیزی بین خودش و <bdo class="leftInline">{% endupper %}</bdo> را به حروف بزرگ تبدیل می کند:</p>
+<code class="language-django">{% upper %}
+    This will appear in uppercase, {{ user_name }}.
+{% endupper %}</code><p>همانند مثال قبلی، از <bdo class="leftInline">parser.parse()</bdo> استفاده کرده ایم. این بار، نتیجه ی nodelist را به Node ارسال کرده ایم:</p>
+<code class="language-python">def do_upper(parser, token):
+    nodelist = parser.parse(('endupper',))
+    parser.delete_first_token()
+    return UpperNode(nodelist)
+
+class UpperNode(template.Node):
+    def __init__(self, nodelist):
+        self.nodelist = nodelist
+
+    def render(self, context):
+        output = self.nodelist.render(context)
+        return output.upper()</code><p>تنها مفهوم جدید در کد فوق <bdo class="leftInline">self.nodelist.render(context)</bdo> در <bdo class="leftInline">UpperNode.render()</bdo> می باشد که به سادگی برای هر Node در لیست node متد <bdo class="leftInline">render()</bdo> فراخوانی شده است.</p>
+<p>برای مثال های بیشتر از ارائه ی پیچیده، کد منبع <bdo class="leftInline">{% if %}</bdo>، <bdo class="leftInline">{% for %}</bdo>، <bdo class="leftInline">{% ifequal %}</bdo> و <bdo class="leftInline">{% ifchanged %}</bdo> را مشاهده کنید. این تگ ها در django/template/defaulttags.py موجود می باشند.</p>
+<h4>میانبر برای تگ های ساده</h4>
+<p>بسیاری از تگ های template یک آرگومان تنها دریافت می کنند – یک رشته یا یک مرجع متغیر <bdo class="leftInline">template –</bdo> و یک رشته را بعد از انجام برخی پردازش های منحصرا بر روی آرگومان ورودی و برخی اطلاعات خارجی بر می گردانند. برای مثال، تگ current_time ای که قبلا نوشته شد. یک قالب رشته به آن داده شد، و current_time زمان را به صورت یک رشته بر گرداند.</p>
+<p>جهت ساده کردن ساختن این قبلی تگ ها، جنگو یک تابع کمک کننده ارائه می کند، simple_tag. این تابع یک متد از django.template.Library می باشد که یک تابع که آن هم یک آرگومان قبول می کند دریافت می کند، کار این تابع پیچیدن در تابع render و کارهای ضروری می باشد که قبلا ذکر شده است مانند معرفی کردن را با template system انجام می دهد.</p>
+<p>تابع current_time را با حالت نوشته شده ی فوق در زیر مشاهده می کنید:</p>
+<code class="language-python">def current_time(format_string):
+    try:
+        return datetime.datetime.now().strftime(str(format_string))
+    except UnicodeEncodeError:
+        return ''
+
+register.simple_tag(current_time)</code>در پایتون 2.4 و بالاتر، می توان از decorator استفاده کرد:<code class="language-python">@register.simple_tag
+def current_time(token):
+    # ...</code><p>توجه به چند نکته ضروری می باشد:</p>
+<ul>
+<li>تنها یک آرگومان (تک) داخل تابع ما ارسال شده است.</li>
+<li>بررسی برای تعداد آرگومان های مورد به وسیله تعداد فراخوانی تابع انجام شده است، بنابراین نیازی به انجام آن نیست.</li>
+<li>کتیشن اطراف آرگومان (در صورت وجود) حذف شده است، بنابراین ما یک رشته ی یونیکد عادی دریافت می کنیم.</li>
+</ul>
+<h4>تگ های Inclusion</h4>
+<p>تگ template رایج دیگر نوعی است که برخی داده ها را از طریق ارائه ی template دیگر نمایش می دهد. برای مثال، رابط مدیر جنگو از تگ های template سفارشی برای نمایش دکمه ها زیر فرم صفحات "add/change" استفاده می کند. آن دکمه های همواره دارای ظاهر یکسان می باشند، ولی نشانه های لینک بسته به ویرایش شیء تغییر می کند. آن ها یک مورد عالی برای استفاده از یک template کوچک می باشد که با جزئیات فرم شیء فعلی پر شده اند.</p>
+<p>این قبیل از تگ ها، تگ های inclusion نامیده می شوند. نوشتن تگ های inclusion بهتر موضوعات دیگر با مثال قابل نشان دادن است. اجازه دهید یک تگ بنویسیم که یک لیست از کتاب ها برای یک شیء Author داده شده تولید می کند. ما از تگ به صورت زیر استفاده می کنیم:</p>
+<code class="language-django">{% books_for_author author %}</code><p>نتیجه چیزی شبیه به کد زیر خواهد بود:</p>
+<code class="language-html">&lt;ul&gt;
+    &lt;li&gt;The Cat In The Hat&lt;/li&gt;
+    &lt;li&gt;Hop On Pop&lt;/li&gt;
+    &lt;li&gt;Green Eggs And Ham&lt;/li&gt;
+&lt;/ul&gt;</code><p>ابتدا، تابعی تعریف می شود که آرگومانی دریافت کرده و یک دیکشنری از داده ها برای نتیجه تولید کند. تقدت داشته باشید که نیاز به برگرداندن تنها یک دیکشنری می باشد، نه چیز پیچیده تر دیگری. این به صورت context برای قطعه ی template استفاده شده است:</p>
+<code class="language-python">def books_for_author(author):
+    books = Book.objects.filter(authors__id=author.id)
+    return {'books': books}</code><p>در قدم بعدی، template ای با استفاده جهت ارائه ی خروجی تگ ساخته می شود. مثال زیر، template ای بسیار ساده می باشد:</p>
+<code class="language-django">&lt;ul&gt;
+    {% for book in books %}
+        &lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;</code><p>در پایان، تگ inclusion با استفاده از فراخوانی متد <bdo class="leftInline">inclusion_tag()</bdo> در یک شیء Library ساخته و معرفی می شود.</p>
+<p>مثال زیر، در صورتیکه template قبلی در یک فایل با نام book_snipper.html باشد، به صورت زیر معرفی می شود:</p>
+<code class="language-python">register.inclusion_tag('book_snippet.html')(books_for_author)</code><p>همچنین در پایتون <bdo class="leftInline">2.4</bdo> به بالا می توان به شکل زیر نیز کار کرد:</p>
+<code class="language-python">@register.inclusion_tag('book_snippet.html')
+def books_for_author(author):
+    # ...</code><p>گاهی اوقات، تگ های inclusion شما نیاز به دسترسی به مقادیری از context مربوط به template پدر دارد. برای حل این موضوع، جنگو یک انتخاب takes_context را برای تگ ها inclusion ارائه کرده است. در صورتیکه در ساختن یک تگ inclusion از takes_context استفاده کنید، تگ آرگومان های الزامی نخواهد داشت، و تابع زیرین پایتون یک آرگومان خواهد داشت: template context تا زمانیکه تگ فراخوانی شده بود.</p>
+<p>برای مثال، فرض کنید شما یک تگ inclusion می نویسید که همواره در یک context که حاوی متغیرهای  home_link و home_title می باشد استفاده خواهد شد که به صفحه ی اصلی اشاره می کند. تابع پایتون آن به شکل زیر خواهد بود:</p>
+<code class="language-python">@register.inclusion_tag('link.html', takes_context=True)
+def jump_link(context):
+    return {
+        'link': context['home_link'],
+        'title': context['home_title'],
+    }</code><p>(توجه داشته باشید که اولین پارامتر باید context نامیده شود.)</p>
+<p>template مورد نظر یعنی link.html باید حاوی کد زیر باشد:</p>
+<code class="language-django">Jump directly to &lt;a href="{{ link }}"&gt;{{ title }}&lt;/a&gt;.</code><p>سپس، هر زمان که بخواهید از آن تگ سفارشی استفاده کنید، کتابخانه ی آن را بارگذاری کرده و آن را بدون هیچ آرگومانی فراخوانی کنید:</p>
+<code class="language-django">{% jump_link %}</code><h3>نوشتن Template Loader های سفارشی</h3>
+<p>template loader های داخلی جنگو (که در بخش "داخل بارگذاری Template" توضیح داده شد) معمولا تمام احتیاجات بارگذاری template های شما را پوشش می دهند، ولی در صورتی که نیاز به منطق ویژه ی بارگذاری باشد، نوشتن Template loader برای خودتان واقعا ساده می باشد. برای مثال، می توان template ها را از یک پایگاه داده، یا به طور مستقیم از یک Subversion repository و یا (همانطور که کمی بعد توضیح داده خواهد شد) از یک ZIP archive بارگذاری کرد.</p>
+<p>انتظار می رود یک template loader (هر آیتم در تنظیم TEMPLATE_LOADERS می باشد) یک شیء قابل فراخوانی با رابط زیر باشد:</p>
+<code class="language-python">load_template_source(template_name, template_dirs=None)</code><p>آرگومان template_name نام template برای بارگذاری می باشد (همانطور که به <bdo class="leftInline">loader.get_template()</bdo> یا <bdo class="leftInline">loader.select_template()</bdo> ارسال شده است)،  و template_dirs یک لیست اختیاری از دیکشنری ها برای جستجو به جای TEMPLATE_DIRS است.</p>
+<p>در صورتیکه یک loader قادر به بارگذاری یک template به طور موفقیت آمیز باشد، باید یک تاپل بر گرداند: (template_source، template_path). در اینجا template_source رشته ی template ای است که از طریق موتور template کامپایل خواهد شد، و template_path مسیر template ای است که از آن بارگذاری شده است. این مسیر ممکن است برای اهداف اشکال زدایی برای نشان داده شود، بنابراین باید جایی که template از آن بارگذاری شده است را به سرعت شناسایی کند.</p>
+<p>در صورتیکه loader برای بارگذاری یک template ناتوان باشد، خطای django.template.TemplateDoesNotExist ایجاد خواهد شد.</p>
+<p>همچنین هر تابع loader باید یک attribute تابع is_usable داشته باشد. این attribute یک Boolean می باشد که به موتور template این موضوع را که آیا این loader در نصب پایتون فعلی در دسترس است یا خیر را اطلاع می دهد. برای مثال egg های loader (که قابلیت بارگذاری template ها از egg های پایتون را دارند) در صورتیکه ماژول pkg_resources نصب نشده باشد is_usable را False قرار می دهند، زیرا pkg_resource جهت خواندن داده از egg ها ضروری می باشد.</p>
+<p>یک مثال برای روشن کردن موضوع می تواند موثر باشد. در اینجا تابع template loader که می تواند template ها را از یک فایل ZIP بارگذاری کند وجود دارد. مثال زیر به جای TEMPLATE_DIRS به صورت یک مسیر جستجو، یک تنظیم سفارشی با نام TEMPLATE_ZIP_FILES را استفاده می کند، و انتظار دارد که هر آیتم در آن مسیر یک فایل ZIP حاوی template هایی باشد:</p>
+<code class="language-python">from django.conf import settings
+from django.template import TemplateDoesNotExist
+import zipfile
+
+def load_template_source(template_name, template_dirs=None):
+    "Template loader that loads templates from a ZIP file."
+
+    template_zipfiles = getattr(settings, "TEMPLATE_ZIP_FILES", [])
+
+    # Try each ZIP file in TEMPLATE_ZIP_FILES.
+    for fname in template_zipfiles:
+        try:
+            z = zipfile.ZipFile(fname)
+            source = z.read(template_name)
+        except (IOError, KeyError):
+            continue
+        z.close()
+        # We found a template, so return the source.
+        template_path = "%s:%s" % (fname, template_name)
+        return (source, template_path)
+
+    # If we reach here, the template couldn't be loaded
+    raise TemplateDoesNotExist(template_name)
+
+# This loader is always usable (since zipfile is included with Python)
+load_template_source.is_usable = True</code><p>تنها قدم کج در صورتیکه بخواهیم از این loader برای اضافه کردن آن به تنظیم TEMPLATE_LOADERS استفاده کنیم. در صورتیکه کد فوق را در یک پکیج به نام mysite.zip_loader قرار دهیم، سپس mysite.zip_loader.load_template_source را به TEMPLATE_LOADERS اضافه کنیم.</p>
+<h3>پیکربندی Template System در حالت مستقل</h3>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="جدول" class="yaddasht"><h4>نکته</h4>
+<p>این بخش برای افرادی که در تلاش برای استفاده از template system به صورت یک جزء خروجی در برنامه ی دیگر هستند جالب است. در صورتیکه از template system به صورت بخشی از یک برنامه ی جنگو استفاده می کنید، اطلاعات ارائه شده در اینجا برای شما بکار نخواهد رفت.</p>
+</ul>
+<p>به طور عادی، جنگو تمام اطلاعات پیکربندی ای مورد نیاز را از فایل پیکربندی پیشفرض خود بارگذاری می کند، ترکیب شده با تنظیمات داده شده در متغیر محیطی DJANGO_SETTINGS_MODULE. (این موضوع در <a href="http://oruji.github.io/amoozesh.org/django/template/" class="content" title="template">آموزش template جنگو</a> توضیح داده شده است.) ولی در صورتیکه template system را مستقل از باقی جنگو می خواهید استفاده کنید، روش متغیر محیطی خیلی مناسب نمی باشد، زیرا شاید بخواهید template system را با باقی برنامه ی خود به جای سر و کار داشتن با تنظیم فایل ها و اشاره به آن ها از طریق متغیر محیطی پیکربندی کنید.</p>
+<p>برای حل این مشکل، نیاز است امکان پیکربندی دستی را استفاده کنید. به طور خلاصه، نیاز است قسمت های مناسب template systm را import کرده و سپس، قبل از فراخوانی هر تابع template ای، <bdo class="leftInline">django.conf.settings.configure()</bdo> را با هر تنظیمی که می خواهید تعیین کنید فراخوانی کنید.</p>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش جنگو</div>
+<a href="http://oruji.github.io/amoozesh.org/django/introduction/" class="anav" title="مقدمه">مقدمه</a><a href="http://oruji.github.io/amoozesh.org/django/start/" class="anav" title="شروع کار">شروع کار</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/" class="anav" title="view ها و URLconf ها">view ها و URLconf ها</a><a href="http://oruji.github.io/amoozesh.org/django/template/" class="anav" title="Template ها">Template ها</a><a href="http://oruji.github.io/amoozesh.org/django/model/" class="anav" title="مدل ها">مدل ها</a><a href="http://oruji.github.io/amoozesh.org/django/admin-site/" class="anav" title="سایت مدیر">سایت مدیر</a><a href="http://oruji.github.io/amoozesh.org/django/form/" class="anav" title="فرم ها">فرم ها</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/advance/" class="anav" title="View ها و URLconf های پیشرفته">View ها و URLconf های پیشرفته</a><div  class="divnav" title="Template های پیشرفته">Template های پیشرفته</div><a href="http://oruji.github.io/amoozesh.org/django/model/advance/" class="anav" title="مدل های پیشرفته">مدل های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/view/generic/" class="anav" title="View های Generic">View های Generic</a><a href="http://oruji.github.io/amoozesh.org/django/non-html/" class="anav" title="تولید محتوای غیر html ای">تولید محتوای غیر html ای</a><a href="http://oruji.github.io/amoozesh.org/django/session/" class="anav" title="Session ها، کاربران، و عضویت">Session ها، کاربران، و عضویت</a><a href="http://oruji.github.io/amoozesh.org/django/caching/" class="anav" title="مبحث Caching">مبحث Caching</a><a href="http://oruji.github.io/amoozesh.org/django/package/contrib/" class="anav" title="پکیج django.contrib">پکیج django.contrib</a><a href="http://oruji.github.io/amoozesh.org/django/middleware/" class="anav" title="مبحث Middleware">مبحث Middleware</a><a href="http://oruji.github.io/amoozesh.org/django/database/integrate/legacy/" class="anav" title="یکپارچه سازی برنامه ها و دیتابیس های Legacy">یکپارچه سازی برنامه ها و دیتابیس های Legacy</a><a href="http://oruji.github.io/amoozesh.org/django/internationalize/" class="anav" title="بین المللی سازی">بین المللی سازی</a><a href="http://oruji.github.io/amoozesh.org/django/security/" class="anav" title="امنیت">امنیت</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/template/advance/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+</html>

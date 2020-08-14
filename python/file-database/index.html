@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/python/file-database/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/python/file-database/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>آموزش فایل File پایتون پایگاه داده دیتابیس Python کتاب برخط</title>
+<meta name="description" content="در زبان برنامه نویسی پایتون (Python) یکی از ساده ترین روش ها برای برنامه ها جهت مدیریت داده هایشان خواندن و نوشتن درون فایل متنی و دیتابیس می باشد." />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="آموزش فایل File پایتون پایگاه داده دیتابیس Python کتاب برخط" />
+<meta property="og:description" content="در زبان برنامه نویسی پایتون (Python) یکی از ساده ترین روش ها برای برنامه ها جهت مدیریت داده هایشان خواندن و نوشتن درون فایل متنی و دیتابیس می باشد." />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/python/file-database/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/22 21:04</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>آموزش فایل در پایتون</h1>
+<p>در این <strong>آموزش</strong> از کتاب برخط پایتون (<strong>Python</strong>) با مفاهیم فایل و <strong>دیتابیس</strong> و مفاهیم پایه ی دیگر آشنا خواهیم شد.</p>
+<h2>ماندگاری داده ها</h2>
+<p>اغلب برنامه هایی که تا به حال دیده ایم برنامه هایی گذرا هستند، به این معنی که این برنامه ها برای مدت زمان کوتاهی اجرا می شوند و برای خود خروجی تولید می کنند، ولی وقتی برنامه به پایان می رسد، تمامی داده ها از بین می روند. در صورتی که برنامه را دوباره اجرا کنید، برنامه خالی از هرگونه داده خواهد بود.</p>
+<p>ولی برنامه های دیگر به اصطلاح <b>ماندگار</b> هستند: این برنامه ها حداقل برخی از داده های خود را درون یک مخزنی (به عنوان مثال، هارد درایو) ذخیره می کنند؛ و در صورتی که برنامه خاموش یا دوباره راه اندازی شود، داده های خود را برای استفاده در اختیار خواهند داشت.</p>
+<p>از جمله برنامه های مانگار می تواند سیستم عامل ها را نام برد، که به خوبی تا هر زمان که کامپیوتر در روشن است اجرا می شوند، و وب سرور ها در تمام مدت در حال اجرا بوده و منتظر درخواست هایی که از شبکه می آید می باشند.</p>
+<p>یکی از ساده ترین روش ها برای برنامه ها جهت مدیریت داده هایشان خواندن و نوشتن درون فایل متنی می باشد. پیش تر با برنامه هایی که فایل های متنی را می خوانند آشنا شده ایم؛ در این فصل با نوشتن بر روی فایل ها آشنا خواهید شد.</p>
+<p>روش دیگر، ذخیره داده های یک برنامه درون یک دیتابیس یا پایگاه داده می باشد. در این فصل یک دیتابیس ساده و یک ماژول به نام pickle را برای ذخیره داده های یک برنامه نشان خواهیم داد.</p>
+<h3>خواندن و نوشتن درون فایل در پایتون</h3>
+<p>فایل متنی ترتیبی از کارکترهای ذخیره شده در یک هارد دائمی مانند هارد درایو، فلش یا CD-ROM می باشد. نحوه باز کردن و خواندن فایل را در فصل بازی با کلمات آشنا شدیم.</p>
+<p>برای نوشتن بر روی فایل، باید از 'w' به عنوان پارامتر دوم در تابع open استفاده کرد:</p>
+<code class="language-python">&gt;&gt;&gt; fout = open('output.txt', 'w')
+&gt;&gt;&gt; print fout
+&lt;open file 'output.txt', mode 'w' at 0xb7eb2410&gt;</code><p>در صورتی که فایل مورد نظر وجود داشته باشد، باز کردن آن در حالت نوشتن ('w')، داده های قبلی را به طور کامل پاک کرده و یک فایل جدید را ایجاد می کند، بنابراین در این مورد باید کمی مواظب باشید! در صورتیکه فایل وجود نداشته باشد نیز یک فایل جدید ساخته می شود.</p>
+<p>متد write داده ها را درون فایل قرار می دهد.</p>
+<code class="language-python">&gt;&gt;&gt; line1 = "This here's the wattle,\n"
+&gt;&gt;&gt; fout.write(line1)</code><p>شیء فایل جایی را که قرار دارد را درون خود نگه می دارد، بنابراین در صورتیکه متد write را دوباره فراخوانی کنید، داده مورد نظر دوباره به انتهای فایل اضافه می شود.</p>
+<code class="language-python">&gt;&gt;&gt; line2 = "the emblem of our land.\n"
+&gt;&gt;&gt; fout.write(line2)</code><p>هنگامی که نوشتن بر روی فایل خاتمه یافت، باید فایل را با استفاده از متد close ببندید.</p>
+<code class="language-python">&gt;&gt;&gt; fout.close()</code><h3>عملگر فرمت (%)</h3>
+<p>آرگومان write باید یک رشته باشد، بنابراین در صورتیکه بخواهیم مقادیر دیگری غیر ار رشته به متد write ارسال کنید، باید آن مقدار را به رشته تبدیل کنیم. ساده ترین راه استفاده از تابع str می باشد:</p>
+<code class="language-python">&gt;&gt;&gt; x = 52
+&gt;&gt;&gt; f.write(str(x))</code><p>روش دیگر برای تبدیل مقادیر دیگر به رشته، استفاده از <b>عملگر فرمت (%)</b> می باشد. در صورتیکه از این عملگر برای یک مقدار integer استفاده شود، کارکرد آن به شکل عملگر modulus (باقی مانده تقسیم) خواهد بود. ولی هنگامی که برای یک مقدار رشته از این عملگر استفاده شود به صورت عملگر فرمت رفتار خواهد کرد.</p>
+<p>اولی عملوند در این حالت <b>فرمت رشته</b> می باشد، که حاوی یک یا چندین ترتیب فرمت می باشد و تعیین می کند که عملوند دوم به چه صورت قالب بندی شود.</p>
+<p>برای مثال، '%d' بدین معنی است که عملوند دوم باید یک integer باشد (d مخفف decimal است):</p>
+<code class="language-python">&gt;&gt;&gt; camels = 42
+&gt;&gt;&gt; '%d' % camels
+'42'</code><p>نتیجه رشته '42' است، که هیچ تداخلی با 42 که یک integer است ندارد.</p>
+<p>ترتیب فرمت می توانید در هر قسمتی از رشته قرار گیرد، بنابراین شما می توانید یک مقدار را درون یک جمله جای دهید:</p>
+<code class="language-python">&gt;&gt;&gt; camels = 42
+&gt;&gt;&gt; 'I have spotted %d camels.' % camels
+'I have spotted 42 camels.'</code><p>در صورتیکه بیشتر از یک فرمت درون رشته وجود داشته باشد، آرگومان دوم باید یک مقدار از نوع تاپل باشد. هر فرمت به ترتیب مطابق با یک المان از تاپل خواهد بود.</p>
+<p>در مثال زیر از '%d' برای فرمت یک integer، از '%g' برای فرمت یک عدد اعشاری (نپرس چرا)، و از '%s' برای فرمت یک رشته استفاده شده است:</p>
+<code class="language-python">&gt;&gt;&gt; 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')
+'In 3 years I have spotted 0.1 camels.'</code><p>تعداد المان های درون تاپل باید با تعداد فرمت های استفاده شده درون رشته مطابق باشد. همچنین، نوع المان ها نیز باید با فرمت ها یکی باشد:</p>
+<code class="language-python">&gt;&gt;&gt; '%d %d %d' % (1, 2)
+TypeError: not enough arguments for format string
+&gt;&gt;&gt; '%d' % 'dollars'
+TypeError: illegal argument type for built-in operation</code><p>در خط اول کد فوق، تعداد المان ها کافی نیستند، و در خط سوم نوع المان یک نوع اشتباه می باشد.</p>
+<p>عملگر فرمت بسیار قدرتمند می باشد، ولی استفاده از آن می تواند کمی مشکل باشد. برای اطلاعات بیشتر در مورد این عملگر می توانید به
+مستندات پایتون مراجعه کنید.</p>
+<h3>نام فایل و مسیر</h3>
+<p>فایل ها اصولا درون دایرکتوری ها (فولدر نیز نامیده می شود) قرار می گیرند. هر بنامه ای که در حال اجرا می باشد، دارای یک دایرکتوری جاری می باشد، که دایرکتوری پیشفرض برای اغلب عملیات ها می باشد. برای مثال، هنگامی که شما فایلی را برای خواندن باز می می کنید، پایتون درون دایرکتوری جاری به دنبال آن می گردد.</p>
+<p>ماژول os دارای توابعی برای کار با فایل ها و دایرکتوری ها می باشد (os مخفف "operating system" است). os.getcwd نام دایرکتوری جاری را بر می گرداند:</p>
+<code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; cwd = os.getcwd()
+&gt;&gt;&gt; print cwd
+/home/dinsdale</code><p>اصطلاح cwd مخفف "current working directory" به معنی دایرکتوری جاری در حال کار می باشد. نتیجه مثال فوق /home/aminpy می باشد، که دایرکتوری خانگی کاربری با نام aminpy می باشد (در سیستم عامل لینوکس).</p>
+<p>شبه رشته (string like) فوق یعنی cwd یک فایل را که <b>مسیر (path)</b> نامیده می شود را شناسایی می کند. <b>مسیر نسبی (relative path)</b> از دایرکتوری جاری شروع می شود و <b>مسیر کامل (absolute path)</b> از بالاتری دایرکتوری سیستم فایل شروع می شود.</p>
+<p>مسیرهایی که تا کنون دیدیم یک نام ها فایل ساده بوده اند، بنابراین این مسیرها مسیرهای نسبی از دایرکتوری جاری بوده اند. برای یافتن یک مسیر کامل به یک فایل، می توانیم از os.path.abspath استفاده کنیم:</p>
+<code class="language-python">&gt;&gt;&gt; os.path.abspath('memo.txt')
+'/home/dinsdale/memo.txt'</code><p>تابع os.path.exists وجود فایل یا دایرکتوری را بررسی می کند:</p>
+<code class="language-python">&gt;&gt;&gt; os.path.exists('memo.txt')
+True</code><p>در صورتیکه فایل مورد نظر وجود داشته باشد، os.path.isdir بررسی می کند که آن دایرکتوری است یا خیر:</p>
+<code class="language-python">&gt;&gt;&gt; os.path.isdir('memo.txt')
+False
+&gt;&gt;&gt; os.path.isdir('music')
+True</code><p>به همین ترتیب، os.path.isfile نیز بررسی می کند که آیا آرگومان ارسالی به آن یک فایل است یا خیر.</p>
+<p>تابع os.listdir لیستی از فایل ها و دایرکتوری موجود در دایرکتوری داده شده را بر می گرداند:</p>
+<code class="language-python">&gt;&gt;&gt; os.listdir(cwd)
+['music', 'photos', 'memo.txt']</code><p>برای شرح این توابع، مثال زیر درون یک دایرکتوری گشته، و اسامی تمامی فایل ها را چاپ کرده، و خودش را به صورت بازگشتی (recursively) درون تمام دایرکتوری ها فراخوانی می کند.</p>
+<code class="language-python">def walk(dirname):
+    for name in os.listdir(dirname):
+        path = os.path.join(dirname, name)
+
+        if os.path.isfile(path):
+            print path
+        else:
+            walk(path)</code><p>تابع os.path.join نام یک دایرکتوری و فایل را دریافت کرده و آن ها را در یک مسیر کامل شده به هم متصل می کند.</p>
+<h3>کنترل خطا در فایل</h3>
+<p>هنگام خواندن یا نوشتن درون فایل اشتباهات بسیاری می تواند رخ دهد. در صورتیکه سعی کنید فایلی را که وجود ندارد را باز کنید، خطای IOErro رخ خواهد داد:</p>
+<code class="language-python">&gt;&gt;&gt; fin = open('bad_file')
+IOError: [Errno 2] No such file or directory: 'bad_file'</code><p>در صورتیکه حق دسترسی به فایل را نداشته باشید با خطای زیر مواجه خواهید شد:</p>
+<code class="language-python">&gt;&gt;&gt; fout = open('/etc/passwd', 'w')
+IOError: [Errno 13] Permission denied: '/etc/passwd'</code><p>و در صورتیکه یک دایرکتوری را برای خواندن باز کنید، خطای زیر را خواهید دید:</p>
+<code class="language-python">&gt;&gt;&gt; fin = open('/home')
+IOError: [Errno 21] Is a directory</code><p>برای جلوگیری از خطاهای فوق، می توان از توابعی مانند os.path.exists و os.path.isfile استفاده کرد، ولی این کار زمان زیادی را خواهد گرفت و کد تمام احتمالات را باید بررسی کنید (if “Errno 21” is any indication, there are at least 21 things that can go wrong).</p>
+<p>بهتر است زمانی که مشکل رخ داد با آن درگیر شویم، این دقیقا کاری است که عبارت try انجام می دهد. syntax آن شبیه به عبارت if است:</p>
+<code class="language-python">try:    
+    fin = open('bad_file')
+    for line in fin:
+        print line
+    fin.close()
+except:
+    print 'Something went wrong.'</code><p>پایتون با اجرای بلاک try آغاز می کند. در صورتیکه همه چیز بدون مشکل در بلاک try انجام شود، پردازش بلاک except نادیده گرفته خواهد شد. در صورتی که یک خطا رخ دهد، مفسر از بلاک try بیرون پریده و بلاک except را اجرا می کند.</p>
+<p>مدیریت خطا با یک جمله try را <b>کنترل</b> خطا می گویند. در مثال فوق، بلاک except یک پیام خطا چاپ می کند که کمک زیاد نمی کند. به طور کلی، کنترل یک خطا به شما شانس این را می دهد که مشکل را حل کرده، یا دوباره سعی کرده و یا حداقل برنامه را به آرامی خاتمه دهید.</p>
+<h3>دیتابیس ها</h3>
+<p>دیتابیس یک فایل است که برای ذخیره سازی داده سازمان دهی شده است. اغلب دیتابیس ها همانند <a title="آموزش دیکشنری در پایتون" class="content" href="http://oruji.github.io/amoozesh.org/python/dictionary/">دیکشنری</a> ساخته شده اند، بدین معنی که کلیدها را به مقادیر مرتبط می کنند. بزرگترین فرق آن این است که دیتابیس بر روی دیسک (یا هاردهای دائمی دیگر) می باشد، بنابراین بعد از اتمام برنامه نیز باقی خواهد ماند.</p>
+<p>ماژول anydbm یک رابط برای ایجاد و به روز رسانی فایل های دیتابیس فراهم می کند. به عنوان مثال، ما یک دیتابیس که حاوی فایل های تصویری و عناوین آن می باشد را ایجاد خواهیم کرد:</p>
+<code class="language-python">&gt;&gt;&gt; import anydbm
+&gt;&gt;&gt; db = anydbm.open('captions.db', 'c')</code><p>حالت 'c' بدین معنی است که دیتابیس در صورتی که وجود نداشته باشد ایجاد شود. نتیجه یک شیء دیتابیس است که می تواند (برای اغلب عملیات ها) مانند یک <a title="آموزش دیکشنری در پایتون" class="content" href="http://oruji.github.io/amoozesh.org/python/dictionary/">دیکشنری</a> استفاده شود. در صورتیکه یک مورد جدید ایجاد کنیم، anydbm فایل دیتابیس را به روز رسانی می کند.</p>
+<code class="language-python">&gt;&gt;&gt; db['cleese.png'] = 'Photo of John Cleese.'</code><p>هنگامی که به یک از موارد دسترسی پیدا می کنیم، anydbm فایل را می خواند:</p>
+<code class="language-python">&gt;&gt;&gt; print db['cleese.png']
+Photo of John Cleese.</code><p>در صورتیکه انتساب دیگری را برای یک کلید موجود ایجاد کنیم، anydbm مقدار جدید را با مقدار قدیمی جایگزین می کند:</p>
+<code class="language-python">&gt;&gt;&gt; db['cleese.png'] = 'Photo of John Cleese doing a silly walk.'
+&gt;&gt;&gt; print db['cleese.png']
+Photo of John Cleese doing a silly walk.</code><p>بسیاری از متدهای دیکشنری، مانند keys و items، با شیء های دیتابیس کار می کنند. بنابراین عملیات تکرار را با یک جمله for انجام می دهیم.</p>
+<code class="language-python">for key in db:
+    print key</code><p>همانند فایل های دیگر، باید با استفاده از متد close شیء دیتابیس را مسدود کنیم:</p>
+<code class="language-python">&gt;&gt;&gt; db.close()</code><h3>Pickling</h3>
+<p>یکی از محدودیت های anydbm این است که نوع کلید و مقدار استفاده شده در آن باید رشته باشد. در صورتیکه از انواع دیگر در آن استفاده کنید، با خطا مواجه خواهید شد.</p>
+<p>ماژول pickle در این مورد سودمند خواهد بود. این ماژول تقریبا تمامی نوع شیء ها را به رشته مناسب با آن برای ذخیره درون دیتابیس ترجمه کرده و رشته های ترجمه شده را به شیء های قبلی آن بر می گرداند.</p>
+<p>تابع pickle.dumps یک شیء را به عنوان پارامتر دریافت کرده و یک رشته متناظر با آن بر می گرداند (dumps کوتاه شده "dump string" می باشد):</p>
+<code class="language-python">&gt;&gt;&gt; import pickle
+&gt;&gt;&gt; t = [1, 2, 3]
+&gt;&gt;&gt; pickle.dumps(t)
+'(lp0\nI1\naI2\naI3\na.'</code><p>فرمت رشته برگردانده شده واضح به نظر نخواهد رسید؛ این رشته جهت ساده شدن برای picke جهت تفسیر یه این شکل در آمده است. <bdo class="leftInline">pickle.loads("loads string")</bdo> شیء را بازسازی می کند:</p>
+<code class="language-python">&gt;&gt;&gt; t1 = [1, 2, 3]
+&gt;&gt;&gt; s = pickle.dumps(t1)
+&gt;&gt;&gt; t2 = pickle.loads(s)
+&gt;&gt;&gt; print t2
+[1, 2, 3]</code><p>هرچند شیء جدید مقداری مشابه با شیء قدیمی دارد، ولی به طور کلی این دو شیء با یکدیگر یکی نخواهند  بود:</p>
+<code class="language-python">&gt;&gt;&gt; t1 == t2
+True
+&gt;&gt;&gt; t1 is t2
+False</code><p>به عبارت دیگر، عمل pickling و سپس unpickling، تاثیری یکسان با کپی کردن شیء دارد.</p>
+<p>می توان از pickle برای ذخیره داده هایی به غیر از رشته در دیتابیس استفاده کرد. در حقیقت، این ترکیبی بسیار رایج است که درون ماژولی به نام shelve قرار گرفته است.</p>
+<h3>Pipes</h3>
+<p>اغلب سیستم عامل ها دارای یک رابط خط فرمان شناخته شده به عنوان <b>shell</b> می باشند. shell ها معمولا دارای دستوراتی برای هدایت فایل سیستم و اجرای برنامه ها هستند. برای مثال در یونیکس می توان دایرکتوری ها را با دستور cd تغییر داد، می توان با دستور ls محتویات یک دایرکتوری را نمایش داد، و (به عنوان مثال) با تایپ دستور firefox مرورگر وب را اجرا کرد.</p>
+<p>هر برنامه ای که را که از shell اجرا می کنید را، با استفاده از <b>pipe</b> می توان در پایتون نیز اجرا نمود. pipe یک شیء است که یک برنامه در حال اجرا را نشان می دهد.</p>
+<p>به عنوان مثال، دستور یونیکس ls -l معمولا محتویات دایرکتوری فعلی (در یک فرمت بلند) نمایش می دهد. می توان دستور ls را با استفاده از os.popen (بهتر است از subprocess به جای آن استفاده کنید، ولی برای سادگی و درک مطلب در اینجا ما از این ماژول استفاده کردیم.) درون پایتون اجرا نمود.</p>
+<code class="language-python">&gt;&gt;&gt; cmd = 'ls -l'
+&gt;&gt;&gt; fp = os.popen(cmd)</code><p>آرگومان ارسالی یک رشته حاوی دستور shell می باشد. مقدار برگشتی یک شیء است که درست مثل یک فایل باز شده رفتار می کند. می توان خروجی پردازش ls را خط به خط با readline بدست آورد و یا با read به کل خروجی دسترسی پیدا کرد:</p>
+<code class="language-python">&gt;&gt;&gt; res = fp.read()</code><p>بعد از اتمام کار، مانند فایل شیء مورد نظر را close می کنیم:</p>
+<code class="language-python">&gt;&gt;&gt; stat = fp.close()
+&gt;&gt;&gt; print stat
+None</code><p>مقدار برگشتی آخرین وضعیت پردازش ls می باشد، None به معنای پایان یافتن عادی (بدون خطا) می باشد.</p>
+<p>برای مثال، اغلب سیستم های Unix دستوری با نام <bdo class="leftInline">md5sum</bdo> را برای خواندن محتویات یک فایل و محاسبه یک "checksum" ارائه می کنند. برای اطلاعات بیشتر در مورد <bdo class="leftInline">MD5</bdo> می توانید به <bdo class="leftInline">http://en.wikipedia.org/wiki/Md5</bdo> مراجعه کنند. این دستور یک روش موثر برای بررسی یکی بودن محتویات دو فایل ارائه می کند. The probability that different contents yield the same checksum is very small (that is, unlikely to happen before the universe collapses).</p>
+<p>می توان از pipe برای اجرای <bdo class="leftInline">md5sum</bdo> در پایتون و گرفتن نتیجه آن استفاده کرد:</p>
+<code class="language-python">&gt;&gt;&gt; filename = 'book.tex'
+&gt;&gt;&gt; cmd = 'md5sum '   filename
+&gt;&gt;&gt; fp = os.popen(cmd)
+&gt;&gt;&gt; res = fp.read()
+&gt;&gt;&gt; stat = fp.close()
+&gt;&gt;&gt; print res
+1e0033f0ed0656636de0d75144ba32e0  book.tex
+&gt;&gt;&gt; print stat
+None</code><h3>ماژول نویسی</h3>
+<p>هر فایلی که حاوی کد پایتون باشد می تواند به عنوان یک ماژول import شود. به عنوان مثال، فرض کنید فایلی به نام wc.py با محتویات زیر داریم:</p>
+<code class="language-python">def linecount(filename):
+    count = 0
+    for line in open(filename):
+        count  = 1
+    return count
+
+print linecount('wc.py')</code><p>در صورتیکه برنامه فوق را اجرا کنیم، برنامه محتویات خود را خوانده و تعداد خطوط موجود در فایل را که عدد ۷ باشد را چاپ می کند. شما همچنین می توانید آن را import کنید:</p>
+<code class="language-python">&gt;&gt;&gt; import wc
+7</code><p>حالا ما یک شیء ماژول به نام wc در اختیار داریم:</p>
+<code class="language-python">&gt;&gt;&gt; print wc
+&lt;module 'wc' from 'wc.py'&gt;</code><p>این ماژول دارای تابعی به نام linecount می باشد:</p>
+<code class="language-python">&gt;&gt;&gt; wc.linecount('wc.py')
+7</code><p>و همه این ها مراحل نوشتن یک ماژول در پایتون نشان می دهند.</p>
+<p>تنا مشکل موجود در مثال فوق این است که، زمانی که ما ماژول را import می کنیم، کد آزمایشی پایین ماژول اجرا می شود. به طور معمول زمانی که یک ماژول را import می کنیم، این کار توابع جدید را تعریف می کند، ولی آن ها را اجرا نمی کند.</p>
+<p>برنامه هایی که به صورت ماژول import می شوند، اغلب از کد زیر استفاده می کنند:</p>
+<code class="language-python">if __name__ == '__main__':
+    print linecount('wc.py')</code><p>__name__ یک متغیر داخلی پایتون است که زمانی که برنامه شروع می شود مقدار دهی می گردد. در صورتیکه برنامه مانند یک script اجرا شود، __name__ دارای مقدار __main__ می باشد؛ در این مورد، کد آزمایشی اجرا می شود. در غیر اینصورت، در صورتیکه ماژول import شود، کد آزمایشی نادیده گرفته می شود.</p>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش پایتون</div>
+<a title="متد append لیست" class="anav" href="http://oruji.github.io/amoozesh.org/python/list/append/">متد append لیست</a><a href="http://oruji.github.io/amoozesh.org/python/variable/" class="anav" title="متغیرها، عبارات و جمله ها">متغیرها، عبارات و جمله ها</a><a href="http://oruji.github.io/amoozesh.org/python/string/" class="anav" title="رشته ها">رشته ها</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/list/" title="لیست ها">لیست ها</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/dictionary/" title="دیکشنری">دیکشنری</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/for/" title="حلقه for">حلقه for</a><div  class="divnav" title="فایل ها و دیتابیس ها">فایل ها و دیتابیس ها</div><a href="http://oruji.github.io/amoozesh.org/python/function/" class="anav" title="توابع">توابع</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/print/pyramid/" title="چاپ هرم">چاپ هرم</a><a title="پردازش XML" class="anav" href="http://oruji.github.io/amoozesh.org/python/xml/">پردازش XML</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/python/file-database/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:42 GMT -->
+</html>

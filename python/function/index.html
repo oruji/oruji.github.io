@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/python/function/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/python/function/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>آموزش توابع پایتون functions کتاب فارسی Python برخط</title>
+<meta name="description" content="تابع یک بلاک کد سازمان یافته با قابلیت استفاده دوباره برای انجام تنها یک کار مشخص و مرتبط می باشد، function کتاب آموزش فارسی برخط آنلاین پایتون" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="آموزش توابع پایتون functions کتاب فارسی Python برخط" />
+<meta property="og:description" content="تابع یک بلاک کد سازمان یافته با قابلیت استفاده دوباره برای انجام تنها یک کار مشخص و مرتبط می باشد، function کتاب آموزش فارسی برخط آنلاین پایتون" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/python/function/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/16 20:26</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>آموزش توابع در پایتون</h1>
+<p>در این <strong>آموزش</strong> از کتاب فارسی برخط پایتون، به <strong>توابع</strong> در پایتون می پردازیم. تابع یک بلاک کد سازمان یافته با قابلیت استفاده دوباره برای انجام تنها یک کار مشخص و مرتبط می باشد. توابع ماژول بندی بهتری را برای برنامه شما فراهم کرده و قابلیت استفاده دوباره از کد برنامه را بیشتر می کند.</p>
+<strong></strong><p>همانطور که می دانید، پایتون توابع داخلی بسیاری همانند <bdo class="leftInline">print()</bdo> و غیره را در اختیار شما قرار داده است. با این حال شما می توانید توابع خودتان را نیز ایجاد کنید. این توابع را، توابع تعریف شده توسط کاربر یا user-defined می نامند.</p>
+<h2>تعریف یک تابع</h2>
+<p>شما می توانید <strong>توابع</strong> را برای فراهم ساختن عملکردهای مورد نیاز  تعریف کنید. در زیر قوانین ساده جهت تعریف تابع در پایتون آمده است.</p>
+<ul>
+<li>بلاک تابع با کلمه کلیدی <strong>def</strong> شروع شده و نام تابع و پرانتز ( () ) باز و بسته بعد از آن می آید.</li>
+<li>تمامی پارامترها و آرگومان های ورودی باید درون پرانتز قرار بگیرند. شما همچنین می توانید پارامترها را درون پرانتز حتی <strong>تعریف</strong> کنید.</li>
+<li>عبارت اول یک تابع می تواند یک عبارت اختیاری باشد - رشته ای برای مستندات تابع یا docstring.</li>
+<li>بلاک کد درون هر تابع با یک علامت کالن (:) شروع شده و به صورت تو رفته (indented) است.</li>
+<li>عبارت return باعث خروج از یک تابع می شود، و به طور دلخواه می تواند یک مقدار را به قسمتی از کد که تابع را فراخوانی کرده است برگرداند. عبارت return با هیچ آرگومانی همانند return None است.</li>
+</ul>
+<h3>نحوه تعریف تابع</h3>
+<code class="language-python">def functionname( parameters ):
+   "function_docstring"
+   function_suite
+   return [expression]</code><p>به طور پیشفرض، نحوه ترتیب قرار گرفتن پارامترهای تابع در علمکرد تابع موثر است و شما نیاز خواهید داشت آن ها را به همان ترتیبی که تعریف شده اند استفاده کنید.</p>
+<h4>مثال</h4>
+<p>تابع زیر یک پارامتر ورودی رشته دریافت کرده و آن را چاپ می کند.</p>
+<code class="language-python">def printme( str ):
+   "This prints a passed string into this function"
+   print (str)
+   return</code><h2>فراخوانی تابع</h2>
+<p>تعریف یک تابع، تعیین یک نام برای آن، تعیین پارامترها و ساختار بلاک کد آن. زمانیکه ساختار پایه ای یک تابع تمام شد، شما می توانید آن را از طریق فراخوانی از تابعی دیگر یا به طور مستقیم اجرا کنید. برنامه زیر فراخوانی تابع <bdo class="leftInline"><strong>printme()</strong></bdo> را نشان می دهد:</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def printme( str ):
+   "This prints a passed string into this function"
+   print (str)
+   return
+
+# Now you can call printme function
+printme("This is first call to the user defined function!")
+printme("Again second call to the same function")</code><p>زمانیکه کد بالا اجرا شد، خروجی زیر ایجاد می شود:</p>
+<code class="language-">This is first call to the user defined function!
+Again second call to the same function</code><h2>فراخوانی با مقدار و با reference</h2>
+<p>تمامی پارامترها در زبان <strong>پایتون</strong> با reference ارسال می شوند. این بدان معناست که اگر شما پارامتر را درون تابع تغییر دهید، این پارامتر همچنین در تابع فراخوانی شده نیز تغییر خواهد کرد. برای مثال:</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   print ("Values inside the function before change: ", mylist)
+   mylist[2]=50
+   print ("Values inside the function after change: ", mylist)
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30]
+changeme( mylist )
+print ("Values outside the function: ", mylist)</code><p>خروجی</p>
+<code class="language-">Values inside the function before change:  [10, 20, 30]
+Values inside the function after change:  [10, 20, 50]
+Values outside the function:  [10, 20, 50]</code><p>در مثالی دیگر آرگومانی که با reference ارسال شده است و reference آن درون تابع فراخوانی شده تغییر می کند:</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist = [1,2,3,4] # This would assi new reference in mylist
+   print ("Values inside the function: ", mylist)
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30]
+changeme( mylist )
+print ("Values outside the function: ", mylist)</code><p>پارامتر <strong>mylist</strong> درون تابع changeme داخلی می باشد، تغییر mylist درون تابع تاثیری در mylist نخواهد گذاشت. تابع در واقع هیچ کاری انجام نداده و خروجی زیر ایجاد می شود:</p>
+<code class="language-">Values inside the function:  [1, 2, 3, 4]
+Values outside the function:  [10, 20, 30]</code><h2>آرگومان های تابع</h2>
+<p>شما می توانید تابع را به از نظر آرگومان به شکل های زیر فراخوانی کنید:</p>
+<ul>
+<li>آرگومان های اجباری</li>
+<li>آرگومان های keyword</li>
+<li>آرگومان های پیشفرض</li>
+<li>آرگومان های variable-length</li>
+</ul>
+<h3>آرگومان های اجباری</h3>
+<p>آرگومان های اجباری آن های هستند که در مکان و ترتیب قرارگیری درست خود به تابع ارسال می شوند. در اینجا تعداد آرگومان های تابع فراخوانی شده باید دقیقا با تعریف تابع یکسان باشند.</p>
+<p>جهت فراخوانی printme()، شما نیاز خواهید داشت دقیقا یک آرگومان به آن ارسال کنید، در غیر اینصورت خطای syntax همانند زیر ایجاد خواهد شد:</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def printme( str ):
+   "This prints a passed string into this function"
+   print (str)
+   return
+
+# Now you can call printme function
+printme()</code><p>خروجی</p>
+<code class="language-">Traceback (most recent call last):
+   File "test.py", line 11, in <module>      printme();
+TypeError: printme() takes exactly 1 argument (0 given)</module></code><h3>آرگومان های Keyword</h3>
+<p>آرگومان های keyword وابسته به فراخوانی تابع می باشند. زمانیکه شما آرگومان keyword را در یک فراخوانی تابع استفاده می کنید، آن بخش فراخوانی کننده این آرگومان را توسط نام پارامتر تشخیص می دهد.</p>
+<p>مثال زیر فراخوانی keyword در تابع <strong><bdo class="leftInline">printme()</bdo></strong> نشان داده شده است:</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def printme( str ):
+   "This prints a passed string into this function"
+   print (str)
+   return
+
+# Now you can call printme function
+printme( str = "My string")</code><p>خروجی</p>
+<code class="language-">My string</code><p>مثال زیر تصویر واضح تری را ترسیم می کند. توجه داشته باشید که ترتیب پارامترها مشکلی ایجاد نمی کند.</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def printinfo( name, age ):
+   "This prints a passed info into this function"
+   print ("Name: ", name)
+   print ("Age ", age)
+   return
+
+# Now you can call printinfo function
+printinfo( age = 50, name = "miki" )</code><p>خروجی</p>
+<code class="language-">Name:  miki
+Age  50</code><h3>آرگومان پیشفرش</h3>
+<p>در صورتیکه هیچ مقداری به آرگومان فراخوانی شده اختصاص داده نشود، آرگومان پیشفرض مقدار آن را مشخص می کند. در مثال زیر در صورتی که مقدار age تعیین نشود مقدار پیشفرض آن چاپ می شود:</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def printinfo( name, age = 35 ):
+   "This prints a passed info into this function"
+   print ("Name: ", name)
+   print ("Age ", age)
+   return
+
+# Now you can call printinfo function
+printinfo( age = 50, name = "miki" )</code><p>خروجی</p>
+<code class="language-">Name:  miki
+Age  50
+Name:  miki
+Age  35</code><h3>آرگومان variable-length</h3>
+<p>شما ممکن است برای پردازش یک تابع نیاز به آرگومان هایی بیش از آن هایی که در تعریف تابع تعریف کرده اید داشته باشید. این آرگومان ها را variable-length می نامند و در تعریف تابع نام گذاری نمی شوند، به جز آرگومان های اجباری و پیشفرض.</p>
+<code class="language-python">def functionname([formal_args,] *var_args_tuple ):
+   "function_docstring"
+   function_suite
+   return [expression]</code><p>علامت ستاره (*) قبل از نام متغیر قرار می گیرد و مقادیر تمامی آرگومان هایی که keyword نیستند را در خود نگه می دارد. این تاپل (tuple) در صورتیکه آرگومان اضافه ای در فراخوانی تابع تعیین نشود، خالی باقی می ماند.</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def printinfo( arg1, *vartuple ):
+   "This prints a variable passed arguments"
+   print ("Output is: ")
+   print (arg1)
+   for var in vartuple:
+      print (var)
+   return
+
+# Now you can call printinfo function
+printinfo( 10 )
+printinfo( 70, 60, 50 )</code><p>خروجی</p>
+<code class="language-">Output is:
+10
+Output is:
+70
+60
+50</code><h2>توابع Anonymous</h2>
+<p>این توابع anonymous نامیده می شوند، چرا که به صورت استاندارد با کلمه کلیدی <strong>def</strong> تعریف نمی شوند. شما می توانید برای ایجاد توابع کوچک <strong>anonymous</strong> از کلمه کلیدی lambda استفاده کنید.</p>
+<ul>
+<li>فرم lambda می تواند هر تعداد آرگومان دریافت کند، ولی تنها یک مقدار را بر می گرداند. lambda ها نمی توانند حاوی چندین عبارت و دستور باشند.</li>
+<li>تابع anonymous نمی تواند به صورت مستقیم برای چاپ فراخوانی شود چرا که نیاز به یک عبارت دارد.</li>
+<li>توابع lambda دارای namespace های داخلی خود می باشند و تنها به متغیر های موجود در لیست پارامترها و آن هایی که در global تعریف شده اند دسترسی دارند.</li>
+<li>اگرچه اینطور به نظر می رسد که lambda ها نسخه تک خطی توابع می باشند، آن ها همانند عبارت inline در C یا <bdo class="leftInline">C  </bdo>  نمی باشند.</li>
+</ul>
+<h4>شکل دستوری</h4>
+<code class="language-">lambda [arg1 [,arg2,.....argn]]:expression</code><p>مثال زیر فرم lambda و نحوه کارکرد آن را نشان می دهد:</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+sum = lambda arg1, arg2: arg1   arg2
+
+
+# Now you can call sum as a function
+print ("Value of total : ", sum( 10, 20 ))
+print ("Value of total : ", sum( 20, 20 ))</code><p>خروجی</p>
+<code class="language-">Value of total :  30
+Value of total :  40</code><h2>عبارت return</h2>
+<p>عبارت return برای خروج از یک تابع است، که می تواند به طور دلخواه حاوی مقداری برای برگرداندن به فراخوانی تابع باشد. مثال زیر نحوه برگرداندن مقدار توسط return را نشان می دهد:</p>
+<code class="language-python">#!/usr/bin/python3
+
+# Function definition is here
+def sum( arg1, arg2 ):
+   # Add both the parameters and return them."
+   total = arg1   arg2
+   print ("Inside the function : ", total)
+   return total
+
+# Now you can call sum function
+total = sum( 10, 20 )
+print ("Outside the function : ", total )</code><p>خروجی</p>
+<code class="language-">Inside the function :  30
+Outside the function :  30</code><h2>Scope متغیرها</h2>
+<p>تمامی متغیرهای موجود در برنامه ممکن است در همه جای برنامه در دسترس نباشند. این موضوع به مکانی که متغیر تعریف شده است بستگی دارد.</p>
+<p>Scope یک متغیر تعیین می کند که یک متغیر در کدام بخش از برنامه قابل دسترسی می باشد. در پایتون دو scope برای متغیرها وجود دارد:</p>
+<ul>
+<li>متغیرهای Global</li>
+<li>متغیرهای Local</li>
+</ul>
+<h3>متغیرهای Local در برابر Global</h3>
+<p>متغیرهایی که درون بدنه تابع تعریف می شوند دارای محدوده local و آن هایی که بیرون از تابع تعریف می شوند دارای محدوده global می باشند.</p>
+<p>این بدان معناست که متغیرهای local تنها درون تابعی که تعریف شده اند قابل دسترسی می باشند، در حالی که متغیرهای global در سراسر بدنه برنامه توسط تمامی توابع در دسترس می باشند. زمانیکه شما یک تابع را فراخوانی می کنید، متغیرهایی که درون آن تعریف شده اند به scope آورده می شوند:</p>
+<code class="language-python">#!/usr/bin/python3
+
+total = 0 # This is global variable.
+# Function definition is here
+def sum( arg1, arg2 ):
+   # Add both the parameters and return them."
+   total = arg1   arg2; # Here total is local variable.
+   print ("Inside the function local total : ", total)
+   return total
+
+# Now you can call sum function
+sum( 10, 20 )
+print ("Outside the function global total : ", total )</code><p>خروجی</p>
+<code class="language-">Inside the function local total :  30
+Outside the function global total :  0</code><h4>منابع</h4>
+<ol><li><a title="Python 3 - Functions" class="content" href="https://www.tutorialspoint.com/python3/python_functions.htm">Python 3 - Functions</a></li></ol>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش پایتون</div>
+<a title="متد append لیست" class="anav" href="http://oruji.github.io/amoozesh.org/python/list/append/">متد append لیست</a><a href="http://oruji.github.io/amoozesh.org/python/variable/" class="anav" title="متغیرها، عبارات و جمله ها">متغیرها، عبارات و جمله ها</a><a href="http://oruji.github.io/amoozesh.org/python/string/" class="anav" title="رشته ها">رشته ها</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/list/" title="لیست ها">لیست ها</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/dictionary/" title="دیکشنری">دیکشنری</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/for/" title="حلقه for">حلقه for</a><a href="http://oruji.github.io/amoozesh.org/python/file-database/" class="anav" title="فایل ها و دیتابیس ها">فایل ها و دیتابیس ها</a><div  class="divnav" title="توابع">توابع</div><a class="anav" href="http://oruji.github.io/amoozesh.org/python/print/pyramid/" title="چاپ هرم">چاپ هرم</a><a title="پردازش XML" class="anav" href="http://oruji.github.io/amoozesh.org/python/xml/">پردازش XML</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/python/function/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:42 GMT -->
+</html>

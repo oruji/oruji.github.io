@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/admin-site/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/django/admin-site/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>سایت رابط مدیر جنگو Django کتاب آموزش برخط چارچوب فریم ورک</title>
+<meta name="description" content="در این آموزش کتاب برخط آنلاین جنگو Django فریم ورک چارچوب خواهیم دید، برای طبقه ی خاصی از وب سایت ها، یک رابط مدیر (admin interface) بخشی ضروری وب سایت می باشد" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="سایت رابط مدیر جنگو Django کتاب آموزش برخط چارچوب فریم ورک" />
+<meta property="og:description" content="در این آموزش کتاب برخط آنلاین جنگو Django فریم ورک چارچوب خواهیم دید، برای طبقه ی خاصی از وب سایت ها، یک رابط مدیر (admin interface) بخشی ضروری وب سایت می باشد" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/django/admin-site/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/13 19:15</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>سایت و رابط مدیر در جنگو (Django)</h1>
+<p>برای طبقه ی خاصی از وب سایت ها، یک رابط مدیر (admin interface) بخشی ضروری زیر ساخت وب سایت می باشد. رابط مدیر یک رابط تحت وب می باشد، که مختص مدیران مورد اعتماد سایت می باشد و اضافه کردن، ویرایش و حذف محتویات سایت را مقدور می سازد. رابطی که شما برای پست کردن به بلاگ خود از آن استفاده می کنید، ابزاری که کاربران برای به روز رسانی مطالبی که برای آن ها ساخته اید به کار می برند و محیطی که مدیران سایت برای اداره ی نقطه نظرات کاربران از آن استفاده می کنند مثال هایی برای استفاده از رابط مدیر می باشند.</p>
+<p>توسعه ی وب هنگامی که با عملکرد برنامه رو به رو هستید کاری جالب می باشد در صورتیکه ساختن رابط مدیر همواره به یک شکل است. باید به کاربران اجازه دسترسی بدهید، فرم ها را نمایش داده و کنترل کنید، ورودی را معتبر سازید و غیره. این ها کارهایی خسته کننده و تکراری می باشند.</p>
+<p>بنابراین روش جنگو برای این مسائل خسته کننده و تکراری چه می باشد؟ جنگو تنها با چند خط نه بیشتر تمام این کارها را برای شما انجام می دهد. با ساختن رابط مدیر جنگو تمام این مشکلات حل خواهد شد.</p>
+<p><a title="سایت مدیر" class="content" href="http://oruji.github.io/amoozesh.org/django/admin-site/">این آموزش</a> از کتاب، درباره ی رابط خودکار مدیر می باشد. ویژگی ای که از طریق خواندن داده های موجود در مدل یک رابط پر قدرت که مدیران سایت می توانند به سرعت از آن استفاده کنند را تهیه می کند. در اینجا نحوه ی فعال کردن و سفارشی کردن این ویژگی را مورد بررسی قرار خواهیم داد.</p>
+<p>توجه داشته باشید که توصیه می کنیم حتی اگر قصد استفاده از رابط مدیر را ندارید این فصل را مطالعه کنید، زیرا در این فصل صرفنظر از کاربرد سایت مدیر، مفاهیمی معرفی خواهند شد که در تمام جنگو بکار می روند.</p>
+<h2>پکیج های django.contrib</h2>
+<p>مدیر خودکار جنگو بخشی از یک سلسله از عملکرد جنگو می باشد که django.contrib نامیده می شود (بخشی از کد جنگو که حاوی افزودنی های مفید برای هسته فریم ورک یا چارچوب می باشد). می توانید django.contrib در جنگو را معادل کتابخانه ی استاندار پایتون فرض کنید. این پکیج ها به وسیله ی جنگو جمع آوری و تدوین شده اند، به طوری که نیازی به دوباره نویسی برخی از اصول در برنامه ها نمی باشد.</p>
+<p>سایت مدیر اولین بخش از django.contrib می باشد که در این کتاب پوشش داده شده است که از نظر فنی، django.contrib.admin نامیده می شود. از خصوصیات دیگر قابل استفاده درون django.contrib می توان سیستم حق دسترسی (django.contrib.auth)، سیستم پشتیبانی از session ها (django.contrib.sessions) و حتی یک سیستم برای نقطه نظرات کاربر (django.contrib.comments)را نام برد. شما خصوصیات مختلف django.contrib را به صورت فردی حرفه ای در جنگو فرا خواهید گرفت، زمان زیادی را در <a href="http://oruji.github.io/amoozesh.org/django/package/contrib/" class="content" title="پکیج django.contrib">پکیج django.contrib</a> برای بحث در مورد این خصوصیات خواهیم گذاشت.</p>
+<h3>فعال کردن رابط مدیر</h3>
+<p>سایت مدیر جنگو به صورت کلی اختیاری می باشد، زیرا بعضی از سایت ها نیاز به این عملکرد دارند. این بدان معناست که نیاز خواهید داشت جند قدمی را برای فعال کردن آن در پروژه ی خود بردارید.</p>
+<p>ابتدا، چند تغییر در فایل تنظیمات انجام دهید:</p>
+<ol>
+<li>django.contrib.admin را به تنظیم INSTALLED_APPS اضافه کنید. (ترتیب قرارگیری محتویات INSTALLED_APPS اهمیت ندارد، ولی در این کتاب برای خوانایی بیشتر آن ها را بر اساس حروف الفبا مرتب کرده ایم.)</li>
+<li>اطمینان حاصل کنید که INSTALLED_APPS حاوی <bdo class="leftInline">'django.contrib.auth'</bdo>، <bdo class="leftInline">'django.contrib.contenttypes'</bdo> و <bdo class="leftInline">'django.contrib.sessions'</bdo> می باشد. سایت مدیر جنگو به این سه پکیج نیاز دارد. (در صورتیکه همزمان با تمرینات کتاب یعنی پروژه ی mysite پیش می روید، توجه داشته باشید که در <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a> این سه پکیج را کامنت کردیم. همین حالا آن ها را از حالت کامنت خارج کنید.)</li>
+<li>1. اطمینان حاصل کنید که MIDDLEWARE_CLASSES حاوی <bdo class="leftInline">'django.middleware.common.CommonMiddleware'</bdo>، <bdo class="leftInline">'django.contrib.sessions.middleware.SessionMiddleware'</bdo> و <bdo class="leftInline">'django.contrib.auth.middleware.AuthenticationMiddleware'</bdo> می باشد (دوباره، در صورتیکه همزمان با تمرینات کتاب پیش می روید، توجه داشته باشید که در <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a> ایتم های فوق کامنت شده اند، پس آن ها را از حالت کامنت خارج کنید.)</li>
+</ol>
+<p>در قدم دوم، دستور python manage.py syncdb را اجرا کنید. دستور فوق جداول پایگاه داده اضافه که رابط مدیر از آنها استفاده می کند را نصب می کند. در اولین باری که دستور sycdb را به 'django.contrib.auth' درون INSTALLED_APPS اجرا می کنید، سوالی مبنی درباره ی ساختن یک superuser از شما پرسیده می شود. در صورتیکه آن را انجام ندهید، نیاز است که دستور python manage.py createsuperuser را به طور جداگانه برای ساختن یک حساب کاربری مدیر اجرا کنید، در غیر اینصورت قادر نخواهید بود به سایت مدیر وارد شوید. (نکته ی مهم: دستور python manage.py createsuperuser تنها زمانی در دسترس خواهد بود که 'django.contrib.auth' درون تنظیم INSTALLED_APPS موجود باشد.)</p>
+<p>قدم سوم، اضافه کردن سایت مدیر به URLconf (درون فایل urls.py) می باشد. به صورت پیشفرض، urls.py تولید شده توسط django-admin.py startproject حاوی کدهای کامنت شده ای برای مدیر جنگو می باشد و تمام کاری که شما باید انجام دهید خارج کردن آن کدها از حالت کامنت می باشد. چیزی شبیه به کد زیر لازم است:</p>
+<code class="language-python"># Include these import statements...
+from django.contrib import admin
+admin.autodiscover()
+
+# And include this URLpattern...
+urlpatterns = patterns('',
+    # ...
+    (r'^admin/', include(admin.site.urls)),
+    # ...
+)</code><p>با اضافه کردن سایت مدیر به URLconf، حالا می توان سایت مدیر جنگو را در عمل مشاهده کرد. تنها کافیست سرور جنگو را اجرا کرده (python manage.py runserver) و نشانی <bdo class="leftInline">http://127.0.0.1:8000/admin/</bdo> را درون مرورگر جستجو کنید.</p>
+<h3>استفاده از سایت مدیر</h3>
+<p>سایت مدیر برای استفاده ی کاربران غیر فنی طراحی شده است، و به همین دلیل می بایست بسیار واضح باشد. با این وجود، ویژگی های اولیه آن را به صورت سریع به شما نشان خواهیم کرد.</p>
+<p>اولین چیزی که شما مشاهده خواهید کرد صفحه ی ورود مانند شکل 1-6 می باشد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 1-6</h4>
+<img alt="شکل 1-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-1.jpg" width="100%">
+</ul>
+<p>با نام کاربری و رمز عبوری که در زمان اضافه کردن superuser ساخته اید وارد شوید. در صورتیکه قادر به وارد شدن نیستید، اطمینان حاصل کنید که واقعا یک superuser ساخته اید (سعی کنید دستور python manage.py createsuperuser را اجرا کنید.)</p>
+<p>هنگامی که وارد شدید، اولین چیزی که مشاهده خواهید کرد صفحه ی خانگی مدیر می باشد. این صفحه تمامی نوع داده هایی که می توان ویرایش کرد را درون سایت مدیر لیست می کند. در حال حاضر، به دلیل آنکه هنوز هیچ مدل فعالی وجود ندارد، لیست کمی خالی می باشد: تنها Groups و Users وجود دارند که مدل های پیشفرض قابل ویرایش مدیر می باشند.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 2-6</h4>
+<img alt="شکل 2-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-2.jpg" width="100%">
+</ul>
+<p>هر نوعی از داده در سایت مدیر جنگو دارای یک change list و یک edit form می باشد. change list ها تمام شیء های در دسترس درون پایگاه داده را نشان می دهند، و edit form ها، اجازه ی اضافه کردن تغییر دادن و یا حذف رکورد های مشخص در پایگاه داده را به شما می دهند.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="یادداشت" class="yaddasht
+"><h4>زبان های دیگر</h4>
+<p>در صورتیکه زبان اصلی شما زبان انگلیسی نمی باشد و مرورگر شما برای یک زبان دیگری به جز زبان انگلیسی تنظیم شده است، می توانید با یک تغییر سریع همه چیز را درون سایت مدیر جنگو به صورت ترجمه شده به زبان مورد دلخواه مشاهده کنید. تنها کافیست 'django.middleware.locale.localeMiddleware' را به تنظیم MIDDLEWARE_CLASSES اضافه کنید، اطمینان حاصل کنید که آن را بعد از 'django.contrib.sessions.middleware.SessionMiddleware' قرار دهید.</p>
+<p>هنگامی که تنظیم فوق انجام داده شد، صفحه ی اصلی مدیر را دوباره بارگذاری کنید. در صورتیکه یک ترجمه برای زبان شما در دسترس باشد، بخش های مختلف از رابط مانند لینک های "Change password" و "Log out" در بالای صفحه و لینک های "Groups" و "Users" در وسط صفحه به زبان مورد نظر ترجمه خواهند شد. جنگو با ترجمه ی ده ها زبان ارائه شده است.</p>
+<p>برای خصوصیات بیشتر بین المللی جنگو، به <a href="http://oruji.github.io/amoozesh.org/django/internationalize/" class="content" title="بین المللی سازی">آموزش بین المللی سازی جنگو</a> مراجعه کنید.</p>
+</ul>
+<p>برای بار گذاری صفحه ی change list برای کاربران بر روی لینک "Change" در ردیف "Users" کلیک کنید.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 3-6</h4>
+<img alt="شکل 3-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-3.jpg" width="100%">
+</ul>
+<p>صفحه ی فوق تمام کاربران موجود در پایگاه داده را نمایش می دهد، می توانید این را به صورت پرس وجو پایگاه داده یک نسخه ی زیبا شده از عبارت SELECT * FROM auth_user تصور کنید. در صورتیکه همراه با مثال های کتاب حرکت می کنید، تنها یک کاربر را مشاهده خواهید کرد، ولی هنگامی که کاربران بیشتری وجود داشته باشد، امکانات مفیدی از قبیل فیلتر کردن، چیدن و جستجوی بین آیتم ها را مشاهده خواهید کرد. امکان فیلتر کردن در سمت راست صفحه موجود می باشد، چیدمان از طریق کلیک کردن روی یک header ستون عملی می شود، و جعبه ی جستجو (search box) در قسمت بالا صفحه می باشد اجازه می دهد بر اساس نام کاربری به جستجو بپردازید.</p>
+<p>بر روی نام کاربری که ساخته اید کلیک کنید، فرم ویرایش برای کاربر را مشاهده خواهید کرد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 4-6</h4>
+<img alt="شکل 4-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-4.jpg" width="100%">
+</ul>
+<p>صفحه ی فوق این اجازه را می دهد که خصوصیات کاربر را تغییر دهید، مانند نام و نام خانوادگی و حق دسترسی های گوناگون. (توجه داشته باشید که برای تغییر رمز عبور کاربر به جای ویرایش کد hash، می بایست بر روی "change password form" در زیر فیلد رمز عبور کلیک کرد.) نکته ی دیگر قابل توجه اینکه فیلدهای مختلف به شکل های مختلف پیاده سازی شده اند؛ به عنوان مثال، فیلد زمان و تاریخ دارای کنترل تقویم، فیلدهای Boolean دارای checkbox ها و فیلدهای حروف حاوی فیلد ساده ی مربوط به متن می باشند.</p>
+<p>می توان برای حذف کردن یک رکورد بر روی دکمه ی delete در قسمت پایین سمت چپ از فرم ویرایش کلیک کرد. بسته به شیء هایی که قصد حذف کردن آن را دارید، صفحه ی مربوط به تایید برای حذف رکورد نمایان خواهد شد، به عنوان مثال، در صورتیکه یک ناشر را حذف کنید، هر کتاب مربوط به ناشر نیز حذف خواهد شد!</p>
+<p>همچنین می توان با کلیک کردن بر روی "Add" درون ستون مناسب از صفحه ی خانگی مدیر یک رکورد را اضافه کرد. بعد از کلیک صفحه ای با فیلدهای خصوصیات خالی نمایان می شود که آماده برای پر شدن است.</p>
+<p>همچنین متوجه این موضوع خواهید شد که رابط مدیر همچنین معتبر بودن ورودی ها را برای شما کنترل می کند. یکی از فیلدهایی را که باید حتما پر شود را خالی بگذارید و یا یک مقدار نا معتبر درون یکی از فیلدها قرار دهید، سپس شما خطاهایی را هنگام ذخیره مانند شکل 5-6 مشاهده خواهید نمود.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" class="yaddasht" alt="تصویر"><h4>شکل 5-6</h4>
+<img alt="شکل 5-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-5.jpg" width="100%">
+</ul>
+<p>هنگامی که یک شیء موجود را ویرایش می کنید، متوجه یک لینک History در قسمت راست بالای صفحه خواهید شد. هر تغییری درون رابط مدیر اتفاق بیافتد در اینجا ثبت خواهد شد، و می توان با کیک کردن بر روی لینک History آن تغییر را بررسی کرد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 6-6</h4>
+<img alt="شکل 6-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-6.jpg" width="100%">
+</ul>
+<h3>اضافه کردن مدل ها به سایت مدیر</h3>
+<p>یک بخش بسیار مهمی هنوز انجام نشده است. اجازه دهید مدل های خود را به سایت مدیر اضافه کنیم، بنابراین می توان شیء های درون جداول پایگاه داده ی مورد نظر را با این رابط عالی حذف، اضافه و تغییر داد. در این فصل نیز مثال books را دنبال خواهیم کرد که در آن سه مدل به نام های Publisher، َAuthor و book تعریف شده است.</p>
+<p>درون دایرکتوری <bdo class="leftInline">books (mysite/books)</bdo>، یک فایل با نام admin.py ایجاد کرده و کد زیر درون آن وارد کنید:</p>
+<code class="language-python">from django.contrib import admin
+from mysite.books.models import Publisher, Author, Book
+
+admin.site.register(Publisher)
+admin.site.register(Author)
+admin.site.register(Book)</code><p>کد فوق برای هر یک از مدل ها یک رابط به مدیر جنگو اضافه می کند.</p>
+<p>هنگامی که این کار انجام داده شد، به صفحه ی خانگی مدیر درون مرورگر خود رفته (<bdo class="leftInline">http://127.0.0.1/admin/</bdo>)، شما باید قسمت "Books" را با لینک های Authors، Books و Publishers مشاهده کنید. (برای موثر واقع شدن تغییرات می بایست سرور را متوقف کرده و دوباره اجرا runserver کنید)</p>
+<p>شما هم اکنون برای هر از این سه مدل یک رابط مدیر در حال کار خواهید داشت. بسیار ساده است!</p>
+<p>می توانید زمانی را برای اضافه کردن و تغییر رکوردها اختصاص دهید، تا داده هایی را درون پایگاه داده اضافه کنید. در صورتیکه مثال های <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a> (ساختن شیء های Publisher) را دنبال کرده و آن ها را حذف نکرده باشید، آن رکوردهای ساخته شده در <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a> را در صفحه ی لیست تغییرات publisher مشاهده خواهید کرد.</p>
+<p>یکی از خصوصیات با ارزشی که می توان در اینجا ذکر کرد، کنترل سایت مدیر برای کلیدهای خارجی و رابطه های چند به چند می باشد، هر دوی این حالت ها در مدل Book وجود دارند، برای یادآوری کد زیر مدل Book می باشد: </p>
+<code class="language-python">class Book(models.Model):
+    title = models.CharField(max_length=100)
+    authors = models.ManyToManyField(Author)
+    publisher = models.ForeignKey(Publisher)
+    publication_date = models.DateField()
+
+    def __unicode__(self):
+        return self.title</code><p>درون صفحه ی "Add book" مدیر <bdo class="leftInline">(http://127.0.0.1:8000/admin/books/book/add/)</bdo>، Publisher (یک ForeignKey) با یک جعبه ی انتخاب (select box) نمایش داده شده است، و فیلد Authors (یک ManyToManyField) با یک جعبه ی چند انتخابی (multiple-select box) نمایش داده شده است. هر دو فیلد فوق دارای یک علامت سبز رنگ جمع در جلوی خود می باشند که برای اضافه کردن رکوردهای مرتبط به آن ها می باشد. برای مثال، در صورتیکه شما بر روی آن علامت سبز رنگ جلوی فیلد "Publisher" کلیک کنید، یک پنجره ی pop-up برای اضافه کردن یک ناشر باز می باشد. بعد از آنکه یک ناشر در پنجره ی باز شده ساخته شود، صفحه ی "Add book" با جدید ترین ناشر ساخته شده به روزرسانی می شود.</p>
+<h3>نحوه ی کار سایت مدیر</h3>
+<p>در پشت صحنه، سایت مدیر چه طور کار می کند؟ نحوه ی کار آن بسیار ساده می باشد.</p>
+<p>هنگامی که جنگو URLconf را هنگام اجرای سرور در urls.py بارگذاری می کند، عبارت <bdo class="leftInline">admin.autodiscover()</bdo> که در درون این برای فعال کردن سایت مدیر قرار داده شده است اجرا می شود. این تابع درون تنظیم INSTALLED_APPS به دنبال فایلی به نام admin.py که درون هر یک از ایتم ها جستجو می کند. در صورتیکه admin.py درون یکی از app های داده شده وجود داشته باشد، کد درون آن فایل اجرا می شود.</p>
+<p>در فایل admin.py درون app مورد نظر یعنی books، فراخوانی هر <bdo class="leftInline">admin.site.register()</bdo> به سادگی مدل داده شده را درون سایت مدیر عضو می کند. سایت مدیر تنها یک رابط ویرایش/تغییر برای مدل های عضو شده را نمایش می دهد.</p>
+<p>همانطور که مشاهده شد، سایت مدیر به صورت خودکار Users و Groups را نمایش می دهد که درون app خود یعنی django.contrib.auth می باشند که این app شامل فایل admin.py خود و Users و Groups درون آن می باشد. app های دیگر django.contrib، مانند django.contrib.redirects، نیز خودشان را درون سایت مدیر اضافه می کنند.</p>
+<p>از این گذشته، سایت مدیر جنگو تنها یک application جنگو با مدل های خود، view ها و URLpattern ها می باشد. با استفاده از URLconf آن را به برنامه ی خود اضافه می کنید، تنها درون view ها خود از آن استفاده می کنید. می توان template ها، view ها و URLpattern های آن را با رفتن به مسیر django.contrib/admin مشاهده و بازرسی کنید ولی تحریک به تغییر چیزی به طور مستقیم در آنجا نشوید چرا که امکانات استفاده ی غیر مستقیم زیادی برای شما وجود دارد. </p>
+<h3>ایجاد فیلدهای اختیاری</h3>
+<p>بعد از آنکه کمی با سایت مدیر آشنا شده و از آن استفاده کردید، ممکن است متوجه محدودیت هایی شده باشید، مانند اینکه هر فیلد باید پر شده باشد، در حالیکه در بسیاری از موارد شما می خواهید پر کردن بعضی از فیلدها اختیاری باشد، به عنوان مثال، می خواهیم فیلد email مدل Author اختیاری باشد یعنی بتوان فیلد را خالی گذاشت. در دنیای واقعی، شما ممکن است هیچ آدرس الکترونیکی نداشته باشید.</p>
+<p>برای تعیین کردن فیلد email اختیاری، مدل Book را ویرایش می کنیم (این مدل درون فایل mysite/books/models.py می باشد.) برای این کار به سادگی blank=True را به مانند مثال زیر به فیلد email اضافه می کنیم:</p>
+<code class="language-python">class Author(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=40)
+    email = models.EmailField(blank=True)</code><p>حرکت فوق به جنگو می گوید که برای آدرس پست الکترونیک نویسندگان می توان مقدار خالی را نیز در نظر گرفت. به صورت پیش فرض، تمام فیلدها blank=False می باشند، بدین معنی که مقدار خالی را نمی توان برای آن ها در نظر گرفت.</p>
+<p> تا حالا، بجز متد <bdo class="leftInline">__unicode__()</bdo>، مدل های ما به صورت جداول پایگاه داده ما بکار می رفتند یعنی مدل ها عبارات پایتونی معادل عبارات CREATE TABE در SQL بودند. با اضافه کردن blank=True، ما شروع به گسترش دادن مدل فراتر از تعریف ساده ی مشابه با جدول پایگاه داده کرده ایم. حال، کلاس مدل در حال تبدیل شدن به یک مجموعه ی غنی از دانش درباره ی آنچه که شیء های Author هستند و می توانند انجام دهند، می باشد. نه تنها فیلد email یک ستون VARCHAR در پایگاه داده می باشد، بلکه همچنین می دانیم که یک فیلد اختیاری در سایت مدیر جنگو نیز می باشد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 7-6</h4>
+<img alt="شکل 7-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-7.jpg" width="100%">
+</ul>
+<p> این حالت بدین معنی می باشد که فیلد مورد نظر اختیاری می باشد. حالا می توان نویسندگان را بدون نیاز به تهیه ی آدرس الکترونیک اضافه کرد؛ در صورتیکه فرم مورد نظر را با فیلد خالی آدرس الکترونیک Submit کنید دیگر هیچ پیام "This field is required" با رنگ قرمز مشاهده نخواهید کرد.</p>
+<p>هنگامی که blank=True اضافه شد، فرم ویرایش "Add author" را دوباره بارگذاری کنید (<bdo class="leftInline">http://127.0.0.1:8000/admin/books/author/add/</bdo>)، متوجه خواهید شد که نام فیلد "Email" دیگر به صورت تو پر و پر رنگ نمی باشد.</p>
+<h4>ایجاد فیلد های از نوع تاریخ و عددی به صورت اختیاری</h4>
+<p>نکته ی مهم در رابطه با blank=True این است که انجام این حرکت بر روی فیلدهای از نوع عددی و تاریخ نیازمند مقداری توضیح و پیش زمینه می باشد.</p>
+<p>SQL برای تعیین مقدار خالی دارای روش خاص خودش می باشد – یک مقدار ویژه به نام NULL. NULL می تواند به معنای ناشناخته، نامعتبر یا ... معنی شود.</p>
+<p>در SQL یک مقدار NULL با یک مقدار رشته ی خالی متفاوت می باشد، درست مثال شیء None در پایتون که با یک رشته ی خالی پایتون ("") متفاوت می باشد. این بدان معنی است که ممکن است یک فیلد حرفی (مانند یک ستون VARCHAR) به طور همزمان هم حاوی مقدار NULL و هم حاوی یک رشته ی خالی باشد.</p>
+<p>این موضوع می تواند موجب ابهام و گیجی نا خواسته شود. "چرا این رکورد دارای مقدار NULL ولی آن رکورد دیگر دارای یک رشته ی خالی است؟ ایا تفاوتی وجود دارد، یا فقط داده به صورت نا سازگار وارد شده است؟" و: "چطور می توان تمام رکوردهایی که دارای مقدار خالی می باشند را بدست آورد – ایا می توان هر دو رکوردهای NULL و رشته ی خالی را جستجو کرد، یا یک از آن ها را با مقدار رشته ی خالی انتخاب کرد؟"</p>
+<p>برای کمک به خلاص شدن از این قبیل ابهامات، جنگو به صورت خودکار عبارت های CREATE TABLE (که در <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a> توضیح داده شده اند) اضافه و برای هر ستون مقدار NOT NULL را در نظر می گیرد. برای مثال، کد زیر عبارت تولید شده برای مدل Author در <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a> می باشد:</p>
+<code class="language-sql">CREATE TABLE "books_author" (
+    "id" serial NOT NULL PRIMARY KEY,
+    "first_name" varchar(30) NOT NULL,
+    "last_name" varchar(40) NOT NULL,
+    "email" varchar(75) NOT NULL
+)
+;</code><p>در اغلب موارد، این حالت پیشفرض برای برنامه مطلوب بوده و شما را از درد سر های تناقض و نا هماهنگی های داده حفظ می کند. و برای بقیه ی قسمت های جنگو به خوبی کار می کند، مانند سایت مدیر جنگو، که در زمان خالی گذاشتن یک فیلد یک رشته ی خالی (نه مقدار NULL) وارد می کند.</p>
+<p>ولی برای نوع ستون هایی که رشته ی خالی را به عنوان مقدار معتبر قبول نمی کنند – ازقبیل تاریخ ها، زمان ها، و اعداد، یک استثناء وجود دارد. در صورتیکه سعی کنید یک رشته ی خالی برای ستون های ذکر شده وارد کنید، بسته به نوع پایگاه داده ی شما احتمالا خطای پایگاه داده رخ خواهد. در این حالت، NULL تنها راه برای تعیین مقدار خالی می باشد. در مدل های جنگو، می توان مقدار NULL را با اضافه کردن null=True به یک فیلد تعیین کرد.</p>
+<p>در صورتیکه بخواهید اجازه دهید مقادیر خالی در فیلد تاریخ (مانند DateField، TimeField، DateTimeField) یا فیلد عددی (مانند IntegerField، DecimalField، FloatField) قرار گیرند نیاز است از null=True و blank=True با هم استفاده کنید.</p>
+<p>اجازه دهید مدل Book را برای اینکه بتوان فیلد publication_date را خالی گذاشت تغییر دهیم:</p>
+<code class="language-python">class Book(models.Model):
+    title = models.CharField(max_length=100)
+    authors = models.ManyToManyField(Author)
+    publisher = models.ForeignKey(Publisher)
+    publication_date = models.DateField(blank=True, null=True)</code><p>اضافه کردن null=True پیچیده تر از اضافه کردن blank=True می باشد، زیرا null=True از نظر معنایی پایگاه داده را تغییر می دهد – در این حالت عبارت CREATE TABLE تغییر می کند بدین شکل که NOT NULL از فیلد publication_date حذف می شود. برای کامل کردن این تغییر، نیاز است پایگاه داده به روز رسانی شود.</p>
+<p>به دلایلی، جنگو تلاشی برای تغییرات خودکار در شمای پایگاه داده نمی کند، بنابراین مسئولیت اجرای یک عبارت ALTER TABLE هر زمان که که تغییری در مدل ایجاد شد، به عهده خودتان می باشد. می توان از manage.py dbshell برای این منظور استفاده کرد. در کد زیر نحوه ی حذف NOT NULL در این مورد خاص را مشاهده می کنید:</p>
+<code class="language-sql">ALTER TABLE books_book ALTER COLUMN publication_date DROP NOT NULL;</code><p>(توجه داشته باشید که کد فوق برای پایگاه داده ی PostgreSQL می باشد.)</p>
+<p>توضیح و بحث عمیق تر در مورد این تغییرات در <a href="http://oruji.github.io/amoozesh.org/django/model/advance/" class="content" title="مدل پیشرفته">آموزش مدل پیشرفته</a> بحث شده است.</p>
+<p>به سایت مدیر بر می گردیم، اکنون فرم ویرایش "Add book" اجازه می دهد تا مقدار خالی را برای publication date قرار دهیم.</p>
+<h3>سفارشی کردن نام فیلدها</h3>
+<p>در فرم های ویرایش سایت مدیر، نام هر فیلد از روی نام مدل فیلد تولید می شود. الگوریتم آن بسیار ساده می باشد: جنگو تنها خط های تیره (_) را با فاصله ها جایگزین کرده و حروف اول را تبدیل به حروف بزرگ می کند، بنابراین، برای مثال، فیلد publication_date مدل Book دارای نام "Publication date" خواهد بود.</p>
+<p>اگر چه نام فیلدها درون مدل به طور زیبایی درون سایت مدیر نیز تغییر می کنند، ولی در برخی موارد ممکن است بخواهید آن نام ها را خودتان تعیین کنید. با استفاده از verbose_name می توان این کار را انجام داد.</p>
+<p>برای مثال، در زیر نحوه ی تغییر نام فیلد Author.email به "e-mail" نشان داده شده است:</p>
+<code class="language-python">class Author(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=40)
+    email = models.EmailField(blank=True, verbose_name='e-mail')</code><p>تغییر فوق را ایجاد کرده و صفحه را دوباره بارگذاری کنید، شما باید فیلد مورد نظر با نام جدید مشاهده کنید.</p>
+<p>توجه داشته باشید، در صورتیکه حرف اول نامی که انتخاب می کند حرف بزرگ نباشد جنگو به طور خودکار آن را تبدیل به حروف بزرگ می کند.</p>
+<p>در پایان، توجه داشته باشید که می توان verbos_name را به صوت یک آرگومان موضعی نیز ارسال کرد، کد زیر برابر با مثال قبلی می باشد:</p>
+<code class="language-python">class Author(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=40)
+    email = models.EmailField('e-mail', blank=True)</code><p>حرکت فوق برای فیلدهای ManyToManyField و ForeignKey کار نخواهد کرد، زیرا در این فیلدها باید اولین آرگومان یک کلاس مدل باشد. در این موارد، می بایست از verbose_name به صورت واضح استفاده کرد.</p>
+<h3>کلاس های ModelAdmin مرسوم</h3>
+<p>نغییراتی که تاکنون اعمال شد – blank=True، null=True و verbose_name – تغییراتی در سطح مدل بوده اند، نه تغییرات در سطح مدیر. خیلی پیش می آید که تغییرات مورد نیاز سایت مدیر در یک بخش از مدل انجام پذیرد و استفاده شوند، هیچ چیز تعیین شده ای برای مدیر وجود ندارد.</p>
+<p>گذشته از این، سایت مدیر جنگو امکانات و اختیارات قدترمندی برای سفارشی کردن نحوه ی کار سایت مدیر برای مدل خاص ارائه می کند. </p>
+<h4>سفارشی کردن لیست های تغییر</h4>
+<p>اجازه دهید از طریق تعیین کردن فیلدها که درون لیست تغییر برای مدل Author قرار دارند وارد مسائل سفارشی سازی مدیر شویم. به طور پیشفرض، لیست تغییر نتیجه ی <bdo class="leftInline">__unicode__()</bdo> برای هر شیء را نمایش می دهد. در <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a>، متد <bdo class="leftInline">__uncode__()</bdo> برای شیء های Author جهت نمایش نام و فامیلی با هم تعریف شد.</p>
+<code class="language-python">class Author(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=40)
+    email = models.EmailField(blank=True, verbose_name='e-mail')
+
+    def __unicode__(self):
+        return u'%s %s' % (self.first_name, self.last_name)</code><p>در نتیجه لیست تغییر برای شیء های Author نام و نام خانوادگی را با هم نمایش می دهد، همانطور که در شکل 8-6 مشاهده می کنید.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 8-6</h4>
+<img alt="شکل 8-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-8.jpg" width="100%">
+</ul>
+<p>می توان این رفتار پیشفرض را با اضافه کردن تعدادی از فیلدها برای تغییر نمایش لیست بهبود بخشید. برای مثال، برای دیدن آدرس الکترونیک هر نویسنده در این لیست، و همچنین اضافه کردن امکان چیدمان بر اساس نام و نام خانوادگی می توان یک کلاس ModelAdmin برای مدل Author تعریف کرد. این کلاس کلید سفارشی سازی مدیر، و یکی از اولیه ترین چیزهایی است که اجازه می دهد لیست فیلدها را جهت نمایش در صفحه ی لیست تغییر تعیین کنید. فایل admin.py را جهت این تغییرات ویرایش کنید:</p>
+<code class="language-python">from django.contrib import admin
+from mysite.books.models import Publisher, Author, Book
+
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email')
+
+admin.site.register(Publisher)
+admin.site.register(Author, AuthorAdmin)
+admin.site.register(Book)</code><p>در زیر مثال فوق، توضیح داده شده است:</p>
+<ul>
+<li>کلاس AuthorAdmin ساخته شده است. کلاس AuthorAdmin که از کلاس پدر خود یعنی django.admin.ModelAdmin ارث بری کرده است پیکربندی های تعیین شده برای مدل مدیر را نگه می دارد. تنها یک پیکربندی – list_display، انجام شده است که نام فیلدهایی را که قرار است درون لیست تغییر نمایش داده شوند، درون یک تاپل قرار گرفته اند. البته نام فیلدها باید در مدل وجود داشته باشند.</li>
+<li>فراخوانی admin.site.register با اضافه کردن AuthorAdmin بعد از Author تغییر کرده است که می توان آنرا بدین صورت خواند: "مدل Author با امکانات AuthorAdmin عضو شده است."<p>تابع <bdo class="leftInline">admin.site.register()</bdo> کلاس فرزند ModelAdmin را به صورت اختیاری به عنوان دومین آرگومان دریافت می کند. در صورتیکه دومین آرگومان را تعیین نکنید (همانطور در مورد Publisher و Book صدق می کند)، جنگو از اختیار پیشفرض مدیر برای آن مدل استفاده می کند.</p>
+</li>
+</ul>
+<p>با تغییرات فوق، لیست تغییر نویسنده را دوباره بارگذاری کنید، شما حالا در این صفحه سه ستون را مشاهده خواهید کرد – نام، نام خانوادگی و آدرس الکترونیک. علاوه بر آن، هر کدام از این ستون ها قابلیت چیدمان بر اساس سرتیتر ستون را با کلیک کردن رو آن خواهند داشت.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 9-6</h4>
+<img alt="شکل 9-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-9.jpg" width="100%">
+</ul>
+<p>در قدم بعدی اجازه دهید یک نوار جستجوی ساده اضافه کنیم. مانند زیر search_fields را به AuthorAdmin اضافه کنید:</p>
+<code class="language-python">class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email')
+    search_fields = ('first_name', 'last_name')</code><p>صفحه را درون مرورگر دوباره بارگذاری کنید، شما باید یک نوار جستجو را در قسمت بالای صفحه مشاهده کنید (شکل 10-6). در کد فوق تنها به صفحه ی تغییر گفته شده است که یک نوار جستجو برای جستجو بر حسب فیلدهای نام و نام خانوادگی ایجاد کند. همانطور که ممکن است کاربر انتظار داشته باشد، جستجو به حروف کوچک و بزرگ حساس نمی باشد و درون هر دو فیلد صورت می گیرد، بنابراین برای رشته ی "bar" هم نویسنده ای که نام وی Barney بوده را خواهد یافت و هم نویسنده ای که نام خانوادگی وی Hobarson می باشد را خواهد یافت.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 10-6</h4>
+<img alt="شکل 10-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-10.jpg" width="100%">
+</ul>
+<p>در قدم بعدی، اجازه دهید تعدادی فیلتر برای صفحه ی لیست تغییر مدل Book اضافه کنیم:</p>
+<code class="language-python">from django.contrib import admin
+from mysite.books.models import Publisher, Author, Book
+
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email')
+    search_fields = ('first_name', 'last_name')
+
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'publisher', 'publication_date')
+    list_filter = ('publication_date',)
+
+admin.site.register(Publisher)
+admin.site.register(Author, AuthorAdmin)
+admin.site.register(Book, BookAdmin)</code><p>در کد فوق با آیتم های زیادی سر و کار داریم، در کد فوق یک کلاس BookAdmin از نوع ModelAdmin به طور جداگانه ساخته شده است. ابتدا، یک list_display تنها برای ایجاد لیست زیباتر تعریف شده است. سپس، از list_filter استفاده شده است، که فیلدهایی برای استفاده را درون تاپل قرار می دهد و در سمت راست صفحه ی تغییر لیست نمایش داده می شود. برای فیلدهای تاریخ، جنگو میانبرهایی را برای فیلتر لیست می کند <bdo class="leftInline">"Today"</bdo>، <bdo class="leftInline">"Past 7 days"</bdo>، <bdo class="leftInline">"This month"</bdo>و "This year". </p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 11-6</h4>
+<img alt="شکل 11-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-11.jpg" width="100%">
+</ul>
+<p>list_filter فقط محدود به DateField نمی باشد بلکه با داده های نوع دیگر نیز کار می کند. (سعی کنید با فیلدهای BooleanField و foreignKey هم کار کنید) فیلترها تا زمانیکه حداقل دو مقدار برای انتخاب فرم وجود داشته باشد نمایش داده می شوند.</p>
+<p>روش دیگربرای ارائه ی فیلترهای تاریخ استفاده از date_hierarcy مانند کد زیر می باشد:</p>
+<code class="language-python">class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'publisher', 'publication_date')
+    list_filter = ('publication_date',)
+    date_hierarchy = 'publication_date'</code><p>با اضافه کرد date_hierarchy صفحه ی لیست تغییر یک نوار تاریخ در بالای لیست ایجاد می شود، که در شکل 12-6 مشاهده می کنید، که با یک لیست از سال های در دسترس شروع می کند سپس می توان برای ماه حتی نمایان شدن روز بر روی آن کلیک کرد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 12-6</h4>
+<img alt="شکل 12-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-12.jpg" width="100%">
+</ul>
+<p>توجه داشته باشید که date_hierarchy یک رشته دریافت می کند، نه یک تاپل، زیرا تنها یک فیلد تاریخ می تواند در آن استفاده شود.</p>
+<p>در پایان، اجازه دهید ترتیب چیدمان پیشفرض لیست را به طوری تغییر دهیم که کتاب ها در صفحه ی لیست تغییر همیشه بر اساس تاریخ به صورت نزولی قرار بگیرند. به طور پیشفرض، لیست تغییر شیء ها را بر اساس کلاس Meta مربوط به مدل مودر نظر چیده می شوند (که در <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a> به آن اشاره شده است.) – ولی شما این مقدار مرتب کردن را تعیین نکرده اید، پس ترتیب تعریف نشده است.</p>
+<code class="language-python">class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'publisher', 'publication_date')
+    list_filter = ('publication_date',)
+    date_hierarchy = 'publication_date'
+    ordering = ('-publication_date',)</code><p>این اختیار چیدمان مدیر دقیقا به صورت چیدمان در کلاس Meta کار می کند، با این تفاوت که آن تنها از اولین فیلد نام در لیست استفاده می کند. تنها یک لیست یا تاپل از نام فیلدها به آن ارسال کنید و یک علامت (-) در ابتدای فیلد برای چیدمان نزولی آن قرار دهید.</p>
+<p>صفحه ی لیست تغییر را برای مشاهده ی حرکت فوق دوباره بارگذاری کنید. توجه داشته باشید که تیتر "Publication date" حالا شامل یک فلش کوچک می باشد که به نحوه ی چیدمان اشاره می کند.</p>
+<p>اختیارات اصلی لیست تغییر در اینجا توضیح داده شد. با استفاده از این اختیارات می توانید با قدرت تر کار کنید، با استفاده از تنها چند خط می توانید از یک رابط آماده و پر قدرت استفاده کنید.</p>
+<h4>سفارشی کردن فرم های ویرایش</h4>
+<p>همانطور که لیست تغییر می تواند سفارشی شده باشد، فرم های ویرایش نیز می توانند با روش های مختلف سفارشی شوند.</p>
+<p>ابتدا اجازه دهید روش چیده شدن فیلدها را سفارشی کنیم. به طور پیشفرض، ترتیب فیلدها در یک فرم ویرایش مطابق با ترتیبی است که آنها در مدل تعریف شده اند. می توان با استفاده از اختیار fields در کلاس فرزند ModelAdmin آن را تغییر داد:</p>
+<code class="language-python">class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'publisher', 'publication_date')
+    list_filter = ('publication_date',)
+    date_hierarchy = 'publication_date'
+    ordering = ('-publication_date',)
+    fields = ('title', 'authors', 'publisher', 'publication_date')</code><p>بعد از تغییر فوق، فرم ویرایش برای کتاب ها از ترتیب داده شده برای فیلدها استفاده خواهد کرد. این که نویسنده بعد از عنوان کتاب قرار بگیرد کمی طبیعی تر می باشد. البته، ترتیب فیلد باید بسته به به اطلاعات ورودی جریان کار باشد. هر فرم متفاوت است.</p>
+<p>نکته ی دیگر مفید در اختیار fields این است که  اجازه می دهد بعضی فیلد ها را از قرار داشتن در فرم ویرایش کلا محروم کرد. تنها کافیست، فیلدهایی که نمی خواهید در فرم باشند را درون تاپل قرار ندهید. ممکن است از این امکان هنگامی که کاربران مدیر تنها برای ویرایش بعضی از بخش ها مورد اعتماد هستند استفاده کنید. برای مثال، در پایگاده داده ی کتاب ما، فیلد publication_date از حالت قابل ویرایش بودن خارج و مخفی شده است:</p>
+<code class="language-python">class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'publisher', 'publication_date')
+    list_filter = ('publication_date',)
+    date_hierarchy = 'publication_date'
+    ordering = ('-publication_date',)
+    fields = ('title', 'authors', 'publisher')</code><p>نتیجتا، فرم ویرایش برای کتاب ها هیچ روشی برای تعیین publication date ارائه نمی کند. این حرکت می تواند در صورتیکه یک ویرایشگر ترجیح می دهد نویسندگانش تاریخ را عقب نزنند مفید باشد.</p>
+<p>هنگامی که یک کاربر از این فرم برای اضافه کردن یک کتاب جدید استفاده می کند، جنگو به آسانی مقدار publication_date را None در نظر می گیرد – بنابراین اطمینان حاصل کنید که فیلد مورد نظر دارای null=True می باشد.</p>
+<p>استفاده ی عمومی دیگر فرم ویرایش سفارشی برای کار با فیلدهای چند به چند می باشد. همانطور که در فرم ویرایش برای کتاب ها مشاهده کردید، سایت مدیر هر ManyToManyField را به صورت یک جعبه ی چند انتخابه نمایش می دهد، که منطقی ترین راه برای ورودی HTML برای استفاده می باشد – ولی استفاده از جعبه های چند انتخابه می تواند کمی سخت باشد. در صورتیکه که می خواهید چند ایتم را انتخاب کنید، باید برای انجام چنین کاری کلید control و یا در Mac کلید command را نگه پایین نگه داشته و آن ها را انتخاب کنید. سایت مدیر برای این مشکل یک توضیحی را در زیر این فیلد قرار داده است، ولی هنوز هم دارای مشکلاتی می باشد مخصوصا زمانی که فیلد شما حاوی صدها انتخاب باشد. </p>
+<p>راه حل سایت مدیر filter_horizontal می باشد. آنرا به BookAdmin اضافه کرده و نتیجه را مشاهده کنید:</p>
+<code class="language-python">class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'publisher', 'publication_date')
+    list_filter = ('publication_date',)
+    date_hierarchy = 'publication_date'
+    ordering = ('-publication_date',)
+    filter_horizontal = ('authors',)</code><p>فرم ویرایش برای کتاب ها را دوباره بارگذاری کنید، بخش "Authors" حالا از یک رابط جاوا اسکریپت کاراتر استفاده می کند که می توان به راحتی درون انتخاب ها جستجو کردن و هر آنچه را که درون "Available authors" انتخاب می کنید را به درون "Chosen authors" و بر عکس ارسال می کند.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 13-6</h4>
+<img alt="شکل 13-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-13.jpg" width="100%">
+</ul>
+<p>اکیدا توصیه می شود که برای فیلدهای ManyToManyField که بیشتر از 10 ایتم دارند از filter_horizontal استفاده کنید. روش فوق بسیار آسانتر از استفاده از جعبه ی چند انتخابه می باشد. توجه داشته باشید که همچنین می توان برای چندین فیلد نیز از filter_horizontal استفاده کرد – تنها کافیست نام هر کدام را درون تاپل قرار دهید.</p>
+<p>کلاس های ModelAdmin همچنین از filter_vertical که تنها در فیلدهای ManyToManyField و نه ForeignKey کار می کند نیز پشتیبانی می کنند، به طور پیشفرض، سایت مدیر برای فیلدهای ForeignKey به سادگی از &lt;select&gt; استفاده می کند، ولی همانطور که برای ManyToManyField نیز از &lt;select&gt; استفاده می شود، ممکن است شما مایل نباشید برای نمایش تمام شیء ها به صورت منوی باز شونده در پایین بار اضافی ای را متحمل شوید. برای مثال در صورتیکه پایگاه داده ی کتاب حاوی صدها ناشر شده باشد، فرم "Add book" مدتی برای بارگذاری زمان خواهد برد، زیرا باید تمام ناشران را برای نمایش در &lt;select&gt; بارگذاری کند.</p>
+<p>برای حل این مشکل می بایست از raw_id_fields استفاده کرد. نام فیلد ForeignKey را درون این تاپل قرار دهید، فیلدهای مذکور به جای &lt;select&gt; به صورت یک متن ساده نمایش داده می شوند (<bdo class="leftInline">&lt;input type="text"</bdo>) </p>
+<code class="language-python">class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'publisher', 'publication_date')
+    list_filter = ('publication_date',)
+    date_hierarchy = 'publication_date'
+    ordering = ('-publication_date',)
+    filter_horizontal = ('authors',)
+    raw_id_fields = ('publisher',)</code><ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/pic.svg" alt="تصویر" class="yaddasht
+"><h4>شکل 14-6</h4>
+<img alt="شکل 14-6" src="http://oruji.github.io/amoozesh.org/static/img/django/6-14.jpg" width="100%">
+</ul>
+<p>درون جعبه ی ورودی چه چیزی وارد می کنید؟ ID مربوط به پایگاه داده ی ناشر. نمی توان به طور عادی ID هر شخص را به خاطر سپرد، به همین دلیل یک شکل ذره بین نیز در شکل فوق مشاهده می کنید که می توان با کلیک بر روی آن توسط یک پنجره ی pop-up ناشران را که می خواهید اضافه کنید.</p>
+<h3>کاربران، گروه ها و حق دسترسی ها</h3>
+<p>بدلیل اینکه با یک superuser وارد می شویم، می توان برای ساختن، ویرایش و حذف کردن هر شیء اقدام کرد. به طور طبیعی، محیط های مختلف نیازمند حق دسترسی های  متفاوتی می باشد – بدین صورت نباید باشد که هر شخصی بتواند superuser باشد. سایت مدیر جنگو یک سیستم حق دسترسی را بکاربرده است که می توان برای دادن دسترسی به کاربران خاص برای بخش هایی ار رابط که مورد نیاز است استفاده کرد.</p>
+<p>همانطور که در اوایل فصل مشاهده کردیم می توان کاربران و حق دسترسی ها را از طریق رابط مدیر همانند دیگر شیء ها ویرایش کرد. شیء های کاربر دارای فیلد های استاندارد نام کاربری، رمز عبور، آدرس پست الکترونیک و نام واقعی به همراه یک مجموعه از فیلد ها که اختیارات کاربر را در درون رابط مدیر تعیین می کند، می باشد. در ابتدا، سه گزینه ی boolean وجود دارد:</p>
+<ul>
+<li>گزینه ی "active" کنترل می کند که ایا کاربر فعال است یا خیر. در صورتیکه این گزینه تیک نخورده باشد و کاربر سعی کند وارد شود، به وی اجازه ی ورود داده نمی شود حتی اگر رمز عبور وی معتبر باشد.</li>
+<li>گزینه ی "staff" کنترل می کند که ایا کاربر اجازه ی ورود به رابط مدیر را دارد یا خیر (مانند اینکه ایا کاربر مورد نظر به عنوان یکی از کارمندان شرکت در نظر گرفته شده است یا خیر). </li>
+<li>گزینه ی "superuser" به کاربر دسترسی کامل را برای اضافه، ساختن و حذف کردن هر ایتم در رابط مدیر را می دهد. در صورتیکه یک کاربر این گزینه را داشته باشد، در آن صورت تمام قوانین دسترسی برای آن کاربر نقض خواهد شد.</li>
+</ul>
+<p>کاربران مدیر "Normal"، کاربر superuser نیستند بلکه دارای دسترسی مدیر از طریق دسترسی های اختصاص داده شده به آنها می باشند که می تواند شامل محدودیت های دسترسی باشد. هر شیء قابل ویرایش از طریق رابط مدیر (مانند کتاب ها، نویسندگان، ناشران) دارای سه حق دسترسی می باشد: حق دسترسی ساخت، حق دسترسی ویرایش و حق دسترسی حذف. اختصاص دادن حق دسترسی ها به یک کاربر، محدوده اختیارات آن کاربر را برای ایجاد، حذف و یا اعمال تغییرات تعیین می کند.</p>
+<p>زمانیکه یک کاربر می سازید، کاربر ساخته شده هیچ حق دسترسی ای ندارد، و برای دادن حق دسترسی های خاص حاضر می باشد. برای مثال، شما می توانید حق دسترسی ای برای تغیییر ناشران به آن بدهید، ولی حق حذف کردن ناشران را به کاربر ندهید. توجه داشته باشید که این حق دسترسی ها برای هر مدل تعریف شده می باشند و نه برای هر شیء، بنابراین شما می توانید اینطور بگویید که <bdo class="leftInline">"john</bdo> می تواند روی هر کتاب تغییر ایجاد کند"، ولی نمی توان گفت <bdo class="leftInline">"john</bdo> می تواند بر روی هر کتابی که با Apress منتشر شده است تغییرات ایجاد کند." قابلیت دوم، حق دسترسی های هر شیء می باشد که کمی پیچیده تر بوده و خارج از حوصله ی این کتاب می باشد ولی در مستندات جنگو درباره ی آن صحبت شده است.</p>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="یادداشت" class="yaddasht
+"><h4>نکته</h4>
+<p>دسترسی به ویرایش کاربران و حق دسترسی ها نیز از طریق سیستم حق دسترسی کنترل شده است. در صورتیکه به شخصی حق دسترسی برای ویرایش کاربران را بدهید، آن شخص قادر به ویرایش حق دسترسی های خود می باشد که این ممکن است آن چیزی نباشد که شما می خواهید! دادن حق دسترسی کاربر برای ویرایش کاربران اساسا تغییر کاربر به superuser می باشد.</p>
+<p>همچنین می توان کاربران را به گروه ها اختصاص داد. گروه مجموع ای از حق دسترسی هایی می باشد که برای تمام اعضای آن گروه بکار برده می شود. گروه ها برای دادن حق دسترسی های یکسان به زیرمجموعه ای از کاربران مفید می باشد.</p>
+<h3>چه زمانی و به چه دلیل از رابط مدیر استفاده می شود و چه زمانی استفاده نمی شود</h3>
+<p>بعد از آشنایی و کار در این فصل، شما باید یک ایده ی خوب در مورد نحوه ی استفاده از سایت مدیر جنگو داشته باشید. ولی می خواهیم در اینجا چند موضوع را باز کنید و آن هم این است که چرا و کی باید از سایت مدیر جنگو استفاده کرد و چه زمانی نباید از آن استفاده کرد.</p>
+<p>سایت مدیر جنگو زمانی بسیار پر ارزش می شود که کاربران غیر فنی به وارد کردن داده نیاز داشته باشند، در روزنامه جایی که جنگو اولین توسعه را در آنجا پیدا کرد یک گزارش ویژه در مورد کیفیت آب شهری که چیزی شبیه به مراحل زیر بود، ارائه شده بود:</p>
+<ul>
+<li>گزارشگر مسئولیت داشت برای پروژه با یکی از توسعه دهندگان ملاقات کند و داده ی در دسترس را توضیح دهد.</li>
+<li>توسعه دهنده مدل های جنگو را برای متناسب بودن با آن داده ها طراحی کرده سپس سایت مدیر را برای گزارشگر باز می کرد.</li>
+<li>گزارشگر سایت مدیر را بررسی کرده و کمبود ها و فیلدهای غیر اصلی را به آن اشاره می کرد، توسعه دهنده مکررا مدل ها را تغییر می داد.</li>
+<li>هنگامی که مدل ها مورد توافق قرار گرفت، گزارشگر شروع به وارد کردن داده با استفاده از سایت مدیر می کرد. هم زمان، برنامه نویس می تواند روی توسعه ی عمومی قسمت های views و template ها کار کند (قسمت جالب کار).</li>
+</ul>
+<p>ورای وظایف واضح برای وارد کردن داده، سایت مدیر در موارد دیگر که در زیر آمده است نیز مفید می باشد:</p>
+<ul>
+<li>بررسی کردن داده ی مدل ها: هنگامی که تعدادی مدل تعریف می کنید، فراخوانی آن ها در رابط مدیر و وارد کردن برخی داده های ساختگی می تواند کاملا مفید باشد.  در برخی موارد، می تواند باعث آشکار شدن اشتباهات data-modeling و یا مشکلات دیگر با مدل های شما شود.</li>
+<li>مدیریت داده ی بدست آمده: برای برنامه هایی که بر روی آمدن داده  از منابع بیرونی تکیه دارند، سایت مدیر روشی ساده برای بازرسی یا ویرایش این داده ها به شما می دهد. ممکن است آن را کم قدرت تصور کنید، ولی بسیار مناسب تر از امکان خط فرمان پایگاه داده ی شما می باشد.</li>
+<li>مدیریت داده ی app ها به صورت سریع: می توان برای ساخت مدیریت داده ی بسیار سبک app از سایت مدیر استفاده کرد. در صورتیکه که تنها می خواهید برای نیازهای خود چیزی بسازید، نه برای مصارف عمومی، سایت مدیر می تواند راه مناسبی باشد. </li>
+</ul>
+<p>یک نکته ی پایانی اینکه می خواهیم واضح باشد: سایت مدیر برای همه وقت و همه چیز نیست. سایت مدیر برای یک رابط عمومی بودن در نظر گرفته نشده است، همچنین برای چیدمان و جستجوی پیچیده ی داده ها نیز در نظر گرفته نشده است. همانطور پیش تر در این فصل گفته شد، سایت مدیر برای مدیران مورد اعتماد سایت می باشد. </p>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش جنگو</div>
+<a href="http://oruji.github.io/amoozesh.org/django/introduction/" class="anav" title="مقدمه">مقدمه</a><a href="http://oruji.github.io/amoozesh.org/django/start/" class="anav" title="شروع کار">شروع کار</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/" class="anav" title="view ها و URLconf ها">view ها و URLconf ها</a><a href="http://oruji.github.io/amoozesh.org/django/template/" class="anav" title="Template ها">Template ها</a><a href="http://oruji.github.io/amoozesh.org/django/model/" class="anav" title="مدل ها">مدل ها</a><div  class="divnav" title="سایت مدیر">سایت مدیر</div><a href="http://oruji.github.io/amoozesh.org/django/form/" class="anav" title="فرم ها">فرم ها</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/advance/" class="anav" title="View ها و URLconf های پیشرفته">View ها و URLconf های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/template/advance/" class="anav" title="Template های پیشرفته">Template های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/model/advance/" class="anav" title="مدل های پیشرفته">مدل های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/view/generic/" class="anav" title="View های Generic">View های Generic</a><a href="http://oruji.github.io/amoozesh.org/django/non-html/" class="anav" title="تولید محتوای غیر html ای">تولید محتوای غیر html ای</a><a href="http://oruji.github.io/amoozesh.org/django/session/" class="anav" title="Session ها، کاربران، و عضویت">Session ها، کاربران، و عضویت</a><a href="http://oruji.github.io/amoozesh.org/django/caching/" class="anav" title="مبحث Caching">مبحث Caching</a><a href="http://oruji.github.io/amoozesh.org/django/package/contrib/" class="anav" title="پکیج django.contrib">پکیج django.contrib</a><a href="http://oruji.github.io/amoozesh.org/django/middleware/" class="anav" title="مبحث Middleware">مبحث Middleware</a><a href="http://oruji.github.io/amoozesh.org/django/database/integrate/legacy/" class="anav" title="یکپارچه سازی برنامه ها و دیتابیس های Legacy">یکپارچه سازی برنامه ها و دیتابیس های Legacy</a><a href="http://oruji.github.io/amoozesh.org/django/internationalize/" class="anav" title="بین المللی سازی">بین المللی سازی</a><a href="http://oruji.github.io/amoozesh.org/django/security/" class="anav" title="امنیت">امنیت</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/admin-site/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+</html>

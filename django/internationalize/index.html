@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/internationalize/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/django/internationalize/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>بین المللی سازی Internationalization جنگو Django کتاب آموزش</title>
+<meta name="description" content="در این آموزش کتاب چارچوب فریم ورک برخط آنلاین جنگو Django می بینیم جنگو به طور کامل internationalize شده می باشد؛ تمام رشته ها برای ترجمه علامت گذاری شده اند" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="بین المللی سازی Internationalization جنگو Django کتاب آموزش" />
+<meta property="og:description" content="در این آموزش کتاب چارچوب فریم ورک برخط آنلاین جنگو Django می بینیم جنگو به طور کامل internationalize شده می باشد؛ تمام رشته ها برای ترجمه علامت گذاری شده اند" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/django/internationalize/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/13 19:21</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>آموزش بین المللی سازی (Internationalization) در جنگو (Django)</h1>
+<p>جنگو در ابتدا درست در ایالات متحده ی میانی توسعه یافت – در معنای واقعی کلمه، در لارنس، کنزاس، کمتر از 40 مایلی مرکز جغرافیای قاره ایالات متحده. همانند اغلب پروژه های منبع باز (open source)، جنگو در بین مردم سرتاسر زمین بزرگ شد. همانطور که جامعه جنگو به طور افزاینده ای متنوع می شدند، internationalization و localization به طور افزاینده ای دارای اهمیت شد. به دلیل آن که بسیاری از توسعه دهندگان درک مبهمی از این دوره ها دارند، به طور اختصار آنها را تعریف می کنیم.</p>
+<p>internationalization به پردازش طراحی برنامه ها برای استفاده ی بالقوه از هر مکان رجوع می کند. این شامل علامت گذاری متن (از قبیل المان های UI و پیام های خطا) برای ترجمه ی آینده، abstract کردن نمایش تاریخ ها و زمان ها به طوری که استاندارهای مختلف محلی ممکن observed باشه، تهیه ی پشتیبانی برای منطقه های زمانی مختلف، و به طور کلی اطمینان از اینکه کد حاوی هیچ فرضی در باره ی محل آن کاربران نباشد. اغلب "internationalization" را به صورت اختصار <bdo class="leftInline">I18N</bdo> می بینید. (<bdo class="leftInline">"18"</bdo> به تعداد حروف حذف شده بین حرف اول "I" و حرف آخر "N" می باشد.)</p>
+<p>localization به پردازش ترجمه ی واقعی یک برنامه ی internationalize شده برای استفاده در یک محل خاص رجوع می کند. گاهی اوقات "localization" به صورت اختصار <bdo class="leftInline">L10N</bdo> می بینید.</p>
+<p>خود جنگو به طور کامل internationalize شده می باشد؛ تمام رشته ها برای ترجمه علامت گذاری شده اند، و تنظیمات نمایش مقادیر local-dependent مانند تاریخ ها و زمان ها را کنترل می کنند. جنگو همچنین دارای بیشتر از 50 فایل localization می باشد. در صورتی که زبان مادری شما انگلیسی نمی باشد، یک شانس خوب وجود دارد که جنگو قبلا به زبان اصلی شما ترجمه شده است.</p>
+<p>فریم ورک همسان internationalization برای این localization ها برای شما جهت استفاده از کد و template های خودتان در دسترس می باشند.</p>
+<p>جهت استفاده از این فریم ورک یا چارچوب، نیاز به اضافه کردن حداقل hook ها به کد پایتون و template های خود دارید. این hook ها رشته های ترجمه نام دارند. آن ها به جنگو می گویند، "این متن باید به زبان کاربر ترجمه شود، در صورتی که یک ترجمه برای این متن در آن زبان در دسترس باشد."</p>
+<p>فریم ورک یا چارچوب جنگو (Django) مراقب استفاده از این hook ها برای ترجمه ی برنامه های وب می باشد، بسیار سریع، بر طبق تنظیمات زبان کاربر.</p>
+<p>اساسا، جنگو دو کار را انجام می دهد:</p>
+<ul>
+<li>به توسعه دهندگان و نویسندگان template اجازه می دهد که بخش های برنامه ی خودشان که باید قابل ترجمه باشد را تعیین کنند.</li>
+<li>از آن اطلاعات جهت ترجمه ی برنامه های وب برای کاربران خاص بر طبق زبان مورد ترجیح استفاده می کند.</li>
+</ul>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="نکته" class="yaddasht"><h4>نکته</h4>
+<p>دستگاه ترجمه ی جنگو از GNU gettext (<bdo class="leftInline">http://www.gnu.org/software/gettext/</bdo>) از طریق ماژول gettext که در پایتون ارائه شده است استفاده می کند.</p>
+</ul>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="نکته" class="yaddasht"><h4>در صورتی که به internationalization نیازی نداشته باشید:</h4>
+<p>hook های internationalization جنگو به طور پیشفرض فعال می باشند، که موجب کمی بار اضافی می شود. در صورتی که از internationalization استفاده نمی کنید، باید درون فایل تنظیمات <bdo class="leftInline">USE_I18N = False</bdo> را قرار دهید. در صورتی که <bdo class="leftInline">USE_I18N</bdo> مقدار False باشد، جنگو بهینه سازی هایی را برای بارگذاری نشدن دستگاه internationalization انجام می دهد.</p>
+<p>همچنین شاید بخواهید <bdo class="leftInline">'django.core.context_processors.i18n'</bdo> از تنظیم TEMPLATE_CONTEXT_PROCESSORS حذف کنید.</p>
+</ul>
+<p>سه مرحله برای internationalize کردن برنامه جنگو به قرار زیر می باشند:</p>
+<ol>
+<li>رشته های ترجمه را در کد پایتون خود را template قرار دهید.</li>
+<li>ترجمه هایی برای آن رشته های بدست آورید، در هر زبانی که برای پشتیبانی می خواهید.</li>
+<li>locale middleware را در تنظیمات جنگو خود فعال کنید.</li>
+</ol>
+<p>هر کدام از این مراحل را به تفصیل پوشش خواهیم داد.</p>
+<h3>1. نحوه ی تعیین رشته های ترجمه</h3>
+<p>رشته های ترجمه "این متن باید ترجمه شده باشد" تعیین می کنند این رشته ها می توانند در کد پایتون و template های شما ظاهر شوند. علامت گذاری رشته های ترجمه بر عهده ی شما می باشد؛ سیستم تنها می تواند رشته هایی را که می شناسد ترجمه کند.</p>
+<h4>در کد پایتون</h4>
+<h3>ترجمه استاندارد</h3>
+<p>تعیین یک رشته ی ترجمه با استفاده از تابع <bdo class="leftInline">ugettext()</bdo> می باشد. به صورت قرار است که این تابع به صورت یک نام مستعار کوتاه تر یعنی <bdo class="leftInline">"_" import</bdo> شود.</p>
+<p>در مثال زیر، متن "Welcome to my site." به صورت رشته ی ترجمه علامت گذاری شده است:</p>
+<code class="language-python">from django.utils.translation import ugettext as _
+
+def my_view(request):
+    output = _("Welcome to my site.")
+    return HttpResponse(output)</code><p>واضح است، می توانید بدون استفاده از نام مستعار کد فوق را بنویسید. مثال زیر برابر با مثال فوق می باشد:</p>
+<code class="language-python">from django.utils.translation import ugettext
+
+def my_view(request):
+    output = ugettext("Welcome to my site.")
+    return HttpResponse(output)</code><p>ترجمه با مقدار محاسبه شده کار می کند. مثال زیر برابر با دو مثال قبلی می باشد:</p>
+<code class="language-python">def my_view(request):
+    words = ['Welcome', 'to', 'my', 'site.']
+    output = _(' '.join(words))
+    return HttpResponse(output)</code><p>ترجمه با متغیرها نیز کار می کند. برای بار دیگر، مثال زیر برابر با مثال های قبلی می باشد:</p>
+<code class="language-python">def my_view(request):
+    sentence = 'Welcome to my site.'
+    output = _(sentence)
+    return HttpResponse(output)</code><p>(اخطار در مورد استفاده از متغیرها یا مقادیر محاسبه شده، همانطور که در دو مثال قبلی مشاهده کردید، این است که مزیت تشخیص رشته ی ترجمه یعنی django-admin.py makemessages، قادر به یافتن این رشته ها نخواهد بود. در مورد makemessage کمی بعد بیشتر توضیح خواهیم داد.)</p>
+<p>رشته هایی که به _() یا <bdo class="leftInline">ugettext()</bdo> ارسال می کنید، می توانند placeholder هایی دریافت کنند، که درون زبان پایتون وجود دارند. مثال:</p>
+<code class="language-python">def my_view(request, m, d):
+    output = _('Today is %(month)s %(day)s.') % {'month': m, 'day': d}
+    return HttpResponse(output)</code><p>این تکنیک به ترجمه های زبان خاص اجازه می دهد متن placeholder را دوباره چیدمان کنند. برای مثال، یک ترجمه ی انگلیسی ممکن است <bdo class="leftInline">"Today is November 26."</bdo> باشد، هنگام ترجمه ی اسپانیایی ممکن است <bdo class="leftInline">"Hoy es 26 de Noviembre."</bdo> باشد – با placeholder ها (ماه و روز) با موقعیت های عوض شدهی آنها.</p>
+<p>به همین دلیل، شما باید از رشته های نام گذاری شده (مانند <bdo class="leftInline">%(day)s</bdo>) به جای رشته های موضعی (مانند، <bdo class="leftInline">%s</bdo> یا <bdo class="leftInline">%d</bdo>) هر زمان که بیشتر از یک پارامتر وجود دارد استفاده کنید. در صورتی که از رشته های موضعی استفاده می کنید قادر نمی باشد placeholder متن را دوباره چیدمان کنید.</p>
+<h3>علامت گذاری رشته ها به صورت No-Op</h3>
+<p>از تابع <bdo class="leftInline">django.utils.translation.ugettext_noop()</bdo> جهت علامت گذاری یک رشته به صورت یک رشته ی ترجمه بدون ترجمه کردن آن استفاده کنید.</p>
+<p>در صورتی که رشته های ثابتی دارید که باید در ریشه ی زبان ذخیره شده باشند چرا که آن ها در سرتاسر سیستم ها و کاربران رد و بدل می شوند – مانند رشته های درون یک پایگاه داده – ولی باید در آخرین نقطه ی ممکن ترجمه شوند، مانند زمانی که رشته به کاربر نشان داده می شود، از این استفاده کنید.</p>
+<h3>ترجمه ی Lazy</h3>
+<p>از تابع <bdo class="leftInline">django.utils.translation.ugettext_lazy()</bdo> جهت ترجمه ی رشته های به صورت lazy استفاده کنید – زمانی که مقدار در دسترس است، به جای هنگامی که تابع <bdo class="leftInline">ugettext_lazy()</bdo> فراخوانی شده است.</p>
+<p>برای مثال، جهت ترجمه ی مدل help_text کد زیر را عمل کنید:</p>
+<code class="language-python">from django.utils.translation import ugettext_lazy
+
+class MyThing(models.Model):
+    name = models.CharField(help_text=ugettext_lazy('This is the help text'))</code><p>در مثال فوق، <bdo class="leftInline">ugettext_lazy()</bdo> یک بازگشت lazy به رشته را ذخیره می کند – نه ترجمه ی واقعی را. خود ترجمه، هنگامی که رشته در یک رشته ی context استفاده شده باشد، مانند render کردن template در سایت مدیر جنگو، انجام خواهد شد.</p>
+<p>نتیجه فراخوانی یک <bdo class="leftInline">ugettext_lazy()</bdo> می تواند هر جایی که شما یک رشته ی یونیکد (یک شیء از نوع unicode) در پایتون استفاده می کند استفاده شده باشد. در صورتی که سعی کنید در جایی که انتظار یک bytestring (شیء str) از آن استفاده کنید، هیچ چیز آن طوری که انتظار آن می رود کار نخواهد کرد، چون یک شیء <bdo class="leftInline">uggettext_lazy()</bdo> نحوه ی تبدیل خودش به یک bytestring را نمی داند. نمی توانید از یک رشته ی یونیکد درون یک bytestring استفاده کنید، بنابراین این رفتار عادی پایتون می باشد. برای مثال:</p>
+<code class="language-python"># This is fine: putting a unicode proxy into a unicode string.
+u"Hello %s" % ugettext_lazy("people")
+
+# This will not work, since you cannot insert a unicode object
+# into a bytestring (nor can you insert our unicode proxy there)
+"Hello %s" % ugettext_lazy("people")</code><p>در صورتی که همواره خروجی شبیه به <bdo class="leftInline">"hello &lt;django.utils.functional...&gt;"</bdo> مشاهده می کند، باید سعی به درج نتیجه ی <bdo class="leftInline">ugettext_lazy()</bdo> به درون یک bytestring کنید. آن یک اشکال در کد شما می باشد.</p>
+<p>در صورتی که نام طولانی ugettext_lazy را نمی پسندید، می توانید از نام مستعار "_" (خط تیره)، مانند زیر استفاده کنید:</p>
+<code class="language-python">from django.utils.translation import ugettext_lazy as _
+
+class MyThing(models.Model):
+    name = models.CharField(help_text=_('This is the help text'))</code><p>همواره از ترجمه های lazy در مدل های جنگو استفاده کنید. نام های فیلد و نام جدول باید برای ترجمه علامت گذاری شده باشند(در غیر این صورت، آن ها درون رابط مدیر ترجمه نخواهند شد). این بدین معنی است که نوشتن صریح option های verbose_name و verbose_name_plural در کلاس Meta، به جای اعتماد به تعیین پیشفرض verbose_name و verbose_name_plural جنگو توسط نگاه به نام کلاس مدل:</p>
+<code class="language-python">from django.utils.translation import ugettext_lazy as _
+
+class MyThing(models.Model):
+    name = models.CharField(_('name'), help_text=_('This is the help text'))
+    class Meta:
+        verbose_name = _('my thing')
+        verbose_name_plural = _('mythings')</code><h3>جمع بندی</h3>
+<p>برای تعیین پیام های جمع بندی شده از تابع <bdo class="leftInline">django.utils.translation.ungettext()</bdo> استفاده کنید. مثال:</p>
+<code class="language-python">from django.utils.translation import ungettext
+
+def hello_world(request, count):
+    page = ungettext('there is %(count)d object',
+        'there are %(count)d objects', count) % {
+            'count': count,
+        }
+    return HttpResponse(page)</code><p>ungettext سه آرگومان دریافت می کند: رشته ی ترجمه ی تک، رشته ی ترجمه ی جمع و تعداد شیء ها (که به زبان های ترجمه به صورت متغیر count ارسال شده است).</p>
+<h3>در کد Template</h3>
+<p>ترجمه در template های جنگو از دو تگ template و یک syntax کمی متفاوت تر از کد پایتون استفاده می کند. برای دادن دسترسی به این تگ ها به template خود، <bdo class="leftInline">{% load i18n %}</bdo> را نزدیک بالای template خود قرار دهید.</p>
+<p>تگ template <bdo class="leftInline">{% trans %}</bdo> هر دوی رشته ی ثابت (احاطه شده درون دابل کتیشن یا تک کتیشن) یا محتوای متغیر را ترجمه می کند:</p>
+<code class="language-django">&lt;title&gt;{% trans "This is the title." %}&lt;/title&gt;
+&lt;title&gt;{% trans myvar %}&lt;/title&gt;</code><p>در صورتی که آپشن noop موجود باشد، variable lookup همچنان اتفاه می افتد ولی ترجمه انجام نمی شود. در دست ترجمه ....</p>
+<code class="language-django">&lt;title&gt;{% trans "myvar" noop %}&lt;/title&gt;</code><p>امکان ترکیب یک متغیر template درون یک رشته ی داخل <bdo class="leftInline">{% trans %}</bdo> 
+امکان پذیر نمی باشد. در صورتی که ترجمه های شما نیازمند رشته هایی با متغیرها (placeholder ها) باشد، از <bdo class="leftInline">{% blocktrans %}</bdo> استفاده کنید:</p>
+<code class="language-django">{% blocktrans %}This string will have {{ value }} inside.{% endblocktrans %}</code><p>جهت ترجمه ی یک عبارت template – تصور کنید، از فیلترهای template استفاده می کند – نیاز چسباندن عبارت به متغیر محلی برای استفاده درون بلاک ترجمه می باشد:</p>
+<code class="language-django">{% blocktrans with value|filter as myvar %}
+This will have {{ myvar }} inside.
+{% endblocktrans %}</code><p>در صورتی که نیاز به چسباندن بیشتر از یک عبارت داخل یک تگ blocktrans دارید، قسمت ها را با and جدا کنید:</p>
+<code class="language-django">{% blocktrans with book|title as book_t and author|title as author_t %}
+This is {{ book_t }} by {{ author_t }}
+{% endblocktrans %}</code><p>جهت جمع بستن، هر دو فرم های تک و جمع را با تگ <bdo class="leftInline">{% plural %}</bdo> تعیین کنید، که درون <bdo class="leftInline">{% blocktrans %}</bdo> و  <bdo class="leftInline">{% endblocktrans %}</bdo>  ظاهر می شوند. مثال:</p>
+<code class="language-django">{% blocktrans count list|length as counter %}
+There is only one {{ name }} object.
+{% plural %}
+There are {{ counter }} {{ name }} objects.
+{% endblocktrans %}</code><p>به طور داخلی، تمام بلاک و ترجمه های درون خطی از فراخوانی مناسب ugettext / ungettext استفاده می کنند.</p>
+<p>هر RequestContext دارای دسترسی به سه متغیر ترجمه ی خاص می باشد:</p>
+<ul>
+<li>LANGUAGE لیستی از تاپل ها می باشد که در المان اول کد زبان و دومی نام زبان (ترجمه شده به locale فعال فعلی)  می باشد.</li>
+<li>LANGUAGE_CODE زبان مورد ترجیح کاربر فعلی به صورت یک رشته می باشد. مثال: en-us. (به بخش "نحوه ی پی بردن جنگو به زبان مورد ترجیح" در همین آموزش مراجعه کنید.)</li>
+<li>LANGUAGE_BIDI جهت locale فعلی می باشد. در صورتی که True باشد، یک زبان راست به چپ، مانند: فارسی، عربی می باشد. در صورتی که False باشد یک زبان چپ به راست مانند : انگلیسی، فرانسوی  و آلمانی می باشد.</li>
+</ul>
+<p>در صورتی که از RequestContext extension استفاده نمی کنید، می توان آن مقادیر را با سه تگ زیر بدست آورد:</p>
+<code class="language-django">{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}</code><p>این تگ ها همچنین به یک <bdo class="leftInline">{% load i18n %}</bdo> 
+نیاز دارند</p>
+<code class="language-django">{% some_special_tag _("Page not found") value|yesno:_("yes,no") %}</code><ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="نکته" class="yaddasht"><h4>نکته</h4>
+<p>در این مثال، زیر ساخت ترجمه، رشته ی "yes,no" را ارسال می کند، نه رشته های فردی "yes" و "no". رشته ی ترجمه شده نیازمند علامت کاما "," می باشد، به طوری که تجزیه کننده ی کد فیلتر نحوه ی جدا کردن آرگومان ها را بداند. برای مثال، یک مترجم آلمانی ممکن است رشته ی "yes,no" را به صورت "ja,nein" ترجمه کند (نگهداشتن کاما دست نخورده).</p>
+</ul>
+<h3>کار با شیء های ترجمه ی Lazy</h3>
+<p>استفاده از <bdo class="leftInline">ugettext_lazy()</bdo> و <bdo class="leftInline">ungettext_lazy()</bdo> برای علامت گذاری رشته ها در مدل ها و توابع یک عمل رایج می باشد. هنگامی که با این شیء ها در جای دیگر کد خود کار می کنید، باید مطمئن باشید که به طور تصادفی آن ها را رشته ها تبدیل نمی کنید، زیرا آن ها باید در آخرین زمان ممکن تبدیل شوند (در دست ترجمه ...). این موضوع ایجاب می کند که از چند تابع کمکی استفاده کنید.</p>
+<h4>متصل کردن رشته ها: <bdo class="leftInline">string_concat()</bdo>
+</h4>
+<p>join های رشته ی استاندارد پایتون <bdo class="leftInline">(''.join([...]))</bdo> بر روی لیست های حاوی شیء های ترجمه ی lazy کار نخواهند کرد. در عوض، می توانید از <bdo class="leftInline">django.utils.translation.string_concat()</bdo> استفاده کنید، که یک شیء lazy ایجاد می کند که محتویات آن را به هم وصل کرده و آن ها را تنها هنگامی که نتیجه در یک رشته شامل شده باشد، به هم متصل می کند. برای مثال:</p>
+<code class="language-python">from django.utils.translation import string_concat
+# ...
+name = ugettext_lazy(u'John Lennon')
+instrument = ugettext_lazy(u'guitar')
+result = string_concat([name, ': ', instrument])</code><p>در این مورد، ترجمه ی lazy در result تنها زمانی که خود result در یک رشته استفاده شده باشد به رشته ها تبدیل می شود (معمولا زمان render شدن template).</p>
+<h3>دکوریتور <bdo class="leftInline">allow_lazy()</bdo>
+</h3>
+<p>جنگو بسیاری توابع سودمند (به ویژه در django.utils) ارائه می کند که یک رشته را به صورت اولین آرگومان دریافت می کنند و کاری را بر روی آن رشته انجام می دهند. این توابع توسط فیلترهای template همچنین به طور مستقیم در کد دیگر استفاده می شوند.</p>
+<p>در صورتی که توابع مشابه خود را بنویسید و با ترجمه های سر و کار داشته باشید، زمانی که اولین آرگومان یک شیء ترجمه ی lazy باشد با مشکل چه باید بکنم رو به رو می شوید. شما نمی خواهید آن را بلا فاصله به یک رشته تبدیل کنید، چرا که ممکن است تابع را بیرون از view نیز استفاده کنید (در دست ترجمه ...).</p>
+<p>برای موارد شبیه به این، از دکوریتور <bdo class="leftInline">django.utils.functional.allow_lazy()</bdo> استفاده کنید. این دکوریتور تابع اصلاح می کند، به طوری که اگر با یک ترجمه lazy به عنوان اولین آرگومان فراخوانی شود، ارزیابی تابع تا زمانی که نیاز باشد به یک رشته تبدیل شود به تاخیر می افتد.</p>
+<p>برای مثال:</p>
+<code class="language-python">from django.utils.functional import allow_lazy
+
+def fancy_utility_function(s, ...):
+    # Do some conversion on string 's'
+    # ...
+fancy_utility_function = allow_lazy(fancy_utility_function, unicode)</code><p>در دست ترجمه ....</p>
+<p>استفاده از این دکوریتور بدین معناست که شما می توانید تابع خود را نوشته و فرض کنید که ورودی یک رشته ی مناسب می باشد، سپس پشتیبان برای شیء های ترجمه ی lazy در پایان اضافه کنید.</p>
+<h2>2. نحوه ی ساختن فایل های زبان</h2>
+<p>هنگامی رشته های خود را برای ترجمه ی بعدی ضمیمه کردید، نیاز به نوشتن (بدست آوردن) خود ترجمه های زبان دارید. در زیر نحوه ی این عمل وجود دارد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="نکته" class="yaddasht"><h4>محدودیت های Locale</h4>
+<p>جنگو localize کردن برنامه ی شما را به داخل یک locale که خود جنگو ترجمه نکرده است را پشتیبانی نمی کند. در این مورد، فایل های ترجمه ی شما نادیده گرفته می شوند. در صورتی که برای این مورد تلاش کرده اید و جنگو از آن پشتیبانی کرده است، ناگذیر به یک مخلوط از رشته های ترجمه خود (از برنامه خود) رشته های انگلیسی (از خود جنگو) نگاه کنید. در صورتی که می خواهید یک locale برای برنامه ی خود را پشتیبیانی کنید که قبلا بخشی از جنگو نمی باشد، نیاز به ساختن حداقل یک ترجمه از هسته جنگو خواهید داشت.</p>
+</ul>
+<h4>فایل های پیام</h4>
+<p>اولین قدم برای یک زبان جدید ساختن یک فایل پیام می باشد. فایل پیام یک فایل متنی ساده برای نشان دادن یک زبان است، که حاوی تمام رشته های در دسترس برای ترجمه و چگونگی نمایش آن ها در زبان داده شده است. فایل های پیام دارای پسوند .po می باشند.</p>
+<p>جنگو ابزاری به نام django‑admin.py makemessages ارائه می کند، که ساختن و نگهداری این فایل ها را خودکار می کند. جهت ساخت و به روز رسانی یک فایل پیام، دستور زیر را اجرا کنید:</p>
+<code class="language-">django-admin.py makemessages -l de</code><p>de کد زبان برای فایل پیامی که می خواهید بسازید می باشد. کد زبان، در این مورد در قابل بندی locale می باشد. برای مثال، pt_BR برای برزیلی پرتغالی و de_AT برای اتریشی آلمانی می باشد.</p>
+<p>اسکریپت باید از یکی از این سه مکان اجرا شود:</p>
+<ul>
+<li>دایرکتوری ریشه ی پروژه ی جنگوی شما.</li>
+<li>دایرکتوری ریشه ی app جنگوی شما.</li>
+</ul>
+<p>این اسکریپت در سرتاسر درخت منبع پروژه  یا درخت منبع برنامه اجرا می شود و تمام رشته های علامت گذاری شده برای ترجمه را بیرون می کشد. این اسکریپت یک فایل پیام در دایرکتوری locale/LANG/LC_MESSAGES می سازد (یا بروز رسانی می کند). در مثال de، فایل locale/de/LC_MESSAGES/django.po خواهد بود.</p>
+<p>به طور پیشفرض django-admin.py makemessages هر فایلی که دارای پسوند .html باشد را بررسی می کند. در مواردی که می خواهید آن پیشفرض را override کنید، از آپشن –extension یا –e برای تعیین پسوندهای فایل جهت بررسی استفاده کنید:</p>
+<code class="language-">django-admin.py makemessages -l de -e txt</code><p>چندین پسوند را با کاما و / یا با استفاده از <bdo class="leftInline">–e</bdo> یا <bdo class="leftInline">––extension</bdo> چندین بار جدا کنید:</p>
+<code class="language-">django-admin.py makemessages -l de -e html,txt -e xml</code><p>زمان ساختن کاتالوگ های ترجمه ی جاوا اسکریپت (که کمی بعد در این آموزش از کتاب پوشش داده خواهد شد،) نیاز به استفاده از دامنه ی خاص 'djangojs' دارید، نه <bdo class="leftInline">–e js</bdo>.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="نکته" class="yaddasht"><h4>gettext نه؟</h4>
+<p>در صورتی که فواید gettext را نصب ندارید، django‑admin.py makemessages فایل های خالی خواهد ساخت. اگر چنین است می توانید gettext را نصب کنید و یا فایل پیام (locale/en/LC_MESSAGES/django.po) انگلیسی را که فقط یک فایل خالی ترجمه است در صورت دسترس کپی کنید و از آن به عنوان نقطه شروع استفاده کنید.
+ </p>
+</ul>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="نکته" class="yaddasht"><h4>با سیستم عامل ویندوز کار می کنید؟</h4>
+<p>در صورتی که از ویندوز استفاده می کنید و نیاز به نصب فواید GNU gettext برای عملکرد django‑admin makemessages دارید، به بخش "gettext در ویندوز" در همین فصل مراجعه کنید.</p>
+</ul>
+<p>قالب بندی فایل های <bdo class="leftInline">.po</bdo> ساده می باشد. هر فایل <bdo class="leftInline">.po</bdo> حاوی یک قسمت کوچک از metadata، از قبیل اطلاعات تماس maintainer ترجمه، توده ی فایل یک لیست از پیام ها می باشد – ارتباط های ساده بین رشته های ترجمه و متن ترجمه شده ی واقعی برای زبان خاص.</p>
+<p>برای مثال، در صورتی که app جنگو شما حاوی یک رشته ی ترجمه برای متن "Welcom to my site." مانند زیر می باشد:</p>
+<code class="language-python">_("Welcome to my site.")</code><p>... سپس django-admin.py makemessages یک فایل <bdo class="leftInline">.po</bdo> حاوی تکه کد های زیر را خواهد ساخت – یک پیام:</p>
+<code class="language-python">#: path/to/python/module.py:23
+msgid "Welcome to my site."
+msgstr ""</code><p>یک توضیح سریع:</p>
+<ul>
+<li>msgid رشته ی ترجمه می باشد، که در منبع وجود دارد. آن را تغییر ندهید.</li>
+<li>msgstr جایی است که ترجمه ی زبان خاص را در آن جا قرار می دهید. که با مقدار خالی شروع می کند، بنابراین تغییر دادن آن به عهده ی شما می باشد. اطمینان حاصل کنید که ترجمه ی شما درون کتیشن می باشد.</li>
+<li>برای راحتی، هر پیام به صورت شکلی از خط کامنت شروع شده با علامت "#" می باشد و در بالای خط msgid قرار گرفته است، filename و شماره خط از رشته ی ترجمه شده جمع شده اند.</li>
+</ul>
+<p>پیام های طولانی یک مورد خاص می باشند. در آن جا، اولین رشته به طور مستقیم بعد از msgstr (یا msgid) یک رشته ی خالی می باشد. سپس خود محتوا خودش سرتاسر چند خط بعدی به صورت یک رشته در هر خط نوشته شده خواهند بود. آن رشته ها به صورت مستقیم متصل شده اند. space های عقبی درون رشته ها را فراموش نکنید؛ در غیر اینصورت، آن ها بدون فاصله به یکدیگر وصل می شوند!</p>
+<p>جهت بررسی دوباره ی تمام کد منبع و template ها برای رشته های ترجمه ی جدید و به روز رسانی تمام فایل های پیام برای تمام زبان ها، دستور زیر را اجرا کنید:</p>
+<code class="language-">django-admin.py makemessages -a</code><h4>کامپایل فایل های Message</h4>
+<p>بعد از این که فایل پیام خود را ایجاد نمودید – و هر بار که تغییراتی در آن انجام دهید – نیاز به کامپایل آن درون یک فرم موثرتر خواهید داشت، جهت استفاده با gettext. این کار را با مزیت django‑admin.py compilemessages انجام دهید.</p>
+<p>این ابزار سرتاسر تمام فایل های .po در دسترس اجرا می شود و فایل های .mo را ایجاد می کند که فایل های باینری بهینه شده برای استفاده توسط gettext می باشند. درون دایرکتوری همسانی که دستور django‑admin.py makemessages را اجرا کردید، دستور django-admin.py compilemessages را مانند زیر اجرا کنید:</p>
+<code class="language-">django-admin.py compilemessages</code><p>همین. ترجمه های شما آماده برای استفاده می باشند.</p>
+<h3>3. طریقه ی پی بردن جنگو به ترجیح زبان</h3>
+<p>هنگامی ترجمه های خود را آماده می کنید – یا، در صورتی که تنها می خواهید از ترجمه های موجود در خود جنگو استفاده کنید – تنها نیاز خواهید داشت ترجمه را برای app خود فعال کنید.</p>
+<p>در پشت صحنه، جنگو دارای یک مدل خیلی منعطف از تصمیم گیری در مورد زبانی که باید استفاده شود می باشد – installation‑wide برای یک کاربر خاص، یا هر دو.</p>
+<p>برای قرار دادن preference زبان installation-wide، LANGUAGE_CODE را قرار دهید. جنگو از این زبان به صورت ترجمه ی پیشفرض استفاده می کند – تلاش نهایی در صورتی که مترجم دیگری یک ترجمه پیدا کند.</p>
+<p>در صورتی که بخواهید جنگو را با زبان مادری خود اجرا کنید، و یک فایل زبان برای زبان شما در دسترس می باشد، نیاز به قرار دادن LANGUAGE_CODE دارید.</p>
+<p>در صورتی که می خواهید برای هر کاربر منحصر به فرد زبان مورد ترجیح خودش را مشخص کنید، از LocaleMiddleware استفاده کنید. LocaleMiddleware انتخاب زبان بر اساس داده ی درخواست را فعال می کند. LocaleMiddleware محتوا را برای کاربر سفارشی می کند.</p>
+<p>جهت استفاده از LocaleMiddlewareT، 'django.middleware.locale.localeMiddleware' را به تنظیم MIDDLEWARE_CLASSES اضافه کنید. به دلیل آن که ترتیب middleware مهم می باشد، باید دستور العمل های زیر را دنبال کنید:</p>
+<ul>
+<li>اطمینان حاصل کنید آن اولین middleware نصب شده می باشد.</li>
+<li>باید بعد از SessionMidedleware بیاید، زیرا LocaleMiddleware از داده session استفاده می کند.</li>
+<li>در صورتی که از CacheMiddleware استفاده می کند، LocaleMiddleware را بعد از آن قرار دهید.</li>
+</ul>
+<p>به عنوان مثال، MIDDLEWARE_CLASSES ممکن است شبیه به زیر باشد:</p>
+<code class="language-python">MIDDLEWARE_CLASSES = (
+   'django.contrib.sessions.middleware.SessionMiddleware',
+   'django.middleware.locale.LocaleMiddleware',
+   'django.middleware.common.CommonMiddleware',
+)</code><p>(برای اطلاعات بیشتر درباره ی middleware، به <a href="http://oruji.github.io/amoozesh.org/django/middleware/" class="content" title="مبحث middleware">مبحث middleware</a> مراجعه کنید.)</p>
+<p>LocaleMiddleware تلاش می کند preference زبان کاربر را توسط الگوریتم زیر تعیین کند:</p>
+<ul>
+<li>ابتدا، به دنبال کلید django_language در session کاربر فعلی می گردد.</li>
+<li>در صورت نبود، به دنبال یک کوکی می گردد.</li>
+<li>در صورت نبود، به HTTP هدر Accept-Language نگاه می کند. این هدر توسط مرورگر شما ارسال شده است و به سرور زبانی را که شما ترجیح می دهید را می گوید. جنگو برای هر زبان در هدر تلاش می کند تا یک را با ترجمه های در دسترس بایبد.</li>
+<li>در صورت نبود، از تنظیم سراسری LANGUAGAE_CODE استفاده می کند.</li>
+</ul>
+<p>نکته ها:</p>
+<ul>
+<li>در هر کدام از این مکان ها، preference زبان، انتظار می رود در قالب بندی استاندارد زبان باشد، به صورت یک رشته. برای مثال، برزیلی پرتغالی، pt-br می باشد.</li>
+<li>در صورتی که زبان پایه در دسترس باشد ولی sublanguage مشخص نباشد، جنگو از زبان پایه استفاده می کند. برای مثال، در صورتی که کاربرد de-at تعیین کرده باشد (اتریشی آلمانی) ولی جنگو تنها دارای de در دسترس باشد، جنگو از de استفاده می کند.</li>
+<li>تنها زبان های لیست شده در تنظیم LANGUAGES می توانند انتخاب شوند. در صورتی که می خواهید انتخاب زبان را به یک زیر مجموعه از زبان های تهیه شده محدود کنید (چرا که برنامه ی شما تمام آن زبان ها را تهیه نمی کند)، LANGUAGE را به یک لیستی از زبان ها محدود کنید. برای مثال:<code class="language-python">LANGUAGES = (
+  ('de', _('German')),
+  ('en', _('English')),
+)</code><p>مثال فوق زبان هایی را که برای انتخاب خودکار به آلمانی و انگلیسی در دسترس می باشند را محدود می کند (و هر sublanguage، مانند de-ch یا en-us).</p>
+</li>
+<li>در صورتی که یک تنظیم LANGUAGE سفارشی تعریف می کند، همانطور که در bullet قبلی توضیح داده شد، علامت گذاری زبان ها به صورت رشته های ترجمه صحیح می باشد – ولی استفاده از یک تابع <bdo class="leftInline">ugettext()</bdo> ساختگی، نه یکی در django.utils.translation. هرگز نباید django.utils.translation را درون فایل تنظیمات import کنید، چرا که آن ماژول در خودش وابسته به تنظیمات می باشد، و موجب یک import دایره ای می شود.<p>راهکار استفاده از یک تابع <bdo class="leftInline">ugettext()</bdo> ساختگی می باشد. در زیر یک نمونه از فایل تنظیمات می باشد:</p>
+<code class="language-python">ugettext = lambda s: s
+
+LANGUAGES = (
+    ('de', ugettext('German')),
+    ('en', ugettext('English')),
+)</code><p>با این ترتیب، django‑admin.py makemessages همچنان این رشته های علامت گذاری شده برای ترجمه را پیدا می کند، ولی ترجمه در زمان اجرا اتفاق نمی افتد – بنابراین باید بخاطر داشته باشید که زبان ها را در <bdo class="leftInline">ugettext()</bdo> واقعی در هر کدی که در زمان اجرا از LNAGUAGE استفاده می کند wrap کنید.</p>
+</li>
+<li>LocalMiddleware می تواند تنها زبان هایی تهیه شده توسط جنگو برای ترجمه را انتخاب کند. در صورتی که می خواهید ترجمه هایی را برای برنامه ی خود تهیه کنید که قبلا در ترجمه های منبع جنگو قرار داده نشده اند، شما می خواهید حداقل اصول اولیه ترجمه ها را برای آن زبان تهیه کنید. برای مثال، جنگو ID های پیام فنی برای ترجمه ی قالب بندی های تاریخ و زمان استفاده می کند – بنابراین نیاز به حداقل آن ترجمه های برای سیستم، جهت عملکرد درتس خواهید داشت.<p>نقطه ی شروع خوب کپی فایل انگلیسی <bdo class="leftInline">.po</bdo> و ترجمه ی حداقل پیام های فنی می باشد – شاید پیام های validation، همچنین.</p>
+<p>ID های فنی پیام به سادگی تشخیص داده شده اند؛ آن ها تماما حروف بزرگ می باشند. شما ID پیام را به صورت پیام های دیگر ترجمه نمی کنید، شما local گوناگون صحیح در مقدار انگلیسی تهیه شده تهیه می کنید. برای مثال، با DATETIME_FORMAT (یا DATE_FORMATE یا TME_FORMAT)، این قالبندی رشته است که می خواهید برای زبان خود استفاده کنید. قالب بندی جهت قالب بندی رشته هایی که توسط تگ template، now استفاده شده اند یکسان است.</p>
+</li>
+</ul>
+<p>هنگامی که LocalMiddleware، preference کاربر را تعیین می کند، این preference را به صورت request.LANGUAGE_CODE برای هر HttpRequest قابل دسترس می کند. احساس آزادی کندی برای خواند این مقدار در کد view خود. در زیر یک مثال ساده وجود دارد:</p>
+<code class="language-python">def hello_world(request):
+    if request.LANGUAGE_CODE == 'de-at':
+        return HttpResponse("You prefer to read Austrian German.")
+    else:
+        return HttpResponse("You prefer to read another language.")</code><p>توجه داشته باشید که، با ترجمه استاتیک (بدون middleware)، زبان دز settings.LANGUAGE_CODE می باشد، در حالی که با ترجمه ی پویا (middleware)، در request.LANGUAGE_CODE می باشد.</p>
+<h3>استفاده از ترجمه ها در پروژه ی خودتان</h3>
+<p>جنگو توسط الگوریتم زیر به دنبال ترجمه می گردد:</p>
+<ul>
+<li>ابتدا، به دنبال دایرکتوری locale در دایرکتوری برنامه (در دست ترجمه ...). در صورتی که یک ترجمه برای زبان انتخاب شده پیدا کند، ترجمه نصب خواهد شد.</li>
+<li>سپس، به دنبال دایرکتوری locale در دایرکتوری پروژه می گردد. در صورتی که یک ترجمه پیدا کند، ترجمه نصب خواهد شد.</li>
+<li>در پایان، پایگاه ترجمه ی تهیه شده توسط جنگو را در django/conf/locale را بررسی می کند.</li>
+</ul>
+<p>می توانید برنامه هایی که شامل ترجمه های خودشان باشند را بنویسید، و می توانید پایگاه ترجمه ها را در مسیر پروژه ی خود override کنید. یا، می توانید تنها یک پروژهی بزرگ خارج از چندین app ساخته و تمام ترجمه ها را درون یک پروژه ی بزرگ فایل پیام قرار دهید. انتخاب با خودتان می باشد.</p>
+<p>تمامی مخازن (repositories) دارای ساخت به روش یکسان می باشند، آن ها:</p>
+<ul>
+<li><bdo class="leftInline">$APPPATH/locale/&lt;language&gt;/LC_MESSAGES/django.(po|mo)</bdo></li>
+<li><bdo class="leftInline">$PROJECTPATH/locale/&lt;language&gt;/LC_MESSAGES/django.(po|mo)</bdo></li>
+<li>تمام مسیرهای لیست شده در LOCALE_PATHS در فایل تنظیمات شما (در دست ترجمه ...).</li>
+<li><bdo class="leftInline">$PYTHONPATH/django/conf/locale/&lt;language&gt;/LC_MESSAGES/django.(po|mo)</bdo></li>
+</ul>
+<p>جهت ساخت فایل های پیام، از ابزار همسان django-admin.py makemessages همانطور که فایل های پیام جنگو با آن بود استفاده می کنید. تنها نیاز است د رجای مناسب باشید – در دایرکتوری conf/locale ((در دست ترجمه ...)) یا locale/ ((در دست ترجمه ...)) دایرکتوری قرار دارند. همچنین از دستور همسان django-admin.py compilemessages برای تولید فایل های باینری django.mo که توسط gettext استفاده می شوند استفاده می شود.</p>
+<p>همچنین می توانید django-admin.py compilemessages --settings=path.to.settings را برای ایجاد پردازش کامپایلر تمام دایرکتوری های موجود در تنظیم LOCALE_PATHS اجرا کرد.</p>
+<p>فایل های پیام برنامه برای پی بردن کمی پیچیده می باشند – آن ها نیاز به LocaleMiddleware دارند. در صورتی که از middleware استفاده نمی کنید، تنها فایل های پیام جنگو و فایل های پیام پروژه پردازش خواهند شود.</p>
+<p>(در دست ترجمه ...). در صورتی که برنامه ها نیاز به تحویل داده شدن به کاربران دیگر داشته و در پروژه های دیگر استفاده خواهد شد، ممکن است بخواهید ترجمه های app-specific را استفاده کنید. ولی استفاده از ترجمه های app‑specific و ترجمه های پروژه می تواند مشکلات مرموزی با makemessages زتولید کند: makemessages از تمام دایرکتوری های زیر مسیر فعلی عبور کرده و بنابراین ممکن است ID های پیام را درون فایل پیام پروژه قرار دهد که قبلا در فایل های پیام برنامه وجود داشته اند.</p>
+<p>ساده ترین راه ذخیره کردن برنامه هایی است که بخشی از پروژه نیستند (و بنابراین ترجمه های خودشان را حمل می کنند) خارج از درخت پروژه. django-admin.py makemessages در سطح پروژه تنها رشته هایی که پروژه ی صریح شما متصل هستند را ترجمه می کند و نه رشته هایی که به طور مستقل توزیع شده هستند.</p>
+<h3>view تغییر مسیر set_language</h3>
+<p>برای راحتی، جنگو یک view به نام <bdo class="leftInline">django.views.i18n.set_language</bdo> ارائه می کند، که یک preference زبان کاربر را قرار می دهد و به صفحه ی قبلی تغییر مسیر می دهد.</p>
+<p>این view را توسط اضافه کردن خط زیر به URLconf فعال کنید:</p>
+<code class="language-python">(r'^i18n/', include('django.conf.urls.i18n')),</code><p>(توجه داشته باشید که این مثال view را در <bdo class="leftInline">/i18n/setlang/</bdo> قابل دسترس می کند.)</p>
+<p>view انتظار دارد توسط روش POST فراخوانی شود، با یک پارامتر langage در درخواست. در صورتی که پشتیبانی session فعال شده باشد، view انتخاب زبان در session کاربر را ذخیره می کند. در غیر اینصورت، زبان انتخاب در یک کوکی که به طور پیشفرض با نام django_language می باشد را ذخیره می کند. (نام می تواند از طریق تنظیم LANGUAGE_COOKIE_NAME تغییر کند.)</p>
+<p>بعد از تنظیم انتخاب زبان، جنگو با الگوریتم زیر کاربر را تغییر مسیر می دهد:</p>
+<ul>
+<li>جنگو به دنبال یک پارامتر next در داده POST می گردد.</li>
+<li>در صورتی که وجود نداشته باشد، یا خالی باشد، جنگو URL درون هدر Referrer را امتحان می کند.</li>
+<li>در صورتی که خالی باشد – تصور کنید، در صورتی که یک مرورگر مانع آن هدر شود – سپس کاربر به / (ریشه ی سایت) تغییر مسیر داده خواهد شد.</li>
+</ul>
+<p>در زیر مثال کد HTML template وجود دارد:</p>
+<code class="language-django">&lt;form action="/i18n/setlang/" method="post"&gt;
+&lt;input name="next" type="hidden" value="/next/page/" /&gt;
+&lt;select name="language"&gt;
+    {% for lang in LANGUAGES %}
+    &lt;option value="{{ lang.0 }}"&gt;{{ lang.1 }}&lt;/option&gt;
+    {% endfor %}
+&lt;/select&gt;
+&lt;input type="submit" value="Go" /&gt;
+&lt;/form&gt;</code><h3>ترجمه ها و جاوا اسکریپت</h3>
+<p>اضافه کردن ترجمه ها به جاوا اسکریپت برخی مشکلات را موجب می شود:</p>
+<ul>
+<li>کد جاوا اسکریپت دارای دسترسی به انجام gettext نمی باشد.</li>
+<li>کد جاوا اسکریپت دارای دسترسی به فایل های <bdo class="leftInline">.po</bdo> یا <bdo class="leftInline">.mo</bdo> نمی باشد؛ آن ها نیاز به تحویل داده شدن توسط سرور را دارند.</li>
+<li>کاتالوگ های ترجمه برای جاوا اسکریپت باید در کوچکترین حد ممکن نگهداری شوند.</li>
+</ul>
+<p>جنگو یک راهکار یکپارچه سازی شده برای این مشکلات تهی می کند: ترجمه ها را به جاوا استکریپت اراسل می کند، بنابراین می توانید gettext و غیره را از درون جاوا اسکریپت فراخوانی کنید.</p>
+<h4>javascript_catalog</h4>
+<p>راهکار اصلی برای این مشکلات، view ای با نام javascript_catalog می باشد، که یک کتابخانه ی کد جاوا اسکریپت با توابعی است که رابط gettext را تقلید کرده است، به اضافه ی یک آرایه از رشته های ترجمه. آن رشته های ترجمه گرفته شده از برنامه، پروژه یا هسته ی جنگو می باشد، مطابق آن چه را که شما در info_dict یا URL تعیین کرده اید.</p>
+<p>به شکل زیر آن را مرتبط می کنید:</p>
+<code class="language-python">js_info_dict = {
+    'packages': ('your.app.package',),
+}
+
+urlpatterns = patterns('',
+    (r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
+)</code><p>هر رشته در packages باید در syntax پایتون dotted-package باشد (قالب بندی همسان به صورت رشته ها در INSTALLED_APPS) و باید به یک پکیجی که حاوی دایرکتوری locale می باشد رجوع کند. در صورتی که چندین پکیج تعیین می کنید، تمام آن کاتالوگ ها در یک کاتالوگ ادغام می شوند. در صورتی که جاوا اسکریپتی دارید که از رشته های برنامه های مختلف استفاده می کند این مفید می باشد.</p>
+<p>می توانید view را توسط قرار دادن پکیج هایی داخل الگوی URL پویا کنید:</p>
+<code class="language-python">urlpatterns = patterns('',
+    (r'^jsi18n/(?P&lt;packages&gt;\S )/$', 'django.views.i18n.javascript_catalog'),
+)</code><p>با این موضوع، شما پکیج هایی را به صورت یک لیست از نام های پکیج محدود شده توسط علامت های ' 'در URL تعیین می کنید. این بویژه در صورتی که صفحات شما کدهایی از app های مختلف استفاده می کند و این اغلب تغییر می کند و نمی خواهید در یک فایل کاتالوگ بزرگ بکشید مفید است. به عنوان یک اقدام امنیتی، این مقادیر تنها django.conf یا هر پکیجی از تنظیم INSTALLED_APPS می باشند.</p>
+<h4>استفاده از کاتالوگ ترجمه ی جاوا استکریپت</h4>
+<p>جهت استفاده از کاتالوگ، تنها کافیست (در دست ترجمه ...):</p>
+<code class="language-html">&lt;script type="text/javascript" src="/django/path/to/jsi18n/"&gt;&lt;/script&gt;</code><p>این نحوه ای است که مدیر ترجمه ی کاتالوگ سرور را واکشی می کند. هنگامی که کاتالوگ بارگذاری شد، کد جاوا اسکریپت شما می تواند از رابط gettext استاندارد برای دسترسی به آن استفاده کند:</p>
+<code class="language-python">document.write(gettext('this is to be translated'));</code><p>همچنین یک رابط ngettext نیز وجود دارد:</p>
+<code class="language-python">var object_cnt = 1 // or 0, or 2, or 3, ...
+s = ngettext('literal for the singular case',
+        'literal for the plural case', object_cnt);</code><p>و حتی یک تابع رشته ی interpolation:</p>
+<code class="language-python">function interpolate(fmt, obj, named);</code><p>interpolation syntax قرض گرفته شده از پایتون می باشد، بنابراین تابع interpolate هر دوی interpolation موضعی و نام گذاری شده را پشتیبانی می کند:</p>
+<ul>
+<li>interpolation موضعی: obj حاوی یک شیء آرایه ی جاوا اسکریپت می باشد که مقادیر المان ها به ترتیب در placeholder های متناظر ftm در ترتیب یکسانی که ظاهر شده اند قرار می گیرند:<code class="language-python">fmts = ngettext('There is %s object. Remaining: %s',
+        'There are %s objects. Remaining: %s', 11);
+s = interpolate(fmts, [11, 20]);
+// s is 'There are 11 objects. Remaining: 20'</code>
+</li>
+<li>interpolation های نام گذاری شده: این حالت توسط ارسال پارامتر boolean اختیاری name به صورت true انتخاب شده است. obj حاوی یک شیء جاوا اسکریپت یا آرایه ی associative می باشد. برای مثال:<code class="language-python">d = {
+    count: 10
+    total: 50
+};
+
+fmts = ngettext('Total: %(total)s, there is %(count)s object',
+'there are %(count)s of a total of %(total)s objects', d.count);
+s = interpolate(fmts, d, true);</code>
+</li>
+</ul>
+<p>شما نباید بالا با رشته ی interpolation بروید: این همچنان جاوا اسکریپت می باشد، بنابراین، کد باید تعویض های تکرار شده ی regular-expression را ایجاد کند. این به همان سرعت رشته ی interpolation در جاوا نمی باشد، بنابراین آن را برای مورادی که واقعا به آن نیاز دارید نگه دارید (برای مثال، در رابطه با ngettet برای تولید جمع بندی های مناسب).</p>
+<h4>ساختن کاتالوگ های ترجمه ی جاوا اسکریپت</h4>
+<p>شما کاتالوگ های ترجمه را به همان روشی که کاتالوگ های ترجمه ی دیگر جنگو را ساخته و به روز رسانی می کردید – با ابزار django-admin.py makemessages – انجام می دهید. تنها تفاوت این است که نیاز به تهیه ی یک پارامتر –d djangojs مانند زیر خواهید داشت:</p>
+<code class="language-">django-admin.py makemessages -d djangojs -l de</code><p>دستور فوق کاتالوگ ترجمه برای جاوا اسکریپت برای آلمانی را ساخته یا به روز رسانی می کند. بعد از به روز رسانی کاتالوگ های ترجمه، تنها کافیست دستور django-admin.py compilemessages همانند کاتالوگ های عادی جنگو اجرا کنید.</p>
+<h3>نکته هایی برای کاربران آشنا به gettext</h3>
+<p>در صورتی که gettext را می شناسید، ممکن است متوجه این تخصص های روش جنگو برای انجام ترجمه شده باشید:</p>
+<ul>
+<li>رشته ی دامنه، django یا djangojs است. این رشته ی دامنه برای فرق قائل شدن بین برنامه های مختلف می باشد، که داده ی آن ها در یک کتابخانه ی مشترک فایل پیام ذخیره می شود (معمولا /usr/share/locale/). دامنه ی جنگو برای پایتون و رشته های ترجمه ی template استفاده شده است و به کاتالوگ های سراسری ترجمه بارگذاری شده است. دامنه ی djangojs تنها برای کاتالوگ های ترجمه ی جاوا اسکریپت جهت اطمینان اینکه آن ها تا حد ممکن کوچک هستند استفاده شده است.</li>
+<li>جنگو از xgettext تنها استفاده نمی کند. از wrapper پایتون در اطراف xgettext و msgfmt استفاده می کند. این بیشتر برای راحتی است.</li>
+</ul>
+<h3>gettext در ویندوز</h3>
+<p>این تنها برای افرادی که می خواهند ID های پیام را استخراج کنند یا فایل های پیام را کامپایل کنند ضروری می باشد (<bdo class="leftInline">.op</bdo>). خود کار ترجمه تنها با ویرایش فایل های موجود از این نوع درگیر است، ولی در صورتی که می خواهید فایل های پیام خود را ایجاد کنید، یا می خواهید یک فایل پیام تغییر کرده را آزمون یا کامپایل کنید، نیاز به مزیت های gettext خواهید داشت:</p>
+<ul>
+<li>فایل های zip زیر را از http://sourceforge.net/projects/gettext دانلود کنید<ul>
+<li><bdo class="leftInline">gettext-runtime-X.bin.woe32.zip</bdo></li>
+<li><bdo class="leftInline">gettext-tools-X.bin.woe32.zip</bdo></li>
+<li><bdo class="leftInline">libiconv-X.bin.woe32.zip</bdo></li>
+</ul>
+</li>
+<li>3 فایل را فولدر همسان از حالت zip خارج کنید (مانند C:\Program Files\gettext‑utils)</li>
+<li>PATH سیستم را به روز رسانی کنید:<ul>
+<li>Control Panel &gt; System &gt; Advanced &gt; Environment Variables</li>
+<li>در لیست System variables، بر روی Path کلید کنید، بر روی Edit کلیک کنید</li>
+<li>;C:\Program Files\gettext‑utils\bin به انتهای فیلد Variable value اضافه کنید</li>
+</ul>
+</li>
+</ul>
+<p>همچنین می توانید از باینری های gettect نیز که در جای دیگر بدست آورده شده است استفاده کنید، مادامی که دستور xtgett –version به درستی کار می کند. برخی نسخه های باینری <bdo class="leftInline">0.14.4</bdo> این دستور را پشتیبانی نمی کنند. در صورتی که دستور xgettext –version وارد شده در یک command prompt ویندوز موجب یک پنجره ی popup شده است "xgettext.exe has generated errors and will be closed by Windows" برای استفاده از مزیت های ترجمه ی جنگو با پکیج gettext تلاش نکنید.</p>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش جنگو</div>
+<a href="http://oruji.github.io/amoozesh.org/django/introduction/" class="anav" title="مقدمه">مقدمه</a><a href="http://oruji.github.io/amoozesh.org/django/start/" class="anav" title="شروع کار">شروع کار</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/" class="anav" title="view ها و URLconf ها">view ها و URLconf ها</a><a href="http://oruji.github.io/amoozesh.org/django/template/" class="anav" title="Template ها">Template ها</a><a href="http://oruji.github.io/amoozesh.org/django/model/" class="anav" title="مدل ها">مدل ها</a><a href="http://oruji.github.io/amoozesh.org/django/admin-site/" class="anav" title="سایت مدیر">سایت مدیر</a><a href="http://oruji.github.io/amoozesh.org/django/form/" class="anav" title="فرم ها">فرم ها</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/advance/" class="anav" title="View ها و URLconf های پیشرفته">View ها و URLconf های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/template/advance/" class="anav" title="Template های پیشرفته">Template های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/model/advance/" class="anav" title="مدل های پیشرفته">مدل های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/view/generic/" class="anav" title="View های Generic">View های Generic</a><a href="http://oruji.github.io/amoozesh.org/django/non-html/" class="anav" title="تولید محتوای غیر html ای">تولید محتوای غیر html ای</a><a href="http://oruji.github.io/amoozesh.org/django/session/" class="anav" title="Session ها، کاربران، و عضویت">Session ها، کاربران، و عضویت</a><a href="http://oruji.github.io/amoozesh.org/django/caching/" class="anav" title="مبحث Caching">مبحث Caching</a><a href="http://oruji.github.io/amoozesh.org/django/package/contrib/" class="anav" title="پکیج django.contrib">پکیج django.contrib</a><a href="http://oruji.github.io/amoozesh.org/django/middleware/" class="anav" title="مبحث Middleware">مبحث Middleware</a><a href="http://oruji.github.io/amoozesh.org/django/database/integrate/legacy/" class="anav" title="یکپارچه سازی برنامه ها و دیتابیس های Legacy">یکپارچه سازی برنامه ها و دیتابیس های Legacy</a><div  class="divnav" title="بین المللی سازی">بین المللی سازی</div><a href="http://oruji.github.io/amoozesh.org/django/security/" class="anav" title="امنیت">امنیت</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/internationalize/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+</html>

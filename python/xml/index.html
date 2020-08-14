@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/python/xml/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/python/xml/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>پردازش parse فایل XML با API های DOM و SAX پایتون کتاب آموزش</title>
+<meta name="description" content="در این آموزش از کتاب برخط پایتون، نحوه پردازش و parse فایل XML توسط زبان برنامه نویسی پایتون با استفاده از API های SAX و DOM را نشان خواهیم داد" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="پردازش parse فایل XML با API های DOM و SAX پایتون کتاب آموزش" />
+<meta property="og:description" content="در این آموزش از کتاب برخط پایتون، نحوه پردازش و parse فایل XML توسط زبان برنامه نویسی پایتون با استفاده از API های SAX و DOM را نشان خواهیم داد" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/python/xml/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/16 20:32</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>پردازش XML در پایتون</h1>
+<p>در این آموزش از کتاب برخط پایتون، نحوه <strong>parse</strong> و پردازش <strong>XML</strong> توسط زبان برنامه نویسی <strong>پایتون</strong> را با استفاده از API های <strong>DOM</strong> و <strong>SAX</strong> را نشان خواهیم داد. XML یک زبان قابل حمل (Portable) و متن باز است که به برنامه نویسان این امکان را می دهد تا برنامه های خود را توسعه دهند به طوری که این برنامه ها قابلیت خوانده شدن توسط برنامه های دیگر را داشته باشد، بدون در نظر گرفتن آنکه سیستم عامل و یا زبان برنامه نویسی مورد نظر چه خواهد بود.</p>
+<h2>XML چیست؟</h2>
+<p>XML مخفف Extensible Markup Language می باشد، که یک زبان نشانه گذاری مانند HTML یا SGML است. XML برای کار با داده های کم تا متوسط بدون نیاز به SQL بسیار کاربرد دارد.</p>
+<h3>معماری های XML Parser و API ها</h3>
+<p>کتابخانه استاندارد پایتون رابط های مختصر ولی مفیدی برای کار با XML فراهم کرده است.</p>
+<p>دو تا از پایه ای ترین و از نظر استفاده گسترده ترین API ها برای داده XML رابط های SAX و DOM هستند.</p>    <ul>
+<li>
+<strong>SAX</strong> مخفف <strong>Simple API for XML</strong>: در اینجا، شما فراخوان هایی را برای رخدادهای مورد نظر ثبت می کنید و سپس به parser اجازه می دهید درون سند حرکت کند. این حالت زمانیکه سندهای شما خیلی بزرگ هستند و یا محدودیت حافظه دارید سودمند می باشد. در این حالت فایل های خوانده شده از دیسک parse می شوند و کل فایل هرگز در حافظه ذخیره نمی شود.</li>
+<li>
+<strong>DOM</strong> مخفف <strong>Document Object Model</strong>: این API توصیه ی کنسرسیوم World Wide Web می باشد و اینگونه است که تمام فایل از حافظه خوانده شده و در یک فرم سلسله مراتبی (hierarchical) و درختی برای نمایش تمام ویژگی های سند XML ذخیره می شود.</li>
+</ul>
+<p>واضح است که SAX نمی تواند پردازش اطلاعات در فایل های بزرگ را به همان سرعتی که DOM انجام می دهد، انجام دهد. از طرف دیگر، استفاده از DOM می تواند به طور جدی منابع شما را نابود کند، بخصوص اگر با فایل های کوچک با تعداد بالا کار می کنید.</p>
+<p>Sax فقط خواندی است، در حالیکه DOM اجازه تغییرات در فایل XML را به شما می دهد. با توجه به اینکه این دو API متفاوت کاملا کامل کننده یکدیگر می باشند، دلیل ندارد که شما نتوانید از هردوی آن ها برای پروژه های بزرگ استفاده کنید.</p>
+<p>در تمامی مثال های این آموزش، اجازه دهید از فایل XML ساده movies.xml زیر به عنوان ورودی استفاده کنیم:</p>
+<code class="language-xml">&lt;collection shelf = "New Arrivals"&gt;
+&lt;movie title = "Enemy Behind"&gt;
+   &lt;type&gt;War, Thriller&lt;/type&gt;
+   &lt;format&gt;DVD&lt;/format&gt;
+   &lt;year&gt;2003&lt;/year&gt;
+   &lt;rating&gt;PG&lt;/rating&gt;
+   &lt;stars&gt;10&lt;/stars&gt;
+   &lt;description&gt;Talk about a US-Japan war&lt;/description&gt;
+&lt;/movie&gt;
+&lt;movie title = "Transformers"&gt;
+   &lt;type&gt;Anime, Science Fiction&lt;/type&gt;
+   &lt;format&gt;DVD&lt;/format&gt;
+   &lt;year&gt;1989&lt;/year&gt;
+   &lt;rating&gt;R&lt;/rating&gt;
+   &lt;stars&gt;8&lt;/stars&gt;
+   &lt;description&gt;A schientific fiction&lt;/description&gt;
+&lt;/movie&gt;
+   &lt;movie title = "Trigun"&gt;
+   &lt;type&gt;Anime, Action&lt;/type&gt;
+   &lt;format&gt;DVD&lt;/format&gt;
+   &lt;episodes&gt;4&lt;/episodes&gt;
+   &lt;rating&gt;PG&lt;/rating&gt;
+   &lt;stars&gt;10&lt;/stars&gt;
+   &lt;description&gt;Vash the Stampede!&lt;/description&gt;
+&lt;/movie&gt;
+&lt;movie title = "Ishtar"&gt;
+   &lt;type&gt;Comedy&lt;/type&gt;
+   &lt;format&gt;VHS&lt;/format&gt;
+   &lt;rating&gt;PG&lt;/rating&gt;
+   &lt;stars&gt;2&lt;/stars&gt;
+   &lt;description&gt;Viewable boredom&lt;/description&gt;
+&lt;/movie&gt;
+&lt;/collection&gt;</code><h3>parse کردن XML با SAX</h3>
+<p>SAX یک رابط استاندارد برای parse  کردن XML به صورت رویداد محور (event-driven) است. پردازش XML با استفاده از SAX به طور معمول نیاز به ایجاد ContentHandler شما توسط xml.sax.ContentHandler خواهد داشت.</p>
+<p>ContentHandler شما تگ های خاص و attribute هایی XML شما را کنترل می کند.  یک شیء ContentHandler متدهایی برای کنترل رویدادهای مختلفی را فراهم می کند. متدهای startDocument و endDocument در شروع و پایان فایل XML فراخوانی می شوند. متد <bdo class="leftInline">characters(text)</bdo> داده کاراکتر فایل XML توسط پارامتر text ارسال می کند.</p>
+<p>ContentHandler در شروع و پایان هر المان (element) فراخوانی می شود. در صورتی که parser در مُد namespace نباشد، متد های <bdo class="leftInline">startElement(tag, attributes)</bdo> و <bdo class="leftInline">endElement(tag)</bdo> فراخوانی می شوند، در غیر اینصورت، متدهای متناظر startElementNS و endElementNS فراخوانی می شوند. در اینجا، tag المان تگ می باشد، و attributes یک شیء Attribute می باشد.</p>
+<h3>متد make_parser</h3>
+<p>متد زیر یک شیء جدید parser ایجاد کرده و آن را برمیگرداند. آبجکت parser ایجاد شده اولین نوع parser خواهد بود که سیستم پیدا می کند.</p>
+<code class="language-python">xml.sax.make_parser( [parser_list] )</code><p>در زیر جزئیات پارامترها را مشاهده می کنید</p>
+<li>parser_list: آرگومان اختیاری شامل یک لیست از parser ها مورد استفاده که باید همگی متد make_parser را پیاده سازی کنند.</li>
+<h3>متد parse</h3>
+<p>این متد یک SAX parser را ایجاد کرده و از آن برای parse کردن یک سند استفاده می کند.</p>
+<code class="language-python">xml.sax.parse( xmlfile, contenthandler[, errorhandler])</code><p>در زیر جزئیات پارامترها را مشاهده می کنید:</p>
+<li>
+<strong>xmlfile</strong>: نام فایل XML ای که قرار است خوانده شود.</li>
+<li>
+<strong>contenthandler</strong>: شیء ContentHandler می باشد.</li>
+<li>
+<strong>errorhandler</strong>: در صورت تعیین، errorhandler باید یک شیء SAX ErrorHandler باشد.</li>
+<h3>متد parseString</h3>
+<p>یک متد دیگر برای ایجاد یک SAX parser و همچنین parse رشته XML تعیین شده وجود دارد.</p>
+<code class="language-python">xml.sax.parseString(xmlstring, contenthandler[, errorhandler])</code><p>در زیر جزئیات پارامترها را مشاهده می کنید:</p>
+<li>
+<strong>xmlfile</strong>: نام فایل XML ای که قرار است خوانده شود.</li>
+<li>
+<strong>contenthandler</strong>: شیء ContentHandler می باشد.</li>
+<li>
+<strong>errorhandler</strong>: در صورت تعیین، errorhandler باید یک شیء SAX ErrorHandler باشد.</li>
+<h4>مثال:</h4>
+<code class="language-python">#!/usr/bin/python3
+
+import xml.sax
+
+class MovieHandler( xml.sax.ContentHandler ):
+   def __init__(self):
+      self.CurrentData = ""
+      self.type = ""
+      self.format = ""
+      self.year = ""
+      self.rating = ""
+      self.stars = ""
+      self.description = ""
+
+   # Call when an element starts
+   def startElement(self, tag, attributes):
+      self.CurrentData = tag
+      if tag == "movie":
+         print ("*****Movie*****")
+         title = attributes["title"]
+         print ("Title:", title)
+
+   # Call when an elements ends
+   def endElement(self, tag):
+      if self.CurrentData == "type":
+         print ("Type:", self.type)
+      elif self.CurrentData == "format":
+         print ("Format:", self.format)
+      elif self.CurrentData == "year":
+         print ("Year:", self.year)
+      elif self.CurrentData == "rating":
+         print ("Rating:", self.rating)
+      elif self.CurrentData == "stars":
+         print ("Stars:", self.stars)
+      elif self.CurrentData == "description":
+         print ("Description:", self.description)
+      self.CurrentData = ""
+
+   # Call when a character is read
+   def characters(self, content):
+      if self.CurrentData == "type":
+         self.type = content
+      elif self.CurrentData == "format":
+         self.format = content
+      elif self.CurrentData == "year":
+         self.year = content
+      elif self.CurrentData == "rating":
+         self.rating = content
+      elif self.CurrentData == "stars":
+         self.stars = content
+      elif self.CurrentData == "description":
+         self.description = content
+  
+if ( __name__ == "__main__"):
+   
+   # create an XMLReader
+   parser = xml.sax.make_parser()
+   # turn off namepsaces
+   parser.setFeature(xml.sax.handler.feature_namespaces, 0)
+
+   # override the default ContextHandler
+   Handler = MovieHandler()
+   parser.setContentHandler( Handler )
+   
+   parser.parse("movies.xml")</code><p>خروجی:</p>
+<code class="language-">*****Movie*****
+Title: Enemy Behind
+Type: War, Thriller
+Format: DVD
+Year: 2003
+Rating: PG
+Stars: 10
+Description: Talk about a US-Japan war
+*****Movie*****
+Title: Transformers
+Type: Anime, Science Fiction
+Format: DVD
+Year: 1989
+Rating: R
+Stars: 8
+Description: A schientific fiction
+*****Movie*****
+Title: Trigun
+Type: Anime, Action
+Format: DVD
+Rating: PG
+Stars: 10
+Description: Vash the Stampede!
+*****Movie*****
+Title: Ishtar
+Type: Comedy
+Format: VHS
+Rating: PG
+Stars: 2
+Description: Viewable boredom</code><h2>parse یا پردازش XML با DOM</h2>
+<p>DOM یا Document Object Model یک API مستقل از زبان از کنسرسیوم World Wide Web یا W3C می باشد که برای دسترسی و ویرایش مستندات XML به کار می رود.</p>
+<p>DOM برای برنامه های با دسترسی تصادفی (random-access) بسیار سودمند می باشد. SAX تنها اجازه دیدن یک بیت از سند را در یک زمان ان به شما می دهد. در صورتی که یک المان را در SAX مشاهده می کنید، به المان های دیگر دسترسی ندارید.</p>
+<p>در اینجا ساده ترین راه برای بارگذاری سریع یک سند XML و ایجاد یک شیء minidom با استفاده از ماژول xml.dom است. شیء minidom یک روش ساده parser است که یک درخت DOM از فایل XML ایجاد می کند.</p>
+<h4>مثال</h4>
+<code class="language-python">#!/usr/bin/python3
+
+from xml.dom.minidom import parse
+import xml.dom.minidom
+
+# Open XML document using minidom parser
+DOMTree = xml.dom.minidom.parse("movies.xml")
+collection = DOMTree.documentElement
+if collection.hasAttribute("shelf"):
+   print ("Root element : %s" % collection.getAttribute("shelf"))
+
+# Get all the movies in the collection
+movies = collection.getElementsByTagName("movie")
+
+# Print detail of each movie.
+for movie in movies:
+   print ("*****Movie*****")
+   if movie.hasAttribute("title"):
+      print ("Title: %s" % movie.getAttribute("title"))
+
+   type = movie.getElementsByTagName('type')[0]
+   print ("Type: %s" % type.childNodes[0].data)
+   format = movie.getElementsByTagName('format')[0]
+   print ("Format: %s" % format.childNodes[0].data)
+   rating = movie.getElementsByTagName('rating')[0]
+   print ("Rating: %s" % rating.childNodes[0].data)
+   description = movie.getElementsByTagName('description')[0]
+   print ("Description: %s" % description.childNodes[0].data)</code><p>خروجی</p>
+<code class="language-">Root element : New Arrivals
+*****Movie*****
+Title: Enemy Behind
+Type: War, Thriller
+Format: DVD
+Rating: PG
+Description: Talk about a US-Japan war
+*****Movie*****
+Title: Transformers
+Type: Anime, Science Fiction
+Format: DVD
+Rating: R
+Description: A schientific fiction
+*****Movie*****
+Title: Trigun
+Type: Anime, Action
+Format: DVD
+Rating: PG
+Description: Vash the Stampede!
+*****Movie*****
+Title: Ishtar
+Type: Comedy
+Format: VHS
+Rating: PG
+Description: Viewable boredom</code><h4>منابع</h4>
+<ol>
+<li><a title="Python SAX APIs" class="content" href="https://docs.python.org/3/library/xml.sax.html">Python SAX APIs</a></li>
+<li><a title="Python DOM APIs" class="content" href="https://docs.python.org/3/library/xml.dom.html">Python DOM APIs</a></li>
+</ol>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش پایتون</div>
+<a title="متد append لیست" class="anav" href="http://oruji.github.io/amoozesh.org/python/list/append/">متد append لیست</a><a href="http://oruji.github.io/amoozesh.org/python/variable/" class="anav" title="متغیرها، عبارات و جمله ها">متغیرها، عبارات و جمله ها</a><a href="http://oruji.github.io/amoozesh.org/python/string/" class="anav" title="رشته ها">رشته ها</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/list/" title="لیست ها">لیست ها</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/dictionary/" title="دیکشنری">دیکشنری</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/for/" title="حلقه for">حلقه for</a><a href="http://oruji.github.io/amoozesh.org/python/file-database/" class="anav" title="فایل ها و دیتابیس ها">فایل ها و دیتابیس ها</a><a href="http://oruji.github.io/amoozesh.org/python/function/" class="anav" title="توابع">توابع</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/print/pyramid/" title="چاپ هرم">چاپ هرم</a><div title="پردازش XML" class="divnav" >پردازش XML</div>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/python/xml/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:42 GMT -->
+</html>

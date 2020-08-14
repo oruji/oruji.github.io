@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/python/string/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/python/string/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>رشته ها Strings در پایتون متدها و توابع کتاب آموزش برخط</title>
+<meta name="description" content="در زبان پایتون رشته String ترتیبی از کارکترها می باشند. شما می توانید با استفاده از علامت کروشه به کارکترهای درون رشته دسترسی پیدا کنید کتاب آموزش آنلاین برخط" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="رشته ها Strings در پایتون متدها و توابع کتاب آموزش برخط" />
+<meta property="og:description" content="در زبان پایتون رشته String ترتیبی از کارکترها می باشند. شما می توانید با استفاده از علامت کروشه به کارکترهای درون رشته دسترسی پیدا کنید کتاب آموزش آنلاین برخط" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/python/string/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/13 19:11</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>آموزش رشته در پایتون</h1>
+<p>در این آموزش از کتاب برخط (Online) فارسی پایتون (Python)، نوع داده <strong>رشته</strong> (String) و کاربرد آن را مورد بررسی قرار می دهیم.</p>
+<h2>رشته یک ترتیب است</h2>
+<p>رشته ترتیبی از کارکترها می باشد. شما می توانید با استفاده از علامت کروشه به کارکترهای 
+درون رشته دسترسی پیدا کنید:</p>
+<code class="language-python">&gt;&gt;&gt; fruit = 'banana'
+&gt;&gt;&gt; letter = fruit[1]</code><p>خط دوم مثال فوق کارکتر اول fruit را انتخاب کرده و آن را درون letter می ریزد.</p>
+<p>عبارت درون کروشه را اندیس می نامند. اندیس به کاراکترهای درون یک ترتیب اشاره می کند.</p>
+<p>ولی ممکن است چیزی را انتظار خواهید داشت را دریافت نکنید:</p>
+<code class="language-python">&gt;&gt;&gt; print letter
+a</code><p>برای اکثر افراد، اولین حرف از کلمه 'banana' حرف b می باشد، نه حرف a.
+ولی در علوم کامپیوتر اندیس اولین قسمت از رشته می باشد، و اولین قسمت صفر می باشد.</p>
+<code class="language-python">&gt;&gt;&gt; letter = fruit[0]
+&gt;&gt;&gt; print letter
+b</code><p>بنابراین شاید بتوان به حالت طنز گفت که b صفرومین حرف 'banana' می باشد، 
+a اولین و n نیز دومین حرف آن می باشد.</p>
+<p>شما می توانید برای اندیس از هر عبارتی، شال متغیرها و عملگرهای استفاده کنید، 
+ولی باید بخاطر داشت مقدار اندیس باید یک integer باشد، در غیر این صورت شما خطای زیر را دریافت خواهید کرد:</p>
+<code class="language-python">&gt;&gt;&gt; letter = fruit[1.5]
+TypeError: string indices must be integers</code><h2>طول رشته</h2>
+<p>len یک تابع داخلی پایتون می باشد که تعداد کاراکترهای موجود در یک رشته را بر می گرداند.</p>
+<code class="language-python">&gt;&gt;&gt; fruit = 'banana'
+&gt;&gt;&gt; len(fruit)
+6</code><p>برای بدست آوردن آخرین حرف یک رشته، شما ممکن است همچین کاری را انجام دهید:</p>
+<code class="language-python">&gt;&gt;&gt; length = len(fruit)
+&gt;&gt;&gt; last = fruit[length]
+IndexError: string index out of range</code><p>دلیل خطای فوق این است که هیچ در 'banana' با اندیس 6 وجود ندارد. به این دلیل که ما 
+شمارش را از صفر شروع کردیم 6 حرف مورد نظر از 0 تا 5 شماره گذاری شده اند.
+برای بدست آوردن آخرین کاراکتر، شما باید یک واحد از lenght کم کنید.</p>
+<code class="language-python">&gt;&gt;&gt; last = fruit[length-1]
+&gt;&gt;&gt; print last
+a</code><p>همچنین شما می توانید از اندیس های منفی استفاده کنید، که به صورت بر عکس، یعنی 
+از ابتدا به انتها رشته را شمارش می کند. عبارت fruit[-1] نشان دهنده اندیس آخر، 
+fruit[-2] نشان دهنده اندیس یکی مانده به آخر می باشد و الی آخر ...</p>
+<h2>پیمایش با حلقه for</h2>
+<p>بسیاری از محاسبات نیاز به پردازش رشته دارند به طوری بتوانند در هربار یکی از کاراکترهای 
+رشته را در اختیار داشته باشند و به نوبت هر کاراکتر را انتخاب کرده و کاری را روی آن 
+انجام دهند و این موضوع را تا پایان رشته ادامه دهند. این الگوی پردازش پیمایش نام دارد. 
+یکی از راه های نوشتن پیمایش استفاده از حلقه while می باشد:</p>
+<code class="language-python">index = 0
+while index &lt; len(fruit):
+    letter = fruit[index]
+    print letter
+    index = index   1</code><p>این حلقه رشته را پیمایش کره و حروف داخل رشته را جدا جدا نمایش می دهد. شرط حلقه <bdo class="leftInline">index &lt; len(fruit)</bdo> می باشد، بنابراین زمانی که index برابر با طول رشته شود، شرط 
+False می شود، و بدنه حلقه دیگر اجرا نخواهد شد. آخرین کاراکتر مورد دسترسی اندیس <bdo class="leftInline">len(fruti) - 1</bdo> می باشد، که آخرین کاراکتر رشته خواهد بود.</p>
+<h4>تمرین 1</h4>
+<p>تابعی بنویسید که یک رشته را به عنوان آرگومان دریافت کرده و حروف آن را به صورت وارونه 
+نمایش دهد.</p>
+<p>روش دیگر نوشتن یک پیمایش با استفاده از حلقه for می باشد:</p>
+<code class="language-python">for char in fruit:
+    print char</code><p>هر بار درون حلقه، کاراکتر بعدی درون رشته به متغیر char نسبت داده می شود. 
+حلقه تا جایی ادامه پیدا می کند که دیگر هیچ کارکتری درون رشته باقی نماند.</p>
+<p>مثال زیر نحوه استفاده از به هم متصل کردن رشته و یک حلقه for برای تولید یک سری حروف
+به ترتیب حروف الفبا را نشان می دهد. در کتاب make Way for Ducklings اثر Robert McCloskey 
+نام جوجه اردک ها Jack، Kack، Lack، Mak، Nack، Ouack، Pack و Ouack می باشد، 
+خروجی حلقه زیر این نام ها را به ترتیب چاپ می کند.</p>
+<code class="language-python">prefixes = 'JKLMNOPQ'
+suffix = 'ack'
+
+for letter in prefixes:
+    print letter   suffix
+The output is:
+Jack
+Kack
+Lack
+Mack
+Nack
+Oack
+Pack
+Qack</code><p>البته، خروجی به طور کامل صحیح نیست، "Oauck" و "Quack" از نظر املایی غلط می باشند.</p>
+<h4>تمرین 2</h4>
+<p>کد فوق را جهت رفع مشکل اصلاح کنید.</p>
+<h3>برش های رشته</h3>
+<p>یک بند از یک <a title="آموزش رشته در پایتون" class="content" href="http://oruji.github.io/amoozesh.org/python/string/">رشته</a> را یک برش می گویند. انتخاب یک برش، دقیقا انتخاب یک کاراکتر است.</p>
+<code class="language-python">&gt;&gt;&gt; s = 'Monty Python'
+&gt;&gt;&gt; print s[0:5]
+Monty
+&gt;&gt;&gt; print s[6:12]
+Python</code><p>عملگر [n:m] بخشی از رشته یعنی رشته را از کاراکتر n تا بر می گرداند، که شامل اولین برش 
+یعنی عدد n می شود، ولی شامل m نمی شود. این رفتار کمی عجیب به نظر می رشد، 
+ولی ممکن است همانطور که در تصویر 8-1 مشاهده می کنید به این تصور کمک کند که نقطه اندیس بین کارکترها می باشد.</p>
+<table class="note"><tbody>
+<tr>
+<td><img alt="شکل" src="http://oruji.github.io/amoozesh.org/static/img/python/pic.png" width="40" height="40"></td>
+<td valign="middle" width="95%"><h3>شکل 1-8</h3></td>
+</tr>
+<tr><td colspan="2"><img alt="شکل 1-8" src="http://oruji.github.io/amoozesh.org/static/img/python/8-1.png" width="90%"></td></tr>
+</tbody></table>
+<p>در صورتیکه اندیس اول (قبل از : را) از قلم بیاندازید، برش از ابتدا رشته شروع می کند و همچنین در صورتیکه اندیس دوم را از قلم بیاندازید، برش تا انتهای رشته ادامه پیدا می کند.</p>
+<code class="language-python">&gt;&gt;&gt; fruit = 'banana'
+&gt;&gt;&gt; fruit[:3]
+'ban'
+&gt;&gt;&gt; fruit[3:]
+'ana'</code><p>در صورتیکه اندیس اول بزرگتر یا مساوی اندیس دوم باشد، نتیجه یک رشته خالی خواهد بود که درون علامت کتیشن قرار خواهد گرفت.</p>
+<code class="language-python">&gt;&gt;&gt; fruit = 'banana'
+&gt;&gt;&gt; fruit[3:3]
+''</code><p>یک رشته خالی حاوی هیچ کارکتری نبوده و طول آن 0 می باشد، ولی با این حال مانند باقی رشته ها خواهد بود.</p>
+<h3>رشته ها تغییر ناپذیر هستند</h3>
+<p>به نظر وسوسه انگیز می رسد به منظور تغییر یک کاراکتر در رشته از عملگر [] در سمت چپ یک انتساب استفاده کرد برای مثال:</p>
+<code class="language-python">&gt;&gt;&gt; greeting = 'Hello, world!'
+&gt;&gt;&gt; greeting[0] = 'J'
+TypeError: object does not support item assignment</code><p>"object" در مثال فوق رشته و "item" کارکتری است که انتساب داده شده است. 
+فعلا یک شیء همان مقدار می باشد، ولی بعدا شیء را به تفصیل توضیح خواهیم داد. item 
+یکی از مقادیر موجود در ترتیب (sequence) می باشد.</p>
+<p>دلیل خطای فوق این که است که رشته تغییر ناپذیر است، بدین معنی که نمی توان یک رشته موجود 
+را تغییر داد. بهترین راهکار استفاده از یک رشته جدید است.</p>
+<code class="language-python">&gt;&gt;&gt; greeting = 'Hello, world!'
+&gt;&gt;&gt; new_greeting = 'J'   greeting[1:]
+&gt;&gt;&gt; print new_greeting
+Jello, world!</code><p>مثال فوق یک حرف جدید را به عنوان اولین حرف به برش greeting متصل می کند. انتساب فوق 
+هیچ تاثیری بر رشته اصلی ندارد.</p>
+<h3>جستجو کردن</h3>
+<p>تابع زیر چه کاری انجام می دهد؟</p>
+<code class="language-python">def find(word, letter):
+    index = 0
+    while index &lt; len(word):
+        if word[index] == letter:
+            return index
+        index = index   1
+    return -1</code><p>در یک معنا، تابع فوق نقطه مقابل عملگر [] می باشد، بدین معنی که، به جای اینکه یک اندیس را 
+گرفته و کاراکتر مرتبط با آن را بر گرداند، یک کاراکتر را گرفته و اندیس مربوط به کاراکتر را بر 
+می گرداند. در صورتیکه کاراکتر مورد نظر پیدا نشود تابع -1 بر می گرداند.</p>
+<p>این اولین مثالی است که جمله return درون حلقه قرار گرفته است. در صورتیکه 
+word[index] == letter باشد، تابع حلقه را شکسته و به سرعت برگردانده می شود.</p>
+<p>در صورتیکه کاراکتر در رشته وجود نداشته باشد، برنامه به طور عادی از حلقه خارج شده و -1 را بر می گرداند.</p>
+<p>این توع الگوی محاسبه یعنی: پیمایش یک ترتیب و برگرداندن، هنگامی که چیزی که به دنبالش می باشیم را پیدا کردیم را 
+جستجو می نامند.</p>
+<h3>استفاده از حلقه و شمارشگر</h3>
+<p>برنامه زیر تعداد کاراکتر a موجود در رشته را حساب می کند.</p>
+<code class="language-python">word = 'banana'
+count = 0
+for letter in word:
+    if letter == 'a':
+        count = count   1
+print count</code><p>برنامه فوق الگوی محاسبه دیگری را نشان می دهد که شمارشگر نام دارد. متغیر count 
+با مقدار اولیه 0 ایجاد شده و هر بار که کاراتر a در رشته یافت می شود 
+یک واحد به آن اضافه می گردد. زمانی که حلقه خارج شود، متغیر count حاوی نتیجه خواهد بود 
+یعنی تعداد a های موجود در رشته.</p>
+<h3>متدهای رشته</h3>
+<p>یک متد چیزی شبیه به تابع می باشد، بدین معنی که آرگون هایی را دریافت کرده و یک مقدار بر می گرداند، 
+ولی در syntax با یکدیگر متفاوت هستند. برای مثال. برای مثال، متد upper یک رشته را 
+دریافت کرده و یک رشته جدید بر می گرداند که در آن تمامی حروف به حروف بزرگ تبدیل شده اند.</p>
+<p>به جای استفاده از یک تابع به عنوان مثال <bdo class="leftInline">upper(word)</bdo>، در مثال زیر از syntax متد استفاده شده است: <bdo class="leftInline">word.upper()</bdo>.</p>
+<code class="language-python">&gt;&gt;&gt; word = 'banana'
+&gt;&gt;&gt; new_word = word.upper()
+&gt;&gt;&gt; print new_word
+BANANA</code><p>این حالت از نقطه گذاری نام متد را مشخص می کند، که upper می باشد، و نام رشته ای که متد 
+بر روی آن اجرا می شود word می باشد. پرانتزهای خالی نشانگر این هستند که متد هیچ آرگومانی 
+دریافت نمی کند.</p>
+<p>اینگونه استفاده از متد را فراخوانی می نامند؛ در مورد فوق، خواهیم گفت که، ما در حال فراخوانی upper 
+در word می باشیم.</p>
+<p>همانطور که معلوم است، یک متد رشته با نام find وجود دارد که به طور قابل ملاحظه ای شبیه به 
+تابعی است که پیش از این نوشتیم:</p>
+<code class="language-python">&gt;&gt;&gt; word = 'banana'
+&gt;&gt;&gt; index = word.find('a')
+&gt;&gt;&gt; print index
+1</code><p>در مثال فوق، ما متد find را فراخوانی کرده و حرف مورد نظر خود را به عنوان پارامتر به آن 
+ارسال کردیم.</p>
+<p>در واقع، متد find کلی تر از تابعی است که ما قبلا نوشتیم، این متد نه تنها می تواند کاراکتر را پیدا کند، بلکه زیر رشته ها را نیز 
+پیدا می کند:</p>
+<code class="language-python">&gt;&gt;&gt; word.find('na')
+2</code><p>همچنین متد فوق یک آرگومان دیگر نیز دریافت می کند که مشخص می کند جستجو از کدام اندیس شروع شود:</p>
+<code class="language-python">&gt;&gt;&gt; word.find('na', 3)
+4</code><p>بعلاوه آرگومان سوم که مشخص می کند جستجو در کدام اندیس پایان یابد:</p>
+<code class="language-python">&gt;&gt;&gt; name = 'bob'
+&gt;&gt;&gt; name.find('b', 1, 2)
+-1</code><p>جستجوی فوق موفق نبود چرا که b در محدوده اندیس 1 تا 2 (نه خود 2) وجود نداشت.</p>
+<h3>عملگر in</h3>
+<p>کلمه in یک عملگر boolean می باشد که دو رشته را گرفته و در صورتی که رشته اول 
+زیر رشته یا زیر مجموعه رشته دوم باشد مقدار True بر می گرداند.</p>
+<code class="language-python">&gt;&gt;&gt; 'a' in 'banana'
+True
+&gt;&gt;&gt; 'seed' in 'banana'
+False</code><p>براث مثال، تابع زیر تمام حروف word1 را در صورتی که درون word2 باشد چاپ می کند.</p>
+<code class="language-python">def in_both(word1, word2):
+    for letter in word1:
+        if letter in word2:
+            print letter</code><p>در صورتیکه از نام های درست استفاده کنید، پایتون گاهی اوقات مانند زبان انگلیسی 
+خوانده می شود:
+“for (each) letter in (the first) word, if (the) letter (appears) in (the second) word, print (the) letter.”</p>
+<p>در زیر نتیجه مقایسه apples با oranges را با استفاده از تابع نوشته مشاهده می کنید:</p>
+<code class="language-python">&gt;&gt;&gt; in_both('apples', 'oranges')
+a
+e
+s</code><h3>مقایسه رشته ها</h3>
+<p>عملگرهای انتسابی برای رشته ها استفاده می شوند. مقایسه این که آیا دو رشته با هم مساوی هستند:</p>
+<code class="language-python">if word == 'banana':
+    print 'All right, bananas.'</code><p>عملگرهای انتسابی دیگر برای قرار دادن لغات به ترتبی حروف الفبا کاربرد خواهند داشت:</p>
+<code class="language-python">if word &lt; 'banana':
+    print 'Your word,'   word   ', comes before banana.'
+elif word &gt; 'banana':
+    print 'Your word,'   word   ', comes after banana.'
+else:
+    print 'All right, bananas.'</code><p>پایتون حروف بزرگ و کوچک را به همان روشی که در دنیای واقعی ما از آستفاده می کنیم، ‌کنترل نمی کند. 
+تمامی حروف بزرگ قبل از حروف کوچک می آیند، ‌بنابراین:</p>
+<code class="language-">Your word, Pineapple, comes before banana.</code><p>رایج ترین روش برای درست کردن این مشکل این است که، قبل از انجام عمل مقایسه، 
+رشته ها را به حروف کوچک تبدیل کنیم.</p>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش پایتون</div>
+<a title="متد append لیست" class="anav" href="http://oruji.github.io/amoozesh.org/python/list/append/">متد append لیست</a><a href="http://oruji.github.io/amoozesh.org/python/variable/" class="anav" title="متغیرها، عبارات و جمله ها">متغیرها، عبارات و جمله ها</a><div  class="divnav" title="رشته ها">رشته ها</div><a class="anav" href="http://oruji.github.io/amoozesh.org/python/list/" title="لیست ها">لیست ها</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/dictionary/" title="دیکشنری">دیکشنری</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/for/" title="حلقه for">حلقه for</a><a href="http://oruji.github.io/amoozesh.org/python/file-database/" class="anav" title="فایل ها و دیتابیس ها">فایل ها و دیتابیس ها</a><a href="http://oruji.github.io/amoozesh.org/python/function/" class="anav" title="توابع">توابع</a><a class="anav" href="http://oruji.github.io/amoozesh.org/python/print/pyramid/" title="چاپ هرم">چاپ هرم</a><a title="پردازش XML" class="anav" href="http://oruji.github.io/amoozesh.org/python/xml/">پردازش XML</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/python/string/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:42 GMT -->
+</html>

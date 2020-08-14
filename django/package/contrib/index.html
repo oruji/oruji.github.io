@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/package/contrib/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/django/package/contrib/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>پکیج django.contrib جنگو کتاب آموزش آنلاین چارچوب فریم ورک</title>
+<meta name="description" content="آموزش کتاب برخط آنلاین فریم ورک چارچوب جنگو Django کتابخانه استاندارد درون پکیج django.contrib قرار گرفته. درون هر ساب پکیج یک قسمت جدا از عملکرد add-on می باشد" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="پکیج django.contrib جنگو کتاب آموزش آنلاین چارچوب فریم ورک" />
+<meta property="og:description" content="آموزش کتاب برخط آنلاین فریم ورک چارچوب جنگو Django کتابخانه استاندارد درون پکیج django.contrib قرار گرفته. درون هر ساب پکیج یک قسمت جدا از عملکرد add-on می باشد" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/django/package/contrib/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/13 19:20</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>آموزش پکیج django.contrib در جنگو (Django)</h1>
+<p>یکی از نقاط قدرت پایتون فلسفه ی "batteries included" پایتون می باشد: هنگامی که پایتون را نصب می کنید، پایتون درون خود دارای یک کتابخانه بزرگ از پکیج هایی می باشد که می توان بلافاصله از آن ها استفاده کرد می باشد، بدون نیاز به دانلود هیچ چیز دیگری. جنگو سعی می کند این فلسفه را دنبال کند، و حاوی کتابخانه ی استاندارد خودش می باشد از add-on های مفید برای وظایف مشترک توسعه ی وب می باشد. این آموزش از کتاب، مجموعه ای از این add-on ها را پوشش می دهد.</p>
+<h2>کتابخانه ی استاندارد جنگو</h2>
+<p>کتابخانه ی استاندارد جنگو، درون پکیج django.contrib قرار گرفته است. درون هر ساب پکیج یک قسمت جدا از عملکرد add-on می باشد. این قسمت ها لزوما وابسته نمی باشند، ولی برخی ساب پکیج های django.contrib نیازمند دیگر پکیج ها می باشند.</p>
+<p>هیچ نیازمندی سختی برای انواع عمکردها در django.contrib وجود ندارد. برخی از پکیج ها شامل ماژول هایی می باشند (و از این رو نیازمند نصب جداول پایگاه داده ی آن ها درون پایگاه داده ی شما می باشد.)، ولی بقیه تنها عبارتند از middleware یا تگ های template.</p>
+<p>تنها مشخصه ی مشترکی بین پکیج های django.contrib وجود دارد این است: در صورتی که پکیج django.contrib را به کلی حذف کنید، شما همچنان می توانید از خصوصیات اساسی جنگو بدون هیچ مشکلی استفاده کنید. هنگامی که توسعه دهندگان جنگو عملکرد جدیدی را به فریم ورک یا چارچوب اضافه می کنند، آن ها از این قانون تجربی در تصمیم اینکه آیا عمکرد جدید باید درون django.contrib باشد یا جای دیگری استفاده می کند.</p>
+<p>django.contrib عبارت است از این پکیج ها:</p>
+<ul>
+<li>admin: سایت مدیر جنگو. توضیح داده شده در <a href="http://oruji.github.io/amoozesh.org/django/admin-site/" class="content" title="سایت مدیر">سایت مدیر</a>.</li>
+<li>admindocs: مستندات خودکار برای سایت مدیر جنگو. این کتاب این خصوصیت را پوشش نمی دهد؛ مستندات رسمی جنگو را بررسی کنید.</li>
+<li>auth: فریم ورک تصدیق جنگو. توضیح داده شده در <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a>.</li>
+<li>comments: یک برنامه ی نظرات. این کتاب این خصوصیت را پوشش نمی دهد. مستندات رسمی جنگو را بررسی کنید.</li>
+<li>contenttypes: (در دست ترجمه ...). </li>
+<li>csrf: محافظت در برابر <bdo class="leftInline">Cross-Site Request Forgery (CSRF)</bdo>. به بخش "CSRF Protection" در همین فصل مراجعه کنید.</li>
+<li>databrowse: برنامه ی جنگو ای که اجازه می دهد داده ها را مرور کنید. این کتاب این خصوصیت را پوشش نمی دهد؛ مستندات رسمی جنگو را بررسی کنید.</li>
+<li>flatpages: یک فریم ورک برای مدیریت ساده ی محتوای <bdo class="leftInline">"flat" HTML</bdo> در یک پایگاه داده. به بخش "Flatpages" در همین فصل مراجعه کنید.</li>
+<li>formtools: تعدادی از کتابخانه های مفید سطح بالا برای سر و کار داشتن با الگوهای مشترک در فرم ها. این کتاب این خصوصیت را پوشش نمی دهد؛ مستندات رسمی جنگو را بررسی کنید.</li>
+<li>gis: ضمیمه هایی برای جنگو که پشتیبانی از <bdo class="leftInline">GIS (Geographic Information Systems)</bdo> را پشتیبانی می کند. برای مثال، به مدل های جنگو جهت ذخیره ی داده ی جغرافیایی اجازه می دهد و کوئری های جغرافیایی را نمایش می دهد. این یک کتابخانه ی بزرگ و پیچیده می باشد که در این کتاب پوشش داده نمی شود. برای اطلاعات بیشتر در این مورد به <bdo class="leftInline">http://geodjango.org/</bdo> مراجعه کنید.</li>
+<li>humanize: مجموعه ای از فیلترهای مفید template جنگو برای اضافه کردن یک "human touch" به داده می باشد. به بخش "Humanizing Data" در همین فصل مراجعه کنید.</li>
+<li>localflavor: قسمت های مناسبی از کد که برای کشور یا فرهنگ های خاص مفید می باشند. برای مثال، شامل روش هایی برای تایید اعتبار کدهای ZIP ایالات متحده یا شماره های شناسایی ایسلند.</li>
+<li>marup: مجموعه ای از فیلترهای template جنگو که تعدادی از زبان های مشترک markup را اجرا می کنند. برای اطلاعات بیشتر به بخش "فیلترهای Marcup" مراجعه کنید.</li>
+<li>redirects: فریم ورکی برای مدیریت تغییر مسیرها. به بخش "تغییر مسیرها" مراجعه کنید.</li>
+<li>sessions: فریم session جنگو. توضیح داده شده در <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a>.</li>
+<li>sitemaps:  فریم ورکی برای تولید فیل XML نقشه ی سایت. توضیح داده شده در <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a>.</li>
+<li>sites: فریم ورکی که به شما اجازه می دهد چندین وب سایت را با یک پایگاه داده و یک نصب جنو اداره کنید. به بخش بعدی "sites" مراجعه کنید.</li>
+<li>syndication: فریم ورکی برای تولید خوراک پیوند در RSS و Atom. توضیح داده شده در <a href="http://oruji.github.io/amoozesh.org/django/non-html/" class="content" title="تولید محتوای غیر html">تولید محتوای غیر html ای</a>.</li>
+<li>webdesign: add-on های جنگو که به طور خاص برای طراحان وب (مخالف توسعه دهندگان) مفید می باشد. تا زمان نوشتن این کتاب، این آیتم تنها شامل یک تگ template با نام <bdo class="leftInline">{% lorem %}</bdo> می باشد. برای اطلاعات بیشتر مستندات جنگو را بررسی کنید.</li>
+</ul>
+<p>باقی مانده ی این آموزش از کتاب، به جزئیات تعدادی از پکیج های django.contrib خواهد پرداخت که تاکنون درباره ی آن ها در این کتاب بحث نشده است.</p>
+<h3>Sites</h3>
+<p>سیستم sites جنگو یک فریم ورک یا چارچوب جنریک می باشد که به شما اجازه می دهد چندین وب سایت را با پایگاه داده و پروژه ی جنگوی همسان اداره کنید. این یک مفهوم تصوری می باشد، و (در دست ترجمه ...)، بنابراین با چند سناریو شروع می کنیم که این مفهوم می تواند در آنجا مفید باشد.</p>
+<h4>سناریو 1: استفاده ی دوباره از داده در سایت های چندگانه</h4>
+<p>همانطور که در <a href="http://oruji.github.io/amoozesh.org/django/introduction/" class="content" title="مقدمه">مقدمه</a> توضیح داده شد، سایت های LJWorld.com و Lawrence.com ساخته شده با جنگو توسط سازمان اخبار یکسان اداره شده است: روزنامه ی Lawrence Journal-World در Lawrence، Kansas. LJWorld.com بر روی اخبار تمرکز می کند، در حالی که Lawrence.com بر روی سرگرمی های محلی. ولی اغلب مقاله نویسان می خواهند یک مقاله را بر روی هر دو سایت منتشر کنند.</p>
+<p>روش احمقانه برای حل مشکل، استفاده از پایگاه داده ی جدا برای هر سایت و نیاز داشتن تولید کنندگان سایت جهت دو مرتبه انتشار یک داستان همسان: یک مرتبه برای LJWorld.com و دوباره یک بار دیگر برای Lawrence.com. ولی این حرکت برای تولید کنندگان سایت نا کارآمد می باشد، و ذخیره ی چندین کپی از یک داستان در پایگاه داده کاری زائد و افزونه می باشد.</p>
+<p>راهکار بهتر؟ هر دو سایت از یک پایگاه داده ی استفاده کنند، و یک مقاله از طریق یک رابطه ی چند به چند با یک یا چند سایت مشترک باشد. فریم ورک یا چارچوب sites جنگو جدول پایگاه داده ای برای آن دسته از مقالاتی که می توانند مرتبط باشند ارائه می کند. این یک قلاب برای پیوستن داده با یک یا بیشتر سایت ها می باشد.</p>
+<h4>سناریو 2: ذخیره ی نام/دامنه ی سایت شما در یک مکان</h4>
+<p>LJWorld.com و Lawrence.com هر دو دارای قابلیت هشدار پست الکترونیک می باشند، که به خوانندگان اجازه می دهد جهت دست یابی به اطلاعات در هنگام بروز اخبار عضو شوند. این بسیار اساسی است: یک خواننده در یک وب عضو می شود، و بلا فاصله یک پست الکترونیک با پیام "Thanks for you subscription" در یافت می کند.</p>
+<p>اجرا شدن این پروسه ی عضویت به صورت دو مرتبه کد زدن یکسان نا کارآمد و زائد می باشد، بنابراین سایت ها از در پشت صحنه از یک کد همسان استفاده می کنند. ولی پیام "Thanks you for your subscription" برای هر سایت باید متفاوت باشد. با استفاده از شیء های Site، می توان پیام thank-you را با استفاده از مقادیر نام سایت فعلی (مانند 'LJWorld.com') و نام دامنه (مانند 'www.ljworld.com') جدا کرد.</p>
+<p>فریم ورک sites جنگو مکانی برای شما جهت ذخیره name و domain برای هر سایت در پروژه ی جنگو ارائه می کند، که بدین معنی است که می توانید از مقدایر در یک روش جنریک دوباره استفاده کرد.</p>
+<h4>نحوه ی استفاده از فریم ورک یا چارچوب Sites</h4>
+<p>فریم ورک sites بیشتر یک سری از قرارداد ها می باشد تا یک چارچوب. همه چیز بر اساس دو مفهوم ساده می باشد:</p>
+<ul>
+<li>مدل Site، درون django.contrib.sites، دارای فیلدهای domain و name.</li>
+<li>تنظیم SITE_ID که ID پایگاه داده را از شیء Site وابسته شده با آن تنظیمات خاص فایل تعیین می کند.</li>
+</ul>
+<p>نحوه ی استفاده از این دو مفهوم به عهده ی خودتان می باشد، ولی جنگو از طریق قراردادهای ساده ای در چند روش به طور خودکار استفاده می کند.</p>
+<p>جهت نصب برنامه ی sites، مراحل زیر را دنبال کنید:</p>
+<ol>
+<li>'django.contrib.sites' را به تنظیم INSTALLD_APPS اضافه کنید.</li>
+<li>دستور manage.py syncdb را جهت نصب جدول django_site داخل پایگاه داده ی خود اجرا کنید. همچنین این یک شیء site پیشفرض، با دامنه ی example.com ایجاد می کند.</li>
+<li>سایت example.com را به دامنه ی خودتان تغییر داده، و هر شیء Site دیگری را اضافه کنید، هم از طریق سایت مدیر جنگو یا از طریق API پایتون. یک شیء Site برای هر سایت/دامنه ای که این پروژه ی جنگو ایجاد کرده بسازید.</li>
+<li>تنظیم SITE_ID در هر یک از فایل های تنظیم خودتان تعریف کنید. این مقدار باید ID پایگاه داده برای شیء Site، جهت سایت ایجاد شده توسط آن فایل تنظیمات باشد.</li>
+</ol>
+<h4>قابلیت های فریم ورک یا چارچوب Sites</h4>
+<p>بخش های زیر کارهای مختلفی را که می توانید با فریم ورک sites انجام دهید را توضیح می دهد.</p>
+<h4>استفاده ی دوباره از داده در چندین سایت</h4>
+<p>جهت استفاده ی دوباره از داده در چندین سایت، همانطور که در سناریو 1 توضیح داده شد، تنها کافیست یک ManyToManyField برای Site در مدل های خود ایجاد کنید، برای مثال:</p>
+<code class="language-python">from django.db import models
+from django.contrib.sites.models import Site
+
+class Article(models.Model):
+    headline = models.CharField(max_length=200)
+    # ...
+    sites = models.ManyToManyField(Site)</code><p>این زیر ساختی است که برای مربوط ساختن مقالات با چندین سایت در پایگاه داده نیاز می باشد. با قرار گرفتن آن، می توان از کد view جنگوی همسان برای چندین سایت دوباره استفاده کرد. مثال مدل Article زیر، view مورد نظر یعنی article_detail به شکل زیر خواهد بود:</p>
+<code class="language-python">from django.conf import settings
+from django.shortcuts import get_object_or_404
+from mysite.articles.models import Article
+
+def article_detail(request, article_id):
+    a = get_object_or_404(Article, id=article_id, sites__id=settings.SITE_ID)
+    # ...</code><p>تابع view فوق قابل استفاده ی دوباره می باشد چرا که سایت مقاله را به صورت پویا بررسی می کند، بر حسب مقدار تنظیم SITE_ID.</p>
+<p>برای مثال، تصور کنید فایل تنظیمات LJWorld.com دارای یک تنظیم SITE_ID با مقدار 1 می باشد، و فایل تنظیمات Lawrence.com دارای یک SITE_ID با مقدار 2 می باشد. در صورتی که این view زمانی که فایل تنظیمات LJWorld.com فعال است فراخوانی شده است، سپس (در دست ترجمه ...).</p>
+<h4>مربوط ساختن محتوی با یک سایت تنها</h4>
+<p>به طور همسان، می توان یک مدل را در یک رابطه ی چند به یک با استفاده از ForeignKey به مدل Site مرتبط کرد.</p>
+<p>برای مثال، در صورتی که هر مقاله تنها با یک سایت تنها مرتبط باشد، می توانید از مدلی شبیه به مدل زیر استفاده کنید:</p>
+<code class="language-python">from django.db import models
+from django.contrib.sites.models import Site
+
+class Article(models.Model):
+    headline = models.CharField(max_length=200)
+    # ...
+    site = models.ForeignKey(Site)</code><p>کد فوق دارای مزیت همسان با بخش قبلی می باشد که توضیح داده شد.</p>
+<h4>Hooking Into the Current Site from Views</h4>
+<p>در یک سطح پایین، می توان کارهای خاصی را بر اساس سایت با استفاده از فریم ورک sites در view های جنگو در view ای که فراخوانی شده است انجام داد، برای مثال:</p>
+<code class="language-python">from django.conf import settings
+
+def my_view(request):
+    if settings.SITE_ID == 3:
+        # Do something.
+    else:
+        # Do something else.</code><p>البته، قرار دادن ID های سایت مانند کد فوق کاری شلخته می باشد. روشی تمیزتر از انجام کاری یکسان برای بررسی دامنه ی سایت:</p>
+<code class="language-python">from django.conf import settings
+from django.contrib.sites.models import Site
+
+def my_view(request):
+    current_site = Site.objects.get(id=settings.SITE_ID)
+    if current_site.domain == 'foo.com':
+        # Do something
+    else:
+        # Do something else.</code><p>روش بازیابی شیء Site برای مقدار settings.SITE_ID بسیار رایج می باشد، بنابراین مدیر مدل <bdo class="leftInline">Site (Site.objects)</bdo> دارای یک متد <bdo class="leftInline">get_current()</bdo> می باشد. مثال زیر برابر با مثال قبلی می باشد:</p>
+<code class="language-python">from django.contrib.sites.models import Site
+
+def my_view(request):
+    current_site = Site.objects.get_current()
+    if current_site.domain == 'foo.com':
+        # Do something
+    else:
+        # Do something else.</code><ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="جدول" class="yaddasht"><h4>نکته</h4>
+<p>در مثال آخر، نیاز به import کردن django.conf.settings نمی باشد.</p>
+</ul>
+<h4>بدست آوردن دامنه ی فعلی برای نمایش</h4>
+<p>برای یک رویکرد <bdo class="leftInline">DRY (Don't Repeat Yourself)</bdo>، حذف کد های تکراری، جهت ذخیره ی نام سایت و دامنه، همانطور که کمی قبل تر در "سناریو 2: ذخیره نام/دامنه سایت در یک مکان" توضیح داده شد، تنها کافیست به name و domain شیء Site فعلی مراجعه کنید. برای مثال:</p>
+<code class="language-python">from django.contrib.sites.models import Site
+from django.core.mail import send_mail
+
+def register_for_newsletter(request):
+    # Check form values, etc., and subscribe the user.
+    # ...
+    current_site = Site.objects.get_current()
+    send_mail('Thanks for subscribing to %s alerts' % current_site.name,
+        'Thanks for your subscription. We appreciate it.\n\n-The %s team.' % current_site.name,
+        'editor@%s' % current_site.domain,
+        [user_email])
+    # ...</code><p>در ادامه مثال در حال پیشرفت LJWorld.com و Lawrence.com در Lawrence.com این آدرس پست الکترونیک دارای خط موضوع "Thanks for subscribing to Lawrence.com alerts" می باشد. در LJWorld.com، آدرس پست الکترونیکی دارای خط موضوع "Thanks … to LJworld.com alerts" می باشد. این رفتار همسان مختص سایت برای بدنه ی پیام آدرس پست الکترونیک بکار برده می شود.</p>
+<p>یک روش حتی بیشتر انعطاف پذیر (ولی سنگین تر) برای انجام این استفاده از سیستم template جنگو می باشد. با فرض اینکه Lawrence.com و LJWorld.com دارای دایرکتوری های template متفاوت (TEMPLATE_DIRS)، می توان به سادگی به سیستم template محول کرد، مانند زیر:</p>
+<code class="language-python">from django.core.mail import send_mail
+from django.template import loader, Context
+
+def register_for_newsletter(request):
+    # Check form values, etc., and subscribe the user.
+    # ...
+    subject = loader.get_template('alerts/subject.txt').render(Context({}))
+    message = loader.get_template('alerts/message.txt').render(Context({}))
+    send_mail(subject, message, 'do-not-reply@example.com', [user_email])
+    # ...</code><p>در این مورد، شما ملزم به ساخت template های subject.txt و message.txt در هر دو دایرکتوری template برای LJWorld.com و Lawrence.com می باشد. همانطور که قبلا ذکر شد، این روش منعطف تر از روش قبلی، ولی پیچیده تر نیز می باشد.</p>
+<p>این ایده ی خوبی برای بکار بردن شیء های Site تا آنجا که ممکن است برای حذف پیچیدگی زائد و اضافه می باشد.</p>
+<h4>CurrentSiteManager</h4>
+<p>در صورتی که شیء ها نقش کلیدی را در برنامه ی شما ایفا می کنند، استفاده از CurrentSiteManager را در مدل های خود مورد ملاحظه قرار دهید. CurrentSiteMannager یک مدیر مدل (به <a href="http://oruji.github.io/amoozesh.org/django/model/advance/" class="content" title="مدل پیشرفته">آموزش مدل پیشرفته</a> مراجعه کنید) است که به طور خودکار کوئری های خود را جهت بر داشتن تنها شیء های مرتبط شده با Site فعلی فیلتر می کند.</p>
+<p>با اضافه کردن CurrentSiteManager به مدل خود از آن استفاده کنید. برای مثال:</p>
+<code class="language-python">from django.db import models
+from django.contrib.sites.models import Site
+from django.contrib.sites.managers import CurrentSiteManager
+
+class Photo(models.Model):
+    photo = models.FileField(upload_to='/home/photos')
+    photographer_name = models.CharField(max_length=100)
+    pub_date = models.DateField()
+    site = models.ForeignKey(Site)
+    objects = models.Manager()
+    on_site = CurrentSiteManager()</code><p>با مدل فوق، <bdo class="leftInline">Photo.objects.all()</bdo> تمام شیء های Photo را در پایگاه داده بر می گرداند. ولی <bdo class="leftInline">Photo.on_site.all()</bdo> تنها شیء های Photo مرتبط شده با سایت فعلی را بر می گرداند، بر حسب تنظیم SITE_ID.</p>
+<p>به عبارت دیگر، دو عبارت زیر با یکدیگر برابر می باشند:</p>
+<code class="language-python">Photo.objects.filter(site=settings.SITE_ID)
+Photo.on_site.all()</code><p>چطور CurrentSiteManager می داند کدام فیلد از Photo، Site بوده است؟ به طور پیشفرض CurrentSiteMananger به دنبال یک فیلد با نام site می گردد. در صورتی که مدل شما دارای یک ForeignKey یا ManyToManyField فراخوانی شده ی چیزی به غیر از site باشد، نیاز خواهید داشت آن را به صورت پارامتر به CurrentSiteManager ارسال کنید. مدل زیر، که دارای یک فیلد با نام publish_on می باشد، این را توضیح می دهد:</p>
+<code class="language-python">from django.db import models
+from django.contrib.sites.models import Site
+from django.contrib.sites.managers import CurrentSiteManager
+
+class Photo(models.Model):
+    photo = models.FileField(upload_to='/home/photos')
+    photographer_name = models.CharField(max_length=100)
+    pub_date = models.DateField()
+    publish_on = models.ForeignKey(Site)
+    objects = models.Manager()
+    on_site = CurrentSiteManager('publish_on')</code><p>در صورتی که در تلاش برای استفاده از CurrentSiteManager و ارسال یک نام فیلدی که وجود ندارد می باشد، جنگو یک خطای ValueError ایجاد خواهد کرد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="جدول" class="yaddasht"><h4>نکته</h4>
+<p>احتمالا یک Manager معمولی (non-site-specific) در مدل خود نگه خواهید داشت، حتی اگر از CurrentSiteManager استفاهد کنید. همانطور که در Appendix B توضیح داده شده است، در صورتی که به صورت دستی یک مدیر تعریف کنید، جنگو مدیر خودکار <bdo class="leftInline">objects = models.Manager()</bdo> را برای شما ایجاد نخواهد کرد.</p>
+<p>همچنین بعضی قسمت های جنگو – برای مثال، سایت مدیر جنگو و view های جنریک – از مدیر در ابتدا تعریف شده در مدل استفاده می کنند، بنابراین در صورتی که می خواهید سایت مدیر شما دارای دسترسی به تمام شیء ها باشد (نه فقط آن هایی که site-specific هستند)، <bdo class="leftInline">objects = models.Manager()</bdo> را در مدل خود قرار دهید، قبل از تعریف CurrentSiteManager.</p>
+</ul>
+<h4>طریقه ی استفاده ی جنگو از فریم ورک Sites</h4>
+<p>اگر چه استفاده از فریم ورک sites الزامی نمی باشد، استفاده از آن تشویق شده است، چرا که جنگو از آن در چند جا سود می برد. حتی اگر نصب جنگو شما تنها یک سایت را پشتیبانی کند، شما باید چند ثانیه برای ساختن شیء site با domain و name خودتان و اشاره به ID آن در تنظیم SITE_ID وقت صرف کنید.</p>
+<p>در زیر نحوه ی استفاده ی جنگو از فریم ورک sites وجود دارد:</p>
+<ul>
+<li>در فریم ورک تغییر مسیرها (به بخش "تغییر مسیرها" مراجعه کنید)، هر شیء redirect با یک سایت خاص مرتبط می باشد. هنگامی که جنگو برای یک تغییر مسیر جستجو می کند، (در دست ترجمه ...).</li>
+<li>در فریم ورک comments، هر comment با یک سایت خاص مرتبط شده است. هنگامی که یک comment ارسال می شود، site آن در SITE_ID فعلی قرار داده می شود، و هنگامی که comment ها از طریق تگ template مناسب لیست شده اند، comment ها تنها برای سایت فعلی نمایش داده می شوند.</li>
+<li>در فریم ورک flatpages (بخش "Flatpages" را در همین فصل مشاهده کنید)، هر flatpage یا یک سایت خاص مرتبط شده است. هنگامی که یک flatpage ساخته شده است، شما site آن را تعیین می کند، و flatpage middleware، SITE_ID فعلی را در بازیابی flatpage ها برای نمایش بررسی می کند.</li>
+<li>در فریم ورک syndication (<a href="http://oruji.github.io/amoozesh.org/django/non-html/" class="content" title="تولید محتوای غیر html">تولید محتوای غیر html ای</a> را مشاهده کنید) template ها برای title و description به طور خودکار دارای دسترسی به یک متغیر <bdo class="leftInline">{{ site }}</bdo> می باشند که نمایش شیء Site، سایت فعلی می باشد. همچنین، hook برای تهیه ی URL های آیتم در صورتی که یک دامنه ی کاملا واجد شرایط تعیین نکنید از domain شیء Site فعلی استفاده خواهد کرد.</li>
+<li>در فریم ورک تصدیق (<a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a> را مشاهده کنید)، django.contrib.auth.views.login نام Site فعلی برای template به صورت <bdo class="leftInline">{{ site_name }}</bdo> و شیء Site فعلی را به صورت <bdo class="leftInline">{{ site }}</bdo> ارسال می کند.</li>
+</ul>
+<h3>Flatpages</h3>
+<p>اغلب شما یک برنامه ی وب پایگاه داده محور خواهید داشت، ولی به تعدادی از صفحات استاتیک نیز نیاز خواهید داشت، از قبیل یک صفحه ی About یا یک صفحه ی Privacy Policy. این امکان وجود دارد که برای این نوع صفحات از وب سرور های استانداردی مانند Apache به صورت فایل های flat HTML استفاده کرد، اما این سطح اضافه ای از پیچیدگی درون برنامه ی شما ایجاد می کند، چرا که شما باید نسبت به تنظیم Apache نیز نگرانی هایی داشته باشید. باید برای تیم خود جهت ویرایش آن فایل ها دسترسی بر پا کنید، و همچنین نمی توانید از سیستم template جنگو برای طراحی این صفحات استفاده کنید.</p>
+<p>راهکار برای این مشکل، برنامه ی flatpages جنگو می باشد، که در پکیج django.contrib.flatpages وجود دارد. این برنامه به شما اجازه می دهد صفحات استاتیک را از طریق سایت مدیر جنگو مدیریت کنید، همچنین این برنامه به شما اجازه می دهد template هایی برای آن ها با استفاده از سیستم template جنگو تعیین کنید، درست مثل بقیه ی داده های شما، و شما می توانید با API استاندارد پایگاه داده ی جنگو به flatpages دسترسی پیدا کنید.</p>
+<p>(در دست ترجمه ...).</p>
+<h4>استفاده از Flatpages</h4>
+<p>جهت نصب برنامه ی flatpages، مراحل زیر را دنبال کنید:</p>
+<ol>
+<li>'django.contrib.flatpages' را به تنظیم INSTALLED_APPS اضافه کنید. django.contrib.flatpages به django.contrib.sites وابسته است، بنابراین اطمینان حاصل کنید که هر دو پکیج درون INSTALLED_APPS وجود دارند.</li>
+<li>'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware' را به تنظیم MIDDLEWARE_CLASSES اضافه کنید.</li>
+<li>جهت نصب دو جدول الزامی درون پایگاه داده ی خود دستور manage.py sycndb را اجرا کنید.</li>
+</ol>
+<p>برنامه ی flatpages دو جدول درون پایگاه داده ی شما ایجاد می کند: django_flatpage و django_flatpage_sites. django_flatpage به سادگی یک URL را به عنوان و دسته ای از متن محتوا مرتبط می کند. django_flatpage_sites یک جدول چند به چند می باشد که یک flatpage را با یک یا بیشتر سایت ها مرتبط می سازد.</p>
+<p>برنامه دارای یک تنها یک مدل FlatPage می باشد، که در django/contrib./flatpages/models.py تعریف شده است. که چیزی شبیه به کد زیر می باشد:</p>
+<code class="language-python">from django.db import models
+from django.contrib.sites.models import Site
+
+class FlatPage(models.Model):
+    url = models.CharField(max_length=100, db_index=True)
+    title = models.CharField(max_length=200)
+    content = models.TextField(blank=True)
+    enable_comments = models.BooleanField()
+    template_name = models.CharField(max_length=70, blank=True)
+    registration_required = models.BooleanField()
+    sites = models.ManyToManyField(Site)</code><p>اجازه دهید فیلدهای فوق را مورد بررسی قرار دهیم:</p>
+<ul>
+<li>url: URL ای می باشد که درون flatpage قرار دارد، به استثنای نام دامنه ولی دارای علامت "/" ابتدا (/about/contact/).</li>
+<li>title: عنوان flatpage. فریم ورک هیچ کار خاصی با این فیلد انجام می دهد. این مسئولیت با عهده ی شما می باشد که آن را درون temtplate خود نمایش دهید.</li>
+<li>content: محتوای flatpage (مانند HTML صفحه). فریم ورک هیچ کار خاصی با این فیلد انجام نمی دهد. این به عهده ی شما می باشد که آن را درون template نمایش دهید.</li>
+<li>enable_comments: فعال کردن یا نکردن comment ها در این flatpage می باشد. فریم ورک هیچ کار خاصی با این فیلد انجام نمی دهد. می توان این مقدار را درون template بررسی کرده و در صورت نیاز یک comment نمایش داد.</li>
+<li>template_name: نام template جهت استفاده برای render کردن این flatpage. این فیلد اختیاری می باشد؛ در صورتی که داده نشده باشد یا در صورتی که این template وجود نداشته باشد، فریم ورک به template عقب نشینی خواهد کرد flatpages/default.html.</li>
+<li>registration_required: عضویت برای نمایش این flatpage الزامی است یا خیر. این فیلد با فریم ورک authentication/user کامل می شود، که در <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a> بیشتر درباره ی آن توضیح داده شده است.</li>
+<li>sites: سایت هایی که این flatpage در آن ها وجود دارد. این فیلد با فریم sites جنگو متحد می شود ، که در بخش "Sites" همین فصل توضیح داده شده است.</li>
+</ul>
+<p>می توان flatpages را از طریق رابط مدیر جنگو یا API پایگاه داده ی جنگو نیز ایجاد نمود. برای اطلاعات بیشتر در این مورد، بخش "اضافه کردن، تغییر دادن و حذف Flatpages" مشاهده کنید.</p>
+<p>هنگامی که flatpages ساخته شد، FlatpageFallbackMiddleware تمام کار را انجام می دهد. هر بار که هر برنامه ی جنگو یک خطای 404 را ایجاد می کند، این middleware برای URL درخواست شده به صورت آخرین چاره middleware را بررسی می کند. به طور خاص، برای یک flatpage با URL داده شده یا یک ID سایت که با تنظیم SITE_ID مطابقت دارد بررسی می کند.</p>
+<p>در صورتی که یک مطابق پدا کند، template مربوط به flatpage و یا در صورتی که flatpage دارای یک template سفارشی نباشد flatpages/default.html را بار گذاری می کند. این middleware آن template را تنها به یک متغیر context با نام flatpage ارسال می کند که شیء FlatPage می باشد، و در render کردن template از RequestContext استفاده می کند.</p>
+<p>در صورتی که FlatpageFallbackMiddleware هیچ مطابقی پیدا نکند، درخواست برای پردازش به صورت معمول به کارش ادامه می دهد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="جدول" class="yaddasht"><h4>نکته</h4>
+<p>این middleware تنها برای خطای 404 (page not found) فعال می شود – نه برای 500 (server error) یا خطاهای دیگر. همچنین به مسائل ترتیب MIDDLEWARE_CLASSES دقت داشته باشید که، به طور معمول FlatpageFallbackMiddleware در آنتها یا نزدیک به انتهای لیست قرار دهید، چرا که استفاده از آن چاره ی آخر می باشد.</p>
+</ul>
+<h3>اضافه کردن، تغییر دادن و حذف Flatpages</h3>
+<p>می توان flatpages را به دو روش اضافه کرده، تغییر داده و یا حذف کرد:</p>
+<h4>از طریق رابط مدیر</h4>
+<p>در صورتی که رابط خودکار مدیر جنگو فعال کرده اید، باید به قسمت "Flatpages" در صفحه ی index مدیر مشاهده کنید. flatpages را به همانطور که هر شیء دیگری را در سیستم ویرایش می کند ویرایش کنید.</p>
+<h4>از طریق API پایتون</h4>
+<p>همانطور که قبلا ذکر شد، flatpages توسط یک مدل استاندارد جنگو که درون django/contrib./flatpages/models.py وجود دارد نشان داده می شود. از این رو، می توان به شیء های flatpage از طریق API پایگاه داده ی جنگو دسترسی پیدا کرد، برای مثال:</p>
+<code class="language-python">&gt;&gt;&gt; from django.contrib.flatpages.models import FlatPage
+&gt;&gt;&gt; from django.contrib.sites.models import Site
+&gt;&gt;&gt; fp = FlatPage.objects.create(
+...     url='/about/',
+...     title='About',
+...     content='&lt;p&gt;About this site...&lt;/p&gt;',
+...     enable_comments=False,
+...     template_name='',
+...     registration_required=False,
+... )
+&gt;&gt;&gt; fp.sites.add(Site.objects.get(id=1))
+&gt;&gt;&gt; FlatPage.objects.get(url='/about/')
+&lt;FlatPage: /about/ -- About&gt;</code><h3>استفاده از Template های Flatpage</h3>
+<p>به طور پیشفرض، flatpages توسط template، flatpages/default.html، render می شود، ولی می توان آن را برای یک flatpage خاص، با فیلد template_name در شیء FlatPage، override کرد.</p>
+<p>ساختن flatpages/default.html به عهده ی شما می باشد. درون دایرکتوری template خودتان، تنها کافیست یک دایرکتوری flatpages حاوی فایل default.html بسازید.</p>
+<p>template های flatpage یک متغیر تنهای context با نام flatpage ارسال می کنند که شیء flatpage می باشد.</p>
+<p>در زیر یک نمونه template، flatpages/default.html وجود دارد:</p>
+<code class="language-django">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/REC-html40/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;{{ flatpage.title }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+{{ flatpage.content|safe }}
+&lt;/body&gt;
+&lt;/html&gt;</code><p>توجه داشته باشید که در کد فوق از فیلتر template، safe برای اجازه به flatpage.content جهت (در دست ترجمه ...) استفاده شده است.</p>
+<h3>Redirects</h3>
+<p>فریم ورک redirects جنگو به شما اجازه می دهد تغییر مسیرها را به سادگی توسط ذخیره ی آن ها در یک پایگاه داده و رفتار کردن با آن ها همانند هر شیء مدل دیگری کنترل کنید. برای مثال، می توان از فریم ورک redirects جنگو برای گفتن "هر درخواست به /music/ را به /sections/arts/music/ تغییر مسیر بده" استفاده کرد. هنگامی که نیاز به حرکت دادن برخی لینک در سایت خود داشته باشید این فریم ورک بسیار سودمند می باشد؛ توسعه دهندگان وب باید جهت اجناب از لینک های شکسته شده در صورت لزوم هرکاری انجام دهند.</p>
+<h4>استفاده از فریم ورک چارچوب Redirects</h4>
+<p>جهت نصب برنامه ی redirects، مراحل زیر را دنبال کنید:</p>
+<ol>
+<li>'django.contrib.redirects' را به تنظیم INSTALLED_APPS اضافه کنید.</li>
+<li>'django.contrib.redirects.middleware.RedirectFallbackMiddleware' به تنظیم MIDDLEWARE_CLASSES اضافه کنید.</li>
+<li>دستور manage.py sycdb را به نصب تنها جدول الزامی درون پایگاه داده اجرا کنید.</li>
+</ol>
+<p>manage.py syncdb یک جدول django_redirect در پایگاه داده ی شما ایجاد می کند. این یک جدول جستجو با فیلدهای site_id، old_path و new_path می باشد.</p>
+<p>می توان redirects را هم از طریق رابط مدیر جنگو و یا از API پایگاه داده ی جنگو ایجاد نمود. برای اطلاعات بیشتر بخش "اضافه کردن، تغییر دادن و حذف Redirects" مراجعه کنید.</p>
+<p>هنگامی که redirects ایجاد شد، کلاس RedirectFallbackMiddleware تمام کار را انجام می دهد. هر زمان که هر برنامه ی جنگو یک خطای 404 ایجاد می کند، این middleware پایگاه داده ی redirects را برای URL درخواست شده به عنوان آخرین چاره بررسی می کند. به طور خاص، این middleware برای یک تغییر مسیر با old_path داده شده با یک ID سایت که مطابق با تنظیم SITE_ID می باشد بررسی می کند. (برای اطلاعات بیشتر در مورد SITE_ID و فریم ورک sites به بخش "Sites" در همین فصل مراجعه کنید.) سپس middleware مذکور مراحل زیر را دنبال می کند:</p>
+<ul>
+<li>در صورتی که یک مطابق پیدا کند، و new_path خالی نباشد، به new_path تغییر مسیر می دهد.</li>
+<li>در صورتی که یک مطابق پیدا کند، وی new_path خالی باشد، یک HTTP header، <bdo class="leftInline">410 ("Gone")</bdo> و یک پاسخ خالی (بدون محتوی) ارسال می مکند.</li>
+<li>در صورتی که یک مطابق پیدا نکند، درخواست برای پردازش معمولی به کارش ادامه می دهد.</li>
+</ul>
+<p>middleware تنها برای خطاهای 404 فعال شده است – نه برای خطاها یا پاسخ های 500 از هر کد وضعیت دیگر.</p>
+<p>به موضوع ترتیب قرار گیری MIDDLEWARE_CLASSES توجه کنید. به طور کلی، می توان RedirectFallbackMiddleware را تقریبا در انتهای لیست قرار داد، زیرا آخرین چاره می باشد.</p>
+<ul>
+<img src="http://oruji.github.io/amoozesh.org/static/img/note.svg" alt="جدول" class="yaddasht"><h4>نکته</h4>
+<p>در صورتی که از هر دو middleware های redirect و flatpage استفاده می کند، توجه کنید که می خواهید کدام یک (redirect یا flatpage) در ابتدا بررسی شود. پیشنهاد می کنیم flatpages را قبل از redirects قرار دهید (از این رو flatpage را قبل از redirect قرار می دهید)، ولی ممکن است نظر شما چیز دیگری باشد.</p>
+</ul>
+<h3>اضافه کردن، تغییر دادن و حذف Redirects</h3>
+<p>می توان redirects را به دو روش اضافه کرده، تغییر داده و حذف کرد:</p>
+<h4>از طریق رابط مدیر</h4>
+<p>در صورتی که رابط مدیر جنگو را فعال کرده باشید، می بایست یک بخش "Redirects" در صفحه ی index مدیر مشاهده کنید. همانطور که هر شیء دیگری را در این سیستم ویرایش می کنید، redirects را نیز ویرایش کنید.</p>
+<h4>از طریق API پایتون</h4>
+<p>redirects توسط یک مدل استاندارد جنگو که درون django/contrib./redirects/models.py قرار دارد نشان داده شده است. از این رو، می توان از طریق API پایگاه داده ی جنگو به شیء های redirect دسترسی پیدا کرد، برای مثال:</p>
+<code class="language-python">&gt;&gt;&gt; from django.contrib.redirects.models import Redirect
+&gt;&gt;&gt; from django.contrib.sites.models import Site
+&gt;&gt;&gt; red = Redirect.objects.create(
+...     site=Site.objects.get(id=1),
+...     old_path='/music/',
+...     new_path='/sections/arts/music/',
+... )
+&gt;&gt;&gt; Redirect.objects.get(old_path='/music/')
+&lt;Redirect: /music/ ---&gt; /sections/arts/music/&gt;</code><h3>محافظت CSRF</h3>
+<p>پکیج django.contrib.csrf در مقابل <bdo class="leftInline">Cross-Site Request Forgery (CSRF)</bdo> حفاظت می کند.</p>
+<p>CSRF، همچنین به صورت "session riding" نیز شناخته می شود، که یک سایت امنیت بهره برداری می باشد. CSRF زمانیکه یک وب سایت مخرب (در دست ترجمه ...).</p>
+<h4>یک مثال ساده ی CSRF</h4>
+<p>فرض کنید درون یک حساب webmail در example.com وارد شده اید. این سایت webmail دارای یک دکمه ی log out می باشد که به آدرس example.com/logout اشاره می کند – این بدین معناست که، تنها عملی که برای خروج لازم است رفتن به آدرس example.com/logout می باشد.</p>
+<p>یک می سایت مخرب می تواند توسط آن آدرس به صورت یک &lt;iframe&gt; پنهان در ون صفحه ی خود شما را ناگذیر به بازدید از آدرس example.com/logout کند. در نتیجه، در صورتی که درون حساب webmail در example.com باشید و از صفحه ی مخربی که دارای &lt;iframe&gt; به example.com/logout بازدید کنید، عمل بازدید از صفحه ی مخرب شما را از example.com خارج می کند.</p>
+<p>واضح است، خروج از یک سایت webmail بر خلاف میل خود یک شکاف وحشتناک امنیتی نمی باشد، ولی این نوع از رفتار می تواند بر هر سایت که به کاربران اعتماد می کند اتفاق بیافتد، سایت هایی از قبیل یک سایت بانک آنلاین یا یک سایت تجارت الکترونیک، جایی که این رفتار می تواند یک سفارش یا پرداخت بدون خبر داشتن کاربر آغاز کند.</p>
+<h4>یک مثال پیچیده در از CSRF</h4>
+<p>در مثال قبلی، example.com تا حدی مقصر می باشد، زیرا به یک تغییر وضعیت (مانند خرج کاربر) اجازه داده است تا از طریق روش GET درخواست شود. خیلی بهتر است برای هر درخواست از روش POST استفاده شود که وضعیت را در سرور تغییر می دهد. ولی حتی وب سایت هایی که روش POST را برای تغییر وضعیت لازم می دانند نیز برای CSRF آسیب پذیر می باشند.</p>
+<p>فرض کنید example.com دارای عملکرد ارتقا پیدا کرده ی خروج می باشد، به طوری که یک دکمه ی &lt;form&gt; از طریق روش POST به آدرس example.com/logout ارسال می کند. بعلاوه، خروج &lt;form&gt; حاوی این فیلد hidden می باشد:</p>
+<code class="language-html">&lt;input type="hidden" name="confirm" value="true"&gt;</code><p>این موضوع مطمئن می سازد که یک POST ساده به آدرس example.com/logout یک کاربر را خارج نمی سازد؛ به منظور خروج یک کاربر، کاربر باید example.com/logout را از طریق POST در خواست کرده و متغیر POST به نام confirm را با یک مقدار 'true' ارسال کند.</p>
+<p>خوب، با وجود امنیت اضافه، این تنظیم می تواند همچنان توسط CSRF مورد سو استفاده قرار گیرد – صفحه ی مخرب تنها نیاز به یک مقدار کار بیشتر دارد. مهاجمان می توانند یک فرم کامل را به هدف سایت شما ساخته، آن را در یک &lt;iframe&gt; غیر قابل مشاهده مخفی کرده، سپس با استفاده از جاوا اسکریپت آن فرم را به طور خود کار ارسال کنند.</p>
+<h4>جلوگیری از CSRF</h4>
+<p>بنابراین، چطور یک سایت می تواند خود را از این سو استفاده حفاظت کند؟ (در دست ترجمه ...).</p>
+<p>این موضوع درخواست های POST را کنار می گذارد. دومین قدم دادن یک فیلد hidden به هر &lt;form&gt; از نوع POST می باشد که مقدار این فیلد باید محرمانه بوده و از session ID کاربر تولید شده باشد. سپس، هنگام پردازش فرم در سمت سرور، برای آن فیلد محرمانه بررسی به عمل آمده و در صورت معتبر نبودن یک خطا ایجاد می شود.</p>
+<p>این دقیقا آن چیزی است که لایه ی جلوگیری CSRF جنگو انجام می دهد، همانطور که در بخش های زیر توضیح داده شده است.</p>
+<h4>استفاده از CSRF Middleware</h4>
+<p>پکیج django.contrib.csrf حاوی تنها یک ماژول با نام middleware.py می باشد. این ماژول حاوی یک کلاس middleware جنگو  با نام CSRFMiddleware می باشد که حفاظت CSRF را انجام می دهد.</p>
+<p>جهت فعال کردن حفاظت CSRF، 'django.contrib.csrf.middleware.CsrfMiddleware'به تنظیم MIDDLEWARE_CLASSES درون فایل تنظیمات خود اضافه کنید. این middleware نیاز است که بعد از SessionMiddleware پاسخ را پردازش کند، بنابراین CSRFMiddleware باید قبل از SessionMiddleware در لیست قرار گرفته باشد (زیرا middleware پاسخ از آخر به اول پردازش شده است). همچنین این middleware باید پاسخ را قبل از آن که پاسخ فشرده شده باشد یا مسائل دیگر پردازش شود، بنابراین CSRFMiddleware باید بعد از GZipMiddleware بیاید. هنگامی که آن را به تنظیم MIDDLEWARE_CLASSES خود اضافه کنید، کار را انجام داده اید. بخش "ترتیب MIDDLEWARE_CLASSES" در <a href="http://oruji.github.io/amoozesh.org/django/model/" class="content" title="مدل">آموزش مدل جنگو</a> را برای توضیحات بیشتر مشاهده کنید.</p>
+<p>در صورتی که علاقمند می باشید، در زیر نحوه ی عملکرد CsrfMiddleware وجود دارد. دو کار زیر انجام می شود:</p>
+<ol>
+<li>درخواست های خروجی را توسط اضافه کردن یک فیلد hidden به تمام فرم های POST، با نام csrfmiddlewaretoken و یک مقدار هش session ID به اضافه ی یک کلید امنیت می باشد، ویرایش می کند. middleware در صورتی که هیچ session ID ای وجود نداشته باشد هیچ ویرایشی انجام نمی دهد، بنابراین کاهش کارایی برای درخواست هایی که از session ها استفاده نمی کنند قابل اغماض است.</li>
+<li>در تمام درخواست های ورودی POST که دارای کوکی session نیستند، بررسی می کند که csrfmiddlewaretoken حاضر و درست باشد. در صورتی که نباشد، کاربر یک خطای 403 HTTP دریافت می کند. محتوای صفحه ای  خطای 403 در آن نشان داده می شود پیام "Cross Site Request Forgery detected. Request aborted." می باشد.</li>
+</ol>
+<p>این اطمینان حاصل می کند که تنها فرم هایی که از سایت شما سرچشمه گرفته اند می توانند از داده ها در برگشت استفاده کنند.</p>
+<p>این middleware به طور عمد، تنها درخواست های HTTP POST را هدف گیری می کند (و فرم های POST متناظر). همانطور که توضیح داده شد، درخواست های GET هرگز نباید دارای تاثیرات غیر قابل انتظار باشند؛ این بر عهده ی شما می باشد که از این موضوع مطمئن شوید.</p>
+<p>درخواست های POST با یک کوکی session محافظت نشده همراه نمی باشند، ولی آن ها نیاز به محافظت ندارند، زیرا یک وب سایت مخرب در هر صورت می تواند این نوع درخواست ها را بسازد.</p>
+<p>جهت اجتناب از تغییر درخواست های غیر HTML ای، middleware نوع header محتویات پاسخ را قبل از ویرایش آن بررسی می کند. تنها صفحاتی که به صورت text/html یا application/xml xhtml باشند ویرایش می شوند.</p>
+<h4>محدودیت های CSRF Middleware</h4>
+<p>CsrfMiddleware نیازمند عملکرد فریم ورک session جنگو می باشد. (برای اطلاعات بیشتر به <a href="http://oruji.github.io/amoozesh.org/django/session/" class="content" title="کاربران عضویت session">بخش کاربران عضویت و session</a> مراجعه کنید.) در صورتی که از یک session سفارشی یا فریم ورک authentication ای استفاده می کنید که به صورت دستی کوکی های session را مدیریت می کند، این middleware به شما کمکی نخواهد کرد.</p>
+<p>در صورتی که برنامه ی شما صفحات HTML و فرم ها را در برخی روش های غیر معمول ایجاد می کند (مثلا، در صورتی که قطعات HTML در عبارت های document.write جاوا اسکریپت ارسال می شوند)، ممکن است فیلتری که فیلد hidden به فرم اضافه می کند دور بزنید. در این مورد، ارسال فرم همواره شکست خواهد خورد. (این به این دلیل اتفاق می افتد که CsrfMiddleware برای اضافه کردن فیلد csrfmiddlewaretoken به HTML شما قبل از آن که صفحه به کلاینت ارسال شود از یک regular expression استفاده می کند. و regular expression گاهی اوقات این نوع HTML ها را نمی تواند کنترل کند.) در صورتی که شک دارید که این موضوع اتفاق می افتد یا خیر، تنها کافیست source را در مرورگر خود تماشا کنید که آیا csrfmiddlewaretoken درون &lt;form&gt; قرار گرفته است یا خیر.</p>
+<p>برای اطلاعات و مثال های بیشتر درباره ی CSRF به http://en.wikipedia.org/wiki/csrf مراجعه کنید.</p>
+<h3>Humanizing Data</h3>
+<p>پکیج django.contrib.humanize مجموعه ای از فیلترهای مفید template جنگو را برای اضافه کردن یک "human touch" به داده نگه می دارد. جهت فعال کردن این فیلترها، 'django.contrib.humanize' به تنظیم INSTALLED_APPS اضافه کنید. هنگامی که این کار را انجام داده شد، در یک template از <bdo class="leftInline">{% load humanize %}</bdo> استفاده کنید، تا به فیلترهای توضیح داده شده در بخش های بعدی دسترسی پیدا کنید.</p>
+<h4>apnumber</h4>
+<p>برای شماره های 1 تا 9، این فیلتر شماره به حروف را بر می گرداند. در غیر اینصورت، عدد را بر می گرداند. </p>
+<p>Examples:</p>
+<ul>
+<li>
+<bdo class="leftInline">1</bdo> می شود "one".</li>
+<li>
+<bdo class="leftInline">2</bdo> می شود "two".</li>
+<li>
+<bdo class="leftInline">10</bdo> می شود <bdo class="leftInline">"10"</bdo>.</li>
+</ul>
+<p>می توان نمایش یک integer را در یک integer یا رشته ارسال کرد.</p>
+<h4>intcomma</h4>
+<p>این فیلتر یک integer را به یک رشته ی حاوی کاما برای هر سه رفم تبدیل می کند.</p>
+<p>مثال ها:</p>
+<ul>
+<li>
+<bdo class="leftInline">4500</bdo> می شود <bdo class="leftInline">"4,500"</bdo>.</li>
+<li>
+<bdo class="leftInline">45000</bdo> می شود <bdo class="leftInline">"45,000"</bdo>.</li>
+<li>
+<bdo class="leftInline">450000</bdo> می شود <bdo class="leftInline">"450,000"</bdo>.</li>
+<li>
+<bdo class="leftInline">4500000</bdo> می شود <bdo class="leftInline">"4,500,000"</bdo>.</li>
+</ul>
+<p>می توان نمایش یک integer را در یک integer یا رشته ارسال کرد.</p>
+<h4>intword</h4>
+<p>این فیلتر یک large integer را به یک نمایش متن مناسب تبدیل می کند.</p>
+<p>مثال ها:</p>
+<ul>
+<li>
+<bdo class="leftInline">1000000</bdo> می شود <bdo class="leftInline">"1.0 million"</bdo>.</li>
+<li>
+<bdo class="leftInline">1200000</bdo> می شود <bdo class="leftInline">"1.2 million"</bdo>.</li>
+<li>
+<bdo class="leftInline">1200000000</bdo> می شود <bdo class="leftInline">"1.2 milliard"</bdo>.</li>
+</ul>
+<p>مقادیر تا یک کادریلیون (عدد 1 با پانزده عدد صفر 1000000000000000) پشتیبانی می شوند.</p>
+<p>می توان نمایش یک integer را در یک integer یا رشته ارسال کرد.</p>
+<h4>ordinal</h4>
+<p>این فیلتر یک integer را به ordinal آن به صورت رشته تبدیل می کند.</p>
+<p>مثال ها:</p>
+<ul>
+<li>1 می شود <bdo class="leftInline">"1st"</bdo>.</li>
+<li>2 می شود <bdo class="leftInline">"2nd"</bdo>.</li>
+<li>3 می شود <bdo class="leftInline">"3rd"</bdo>.</li>
+<li>254 می شود <bdo class="leftInline">"254th"</bdo>.</li>
+</ul>
+<p>می توان نمایش یک integer را در یک integer یا رشته ارسال کرد.</p>
+<h3>فیلترهای Markup</h3>
+<p>پکیج django.contrib.markup شامل چند فیلتر template جنگو می باشند که هرکدام یک زبان markup رایج را اجرا می کنند.</p>
+<ul>
+<li>textile: Textile را اجرا می کند که برای اطلاعات بیشتر در مورد آن می توانید به <bdo class="leftInline">http://en.wikipedia.org/wiki/Textile_(markup_language)</bdo> مراجعه کنید.</li>
+<li>markdown: Markdown را اجرا می کند که برای اطلاعات بیشتر در مورد آن می توانید به http://en.wikipedia.org/wiki/Markdown مراجعه کنید.</li>
+<li>restructuredtext: Restructured Text را اجرا می کند که برای اطلاعات بیشتر در مورد آن می توانید به http://en.wikipedia.org/wiki/ReStructuredText مراجعه کنید.</li>
+</ul>
+<p>در هر مورد، فیلتر انتظار قالب بندی markup را به صورت یک رشته را داشته و یک نمایش متن markup شده را بر می گرداند. برای مثال، فیلتر textile متنی را که در قالب بندی Textile، mark up شده است را به HTML تبدیل می کند:</p>
+<code class="language-django">{% load markup %}
+{{ object.content|textile }}</code><p>جهت فعال کردن این فیلترها، 'django.contrib.markup'را به تنظیم INSTALLED_APPS اضافه کنید. هنگامی که این کار را انجام داده شد، از <bdo class="leftInline">{% load markup %}</bdo> در یک template استفاده کنید تا به این فیلترها دسترسی پیدا کنید. برای مستندات بیشتر، کد منبع </p>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش جنگو</div>
+<a href="http://oruji.github.io/amoozesh.org/django/introduction/" class="anav" title="مقدمه">مقدمه</a><a href="http://oruji.github.io/amoozesh.org/django/start/" class="anav" title="شروع کار">شروع کار</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/" class="anav" title="view ها و URLconf ها">view ها و URLconf ها</a><a href="http://oruji.github.io/amoozesh.org/django/template/" class="anav" title="Template ها">Template ها</a><a href="http://oruji.github.io/amoozesh.org/django/model/" class="anav" title="مدل ها">مدل ها</a><a href="http://oruji.github.io/amoozesh.org/django/admin-site/" class="anav" title="سایت مدیر">سایت مدیر</a><a href="http://oruji.github.io/amoozesh.org/django/form/" class="anav" title="فرم ها">فرم ها</a><a href="http://oruji.github.io/amoozesh.org/django/view/urlconf/advance/" class="anav" title="View ها و URLconf های پیشرفته">View ها و URLconf های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/template/advance/" class="anav" title="Template های پیشرفته">Template های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/model/advance/" class="anav" title="مدل های پیشرفته">مدل های پیشرفته</a><a href="http://oruji.github.io/amoozesh.org/django/view/generic/" class="anav" title="View های Generic">View های Generic</a><a href="http://oruji.github.io/amoozesh.org/django/non-html/" class="anav" title="تولید محتوای غیر html ای">تولید محتوای غیر html ای</a><a href="http://oruji.github.io/amoozesh.org/django/session/" class="anav" title="Session ها، کاربران، و عضویت">Session ها، کاربران، و عضویت</a><a href="http://oruji.github.io/amoozesh.org/django/caching/" class="anav" title="مبحث Caching">مبحث Caching</a><div  class="divnav" title="پکیج django.contrib">پکیج django.contrib</div><a href="http://oruji.github.io/amoozesh.org/django/middleware/" class="anav" title="مبحث Middleware">مبحث Middleware</a><a href="http://oruji.github.io/amoozesh.org/django/database/integrate/legacy/" class="anav" title="یکپارچه سازی برنامه ها و دیتابیس های Legacy">یکپارچه سازی برنامه ها و دیتابیس های Legacy</a><a href="http://oruji.github.io/amoozesh.org/django/internationalize/" class="anav" title="بین المللی سازی">بین المللی سازی</a><a href="http://oruji.github.io/amoozesh.org/django/security/" class="anav" title="امنیت">امنیت</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/django/package/contrib/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:41:14 GMT -->
+</html>

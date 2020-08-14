@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/java/interface/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/java/interface/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>جاوا اینترفیس Interface شیءگرایی java کتاب آموزش برخط</title>
+<meta name="description" content="اینترفیس (Interface) در جاوا یک نوع مرجع می باشد، که شبیه به کلاس است. اینترفیس مجموعه ای از متدهای abstract می باشد. کلاس یک اینترفیس را پیاده سازی می کند" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="جاوا اینترفیس Interface شیءگرایی java کتاب آموزش برخط" />
+<meta property="og:description" content="اینترفیس (Interface) در جاوا یک نوع مرجع می باشد، که شبیه به کلاس است. اینترفیس مجموعه ای از متدهای abstract می باشد. کلاس یک اینترفیس را پیاده سازی می کند" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/java/interface/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<style>
+.token.bold,.token.important,.token.string{font-weight:700}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:20px;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#e7eeff}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.doctype,.token.prolog{color:#708090}.token.comment{color:#008a32}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.symbol{color:#000}.token.attr-name,.token.char,.token.inserted,.token.selector{color:#690}.token.builtin{color:#000}.token.string{color:#0f69ff}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:#a67f59}.token.operator{color:#692d02}.token.atrule,.token.attr-value,.token.keyword{color:maroon;font-weight:700}.token.function{color:#000}.token.important,.token.regex{color:#e90}.token.variable{color:#b98118}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/prism.js"></script>
+
+
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}
+</style>
+</head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+
+ویرایش: <span dir=ltr>1396/11/22 23:06</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>آموزش اینترفیس (Interface) در جاوا</h1>
+<p>در این آموزش از کتاب برخط جاوا (Java) خواهیم دید که، Interface در جاوا یک نوع مرجع می باشد، که شبیه به کلاس بوده و مجموعه ای از متدهای abstract می باشد. کلاس یک اینترفیس را پیاده سازی می کند، از این رو متدهای abstract آن را نیز ارث بری می کند.</p>
+<p>همراه با متدهای abstract، اینترفیس ممکن است حاوی ثابت ها، متدهای پیشفرض، متدهای static و نوع های تودرتو نیز باشد. بدنه ی متد تنها برای متدهای پیشفرض و متدهای static وجود دارد.</p>
+<p>نوشتن Interface شبیه به نوشتن یک کلاس است. ولی کلاس خصوصیات و رفتارهای یک شیء را توصیف میکند و اینترفیس حاوی رفتارهایی است که کلاس آن ها را پیاده سازی خواهد کرد.</p>
+<p>کلاسی که اینترفیس را implements می کند، باید تمامی متدهای آن را پیاده سازی کند، مگر آن که کلاس به صورت abstract تعریف شده باشد.</p>
+<p>یک Interface در موارد زیر شبیه به کلاس است:</p>
+<ul>
+<li>می تواند به تعداد دلخواه متد در خود داشته باشد.</li>
+<li>در یک فایل با پسوند <bdo class="leftInline">".java"</bdo> نوشته می شود، و نام فایل نیز با نام آن یکی است.</li>
+<li>بایت کد اینترفیس در یک فایل <bdo class="leftInline">.class</bdo> ظاهر می شود.</li>
+<li>Interface ها در پکیج هایی قرار می گیرند، و فایل بایت کد متناسب با آن ها باید در ساختار فولدر بندی همسان با نام پکیج قرار بگیرد.</li>
+</ul>
+<p>با این حال، اینترفیس تفاوت های بسیاری با کلاس دارد:</p>
+<ul>
+<li>شما نمی توانید یک Interface را مقدار دهی کنید.</li>
+<li>اینترفیس هیچ سازنده (Constructor) ای ندارد</li>
+<li>تمامی متدهای موجود در آن به صورت پیشفرض abstract می باشند.</li>
+<li>هیچ فیلد instance ای ندارد، و تمامی فیلدهای آن باید به صورت static و final تعریف شوند.</li>
+<li>توسط یک کلاس extends نمیشود، بلکه توسط یک کلاس implements می شود.</li>
+<li>می تواند چندین اینترفیس را extends کند.</li>
+</ul>
+<h2>تعریف Interface</h2>
+<p>برای تعریف از کلمه کلیدی <strong>interface</strong> استفاده می شود. در ادامه مثالی ساده از تعریف آن را نشان می دهیم</p>
+<code class="language-java">public interface MyInterface {
+   // Any number of final, static fields
+   // Any number of abstract method declarations
+}</code><p>اینترفیس شامل خصوصیات زیر می باشد:</p>
+<ul>به طور پیشفرض abstract می باشد. نیازی به استفاده از کلمه کلیدی <strong>abstract</strong> برای تعریف آن نیست.</ul>
+<ul>تمامی متدهای تعریف شده درون آن نیز به طور پیشفرض abstract می باشد، بنابراین در تعریف متد نیز نیازی به کلمه کلیدی abstract نیست.</ul>
+<ul>متدهای تعریف شده در آن به طور پیشفرض public می باشند.</ul>
+<ul></ul>
+<h2>پیاده سازی</h2>
+<p>وقتی یک کلاس، یک <a title="آموزش اینترفیس interface در جاوا" class="content" href="http://oruji.github.io/amoozesh.org/java/interface/">اینترفیس</a> را implements می کند، اینگونه فرض کنید که کلاس قراردادی را امضا کرده است که و توافق کرده است که تمام رفتارهای تعریف شده در Interface را انجام دهد. اگر یک کلاس تمامی رفتارهای آن را انجام ندهد، آن کلاس می بایست به صورت abstract تعریف شود.</p>
+<p>برای پیاده سازی در یک کلاس از کلمه کلیدی <strong>implements</strong> استفاده می شود. کلمه کلیدی implements بعد از تعریف کلاس استفاده می شود.</p>
+<p>مثال:</p>
+<code class="language-java">/* File name : MammalInt.java */
+public class MammalInt implements Animal {
+
+   public void eat() {
+      System.out.println("Mammal eats");
+   }
+
+   public void travel() {
+      System.out.println("Mammal travels");
+   } 
+
+   public int noOfLegs() {
+      return 0;
+   }
+
+   public static void main(String args[]) {
+      MammalInt m = new MammalInt();
+      m.eat();
+      m.travel();
+   }
+} </code><p>کد بالا، خروجی زیر را چاپ می کند:</p>
+<code class="language-">Mammal eats
+Mammal travels</code><p>هنگام override متدها، قواعد زیر را باید رعایت کرد:</p>
+<ul>
+<li>exception های چک شده (checked exceptions) نباید در متدهای پیاده سازی شده تعریف شوند، به غیر از آنهایی که توسط متد اینترفیس تعریف شده اند.</li>
+<li>مشخصات متد از قبیل نام آن و پارامترهای ورودی و نوع داده بازگشتی آن باید هنگام override شدن رعایت شوند.</li>
+<li>کلاسی که اینترفیس را پیاده سازی کرده است می تواند abstract باشد، و در اینصورت اجباری در پیاده سازی تمام متدها نخواهد بود.</li>
+</ul>
+<p>زمان پیاده سازی، قواعد زیر وجود خواهند داشت:</p>
+<ul>
+<li>یک کلاس می تواند بیشتر از یک اینترفیس را در یک زمان پیاده سازی کند.</li>
+<li>یک کلاس تنها می تواند از یک کلاس ارث بری کند، ولی می تواند به تعداد دلخواه اینترفیس را پیاده سازی کند.</li>
+<li>یک اینترفیس می تواند از یک Interface دیگر ارث بری کند، به همان صورتی که یک کلاس از کلاس دیگری ارث بری می کند.</li>
+</ul>
+<h3>ارث بری</h3>
+<p>مشابه ارث بری در کلاس، اینترفیس ها نیز می توانند از یکدیگر ارث بری کنند، کلمه کلیدی <strong>extends</strong> برای منظور استفاده می شود، و فرزند تمامی متدهای پدر خود را ارث بری می کند.</p>
+<p>در کد زیر Hockey و Football از Sports ارث بری کرده اند:</p>
+<code class="language-java">// Filename: Sports.java
+public interface Sports {
+   public void setHomeTeam(String name);
+   public void setVisitingTeam(String name);
+}
+
+// Filename: Football.java
+public interface Football extends Sports {
+   public void homeTeamScored(int points);
+   public void visitingTeamScored(int points);
+   public void endOfQuarter(int quarter);
+}
+
+// Filename: Hockey.java
+public interface Hockey extends Sports {
+   public void homeGoalScored();
+   public void visitingGoalScored();
+   public void endOfPeriod(int period);
+   public void overtimePeriod(int ot);
+}</code><p>Hockey دارای 4 متد می باشد، و همچنین دو این متد دیگر نیز از Sports به ارث بده است؛ بدینصورت، کلاسی که Hockey را پیاده سازی می کند، باید تمامی 6 متد را پیاده سازی کند. به همین ترتیب، کلاسی که Football را پیاده سازی می کند، باید 3 متد از Football و دو متد از Sports را پیاده سازی کند.</p>
+<h3>آموزش ارث بری چندگانه در Interface</h3>
+<p>کلاس ها در جاوا تنها می توانند یک کلاس پدر داشته باشند. ارث بری چندگانه برای کلاس ها مجاز نیست. اینترفیس ها کلاس نیستند، از این رو می توانند چندین پدر داشته باشد.</p>
+<p>کلمه کلیدی extends یک بار نوشته می شود، و اینترفیس های پدر در ادامه آن با استفاده از جدا کننده ی کاما لیست می شوند.</p>
+<p>برای مثال در صورتی که Hockey از Sports و Events ارث بری کند، به صورت زیر تعریف می شود:</p>
+<code class="language-java">public interface Hockey extends Sports, Event</code><h2>اینترفیس های Tagging</h2>
+<p>یکی عمومی ترین استفاده های ارث بری در اینجا، زمانی است که پدر حاوی هیچ متدی نباشد. برای مثال MouseListener در پکیج java.awt.event از java.util.EventListener ارث بری می کند، که به صورت زیر تعریف شده است:</p>
+<code class="language-java">package java.util;
+public interface EventListener
+{}</code><p>این حالت را <strong>tagging</strong> می گویند. tagging دو کاربرد زیر را دارد:</p>
+<p><strong>ایجاد یک پدر مشترک</strong> - همانند EventListener، که توسط صدها اینترفیس دیگر در API جاوا ارث بری شده است، شما می توانید tagging را جهت ایجاد یک اینترفیس مشترک برای گروهی دیگر استفاده کنید. برای مثال، هنگامی که یک اینترفیس، EventListener را ارث بری می کند، JVM متوجه می شود که این مورد خاص برای یک استفاده ی رخدادی می باشد.</p>
+<p><strong>افزودن یک نوع داده برای یک کلاس</strong> - در این حالت کلاسی که tagging را پیاده سازی می کند، نیازی به تعریف متدها ندارد (چرا که هیچ متدی ندارد)، ولی کلاس در پلی مورفیسم یک نوع اینترفیسی خواهد بود.</p>
+</div></main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">کتاب آموزش جاوا</div>
+<a title="مرتب (Sort) کردن شیء با Comparable و Comparator" class="anav" href="http://oruji.github.io/amoozesh.org/java/sort/">مرتب (Sort) کردن شیء با Comparable و Comparator</a><a title="تبدیل Map به لیست (List)" class="anav" href="http://oruji.github.io/amoozesh.org/java/map/convert/list/">تبدیل Map به لیست (List)</a><a title="نحوه خواندن و پردازش (parse) فایل CSV" class="anav" href="http://oruji.github.io/amoozesh.org/java/csv/read/">نحوه خواندن و پردازش (parse) فایل CSV</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/immutable/mutable/" title="تفاوت mutable و immutable">تفاوت Mutable و Immutable</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/foreach/" title="foreach 8">foreach 8</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/print/pyramid/" title="چاپ هرم">چاپ هرم</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/date/current/" title="بدست آوردن زمان و تاریخ فعلی">بدست آوردن زمان و تاریخ فعلی</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/disk-space/" title="بدست آوردن فضای خالی دیسک">بدست آوردن فضای خالی دیسک</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/string/convert/int/" title="تبدیل رشته به int">تبدیل رشته به int</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/int/convert/string/" title="تبدیل int به رشته">تبدیل int به رشته</a><a href="http://oruji.github.io/amoozesh.org/java/string/convert/char/" class="anav" title="تبدیل رشته به آرایه char">تبدیل رشته به آرایه char</a><a href="http://oruji.github.io/amoozesh.org/java/char/convert/string/" class="anav" title="تبدیل آرایه char به رشته">تبدیل آرایه char به رشته</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/string/convert/date/" title="تبدیل رشته به تاریخ">تبدیل رشته به تاریخ</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/list/duplicate/count/" title="نحوه شمارش آیتم های تکراری در لیست">نحوه شمارش آیتم های تکراری در لیست</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/bufferedwriter/" title="نوشتن در فایل با BufferedWriter">نوشتن در فایل با BufferedWriter</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/bufferedreader/" title="خواندن فایل با BufferedReader">خواندن فایل با BufferedReader</a><a class="anav" href="http://oruji.github.io/amoozesh.org/java/enum/" title="Enum">Enum</a><a href="http://oruji.github.io/amoozesh.org/java/override/" class="anav" title="override">override</a><a href="http://oruji.github.io/amoozesh.org/java/overload/" class="anav" title="overload">overload</a><a href="http://oruji.github.io/amoozesh.org/java/polymorphism/" class="anav" title="چندریختی یا پلی مورفیسم">چندریختی یا پلی مورفیسم</a>            <div  class="divnav" title="اینترفیس (Interface)">اینترفیس (Interface)</div><a href="http://oruji.github.io/amoozesh.org/java/inherit/" class="anav" title="ارث بری یا وراثت (Inheritance)">ارث بری یا وراثت (Inheritance)</a><a href="http://oruji.github.io/amoozesh.org/java/abstract/" class="anav" title="انتزاعی سازی (Abstraction)">انتزاعی سازی (Abstraction)</a><a href="http://oruji.github.io/amoozesh.org/java/encapsulate/" class="anav" title="کپسوله سازی (Encapsulation)">کپسوله سازی (Encapsulation)</a><a href="http://oruji.github.io/amoozesh.org/java/serialize/" class="anav" title="سریالایز یا سریالیزه کردن (Serialization)">سریالایز یا سریالیزه کردن (Serialization)</a><a href="http://oruji.github.io/amoozesh.org/java/generic/" class="anav" title="Generic ها">Generic ها</a><a title="خواندن فایل XML" href="http://oruji.github.io/amoozesh.org/java/xml/read/" class="anav">خواندن فایل XML</a><a title="بدست آوردن رنکینگ الکسا" href="http://oruji.github.io/amoozesh.org/java/xml/alexa/" class="anav">بدست آوردن رنکینگ الکسا</a>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/java/interface/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:40:40 GMT -->
+</html>

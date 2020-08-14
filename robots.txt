@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /tmp/
+
+SITEMAP: http://oruji.github.io/amoozesh.org/sitemap.xml

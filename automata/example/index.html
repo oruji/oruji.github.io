@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+<!-- Mirrored from oruji.github.io/amoozesh.org/automata/example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:39:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43783552-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-43783552-5');
+</script>
+<link rel="canonical" href="http://oruji.github.io/amoozesh.org/automata/example/" />
+<link rel="shortcut icon" href="http://oruji.github.io/amoozesh.org/static/img/favicon.ico" />
+<title>مثال تمرین نظریه زبان ماشین محاسبات آتاماتا گرامر زبان منظم</title>
+<meta name="description" content="مثال ها و تمرین های نظریه محاسبات، زبان ها و ماشین ها (آتاماتا) زبان ها، گرامرها و عبارات منظم به همراه DFA NFA PDA NPDAهر مثال شامل پیاده سازی عبارت منظم،" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="fontiran.com:license" content="ZM3QX" />
+<meta name="msvalidate.01" content="338AFFB8975A4C65F4A4BC10CDAFF254" />
+<meta property="og:title" content="مثال تمرین نظریه زبان ماشین محاسبات آتاماتا گرامر زبان منظم" />
+<meta property="og:description" content="مثال ها و تمرین های نظریه محاسبات، زبان ها و ماشین ها (آتاماتا) زبان ها، گرامرها و عبارات منظم به همراه DFA NFA PDA NPDAهر مثال شامل پیاده سازی عبارت منظم،" />
+<meta property="og:url" content="http://oruji.github.io/amoozesh.org/automata/example/" />
+<meta property="og:type" content="article" />
+<script src="http://oruji.github.io/amoozesh.org/static/js/main.js"></script>
+<script src="http://oruji.github.io/amoozesh.org/static/js/jquery.js"></script>
+
+<script src="http://oruji.github.io/amoozesh.org/automata/example/script.js"></script>
+<style>
+textarea, input, button, select { font-family: inherit; font-size: inherit;} p, li { text-align: justify;} main, nav { width: 100%;} .leftBlock, .leftInline, .logout, pre, canvas { direction: ltr;} .note td, pre { word-wrap: break-word;} body, main, div, footer, h1, h2, h3, h4, h5, h6, header, nav, input, button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0 } body { font-family: IRANSans; background-color: #fff; font-size: 1em; line-height: 35px;} nav { font-size: 0.83em; padding: 14px; float: right; margin-bottom: 2px;} header { color: #fff; margin: 2px; min-height: 86px; padding: 13px;} footer { font-size: 0.83em; text-align: center; padding: 30px; clear: both; color: #fff; margin: 2px;} pre { text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.86em; background-color: #e7eeff; padding: 8px 10px 8px 8px; color: #000; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; line-height: 20px; border-radius: 5px } code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} .code { direction: ltr; text-align: left; font-family: consolas, "Courier New", Courier, mono, serif; font-size: 0.92em; background-color: #e7eeff; padding: 10px !important; margin: 10px !important; color: #000; white-space: pre !important; white-space: -moz-pre-wrap !important; white-space: -pre-wrap !important; white-space: -o-pre-wrap !important; line-height: 20px; border-radius: 5px; display: block; overflow: auto; word-wrap: break-word;} h1, h2, h3, h4, h5, h6 { font-weight: 500 !important } button { padding: 4px; border-radius: 5px;} .titr-link { text-align: center; font-weight: 700;} h1 { margin-bottom: 20px; margin-top: 20px; font-size: 1.5em;} h2 { font-size: 1.33em;} h3 { font-size: 1.17em;} h4 { font-size: 1.08em;} h5 { font-size: 1em;} textarea { height: 150px; font-size: inherit; line-height: 20px; width: 98%;} main { border-radius: 7px; background-color: #fff; padding-top: 15px; padding-bottom: 15px; padding-right: 20px; padding-left: 20px; min-height: 500px; box-shadow: 0 0 3px 1px #e0d9ff; float: right;} .logout { height: 40px; border-radius: 5px; color: #fff; margin: -5px 2px 2px; direction: ltr; padding-right: 10px; float: left;} .myClean { padding: 0; margin: 0;} .myscroll { display: block; overflow-x: auto } li { padding: 5px } .gradient { border-radius: 7px; background: linear-gradient(#001F38, #37627a); background: -moz-linear-gradient(#001F38, #37627a); background: -webkit-linear-gradient(#001F38, #37627a); background: -ms-linear-gradient(#001F38, #37627a); background: -o-linear-gradient(#001F38, #37627a) } .puzzle { white-space: nowrap;} a { color: #add8e6;} a.content { color: #4164ca;} .last-line, .titr-link { margin-bottom: 10px;} .titr-link { background-color: #e8eeff; border-radius: 5px;} .index, .index-style { border-radius: 4px; padding: 20px; display: block;} .index:hover { color: #add8e6; background-color: #366179;} .index-style { background-color: #e7eeff;} .index-style:hover { color: #add8e6; background-color: #366179;} .myTitle { margin-bottom: -10px } .anav, .anav:hover, .divnav { padding: 4px; display: block;} .divnav { color: #e7eeff; background-color: #366179; border-radius: 3px;} .anav { color: #add8e6;} .anav:hover { background-color: #3e6c8a; border-radius: 3px;} .myError { margin-bottom: 10px; margin-top: 5px; color: red;} .alogo { padding: 10.5px; float: right; color: #000; text-align: center; width: 150px;} .alogo:hover { padding: 10px; border-style: solid; border-radius: 10px; border-width: .5px;} .puzzle, ol, p, li { display: block; overflow-x: auto;} .leftBlock { text-align: left;} .radius5 { border-radius: 5px;} hr { margin-bottom: 15px; margin-top: 0;} .change-lang { margin-top: 5px; background-color: #e8eeff; color: #000; padding-right: 10px; padding-left: 10px; border-radius: 3px; line-height: 29px; text-align: center; height: 26px; display: block; padding-bottom: 5px;} .note { margin: 1em 0; width: 100%; overflow: hidden; background: #FFF; border-radius: 10px; border: 1px solid #167F92 } .note tr { border: 1px solid #D9E4E6 } .note tr:nth-child(odd) { background-color: #e0e0e0 } .note th { border: 1px solid #FFF; background-color: #167F92; color: #FFF } .note th:first-child { display: table-cell; text-align: center } .note th:nth-child(2) { display: table-cell } .note th:nth-child(2) span { display: block } .note th:nth-child(2):after { display: none } .note td { max-width: 7em; border: 1px solid #D9E4E6 } .note td:first-child { display: table-cell; text-align: center; border-right: 1px solid #D9E4E6 } .note td, .note th { display: table-cell; padding: 1em } a, ul.social-icons li a:hover { text-decoration: none } ul.social-icons { padding: 0; width: auto; overflow: initial; margin-top: 0; margin-bottom: 0; float: left;} ul.social-icons li { background-image: url(http://oruji.github.io/amoozesh.org/static/img/social-sprites.svg); background-repeat: no-repeat; background-color: #FFF; background-position: 0 100px; display: inline-block; margin: -1px 1px 5px 0; padding: 0; border-radius: 100%; overflow: visible; transition: all .3s ease; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .42); -moz-border-radius: 100%; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; -webkit-border-radius: 100%; -webkit-transition: all .3s ease; border: 1.5px solid #12354d; margin-left: 3px; margin-right: 3px;} ul.social-icons li a { display: block; height: 28px; width: 28px; text-align: center } ul.social-icons li[class] a { text-indent: -9999px } ul.social-icons li a i[class^=icon-] { color: #444; font-style: 16px; position: relative; top: 3px } ul.social-icons li a:active { box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3); -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3), inset 0 0 10pxrgba(0, 0, 0, .3) } ul.social-icons li a:active, ul.social-icons li:active { border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100% } ul.social-icons li.facebook { background-position: 0 -001px } ul.social-icons li.facebook:hover { background-position: 0 -031px } ul.social-icons li.github { background-position: 0 -061px } ul.social-icons li.github:hover { background-position: 0 -091px } ul.social-icons li.rss { background-position: 0 -121px } ul.social-icons li.rss:hover { background-position: 0 -151px } ul.social-icons li.twitter { background-position: 0 -181px } ul.social-icons li.twitter:hover { background-position: 0 -211px } ul.social-icons li.googleplus { background-position: 0 -301px } ul.social-icons li.googleplus:hover { background-position: 0 -331px } ul.social-icons li.linkedin { background-position: 0 -241px } ul.social-icons li.linkedin:hover { background-position: 0 -271px } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 900; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Black.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Black.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Black.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Black.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 700; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Bold.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Bold.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Bold.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Bold.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 500; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Medium.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Medium.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Medium.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Medium.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 300; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_Light.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_Light.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_Light.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_Light.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 200; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb_UltraLight.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb_UltraLight.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb_UltraLight.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb_UltraLight.ttf) format('truetype') } @font-face { font-display: swap; font-family: IRANSans; font-style: normal; font-weight: 400; src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot); src: url(http://oruji.github.io/amoozesh.org/static/font/eot/IRANSansWeb.eot?#iefix) format('embedded-opentype'), url(http://oruji.github.io/amoozesh.org/static/font/woff2/IRANSansWeb.woff2) format('woff2'), url(http://oruji.github.io/amoozesh.org/static/font/woff/IRANSansWeb.woff) format('woff'), url(http://oruji.github.io/amoozesh.org/static/font/ttf/IRANSansWeb.ttf) format('truetype') } .emph { color: #c7254e; background-color: #ffd7e3; border-radius: 4px; font-weight:bold;} .emphG { color: #2e9821; background-color: #e6f9d8; border-radius: 4px; font-weight: bold;} .search-form { text-align: center; padding-top:0; padding-bottom:10px; background-color: white; border-radius: 10px;} .search-input { width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px;} .search-btn { cursor: pointer; width: 100%; padding: 10px 20px 10px 20px; margin-top: 0; margin-bottom: 5px; border-radius: 5px; background-color: #366179; color: white;} a.alogo img { width: 120px;} img { max-width: 700px;} a.alogo h2 { font-size:0.87em;} .wide { margin-top: -12px; padding: 15px; float: right; margin-right: -15px;} .widetext { color: white; font-family: High Tower Text; font-weight: 600; font-size: 1.56em; margin-right: -10px; float: right; margin-top: -2px;} .widespan { display: block; font-size: 48%; font-weight: normal; margin-top: -11px; margin-right: 5px;} .logo { float: right; padding: 20px; width: 120px;} .fehrest { clear: both; margin-bottom: 20px; margin-top: 20px;} .plogo { overflow-x: initial;} .yaddasht { float: right; margin-left: 15px; width: 40px; height: 40px;} .imgCenter { display: block; margin: auto; border-radius: 2px;} .up { font-size: 0.83em; background-color: #f5f5f5; padding-right: 20px; padding-left: 20px; border-radius: 5px;} #navContent { display: none;} #uploadForm { float: left; color: grey;} @media only screen and (min-width:768px) { nav { width: 25%;} main { width: 75%;} .search-input { width: 400px;} .search-btn { width: 100px;} .search-form { padding-top: 30px; padding-bottom: 30px; background-color: #93abc3;}} @media only screen and (max-width:466px) { header { min-height: 114px }} .myClear { clear:both;} .mar0{margin:0} .mart-3{margin-top:-3px;} .mart10{margin-top:10px;} .marb10{margin-bottom:10px;} .padr20{padding-right:20px} .floatL{float:left} .floatR{float:right} .myPhone { float: left; direction: ltr; font-weight: bold; font-size: 0.87em; margin-left: 5px; font-style: italic; background: #e8eeff; color: black; border-radius: 5px; padding-right: 7px; height: 26px; padding-top: 1px;} .fontSize { display: inline; float: left; direction: ltr; font-weight:bold;} .increaseFont{ font-size: 1.06em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .decreaseFont{ font-size: 0.81em; padding-right: 8px; padding-left: 8px; cursor:pointer;} .myHide { display:none;}.ansButton {color: blue;font-weight: bold;cursor: pointer;}.javabPlus {width: 18px;display: inline;cursor: pointer;font-weight:bold;color: #5393b7;padding-right:5px;padding-left:5px;}.myq {background: gainsboro;border-radius: 5px;}
+</style>
+<script src="http://oruji.github.io/amoozesh.org/static/js/fsm2.js"></script></head>
+<!-- disable right click vv -->
+<!-- <body oncontextmenu="return false;"> -->
+<body>
+<header class="gradient">
+<a href="http://oruji.github.io/amoozesh.org/" title="oruji.github.io/amoozesh.org">
+<img alt="oruji.github.io/amoozesh.org" src="http://oruji.github.io/amoozesh.org/static/img/wide.svg" class="wide">
+<div class="widetext">oruji.github.io/amoozesh.org<span class="widespan">Persian Tutorials</span></div>        </a>
+<ul class="social-icons"><li class="github"><a href="https://github.com/oruji" target="_blank" data-placement="bottom" title=" Github">Github</a></li><li class="twitter"><a href="https://twitter.com/oruji" target="_blank" data-placement="bottom" title=" Twitter">Twitter</a></li><li class="linkedin"><a href="https://www.linkedin.com/in/oruji/" target="_blank" data-placement="bottom" title=" Linkedin">Linkedin</a></li><li class="rss"><a href="http://oruji.github.io/amoozesh.org/feed.xml" target="_blank" data-placement="bottom" title="RSS Feed">rss</a></li></ul>
+</header>
+<main>
+    
+<div class="up">
+
+ایجاد: <span dir=ltr>1398/9/8 00:08</span> - 
+ویرایش: <span dir=ltr>1399/3/27 20:21</span><div title="تغییر اندازه فونت" class="fontSize">
+    <span onclick="increaseFont()" class="increaseFont">A</span>
+    <span onclick="decreaseFont()" class="decreaseFont">A</span>
+</div>
+</div>
+
+<div class="center">
+<h1>مثال ها و تمرین های نظریه محاسبات، زبان ها و ماشین ها (آتاماتا)</h1>
+<h2>زبان ها، گرامرها و عبارات منظم به همراه DFA</h2>
+<p>هر مثال شامل پیاده سازی <strong>عبارت منظم</strong>، گرامر و بسته به <strong>زبان</strong> به همراه ماشین <strong>DFA</strong>، NFA یا PDA است، همچنین توضیح و ارائه <strong>زبان</strong> مربوطه به صورت یکجا کنار هم می باشد. <em></em></p>
+<h3>زبان های منظم</h3>
+<p><strong>روی الفبای {a,b}=Σ تمام رشته هایی که ...</strong></p>
+<p class="myq"><bdo class="leftInline">{w : w ∈ {a, b}*}</bdo> - بدون محدودیت می توان تولید کرد؟ </p>
+<div class="mya myHide">
+<code>(a+b)*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 66,
+            "y": 92,
+            "text": "S",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a,b",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="110" height="130"></canvas></code><code>S -&gt; aS|bS|λ</code>
+</div>
+<p class="myq"><bdo class="leftInline">{wa : w ∈ {a, b}*}</bdo> - به حرف a ختم می شوند؟ </p>
+<div class="mya myHide">
+<code>(a+b)*a</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 96,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 216,
+            "y": 96,
+            "text": "A",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -63,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5448275862068965,
+            "perpendicularPart": -29
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.38620689655172413,
+            "perpendicularPart": -29
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="250" height="160"></canvas></code><code>S -&gt; aS|bS|a</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 95,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 210,
+            "y": 95,
+            "text": "A",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -74,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5586206896551724,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a,b",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="250" height="130"></canvas></code>
+</div>
+<p class="myq"><bdo class="leftInline">{aw: w ∈ {a, b}*}</bdo> - با حرف a شروع می شوند؟ </p>
+<div class="mya myHide">
+<code>a(a+b)*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 34,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 187,
+            "y": 34,
+            "text": "A",
+            "isAcceptState": true
+        },
+        {
+            "x": 131,
+            "y": 110,
+            "text": "B",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -67,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.36752136752136755,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a,b",
+            "anchorAngle": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a,b",
+            "anchorAngle": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 2,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5079498789091292,
+            "perpendicularPart": 0
+        }
+    ]
+}' width="286" height="144"></canvas></code>
+</div>
+<p class="myq"><bdo class="leftInline">{awa: w ∈ {a,b}*}</bdo> - با a شروع و با a به پایان می رسند؟ </p>
+<div class="mya myHide">
+<code>a(a+b)*a</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 45,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 191,
+            "y": 45,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 321,
+            "y": 45,
+            "text": "B",
+            "isAcceptState": true
+        },
+        {
+            "x": 130,
+            "y": 102,
+            "text": "C",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -73,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5511811023622047,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a",
+            "anchorAngle": 1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6413793103448275,
+            "perpendicularPart": -23
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 3,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.6544378698224853,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a,b",
+            "anchorAngle": 2.3647632607602156
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 1,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4594594594594595,
+            "perpendicularPart": -17
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b",
+            "anchorAngle": 1.5707963267948966
+        }
+    ]
+}' width="355" height="179"></canvas></code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 35,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 191,
+            "y": 35,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 321,
+            "y": 35,
+            "text": "B",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -62,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5454545454545454,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a,b",
+            "anchorAngle": 1.5707963267948966
+        }
+    ]
+}' width="360" height="130"></canvas></code><code>S -&gt; aA
+A -&gt; aA|bA|a
+یا
+S -&gt; Aa
+A -&gt; Aa|Ab|a</code>
+</div>
+<p class="myq"><bdo class="leftInline">{auaava : u, v ∈ {0, 1}*}</bdo> - با a شروع و خاتمه یابد و حاوی aa باشد؟</p>
+<div class="mya myHide">
+<code>a(a+b)*aa(a+b)*a</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 62,
+            "y": 33,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 183,
+            "y": 33,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 300,
+            "y": 33,
+            "text": "B",
+            "isAcceptState": false
+        },
+        {
+            "x": 405,
+            "y": 33,
+            "text": "C",
+            "isAcceptState": false
+        },
+        {
+            "x": 515,
+            "y": 33,
+            "text": "D",
+            "isAcceptState": true
+        },
+        {
+            "x": 124,
+            "y": 109,
+            "text": "E",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.559322033898305,
+            "perpendicularPart": -14
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6507936507936508,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 3,
+            "nodeB": 4,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6181818181818182,
+            "perpendicularPart": -13
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 5,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 5,
+            "text": "a,b",
+            "anchorAngle": 2.8592394818162967
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 1,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.559322033898305,
+            "perpendicularPart": -15
+        },
+        {
+            "type": "SelfLink",
+            "node": 4,
+            "text": "a",
+            "anchorAngle": 1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 4,
+            "nodeB": 3,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.3090909090909091,
+            "perpendicularPart": -10
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b",
+            "anchorAngle": 1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "b",
+            "anchorAngle": 1.5707963267948966
+        }
+    ]
+}' width="550" height="150"></canvas></code><code>S -&gt; aA
+A -&gt; aB|bA
+B -&gt; aC|bA
+C -&gt; aC|bC|a</code>
+</div>
+
+<p class="myq">{w ∈ {a, b}* : n<sub>a</sub>(w) &lt;= 1} - فقط حاوی یک a (حداکثر یک a داشته) باشد؟ </p>
+<div class="mya myHide">
+<code>b*(λ+a)b*
+b*(b*+ab*)
+(b*+b*a)b*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 97,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 182,
+            "y": 97,
+            "text": "A",
+            "isAcceptState": true
+        },
+        {
+            "x": 115,
+            "y": 168,
+            "text": "C",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -61,
+            "deltaY": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5358377063867913,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4900393922341024,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a,b",
+            "anchorAngle": -3.141592653589793
+        }
+    ]
+}' width="600" height="200"></canvas></code><code>S -&gt; bS|aA|λ
+A -&gt; bA|λ</code>
+</div>
+<p class="myq"><bdo class="leftInline">{baw : w ∈ {a, b}*}</bdo> - با پیشوند ba شروع می شوند؟ </p>
+<div class="mya myHide">
+<code>ba(a+b)*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 61,
+            "y": 33,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 194,
+            "y": 33,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 314,
+            "y": 33,
+            "text": "B",
+            "isAcceptState": true
+        },
+        {
+            "x": 126,
+            "y": 110,
+            "text": "C",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -59,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6134969325153374,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a,b",
+            "anchorAngle": 1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5934959349593496,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 3,
+            "text": "a",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5501224889759921,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 3,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.48507236109705504,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a,b",
+            "anchorAngle": 0.11756557413764343
+        }
+    ]
+}' width="348" height="144"></canvas></code><code>S -&gt; baA
+A -&gt; aA|bA|λ
+یا
+S -&gt; Sa|Sb|ba</code>
+</div>
+<p class="myq"><bdo class="leftInline">{wau : w, u ∈ {a, b}*}</bdo> - شامل زیر رشته a (حداقل یک a داشته) باشد؟ </p>
+<div class="mya myHide">
+<code>b*a(a+b)*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 60,
+            "y": 93,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 172,
+            "y": 93,
+            "text": "A",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -60,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6581196581196581,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a,b",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="207" height="127"></canvas></code>
+</div>
+<p class="myq">شامل زیر رشته a نباشد؟ </p>
+<div class="mya myHide">
+<code>b*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 60,
+            "y": 93,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 172,
+            "y": 93,
+            "text": "A",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -60,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6581196581196581,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a,b",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="207" height="127"></canvas></code>
+</div>
+<p class="myq"><bdo class="leftInline">{wabu : w, u ∈ {a, b}*}</bdo> - شامل زیر رشته ab باشند؟ </p>
+<div class="mya myHide">
+<code>b*a*ab(a+b)*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 92,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 169,
+            "y": 92,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 120,
+            "y": 163,
+            "text": "B",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.631578947368421,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5625,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a,b",
+            "anchorAngle": -3.0374135514524934
+        }
+    ]
+}' width="203" height="197"></canvas></code>
+</div>
+
+<p class="myq"><bdo class="leftInline">{waaau : w, u ∈ {a, b}*}</bdo> - شامل زیر رشته aaa باشند؟ </p>
+<div class="mya myHide">
+<code>(b+ab+aab)*aaa(a+b)*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 93,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 188,
+            "y": 93,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 312,
+            "y": 93,
+            "text": "B",
+            "isAcceptState": false
+        },
+        {
+            "x": 188,
+            "y": 173,
+            "text": "C",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.7153846153846154,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6323529411764706,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.577859248620455,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.35384615384615387,
+            "perpendicularPart": -24
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.44360902255639095,
+            "perpendicularPart": 45
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a,b",
+            "anchorAngle": -3.141592653589793
+        }
+    ]
+}' width="363" height="208"></canvas></code>
+</div>
+<p class="myq">شامل زیر رشته aaa نباشند؟ </p>
+<div class="mya myHide">
+<code>(b+ab+aab)*(λ+a+aa)</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 93,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 188,
+            "y": 93,
+            "text": "A",
+            "isAcceptState": true
+        },
+        {
+            "x": 312,
+            "y": 93,
+            "text": "B",
+            "isAcceptState": true
+        },
+        {
+            "x": 188,
+            "y": 173,
+            "text": "C",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.7153846153846154,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6323529411764706,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.577859248620455,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.35384615384615387,
+            "perpendicularPart": -24
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.44360902255639095,
+            "perpendicularPart": 45
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a,b",
+            "anchorAngle": -3.141592653589793
+        }
+    ]
+}' width="363" height="208"></canvas></code>
+</div>
+
+
+
+<p class="myq"><bdo class="leftInline">{waabu : w, u ∈ {a, b}*}</bdo> - شامل زیر رشته aab باشند؟ </p>
+<div class="mya myHide">
+<code>(b+ab)*a*aab(a+b)*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 90,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 180,
+            "y": 90,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 295,
+            "y": 90,
+            "text": "B",
+            "isAcceptState": false
+        },
+        {
+            "x": 180,
+            "y": 170,
+            "text": "C",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -62,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.624,
+            "perpendicularPart": -21
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5826086956521739,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.328,
+            "perpendicularPart": -16
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5043478260869565,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a,b",
+            "anchorAngle": 3.141592653589793
+        }
+    ]
+}' width="329" height="204"></canvas></code><code>S -&gt; bS|aA
+A -&gt; bS|aB
+B -&gt; aB|bC
+C -&gt; aC|bC|λ</code><code>S -&gt; aS|bS|aabA
+A -&gt; aA|bA|λ</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 63,
+            "y": 94,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 174,
+            "y": 94,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 284,
+            "y": 94,
+            "text": "B",
+            "isAcceptState": false
+        },
+        {
+            "x": 174,
+            "y": 171,
+            "text": "C",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5826086956521739,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a,b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5043478260869565,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a,b",
+            "anchorAngle": 3.141592653589793
+        }
+    ]
+}' width="319" height="206"></canvas></code>
+</div>
+<p class="myq">برعکس مثال بالا به طوری که شامل زیررشته aab نباشند؟  </p>
+<div class="mya myHide">
+<code>(b+ab)*a*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 90,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 180,
+            "y": 90,
+            "text": "A",
+            "isAcceptState": true
+        },
+        {
+            "x": 295,
+            "y": 90,
+            "text": "B",
+            "isAcceptState": true
+        },
+        {
+            "x": 180,
+            "y": 168,
+            "text": "C",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -62,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.624,
+            "perpendicularPart": -21
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5826086956521739,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.328,
+            "perpendicularPart": -16
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5043478260869565,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a,b",
+            "anchorAngle": 3.141592653589793
+        }
+    ]
+}' width="329" height="203"></canvas></code><code>S -&gt; bS|aA|ɛ
+A -&gt; bS|aB|ɛ
+B -&gt; aB|ɛ</code>
+</div>
+<p class="myq">{w ∈ {a, b}* : n<sub>b</sub>(w) mod 2 = 1} - تعداد b ها در آن فرد باشد؟ </p>
+<div class="mya myHide">
+<code>a*b(a+ba*b)*
+</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 90,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 196,
+            "y": 90,
+            "text": "A",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -61,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4852941176470588,
+            "perpendicularPart": -27
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.47794117647058826,
+            "perpendicularPart": -22
+        }
+    ]
+}' width="230" height="135"></canvas></code><code>S -&gt; aS|bA
+A -&gt; aA|bS|λ</code>
+</div>
+<p class="myq">{w ∈ {a, b}* : n<sub>b</sub>(w) mod 2 = 0} - تعداد b ها در آن زوج باشد؟ </p>
+<div class="mya myHide">
+<code>(a+ba*b)*</code><code>a*(ba*ba*)*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 90,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 196,
+            "y": 90,
+            "text": "A",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -61,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4852941176470588,
+            "perpendicularPart": -27
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.47794117647058826,
+            "perpendicularPart": -22
+        }
+    ]
+}' width="230" height="135"></canvas></code><code>S -&gt; aS|bA|λ
+A -&gt; aA|bS</code>
+</div>
+<p class="myq">{w ∈ {a, b}* : |w| mod 3 = 0} - مثال:طول رشته به عدد 3 بخش پذیر باشد؟ </p>
+<div class="mya myHide">
+<code>((a+b)(a+b)(a+b))*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 62,
+            "y": 32,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 194,
+            "y": 32,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 131,
+            "y": 103,
+            "text": "B",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a,b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5606060606060606,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a,b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6412213740458015,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 0,
+            "text": "a,b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.3049473586136215,
+            "perpendicularPart": 0
+        }
+    ]
+}' width="229" height="136"></canvas></code><code>S -&gt; aA|bA|λ
+A -&gt; aB|bB
+B -&gt; aS|bS</code>
+</div>
+<p class="myq"><bdo class="leftInline">{w : w has the same number of "ab" as "ba"}</bdo> <strong><em>یا</em></strong> 
+<bdo class="leftInline">{awa: w ∈ {a,b}*} ∪ {bwb: w ∈ {a,b}*} ∪ {a,b}</bdo></p>
+<div class="mya">
+<code>b(a*b)*+a(b*a)*+λ</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 146,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 161,
+            "y": 88,
+            "text": "A",
+            "isAcceptState": true
+        },
+        {
+            "x": 161,
+            "y": 200,
+            "text": "C",
+            "isAcceptState": true
+        },
+        {
+            "x": 284,
+            "y": 88,
+            "text": "B",
+            "isAcceptState": false
+        },
+        {
+            "x": 284,
+            "y": 200,
+            "text": "D",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.47688564476885636,
+            "perpendicularPart": -21.102634145603993
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 2,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5004055150040551,
+            "perpendicularPart": 19.137611532855445
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "b",
+            "anchorAngle": 1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 3,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.6101694915254238,
+            "perpendicularPart": -24
+        },
+        {
+            "type": "Link",
+            "nodeA": 3,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.4661016949152542,
+            "perpendicularPart": -27
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 4,
+            "text": "a",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.6440677966101694,
+            "perpendicularPart": -23
+        },
+        {
+            "type": "Link",
+            "nodeA": 4,
+            "nodeB": 2,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4830508474576271,
+            "perpendicularPart": -24
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 4,
+            "text": "a",
+            "anchorAngle": 1.5707963267948966
+        }
+    ]
+}' width="318" height="296"></canvas></code>
+</div>
+<p class="myq"><bdo class="leftInline">{w : w has EVEN number of "ab"}</bdo></p>
+<div class="mya myHide">
+<code>(aa*bb*aa*b+b)*a*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 92,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 179,
+            "y": 92,
+            "text": "A",
+            "isAcceptState": true
+        },
+        {
+            "x": 294,
+            "y": 92,
+            "text": "B",
+            "isAcceptState": false
+        },
+        {
+            "x": 179,
+            "y": 168,
+            "text": "C",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5420560747663551,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5195480451954805,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.46153846153846156,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 3,
+            "nodeB": 0,
+            "text": "b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.44994617868675996,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a",
+            "anchorAngle": 2.8981209212089403
+        }
+    ]
+}' width="327" height="209"></canvas></code>
+</div>
+<p class="myq">{a<sup>n</sup> b<sup>m</sup> : n, m &gt;= 0} - همواره حرف a قبل از b بیاید؟ </p>
+<div class="mya myHide">
+<code>a*b*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 89,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 183,
+            "y": 89,
+            "text": "A",
+            "isAcceptState": true
+        },
+        {
+            "x": 126,
+            "y": 156,
+            "text": "B",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -67,
+            "deltaY": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.49298336798336795,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a,b",
+            "anchorAngle": 3.141592653589793
+        }
+    ]
+}' width="217" height="188"></canvas></code><code>S -&gt; aS|A
+A -&gt; bA|λ
+
+S -&gt; aS|aA|λ
+A -&gt; aA|λ</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 89,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 185,
+            "y": 89,
+            "text": "A",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -64,
+            "deltaY": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.49298336798336795,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="220" height="120"></canvas></code>
+</div>
+<p class="myq">{a<sup>n</sup> b<sup>m </sup>c<sup>k</sup> : n, m, k &gt;= 0} - الفبای {a,b,c} که حرف a قبل از b و c بعد از b بیاید؟ </p>
+<div class="mya myHide">
+<code>a*b*c*</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 127,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 180,
+            "y": 127,
+            "text": "A",
+            "isAcceptState": true
+        },
+        {
+            "x": 294,
+            "y": 127,
+            "text": "B",
+            "isAcceptState": true
+        },
+        {
+            "x": 294,
+            "y": 31,
+            "text": "C",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -67,
+            "deltaY": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5158221887361086,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "c",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5221238938053098,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "c",
+            "anchorAngle": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 2,
+            "text": "c",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.7155172413793104,
+            "perpendicularPart": 40
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "a,b",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 3,
+            "text": "a",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.46252077980958134,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "a,b,c",
+            "anchorAngle": 0
+        }
+    ]
+}' width="407" height="200"></canvas></code><code>S -&gt; aS|A
+A -&gt; bA|B
+B -&gt; cB|λ</code><code>S -&gt; aS|bA|cB|λ
+A -&gt; bA|cB|λ
+B -&gt; cB|λ</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 91,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 172,
+            "y": 91,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 116,
+            "y": 158,
+            "text": "B",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -67,
+            "deltaY": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6120689655172413,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.43434343434343436,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "c",
+            "anchorAngle": 3.141592653589793
+        }
+    ]
+}' width="205" height="193"></canvas></code>
+</div>
+<h3>زبان های مستقل از متن</h3>
+<p class="myq">{a<sup>n</sup> b<sup>n</sup> : n &gt;= 0} - حرف a قبل از b بیاید و تعداد a و b برابر باشد؟</p>
+<div class="mya myHide">
+<code>S -&gt; aSb|λ</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 92,
+            "text": "S",
+            "isAcceptState": true
+        },
+        {
+            "x": 207,
+            "y": 92,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 342,
+            "y": 92,
+            "text": "B",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -65,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a,z/1z",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4330708661417323,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "b,1/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4433821594596965,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 0,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.3563636363636364,
+            "perpendicularPart": -40
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a,1/11",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "b,1/\\lambda",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="375" height="165"></canvas></code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 114,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 204,
+            "y": 114,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 336,
+            "y": 114,
+            "text": "B",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -69,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b,1/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4330708661417323,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4433821594596965,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b,1/\\lambda",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a,z/1z\\na,1/11",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 2,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.6793893129770993,
+            "perpendicularPart": 36
+        }
+    ]
+}' width="368" height="183"></canvas></code>
+</div>
+<p class="myq">{a<sup>n</sup> b<sup>n</sup> : n &gt;= 1} - حرف a قبل از b بیاید تعداد a و b برابر باشد و حداقل یک ab وجود داشته باشد؟ </p>
+<div class="mya myHide">
+<code>S -&gt; aSb|ab</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 107,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 188,
+            "y": 107,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 310,
+            "y": 107,
+            "text": "B",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -60,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b,1/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.49987604330220653,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b,1/\\lambda",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5267857142857143,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a,z/1z\\na,1/11",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="342" height="143"></canvas></code>
+</div>
+<p class="myq">{a<sup>n</sup> b<sup>n+1</sup> : n &gt;= 0} - حرف a قبل از b بیاید و تعداد b همواره یکی از a بیشتر باشد؟ </p>
+<div class="mya myHide"><code>S -&gt; aSb|b</code></div>
+<p class="myq">{a<sup>n</sup> b<sup>2n</sup> : n &gt;= 0} - حرف a قبل از b بیاید و تعداد b همواره دو برابر تعداد a باشد؟ </p>
+<div class="mya myHide">
+<code>S -&gt; aSbb|λ</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 107,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 177,
+            "y": 107,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 294,
+            "y": 107,
+            "text": "B",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -60,
+            "deltaY": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a,z/11z\\na,1/111",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b,1/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4827586206896552,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b,1/\\lambda",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5641025641025641,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 2,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.6437768240343348,
+            "perpendicularPart": 37
+        }
+    ]
+}' width="327" height="176"></canvas></code>
+</div>
+<p class="myq">{a<sup>2</sup> b<sup>n</sup> c<sup>n</sup> : n &gt;= 0}</p>
+<div class="mya myHide">
+<code>S -&gt; aaA
+A -&gt; bAc|λ</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 92,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 169,
+            "y": 92,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 278,
+            "y": 92,
+            "text": "B",
+            "isAcceptState": true
+        },
+        {
+            "x": 394,
+            "y": 92,
+            "text": "C",
+            "isAcceptState": false
+        },
+        {
+            "x": 500,
+            "y": 92,
+            "text": "D",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -60,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a,z/z",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.4212397885631908,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "a,z/z",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5096153846153846,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 3,
+            "text": "b,z/1z",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5142857142857142,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "b,1/11",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 3,
+            "nodeB": 4,
+            "text": "c,1/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.41964285714285715,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 4,
+            "text": "c,1/\\lambda",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 4,
+            "nodeB": 2,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.2956521739130435,
+            "perpendicularPart": -35
+        }
+    ]
+}' width="534" height="161"></canvas></code>
+</div>
+<p class="myq">{a<sup>n+m</sup> b<sup>m</sup> : n, m &gt;= 0} - حرف a قبل از b بیاید و تعداد a ها مجموع تعداد a و b باشد؟ </p>
+<div class="mya myHide"><code>S -&gt; aSb|C
+C -&gt; aC|λ</code></div>
+<p class="myq">{a<sup>n</sup>b<sup>n+m</sup> : n &gt;= 0, m &gt;= 2} - حرف a قبل از b بیاید و تعداد b ها مجموع تعداد a و b باشد و تعداد b ها بزرگتر یا مساوی 2 باشد؟ </p>
+<div class="mya myHide">
+<code>S -&gt; aSb|A
+A -&gt; aA|bb</code><code>S -&gt; </code>
+</div>
+<p class="myq">{a<sup>n</sup>b<sup>n</sup>c<sup>m</sup> : n, m &gt;= 0}</p>
+<div class="mya myHide"><code>S -&gt; Sc|A
+A -&gt; aAb|λ</code></div>
+<p class="myq">{a<sup>n</sup>b<sup>m</sup>c<sup>m</sup> : n, m &gt;= 0}</p>
+<div class="mya myHide"><code>S -&gt; aS|A
+A -&gt; bAc|λ</code></div>
+<p class="myq">{a<sup>n</sup> b<sup>m</sup> c<sup>n</sup> : n, m &gt;= 0}</p>
+<div class="mya myHide"><code>S -&gt; aSc|A
+A -&gt; bA|λ</code></div>
+<p class="myq">{a<sup>n</sup> b<sup>m</sup> c<sup>n+m</sup> : n, m &gt;= 0}</p>
+<div class="mya myHide"><code>S -&gt; aSc|A
+A -&gt; bSc|λ</code></div>
+<p class="myq">{a<sup>n</sup> b<sup>m</sup> c<sup>k</sup> : k &gt; n+m}</p>
+<div class="mya myHide"><code>S -&gt; aSc|A
+A -&gt; bSc|B
+B -&gt; Bc|c</code></div>
+<p class="myq">{a<sup>m+k</sup> b<sup>m</sup> c<sup>k</sup> : m, k &gt;= 0}</p>
+<div class="mya myHide"><code>S -&gt; aSc|A
+A -&gt; aSb|λ</code></div>
+<p class="myq">{a<sup>n</sup> b<sup>n+k</sup> c<sup>k</sup> : n, k &gt;= 0}</p>
+<div class="mya myHide"><code>S -&gt; AB
+A -&gt; aAb|λ
+B -&gt; bBc|λ</code></div>
+<p class="myq">{a<sup>n</sup> b<sup>m</sup> c<sup>n+2m</sup> : n, m &gt;= 0}</p>
+<div class="mya myHide"><code>S -&gt; aSc|A
+A -&gt; bAcc|λ</code></div>
+<p class="myq">تعداد a و b برابر باشد و در هر پیشوند از رشته، تعداد a ها بزرگتر یا مساوی b ها باشند؟  </p>
+<div class="mya myHide"><code>S -&gt; aSb|SS|λ</code></div>
+<p class="myq">در هر پیشوند از رشته، تعداد a ها بزرگتر یا مساوی b ها باشند؟ برابری تعداد a و b مهم نیست  </p>
+<div class="mya myHide"><code>S -&gt; aSb|SS|aS|λ</code></div>
+<p class="myq">{w ∈ {a, b}* : n<sub>a</sub>(w) = n<sub>b</sub>(w)} - تعداد a و b برابر باشد؟</p>
+<div class="mya myHide">
+<code>S -&gt; aSb|bSa|SS|λ</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 167,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 185,
+            "y": 167,
+            "text": "A",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -60,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.468237273874632,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a,z/az\\nb,z/bz\\na,a/aa\\na,b/\\lambda\\nb,b/bb\\nb,a/\\lambda",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="218" height="200"></canvas></code>
+</div>
+<p class="myq"><bdo class="leftInline">{ww<sup>R</sup>: w ∈ {a, b}*}</bdo> - هر رشته با معکوسش برابر باشد و طول <strong>رشته زوج</strong> باشد (<em><strong>Palindrome</strong></em>)؟ </p>
+<div class="mya myHide"><code>S -&gt; aSa|bSb|λ</code></div>
+<p class="myq">{w ∈ {a, b}*: w = w<sup>R</sup>} - هر رشته با معکوسش برابر باشد؟ </p>
+<div class="mya myHide"><code>S -&gt; aSa|bSb|a|b|λ</code></div>
+</div>
+</main>
+<nav class="gradient">
+    <div class="titr-link">کتاب های آموزشی</div>
+<a title="زبان جاوا" class="anav" href="http://oruji.github.io/amoozesh.org/java/">زبان جاوا</a><a title="زبان پایتون" class="anav" href="http://oruji.github.io/amoozesh.org/python/">زبان پایتون</a><a title="فریم ورک جنگو" class="anav" href="http://oruji.github.io/amoozesh.org/django/">فریمورک جنگو</a><a title="سیستم عامل لینوکس" class="anav" href="http://oruji.github.io/amoozesh.org/linux/">سیستم عامل لینوکس</a><a title="مطالب CSS" class="anav last-line" href="http://oruji.github.io/amoozesh.org/css/">مطالب CSS</a><div class="titr-link">مطالب دیگر</div>
+<p class="myClean"><a title="محاسبه حباب طلا" href="http://oruji.github.io/amoozesh.org/gold/" class="anav">محاسبه حباب طلا</a><div title="مثال و تمرین نظریه ماشین"  class="divnav">مثال و تمرین نظریه</div><a title="تبدیل DFA به عبارت منظم" href="http://oruji.github.io/amoozesh.org/automata/dfa/regex/" class="anav">تبدیل DFA به عبارت منظم</a><a title="طراحی آنلاین ماشین DFA" href="http://oruji.github.io/amoozesh.org/automata/design/" class="anav">طراحی آنلاین ماشین DFA</a><a title="ساده سازی عبارات منظم" href="http://oruji.github.io/amoozesh.org/automata/regex/simplify/" class="anav">ساده سازی عبارات منظم</a><a title="تفاوت hide و conceal" href="http://oruji.github.io/amoozesh.org/english/hide/conceal/" class="anav">تفاوت hide و conceal</a><a title="تبدیل عبارت منظم به DFA" href="http://oruji.github.io/amoozesh.org/automata/regex/dfa/" class="anav">تبدیل عبارت منظم به DFA</a></p>    
+</nav>
+<footer class="gradient">Copyright © 2019 - <a href="http://oruji.github.io/amoozesh.org/" title="آموزش آنلاین">oruji.github.io/amoozesh.org</a></footer></body>
+<!-- Mirrored from oruji.github.io/amoozesh.org/automata/example/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Aug 2020 13:39:27 GMT -->
+</html>
