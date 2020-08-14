@@ -83,6 +83,9 @@ function convert2english(str) {
     }
   }
   
+  // remove non numericals
+  str = str.replace(/[^0-9.]/g, "");
+  
   return str;
 }
 
