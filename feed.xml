@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-	    <atom:link href="http://amoozesh.org/feed/" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://amoozesh.org/feed/" rel="self" type="application/rss+xml" />
 		<title>کتاب آموزش آنلاین</title>
-		<link>http://amoozesh.org</link>
+		<link>https://amoozesh.org</link>
 		<description>کتاب فارسی آموزش برخط</description>
 		<language>fa</language>
 		<image>
-		<url>http://amoozesh.org/static/img/logo/logo.png</url>
+		<url>https://amoozesh.org/static/img/logo/logo.png</url>
 		<title>کتاب آموزش آنلاین</title>
-		<link>http://amoozesh.org</link>
+		<link>https://amoozesh.org</link>
 		</image>
 		<lastBuildDate>Sun, 10 Dec 2017 16:40:01 +0330</lastBuildDate>
 		<item>
 			<title>تفاوت شیء تغییر پذیر با تغییرناپذیر در جاوا</title>
 			<link>
-				http://amoozesh.org/java/immutable/mutable/
+				https://amoozesh.org/java/immutable/mutable/
 			</link>
 			<guid>
-				http://amoozesh.org/java/immutable/mutable/
+				https://amoozesh.org/java/immutable/mutable/
 			</guid>
 			<description>
 				&lt;div style="direction: rtl"&gt;
 				&lt;p&gt;در این آموزش از کتاب برخط جاوا، تفاوت بین شیء (object) های mutable و immutable نشان داده می شود.&lt;/p&gt;&lt;p&gt;1. &lt;strong&gt;Mutable Objects&lt;/strong&gt;: شما می توانید شما می توانید وضعیت و فیلدهای شیء یا object را بعد از ایجاد شدن تغییر دهید. برای مثال: StringBuilder، java.util.Date و غیره.&lt;/p&gt;&lt;p&gt;2. &lt;strong&gt;Immutable Object&lt;/strong&gt;: شما نمی توانید هیچ چیزی را بعد از ایجاد شدن object تغییر دهید. برای مثال: String، Integer، Long و غیره.&lt;/p&gt;&lt;h2&gt;مثال Mutable جاوا&lt;/h2&gt;&lt;p&gt;به طور معمول، متدی برای ویرایش مقدار فیلد در خود دارد، و object می تواند گسترش پیدا کند.&lt;/p&gt;
 				&lt;p&gt;&lt;/p&gt; 
-				&lt;a href="http://amoozesh.org/java/immutable/mutable/"&gt;ادامه مطلب&lt;/a&gt;&lt;/div&gt;
+				&lt;a href="https://amoozesh.org/java/immutable/mutable/"&gt;ادامه مطلب&lt;/a&gt;&lt;/div&gt;
 			</description>
 			<comments>
-				http://amoozesh.org/java/immutable/mutable/
+				https://amoozesh.org/java/immutable/mutable/
 			</comments>
 			<category>کامپیوتر/برنامه نویسی</category>
 			<category>تکنولوژی</category>
@@ -45,18 +45,18 @@
 		<item>
 			<title>شروع کار و نصب جنگو</title>
 			<link>
-				http://amoozesh.org/django/start/
+				https://amoozesh.org/django/start/
 			</link>
 			<guid>
-				http://amoozesh.org/django/start/
+				https://amoozesh.org/django/start/
 			</guid>
 			<description>
 				&lt;div style="direction: rtl"&gt;
-&lt;h1&gt;شروع کار با جنگو (Django)&lt;/h1&gt;&lt;p&gt;به علت بخش های متحرک چندگانه در محیط های توسعه وب امروزی،  نصب کردن جنگو (Django) یک پردازش چند مرحله ای می باشد. در &lt;a class="content" href="http://amoozesh.org/django/start/"&gt;این آموزش&lt;/a&gt; از کتاب، به نحوه نصب جنگو فریم ورک وب پایتون و وابستگی های آن می پردازیم.&lt;/p&gt;&lt;p&gt;از آن جهت که جنگو (Django) فقط کد پایتون می باشد، بنابراین هرجایی که پایتون کار کند جنگو نیز کار خواهد کرد، که شامل برخی موبایل ها نیز می شود! اما &lt;a class="content" href="http://amoozesh.org/django/start/"&gt;این آموزش&lt;/a&gt; از کتاب، تنها مراحل نصب جنگو را پوشش می دهد. فرض می کنیم شما در حال نصب آن روی یک دسکتاپ/نت بوک یا یک سرور هستید.&lt;/p&gt;&lt;h2&gt;نصب کردن پایتون&lt;/h2&gt;&lt;p&gt;خود جنگو از پایه با زبان پایتون نوشته شده است، بنابراین اولین قدم در نصب جنگو، نصب کردن پایتون بر روی سیستم می باشد.&lt;/p&gt;
-				&lt;a href="http://amoozesh.org/django/start/"&gt;ادامه مطلب&lt;/a&gt;&lt;/div&gt;
+&lt;h1&gt;شروع کار با جنگو (Django)&lt;/h1&gt;&lt;p&gt;به علت بخش های متحرک چندگانه در محیط های توسعه وب امروزی،  نصب کردن جنگو (Django) یک پردازش چند مرحله ای می باشد. در &lt;a class="content" href="https://amoozesh.org/django/start/"&gt;این آموزش&lt;/a&gt; از کتاب، به نحوه نصب جنگو فریم ورک وب پایتون و وابستگی های آن می پردازیم.&lt;/p&gt;&lt;p&gt;از آن جهت که جنگو (Django) فقط کد پایتون می باشد، بنابراین هرجایی که پایتون کار کند جنگو نیز کار خواهد کرد، که شامل برخی موبایل ها نیز می شود! اما &lt;a class="content" href="https://amoozesh.org/django/start/"&gt;این آموزش&lt;/a&gt; از کتاب، تنها مراحل نصب جنگو را پوشش می دهد. فرض می کنیم شما در حال نصب آن روی یک دسکتاپ/نت بوک یا یک سرور هستید.&lt;/p&gt;&lt;h2&gt;نصب کردن پایتون&lt;/h2&gt;&lt;p&gt;خود جنگو از پایه با زبان پایتون نوشته شده است، بنابراین اولین قدم در نصب جنگو، نصب کردن پایتون بر روی سیستم می باشد.&lt;/p&gt;
+				&lt;a href="https://amoozesh.org/django/start/"&gt;ادامه مطلب&lt;/a&gt;&lt;/div&gt;
 			</description>
 			<comments>
-				http://amoozesh.org/django/start/
+				https://amoozesh.org/django/start/
 			</comments>
 			<category>کامپیوتر/برنامه نویسی</category>
 			<category>تکنولوژی</category>
@@ -74,10 +74,10 @@
 		<item>
 			<title>نحوه نصب JDK جاوا در اوبونتو</title>
 			<link>
-				http://amoozesh.org/ubuntu/install/jdk/
+				https://amoozesh.org/ubuntu/install/jdk/
 			</link>
 			<guid>
-				http://amoozesh.org/ubuntu/install/jdk/
+				https://amoozesh.org/ubuntu/install/jdk/
 			</guid>
 			<description>
 				&lt;div style="direction: rtl"&gt;
@@ -87,10 +87,10 @@
 &lt;p&gt;
 در این آموزش از کتاب برخط اوبونتو، نحوه نصب JDK جاوا را آموزش می دهیم. در این مثال نحوه نصب JDK 7 در اوبونتو 12 را نشان خواهیم داد.
 &lt;/p&gt;
-				&lt;a href="http://amoozesh.org/ubuntu/install/jdk/"&gt;ادامه مطلب&lt;/a&gt;&lt;/div&gt;
+				&lt;a href="https://amoozesh.org/ubuntu/install/jdk/"&gt;ادامه مطلب&lt;/a&gt;&lt;/div&gt;
 			</description>
 			<comments>
-				http://amoozesh.org/ubuntu/install/jdk/
+				https://amoozesh.org/ubuntu/install/jdk/
 			</comments>
 			<category>کامپیوتر/برنامه نویسی</category>
 			<category>تکنولوژی</category>
