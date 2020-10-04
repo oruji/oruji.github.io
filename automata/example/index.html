@@ -2035,7 +2035,7 @@ B -&gt; cB|λ</code><code><canvas json='{
     ]
 }' width="205" height="193"></canvas></code>
 </div>
-<h3>زبان های مستقل از متن</h3>
+<h3>زبان های خطی غیر منظم</h3>
 <p class="myq">{a<sup>n</sup> b<sup>n</sup> : n &gt;= 0} - حرف a قبل از b بیاید و تعداد a و b برابر باشد؟</p>
 <div class="mya myHide">
 <code>S -&gt; aSb|λ</code><code><canvas json='{
@@ -2562,8 +2562,19 @@ A -&gt; aSb|λ</code></div>
 A -&gt; aAb|λ
 B -&gt; bBc|λ</code></div>
 <p class="myq">{a<sup>n</sup> b<sup>m</sup> c<sup>n+2m</sup> : n, m &gt;= 0}</p>
-<div class="mya myHide"><code>S -&gt; aSc|A
-A -&gt; bAcc|λ</code></div>
+<div class="mya myHide">
+<code>S -&gt; aSc|A
+A -&gt; bAcc|λ</code>
+</div>
+<p class="myq"><bdo class="leftInline">{ww<sup>R</sup>: w ∈ {a, b}*}</bdo> - هر رشته با معکوسش برابر باشد و طول <strong>رشته زوج</strong> باشد (<em><strong>Palindrome</strong></em>)؟ </p>
+<div class="mya myHide">
+<code>S -&gt; aSa|bSb|λ</code>
+</div>
+<p class="myq">{w ∈ {a, b}*: w = w<sup>R</sup>} - هر رشته با معکوسش برابر باشد؟ </p>
+<div class="mya myHide">
+<code>S -&gt; aSa|bSb|a|b|λ</code>
+</div>
+<h3>زبان های مستقل از متن</h3>
 <p class="myq">تعداد a و b برابر باشد و در هر پیشوند از رشته، تعداد a ها بزرگتر یا مساوی b ها باشند؟  </p>
 <div class="mya myHide"><code>S -&gt; aSb|SS|λ</code></div>
 <p class="myq">در هر پیشوند از رشته، تعداد a ها بزرگتر یا مساوی b ها باشند؟ برابری تعداد a و b مهم نیست  </p>
@@ -2611,10 +2622,6 @@ A -&gt; bAcc|λ</code></div>
     ]
 }' width="218" height="200"></canvas></code>
 </div>
-<p class="myq"><bdo class="leftInline">{ww<sup>R</sup>: w ∈ {a, b}*}</bdo> - هر رشته با معکوسش برابر باشد و طول <strong>رشته زوج</strong> باشد (<em><strong>Palindrome</strong></em>)؟ </p>
-<div class="mya myHide"><code>S -&gt; aSa|bSb|λ</code></div>
-<p class="myq">{w ∈ {a, b}*: w = w<sup>R</sup>} - هر رشته با معکوسش برابر باشد؟ </p>
-<div class="mya myHide"><code>S -&gt; aSa|bSb|a|b|λ</code></div>
 </div></main>
 <nav class="gradient">
     <div class="titr-link">کتاب های آموزشی</div>
