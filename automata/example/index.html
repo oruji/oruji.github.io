@@ -2177,8 +2177,72 @@ B -&gt; cB|λ</code><code><canvas json='{
         }
     ]
 }' width="368" height="183"></canvas></code>
+</div>
+<p class="myq">{a<sup>n</sup> b<sup>n</sup> : n &gt;= 1} - حرف a قبل از b بیاید تعداد a و b برابر باشد و حداقل یک ab وجود داشته باشد؟ </p>
+<div class="mya myHide">
+<code>S -&gt; aSb|ab</code><code><canvas json='{
+    "nodes": [
+        {
+            "x": 64,
+            "y": 107,
+            "text": "S",
+            "isAcceptState": false
+        },
+        {
+            "x": 188,
+            "y": 107,
+            "text": "A",
+            "isAcceptState": false
+        },
+        {
+            "x": 310,
+            "y": 107,
+            "text": "B",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -60,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "b,1/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.49987604330220653,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "b,1/\\lambda",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "\\lambda,z/\\lambda",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.5267857142857143,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 0,
+            "text": "a,z/1z\\na,1/11",
+            "anchorAngle": -1.5707963267948966
+        }
+    ]
+}' width="342" height="143"></canvas></code>
 <code>
-<canvas json="{
+<canvas json='{
     "nodes": [
         {
             "x": 68,
@@ -2283,72 +2347,8 @@ B -&gt; cB|λ</code><code><canvas json='{
             "perpendicularPart": 0
         }
     ]
-}" width="409" height="318"></canvas>
+}' width="409" height="318"></canvas>
 </code>
-</div>
-<p class="myq">{a<sup>n</sup> b<sup>n</sup> : n &gt;= 1} - حرف a قبل از b بیاید تعداد a و b برابر باشد و حداقل یک ab وجود داشته باشد؟ </p>
-<div class="mya myHide">
-<code>S -&gt; aSb|ab</code><code><canvas json='{
-    "nodes": [
-        {
-            "x": 64,
-            "y": 107,
-            "text": "S",
-            "isAcceptState": false
-        },
-        {
-            "x": 188,
-            "y": 107,
-            "text": "A",
-            "isAcceptState": false
-        },
-        {
-            "x": 310,
-            "y": 107,
-            "text": "B",
-            "isAcceptState": true
-        }
-    ],
-    "links": [
-        {
-            "type": "StartLink",
-            "node": 0,
-            "text": "",
-            "deltaX": -60,
-            "deltaY": 0
-        },
-        {
-            "type": "Link",
-            "nodeA": 0,
-            "nodeB": 1,
-            "text": "b,1/\\lambda",
-            "lineAngleAdjust": 3.141592653589793,
-            "parallelPart": 0.49987604330220653,
-            "perpendicularPart": 0
-        },
-        {
-            "type": "SelfLink",
-            "node": 1,
-            "text": "b,1/\\lambda",
-            "anchorAngle": -1.5707963267948966
-        },
-        {
-            "type": "Link",
-            "nodeA": 1,
-            "nodeB": 2,
-            "text": "\\lambda,z/\\lambda",
-            "lineAngleAdjust": 3.141592653589793,
-            "parallelPart": 0.5267857142857143,
-            "perpendicularPart": 0
-        },
-        {
-            "type": "SelfLink",
-            "node": 0,
-            "text": "a,z/1z\\na,1/11",
-            "anchorAngle": -1.5707963267948966
-        }
-    ]
-}' width="342" height="143"></canvas></code>
 </div>
 <p class="myq">{a<sup>n</sup> b<sup>n+1</sup> : n &gt;= 0} - حرف a قبل از b بیاید و تعداد b همواره یکی از a بیشتر باشد؟ </p>
 <div class="mya myHide"><code>S -&gt; aSb|b</code></div>
