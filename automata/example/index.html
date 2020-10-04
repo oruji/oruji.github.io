@@ -2622,6 +2622,138 @@ A -&gt; bAcc|λ</code>
     ]
 }' width="218" height="200"></canvas></code>
 </div>
+<p class="myq">{a<sup>n</sup> b<sup>n</sup> c<sup>n</sup> : n &gt;= 1}</p>
+<div class="mya myHide">
+<code>
+<canvas json="{
+    "nodes": [
+        {
+            "x": 69,
+            "y": 139,
+            "text": "q0",
+            "isAcceptState": false
+        },
+        {
+            "x": 213,
+            "y": 139,
+            "text": "q1",
+            "isAcceptState": false
+        },
+        {
+            "x": 367,
+            "y": 139,
+            "text": "q2",
+            "isAcceptState": false
+        },
+        {
+            "x": 124,
+            "y": 271,
+            "text": "q3",
+            "isAcceptState": false
+        },
+        {
+            "x": 277,
+            "y": 271,
+            "text": "qf",
+            "isAcceptState": true
+        },
+        {
+            "x": 518,
+            "y": 139,
+            "text": "q3",
+            "isAcceptState": false
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -65,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a,x,R",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.34022584692597235,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a,a,R\\ny,y,R",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "b,y,R",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6180555555555556,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "b,b,R\\nz,z,R",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 3,
+            "text": "y,y,R",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "y,y,R\\nz,z,R",
+            "anchorAngle": 1.3418252754510471
+        },
+        {
+            "type": "Link",
+            "nodeA": 3,
+            "nodeB": 4,
+            "text": "B,B,L",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6187050359712231,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 5,
+            "text": "c,z,L",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6341463414634146,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 5,
+            "text": "a,a,L\\ny,y,L\\nb,b,L\\nz,z,L   ",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 5,
+            "nodeB": 0,
+            "text": "x,x,R",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.44097995545657015,
+            "perpendicularPart": -59
+        }
+    ]
+}" width="558" height="372"></canvas>
+</code>
+</div>
 </div></main>
 <nav class="gradient">
     <div class="titr-link">کتاب های آموزشی</div>
