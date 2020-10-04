@@ -2177,6 +2177,114 @@ B -&gt; cB|λ</code><code><canvas json='{
         }
     ]
 }' width="368" height="183"></canvas></code>
+<code>
+<canvas json="{
+    "nodes": [
+        {
+            "x": 68,
+            "y": 114,
+            "text": "q0",
+            "isAcceptState": false
+        },
+        {
+            "x": 221,
+            "y": 114,
+            "text": "q1",
+            "isAcceptState": false
+        },
+        {
+            "x": 374,
+            "y": 114,
+            "text": "q2",
+            "isAcceptState": false
+        },
+        {
+            "x": 135,
+            "y": 216,
+            "text": "q3",
+            "isAcceptState": false
+        },
+        {
+            "x": 264,
+            "y": 216,
+            "text": "qf",
+            "isAcceptState": true
+        }
+    ],
+    "links": [
+        {
+            "type": "StartLink",
+            "node": 0,
+            "text": "",
+            "deltaX": -65,
+            "deltaY": 0
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 1,
+            "text": "a,x,R",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.34022584692597235,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 1,
+            "text": "a,a,R\\ny,y,R",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 1,
+            "nodeB": 2,
+            "text": "b,y,L",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.6180555555555556,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 2,
+            "text": "a,a,L\\ny,y,L",
+            "anchorAngle": -1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 2,
+            "nodeB": 0,
+            "text": "x,x,R",
+            "lineAngleAdjust": 3.141592653589793,
+            "parallelPart": 0.2647058823529412,
+            "perpendicularPart": -30
+        },
+        {
+            "type": "Link",
+            "nodeA": 0,
+            "nodeB": 3,
+            "text": "y,y,R",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5,
+            "perpendicularPart": 0
+        },
+        {
+            "type": "SelfLink",
+            "node": 3,
+            "text": "y,y,R",
+            "anchorAngle": 1.5707963267948966
+        },
+        {
+            "type": "Link",
+            "nodeA": 3,
+            "nodeB": 4,
+            "text": "B,B,L",
+            "lineAngleAdjust": 0,
+            "parallelPart": 0.5,
+            "perpendicularPart": 0
+        }
+    ]
+}" width="409" height="318"></canvas>
+</code>
 </div>
 <p class="myq">{a<sup>n</sup> b<sup>n</sup> : n &gt;= 1} - حرف a قبل از b بیاید تعداد a و b برابر باشد و حداقل یک ab وجود داشته باشد؟ </p>
 <div class="mya myHide">
