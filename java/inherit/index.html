@@ -129,26 +129,26 @@ public class Child extends Parent {
 This is the display method of Parent
 value of the variable named num in Child:10
 value of the variable named num in Parent:20</code><h2>فراخوانی Constructor کلاس پدر</h2><p>در صورتی که کلاسی خصوصیات کلاسی دیگر را ارث بری کند، کلاس فرزند به طور خودکار constructor پیشفرض پدر را بدست می آورد. ولی اگر بخواهید contructor دارای پارامتر کلاس پدر را فراخوانی کنید، نیاز خواهید داشت مانند زیر از کلمه کلید super استفاده کنید.</p><code class="language-java">super(values);</code><h4>نمونه کد</h4><p>برنامه زیر شرح استفاده از کلمه کلیدی super برای فراخوانی constructor دارای پارامتر کلاس نشان داده شده است. این برنامه حاوی یک کلاس پدر و کلاس فرزند می باشد، که کلاس پدر یک constructor دارای پارامتر دارد که یک مقدار رشته را قبول می کند.</p><code class="language-java">class Parent {
-   int age;
+	int age;
 
-   Parent(int age) {
-      this.age = age; 		 
-   }
+	Parent(int age) {
+		this.age = age;
+	}
 
-   public void getAge() {
-      System.out.println("The value of the variable named age in Parent is: "  age);
-   }
+	public void getAge() {
+		System.out.println("The value of the variable named age in Parent is: " + age);
+	}
 }
 
-public class Child extends Parent{
-   Parent(int age) {
-      super(age);
-   }
+public class Child extends Parent {
+	Child(int age) {
+		super(age);
+	}
 
-   public static void main(String argd[]) {
-      Child s = new Child(24);
-      s.getAge();
-   }
+	public static void main(String argd[]) {
+		Child s = new Child(24);
+		s.getAge();
+	}
 }</code><p>خروجی</p><code class="language-">The value of the variable named age in Parent is: 24</code><h2>رابطه IS-A</h2><p>در مفاهیم شیءگرایی رابطه IS-A را می توان این چنین بیان کرد که: یک شیء نوعی از یک شیء دیگر است. اجازه دهید ببینیم که کلمه کلیدی extends چگونه برای وراثت یا ارث بری (<strong>Inheritance</strong>) در زبان جاوا استفاده می شود.</p><strong></strong><code class="language-java">public class Animal {
 }
 
