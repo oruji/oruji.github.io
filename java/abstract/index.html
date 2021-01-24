@@ -67,12 +67,12 @@ public abstract class Employee {
    }
 
    public void mailCheck() {
-      System.out.println("Mailing a check to "   this.name
-         " "   this.address);
+      System.out.println("Mailing a check to " + this.name
+         " " + this.address);
    }
 
    public String toString() {
-      return name   " "   address   " "   number;
+      return name + " "   address + " " + number;
    }
 
    public String getName() {
@@ -104,7 +104,8 @@ public class AbstractDemo {
                    ^
 1 error</code><h2>ارث بری کردن از کلاس Abstract</h2><p>همانطور که در کد زیر مشاهده می کنید، می توان خصوصیات کلاس Employee را درست مانند یک کلاس معمولی ارث بری کرد:</p><code class="language-java">/* File name : Salary.java */
 public class Salary extends Employee {
-   private double salary; //Annual salary
+   private double salary;
+
    public Salary(String name, String address, int number, double
       salary) {
        super(name, address, number);
@@ -113,8 +114,8 @@ public class Salary extends Employee {
 
    public void mailCheck() {
        System.out.println("Within mailCheck of Salary class ");
-       System.out.println("Mailing check to "   getName()
-         " with salary "   salary);
+       System.out.println("Mailing check to " + getName()
+       + " with salary " + salary);
    }
 
    public double getSalary() {
@@ -128,8 +129,8 @@ public class Salary extends Employee {
    }
 
    public double computePay() {
-      System.out.println("Computing salary pay for "   getName());
-      return salary/52;
+      System.out.println("Computing salary pay for " + getName());
+      return salary;
    }
 }</code><p>در اینجا، شما نمی توانید کلاس Employee را instantiate کنید، ولی می توانید کلاس Salary را instantiate کنید، و با استفاده از این instance، همانطور که در کد زیر مشاهده میکنید، می توانید به تمامی سه فیلد و هفت تابع کلاس Employee دسترسی پیدا کنید.</p><code class="language-java">/* File name : AbstractDemo.java */
 public class AbstractDemo {
@@ -161,11 +162,11 @@ ailing check to John Adams with salary 2400.</code><h2>توابع Abstract</h2><
    //Remainder of class definition
 }</code><p>تعریف یک تابع به صورت abstract نتایج زیر را باعث میشود:</p><ul><li>کلاسی که دارای این تابع است باید به صورت abstract تعریف شود.</li><li>هر کلاسی که از این کلاس ارث بری کند، یا باید تابع abstract را override کند، یا خودش به صورت abstract تعریف شود.</li></ul><p><strong>نکته:</strong> نتیجه آنکه، کلاس مشتق شده از کلاس abstract باید تابع abstract را پیاده سازی کند؛ مگر آنکه بخواهید سلسله مراتبی از کلاس های abstract داشته باشید که نمی توانند instantiate شوند.</p><p>فرض کنید کلاس Salary از کلاس Employee ارث بری کرده است، در این صورت کلاس Salary باید تابع <strong><bdo class="leftInline">computePay()</bdo></strong> را همانند زیر پیاده سازی کند:</p><code class="language-java">/* File name : Salary.java */
 public class Salary extends Employee {
-   private double salary; // Annual salary
+   private double salary;
   
    public double computePay() {
-      System.out.println("Computing salary pay for "   getName());
-      return salary/52;
+      System.out.println("Computing salary pay for " + getName());
+      return salary;
    }
 
    //Remainder of class definition
