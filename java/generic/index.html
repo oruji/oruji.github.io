@@ -110,27 +110,27 @@ H E L L O</code><h2>پارامترهای با نوع محدود شده (Bounded)
 
 Max of 6.6,8.8 and 7.7 is 8.8
 
-Max of pear, apple and orange is pear</code><h2>کلاس های Generic</h2><p>تعریف کلاس Generic مشابه تعریف کلاس معمولی است، به غیر آنکه قسمت نوع پارامتر بعد از نام کلاس می آید.</p><p>همانند توابع Generic قسمت نوع پارامتر کلاس Generic می تواند یک یا بیشتر باشد که توسط کاما از یکدیگر جدا می شوند. این کلاس ها را کلاس های پارامتری نیز می نامنند چرا که یک یا بیشتر پارامتر را قبول می کنند.</p><h3>مثال</h3><p>مثال زیر چگونگی تعریف یک کلاس Generic را نشان می دهد:</p><code class="language-java">public class Box&lt;T&gt; {
-   private T t;
+Max of pear, apple and orange is pear</code><h2>کلاس های Generic</h2><p>تعریف کلاس Generic مشابه تعریف کلاس معمولی است، به غیر آنکه قسمت نوع پارامتر بعد از نام کلاس می آید.</p><p>همانند توابع Generic قسمت نوع پارامتر کلاس Generic می تواند یک یا بیشتر باشد که توسط کاما از یکدیگر جدا می شوند. این کلاس ها را کلاس های پارامتری نیز می نامنند چرا که یک یا بیشتر پارامتر را قبول می کنند.</p><h3>مثال</h3><p>مثال زیر چگونگی تعریف یک کلاس Generic را نشان می دهد:</p><code class="language-java">public class Box<T> {
+	private T t;
 
-   public void add(T t) {
-      this.t = t;
-   }
+	public void add(T t) {
+		this.t = t;
+	}
 
-   public T get() {
-      return t;
-   }
+	public T get() {
+		return t;
+	}
 
-   public static void main(String[] args) {
-      Box&lt;Integer&gt; integerBox = new Box&lt;Integer&gt;();
-      Box&lt;String&gt; stringBox = new Box&lt;String&gt;();
-    
-      integerBox.add(new Integer(10));
-      stringBox.add(new String("Hello World"));
+	public static void main(String[] args) {
+		Box<Integer> integerBox = new Box<Integer>();
+		Box<String> stringBox = new Box<String>();
 
-      System.out.printf("Integer Value :%d\n\n", integerBox.get());
-      System.out.printf("String Value :%s\n", stringBox.get());
-   }
+		integerBox.add(10);
+		stringBox.add(new String("Hello World"));
+
+		System.out.printf("Integer Value :%d\n\n", integerBox.get());
+		System.out.printf("String Value :%s\n", stringBox.get());
+	}
 }</t></code><p>خروجی برنامه بالا:</p><code class="language-">Integer Value :10
 String Value :Hello World</code><br></div></main>
 <nav class="gradient">
