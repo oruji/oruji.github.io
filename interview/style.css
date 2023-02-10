@@ -35,7 +35,10 @@ body {
     padding: 10px;
     font-size: 12pt;
     font-family: sans serif;
-    margin: 0px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 pre {
