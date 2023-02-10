@@ -24,7 +24,7 @@ body {
 /* Style the collapsible content. Note: hidden by default */
 .content {
     background-color: #14282e;
-    padding: 0 18px;
     display: none;
     overflow: hidden;
+    line-height: 1.5;
 }
