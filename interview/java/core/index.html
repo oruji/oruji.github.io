@@ -3,9 +3,9 @@
 <link rel="stylesheet" href="https://oruji.github.io/interview/style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://oruji.github.io/interview/style.css">
 </head>
 <body>
-<link rel="stylesheet" href="https://oruji.github.io/interview/style.css">
 <h1>Java Core</h1>
 <button type="button" class="collapsible">
 What is a Marker Interface?
@@ -45,6 +45,8 @@ When we compile our Java program (e.g., using the javac command), we'll end up w
 This bytecode is simpler and more compact than our source code, but conventional processors in our computers cannot execute it.
 
 To be able to run a Java program, the JVM interprets the bytecode. Since interpreters are usually a lot slower than native code executing on a real processor, the JVM can run another compiler which will now compile our bytecode into the machine code that can be run by the processor. This so-called just-in-time compiler is much more sophisticated than the javac compiler, and it runs complex optimizations to generate high-quality machine code.
+
+https://www.baeldung.com/graal-java-jit-compiler
 </pre>
 
 <script src="https://oruji.github.io/interview/javascript.js"></script>
