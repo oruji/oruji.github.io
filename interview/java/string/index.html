@@ -11,7 +11,8 @@
 String Pool
 </button><pre class="content">
 special memory region in Heap memory where Strings are stored (interned) by the JVM.
-In case you try to create a new string object by String literal (String str = "Hello"), JVM first checks for the presence of the object in the pool. 
+In case you try to create a new string object by String literal (String str = "Hello"), 
+JVM first checks for the presence of the object in the pool. 
 If available, the same object reference is shared with the variable, else a new object is created.
 
 https://www.baeldung.com/java-string-pool
