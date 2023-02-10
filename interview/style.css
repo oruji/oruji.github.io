@@ -14,6 +14,7 @@ body {
   text-align: left;
   outline: none;
   font-size: 18px;
+  font-weight: bold;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
